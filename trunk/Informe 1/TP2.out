@@ -1,0 +1,32 @@
+\BOOKMARK [1][-]{section.1}{Objetivo}{}
+\BOOKMARK [1][-]{section.2}{Desarrollo}{}
+\BOOKMARK [2][-]{subsection.2.1}{Punta de prueba de alta impedancia}{section.2}
+\BOOKMARK [2][-]{subsection.2.2}{Punta de prueba de baja impedancia}{section.2}
+\BOOKMARK [2][-]{subsection.2.3}{Punta de prueba de corriente}{section.2}
+\BOOKMARK [2][-]{subsection.2.4}{Modos de funcionamiento}{section.2}
+\BOOKMARK [3][-]{subsubsection.2.4.1}{Modo transporte}{subsection.2.4}
+\BOOKMARK [3][-]{subsubsection.2.4.2}{Modo t\372nel}{subsection.2.4}
+\BOOKMARK [2][-]{subsection.2.5}{Protocolo AH}{section.2}
+\BOOKMARK [2][-]{subsection.2.6}{Protocolo ESP}{section.2}
+\BOOKMARK [1][-]{section.3}{Desarrollo}{}
+\BOOKMARK [2][-]{subsection.3.1}{Configuraci\363n de las m\341quinas virtuales}{section.3}
+\BOOKMARK [2][-]{subsection.3.2}{Configuraci\363n de adaptadores}{section.3}
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Configuraci\363n del adaptador de red de H1}{subsection.3.2}
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Configuraci\363n del adaptador de red de H2}{subsection.3.2}
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Configuraci\363n del adaptador de red de R1}{subsection.3.2}
+\BOOKMARK [3][-]{subsubsection.3.2.4}{Configuraci\363n del adaptador de red de R2}{subsection.3.2}
+\BOOKMARK [2][-]{subsection.3.3}{Configuraci\363n de redes y VMs}{section.3}
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Configuraci\363n de R1}{subsection.3.3}
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Configuraci\363n de R2}{subsection.3.3}
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Configuraci\363n de H1}{subsection.3.3}
+\BOOKMARK [3][-]{subsubsection.3.3.4}{Configuraci\363n de H2}{subsection.3.3}
+\BOOKMARK [2][-]{subsection.3.4}{Verificaci\363n de la comunicaci\363n}{section.3}
+\BOOKMARK [2][-]{subsection.3.5}{Configuracion t\372nel IPSEC}{section.3}
+\BOOKMARK [3][-]{subsubsection.3.5.1}{Generaci\363n de claves IPSEC}{subsection.3.5}
+\BOOKMARK [3][-]{subsubsection.3.5.2}{Obtenci\363n de la claves IPSEC}{subsection.3.5}
+\BOOKMARK [3][-]{subsubsection.3.5.3}{Configuraci\363n de IPSEC}{subsection.3.5}
+\BOOKMARK [3][-]{subsubsection.3.5.4}{Inicializaci\363n del enlace IPSEC}{subsection.3.5}
+\BOOKMARK [2][-]{subsection.3.6}{Verificaci\363n del t\372nel}{section.3}
+\BOOKMARK [2][-]{subsection.3.7}{An\341lisis del tr\341fico}{section.3}
+\BOOKMARK [2][-]{subsection.3.8}{Desencriptaci\363n del tr\341fico}{section.3}
+\BOOKMARK [1][-]{section.4}{Conclusiones}{}
