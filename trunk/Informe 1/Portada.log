@@ -1,11 +1,20 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.7.3)  8 APR 2014 17:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.10)  24 APR 2014 13:02
 entering extended mode
- %&-line parsing enabled.
 **Portada.tex
-(./Portada.tex
-LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, loaded.
+
+("C:\Documents and Settings\Casita\Mis documentos\Huguito\Instrumentos\Informe 
+1\Portada.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
 ! Undefined control sequence.
 <argument> \includegraphics 
                             [width=1.5cm, height=3cm]{Logo1.png}
@@ -142,7 +151,7 @@ Overfull \hbox (14.8541pt too wide) in paragraph at lines 13--13
 
 
 Overfull \hbox (28.37485pt too wide) in paragraph at lines 13--13
- \OT1/cmr/bx/n/10 nier^^S^^Pa 
+ \OT1/cmr/bx/n/10 niera 
  []
 
 
@@ -170,7 +179,7 @@ Missing character: There is no 6 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 4 in font nullfont!
 Missing character: There is no 4 in font nullfont!
-Missing character: There is no i in font nullfont!
+Missing character: There is no I in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no t in font nullfont!
@@ -182,7 +191,7 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
+Missing character: There is no E in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no c in font nullfont!
@@ -258,12 +267,12 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no s in font nullfont!
 
 Overfull \hbox (10.00003pt too wide) in paragraph at lines 15--15
- \/cmr/m/n/10 ^^Sa 
+ \/cmr/m/n/10 a 
  []
 
 
 Overfull \hbox (9.59724pt too wide) in paragraph at lines 15--15
- []\/cmr/m/n/10 1$ 
+ $[]\/cmr/m/n/10 1$ 
  []
 
 
@@ -329,7 +338,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.25 		\normalsize
-                   91227 & \normalsize Soler, Jos\'e Francisco & \normalsize...
+                   91227 & \normalsize Sanchez, Eduardo Hugo & \normalsize h...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -349,6 +358,93 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.25 		\normalsize 91227 & \normalsize
+                                       Sanchez, Eduardo Hugo & \normalsize h...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no S in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no z in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no E in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no H in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no o in font nullfont!
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 ...alsize Sanchez, Eduardo Hugo & \normalsize
+                                                   hugo\_044@hotmail.com \\
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no h in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 4 in font nullfont!
+Missing character: There is no 4 in font nullfont!
+Missing character: There is no @ in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 		\normalsize
+                   91227 & \normalsize Soler, Jos\'e Francisco & \normalsize...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no 9 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no 7 in font nullfont!
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 		\normalsize 91227 & \normalsize
                                        Soler, Jos\'e Francisco & \normalsize...
 
 Your command was ignored.
@@ -381,7 +477,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.25 ...size Soler, Jos\'e Francisco & \normalsize
+l.27 ...size Soler, Jos\'e Francisco & \normalsize
                                                    francisco.\_tw@hotmail.co...
 
 Your command was ignored.
@@ -413,7 +509,7 @@ Missing character: There is no c in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no m in font nullfont!
 
-Overfull \hbox (105.92303pt too wide) in paragraph at lines 21--28
+Overfull \hbox (105.92303pt too wide) in paragraph at lines 21--30
 [][]  
  []
 
@@ -425,11 +521,11 @@ Overfull \hbox (105.92303pt too wide) in paragraph at lines 21--28
 
  
 Here is how much of TeX's memory you used:
- 23 strings out of 495061
- 295 string characters out of 1182622
- 46108 words of memory out of 3000000
- 3298 multiletter control sequences out of 15000+50000
+ 25 strings out of 493921
+ 486 string characters out of 3144415
+ 51031 words of memory out of 3000000
+ 3416 multiletter control sequences out of 15000+200000
  3948 words of font info for 15 fonts, out of 3000000 for 9000
- 28 hyphenation exceptions out of 8191
- 18i,7n,16p,142b,187s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 841 hyphenation exceptions out of 8191
+ 18i,7n,16p,142b,189s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!
