@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.10)  24 APR 2014 15:15
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.10)  25 APR 2014 09:01
 entering extended mode
 **TP2.tex
 
@@ -917,13 +917,13 @@ LaTeX Info: Redefining \nameref on input line 22.
 \c@lstlisting=\count148
  ABD: EveryShipout initializing macros
 ("C:\Documents and Settings\Casita\Mis documentos\Huguito\Instrumentos\Informe 
-1\Portada.tex" <Logo1.png, id=26, 170.6375pt x 289.08pt>
+1\Portada.tex" <Logo1.png, id=34, 170.6375pt x 289.08pt>
 File: Logo1.png Graphic file (type png)
  <use Logo1.png>
 Package pdftex.def Info: Logo1.png used on input line 6.
 (pdftex.def)             Requested size: 42.67749pt x 85.35725pt.
 
-<Logo2.png, id=28, 277.035pt x 277.035pt>
+<Logo2.png, id=36, 277.035pt x 277.035pt>
 File: Logo2.png Graphic file (type png)
  <use Logo2.png>
 Package pdftex.def Info: Logo2.png used on input line 8.
@@ -951,7 +951,7 @@ to/Instrumentos/Informe 1/Logo2.png>]
 1\TP2.toc")
 \tf@toc=\write6
  [2] [3]
-<Imagenes/Mediciones instrumentos/NewFile1.png, id=58, 321.2pt x 234.8775pt>
+<Imagenes/Mediciones instrumentos/NewFile1.png, id=68, 321.2pt x 234.8775pt>
 File: Imagenes/Mediciones instrumentos/NewFile1.png Graphic file (type png)
 
 <use Imagenes/Mediciones instrumentos/NewFile1.png>
@@ -959,7 +959,7 @@ Package pdftex.def Info: Imagenes/Mediciones instrumentos/NewFile1.png used on
 input line 50.
 (pdftex.def)             Requested size: 227.62204pt x 166.45238pt.
 
-<Imagenes/Mediciones instrumentos/NewFile0.png, id=60, 321.2pt x 234.8775pt>
+<Imagenes/Mediciones instrumentos/NewFile0.png, id=70, 321.2pt x 234.8775pt>
 File: Imagenes/Mediciones instrumentos/NewFile0.png Graphic file (type png)
 
 <use Imagenes/Mediciones instrumentos/NewFile0.png>
@@ -971,47 +971,160 @@ input line 58.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.71 \end{document}
-                    <C:/Documents and Settings/Casita/Mis documentos/Huguito/In
-strumentos/Informe 1/Imagenes/Mediciones instrumentos/NewFile1.png>] [5pdfTeX w
-arning (ext4): destination with the same identifier (name{figure.2}) has been a
-lready used, duplicate ignored
+l.61 
+      <C:/Documents and Settings/Casita/Mis documentos/Huguito/Instrumentos/Inf
+orme 1/Imagenes/Mediciones instrumentos/NewFile1.png>]
+<Imagenes/Mediciones instrumentos/NewFile4.png, id=82, 321.2pt x 234.8775pt>
+File: Imagenes/Mediciones instrumentos/NewFile4.png Graphic file (type png)
+
+<use Imagenes/Mediciones instrumentos/NewFile4.png>
+Package pdftex.def Info: Imagenes/Mediciones instrumentos/NewFile4.png used on 
+input line 68.
+(pdftex.def)             Requested size: 227.62204pt x 166.45238pt.
+ [5pdfTeX warning (ext4): destination with the same identifier (name{figure.2})
+ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.71 \end{document}
-                    <C:/Documents and Settings/Casita/Mis documentos/Huguito/In
-strumentos/Informe 1/Imagenes/Mediciones instrumentos/NewFile0.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 71.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 71.
+l.72 ...bservada en la Figura es $$f_{-3dB}=9MHz$$
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{figure.3}) has been already used, duplicat
+e ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.72 ...bservada en la Figura es $$f_{-3dB}=9MHz$$
+                                                   <C:/Documents and Settings/C
+asita/Mis documentos/Huguito/Instrumentos/Informe 1/Imagenes/Mediciones instrum
+entos/NewFile0.png> <C:/Documents and Settings/Casita/Mis documentos/Huguito/In
+strumentos/Informe 1/Imagenes/Mediciones instrumentos/NewFile4.png>]
+<Imagenes/Mediciones instrumentos/NewFile3.png, id=92, 321.2pt x 234.8775pt>
+File: Imagenes/Mediciones instrumentos/NewFile3.png Graphic file (type png)
+
+<use Imagenes/Mediciones instrumentos/NewFile3.png>
+Package pdftex.def Info: Imagenes/Mediciones instrumentos/NewFile3.png used on 
+input line 75.
+(pdftex.def)             Requested size: 227.62204pt x 166.45238pt.
+
+<Imagenes/Mediciones instrumentos/NewFile5.png, id=93, 321.2pt x 240.9pt>
+File: Imagenes/Mediciones instrumentos/NewFile5.png Graphic file (type png)
+
+<use Imagenes/Mediciones instrumentos/NewFile5.png>
+Package pdftex.def Info: Imagenes/Mediciones instrumentos/NewFile5.png used on 
+input line 82.
+(pdftex.def)             Requested size: 227.62204pt x 170.72038pt.
+
+<Imagenes/Mediciones instrumentos/NewFile6.png, id=94, 321.2pt x 240.9pt>
+File: Imagenes/Mediciones instrumentos/NewFile6.png Graphic file (type png)
+
+<use Imagenes/Mediciones instrumentos/NewFile6.png>
+Package pdftex.def Info: Imagenes/Mediciones instrumentos/NewFile6.png used on 
+input line 88.
+(pdftex.def)             Requested size: 227.62204pt x 170.72038pt.
+
+<Imagenes/Mediciones instrumentos/NewFile7.png, id=95, 321.2pt x 240.9pt>
+File: Imagenes/Mediciones instrumentos/NewFile7.png Graphic file (type png)
+
+<use Imagenes/Mediciones instrumentos/NewFile7.png>
+Package pdftex.def Info: Imagenes/Mediciones instrumentos/NewFile7.png used on 
+input line 94.
+(pdftex.def)             Requested size: 227.62204pt x 170.72038pt.
+
+<Imagenes/Mediciones instrumentos/NewFile8.png, id=96, 321.2pt x 240.9pt>
+File: Imagenes/Mediciones instrumentos/NewFile8.png Graphic file (type png)
+
+<use Imagenes/Mediciones instrumentos/NewFile8.png>
+Package pdftex.def Info: Imagenes/Mediciones instrumentos/NewFile8.png used on 
+input line 100.
+(pdftex.def)             Requested size: 227.62204pt x 170.72038pt.
+
+<Imagenes/Mediciones instrumentos/NewFile10.png, id=97, 321.2pt x 234.8775pt>
+File: Imagenes/Mediciones instrumentos/NewFile10.png Graphic file (type png)
+
+<use Imagenes/Mediciones instrumentos/NewFile10.png>
+Package pdftex.def Info: Imagenes/Mediciones instrumentos/NewFile10.png used on
+ input line 107.
+(pdftex.def)             Requested size: 227.62204pt x 166.45238pt.
+ [6pdfTeX warning (ext4): destination with the same identifier (name{figure.4})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.111 \end{document}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{figure.5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.111 \end{document}
+                     <C:/Documents and Settings/Casita/Mis documentos/Huguito/I
+nstrumentos/Informe 1/Imagenes/Mediciones instrumentos/NewFile3.png> <C:/Docume
+nts and Settings/Casita/Mis documentos/Huguito/Instrumentos/Informe 1/Imagenes/
+Mediciones instrumentos/NewFile5.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 111.
+ [7pdfTeX warning (ext4): destination with the same identifier (name{figure.6})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.111 \end{document}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{figure.7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.111 \end{document}
+                     <C:/Documents and Settings/Casita/Mis documentos/Huguito/I
+nstrumentos/Informe 1/Imagenes/Mediciones instrumentos/NewFile6.png> <C:/Docume
+nts and Settings/Casita/Mis documentos/Huguito/Instrumentos/Informe 1/Imagenes/
+Mediciones instrumentos/NewFile7.png>] [8pdfTeX warning (ext4): destination wit
+h the same identifier (name{figure.8}) has been already used, duplicate ignored
+
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.111 \end{document}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{figure.9}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.111 \end{document}
+                     <C:/Documents and Settings/Casita/Mis documentos/Huguito/I
+nstrumentos/Informe 1/Imagenes/Mediciones instrumentos/NewFile8.png> <C:/Docume
+nts and Settings/Casita/Mis documentos/Huguito/Instrumentos/Informe 1/Imagenes/
+Mediciones instrumentos/NewFile10.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 111.
 
 ("C:\Documents and Settings\Casita\Mis documentos\Huguito\Instrumentos\Informe 
 1\TP2.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 71.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 71.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 111.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 111.
 Package rerunfilecheck Info: File `TP2.out' has not changed.
-(rerunfilecheck)             Checksum: 806CBBCEADA7D464A8FB99F85BA9216B;336.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 71.
+(rerunfilecheck)             Checksum: 3EB568F7684008D66F1BA61C04F57151;452.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 111.
  ) 
 Here is how much of TeX's memory you used:
- 17942 strings out of 493921
- 326089 string characters out of 3144415
- 389071 words of memory out of 3000000
- 20898 multiletter control sequences out of 15000+200000
+ 17991 strings out of 493921
+ 327704 string characters out of 3144415
+ 389617 words of memory out of 3000000
+ 20935 multiletter control sequences out of 15000+200000
  13669 words of font info for 53 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 55i,12n,54p,385b,367s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,13n,54p,385b,363s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Archivos de programa/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ><C:/Archivos de programa/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 <C:/Archivos de programa/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-C:/Archivos de programa/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:
-/Archivos de programa/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/A
-rchivos de programa/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Ar
-chivos de programa/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Arc
-hivos de programa/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on TP2.pdf (5 pages, 163457 bytes).
+C:/Archivos de programa/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:
+/Archivos de programa/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/A
+rchivos de programa/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Arc
+hivos de programa/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Archiv
+os de programa/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Archivo
+s de programa/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Archivos
+ de programa/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on TP2.pdf (8 pages, 211842 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
- 14 named destinations out of 1000 (max. 500000)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 158 PDF objects out of 1000 (max. 8388607)
+ 26 named destinations out of 1000 (max. 500000)
+ 124 words of extra memory for PDF output out of 10000 (max. 10000000)
 
