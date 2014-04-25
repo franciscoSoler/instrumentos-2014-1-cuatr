@@ -4,5 +4,5 @@
 \contentsline {subsection}{\numberline {2.1}Punta de prueba X10}{4}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Punta de prueba X1}{5}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}Punta de prueba de corriente}{6}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Tiempo de crecimiento del generador}{6}{subsection.2.4}
-\contentsline {subsection}{\numberline {2.5}Conclusiones}{6}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.4}Tiempo de crecimiento del generador}{7}{subsection.2.4}
+\contentsline {section}{\numberline {3}Conclusiones}{7}{section.3}
