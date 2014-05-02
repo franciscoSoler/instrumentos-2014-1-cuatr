@@ -13,7 +13,6 @@
 % Paquetes de macros de Circuitos
 %\usepackage{pstricks}
 \usepackage{tikz}
-
 % Encabezado y Pié de página
 \input{EncabezadoyPie.tex}
 % Carátula del Trabajo
@@ -23,19 +22,92 @@
 	\maketitle % Hace que el título anterior sea el principal del documento
 	\newpage
 
-	\tableofcontents % Esta línea genera un indice a partir de las secciones y subsecciones creadas en el documento
+	\tableofcontents % Esta línea genera un indice a partir de las secciones y 
+					% subsecciones creadas en el documento
 	\newpage
-
+	
 
 	\section{Objetivo}
 	
-	\indent	El objetivo del presente trabajo práctico es determinar el comportamiento y fiabilidad de distintas funcionalidades del osciloscopio tales como la FFT, el ruido de entrada 3 tipos de puntas de medición, de tensión con alta/baja impedancia de entrada, y de corriente.
+	\indent	El objetivo del presente trabajo práctico es determinar el 
+	comportamiento y fiabilidad de distintas funcionalidades del osciloscopio 
+	tales como la FFT, el ruido tanto del oscoloscopio como de un generador, 
+	y finalizando con las mediciones de velocidades de propagación utilizando 
+	la reflectometría.
 	
 	\newpage
 	\section{Desarrollo}
+
+	\subsection{Medición 1 - Comportamiento FFT}
+	\indent En esta medición se comparará el comportamiento de la funcionalidad
+	FFT dispuesta en el osciloscopio utilizando cuatro tipos de ventanas 
+	distintas, rectangular, hanning, hamming y blackman.\\
+	\indent Se utilizarán 3 frecuencias contiguas de forma tal de observar como
+	se modifica el pico de la sinc observada (Dependiendo del tipo de ventana, 
+	queda recortado cuando no cae en un punto de medición de la FFT). \\
+	\indent En las siguientes figuras, la frecuencia de la señal de la imagen de
+	la izquierda corresponde a $11MHz$, la del medio a $11,7MHz$ y la de la 
+	derecha a $11,9MHz$.\\
+	\indent En la figura \ref{img001} se puede observar que efectivamente el 
+	pico de la señal queda recortado. Logrando una diferencia de altura de la 
+	señal en unos $1.5dB$.
+
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=8cm]
+		{Imagenes/RectangularWindow.png}
+		\caption{FFT de una señal senoidal utilizando una ventana Cuadrada.}
+		\label{img001}
+	\end{figure}
+
+	\indent En la figura \ref{img002} se puede observar que , a diferencia
+	de utilizar una ventana cuadrada, con la hanning el pico de la sinc no 
+	disminuye en amplitud, por ende el pico siempre es el mismo.
+
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=8cm]
+		{Imagenes/HanningWindow.png}
+		\caption{FFT de una señal senoidal utilizando una ventana Hanning.}
+		\label{img002}
+	\end{figure}
+
+	\indent En la figura \ref{img003} se puede observar que con la ventana 
+	hamming no hay grandes diferencias con la hanning, simplemente se observa 
+	un lóbulo levemente más angosto.
+
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=8cm]
+		{Imagenes/HammingWindow.png}
+		\caption{FFT de una señal senoidal utilizando una ventana Hamming.}
+		\label{img003}
+	\end{figure}
+
+	\indent En la figura \ref{img004} se puede observar que con la ventana 
+	blackman no hay grandes diferencias con las dos anteriores, simplemente se 
+	observa que el lóbulo es levemente más ancho y que el pico está en una 
+	altura menor, aproximadamente en $2,90dB$ mientras que las otras están en 
+	$4,80dB$.
+
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=8cm]
+		{Imagenes/BlackmanWindow.png}
+		\caption{FFT de una señal senoidal utilizando una ventana Blackman.}
+		\label{img004}
+	\end{figure}
+
+	\subsection{Medición 2 - Ruido interno del osciloscopio}
+	%\TODO
+	\subsection{Medición 3 - Ruido de la fuente}
+	%\TODO
+	\subsection{Medición 4 - Tiempo de crecimiento de una compuerta}
+	%\TODO
+	\subsection{Medición 5 - Reflectometría}
+	%\TODO
 	\newpage 
 	\section{Conclusión}
-	\indent
-	\indent  
+	%\TODO
 \end{document}
 
