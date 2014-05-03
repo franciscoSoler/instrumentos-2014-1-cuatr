@@ -99,11 +99,61 @@
 	\end{figure}
 
 	\subsection{Medición 2 - Ruido interno del osciloscopio}
-	%\TODO
+	En esta medici\'on, se pretende obtener el piso de ruido existente en osciloscopios de diferente ancho de banda. Para ello se conecta por separado a cada uno de los 3 osciloscopios disponibles una carga de $50\Omega$ para observar el ruido que genera internamente cada osciloscopio.
+	En la Figura \ref{img005}, se observa el nivel de ruido del osciloscopio RIGOL DS1102E cuyo ancho de banda es de $100MHz$. Resulta importante conocer la potencia del ruido para poder luego obtener otros par\'ametros como la relaci\'on se\~nal a ruido, $SNR$.
+	Su valor de amplitud RMS es de $V_{RMS(100Mhz)}=179\mu V \pm$
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=5cm]
+			{Imagenes/Ruido100Mhz.png}
+			\caption{Ruido presente a la entrada del osciloscopio RIGOL DS1102E}
+			\label{img005}
+		\end{figure}
+		
+	En la Figura \ref{img006}, se observa el nivel de ruido del osciloscopio RIGOL DS1104B cuyo ancho de banda es de $200MHz$.
+	Su valor de amplitud RMS es de $V_{RMS(100Mhz)}=367\mu V \pm$		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=5cm]
+			{Imagenes/Ruido200Mhz.png}
+			\caption{Ruido presente a la entrada del osciloscopio RIGOL DS1104B}
+			\label{img006}
+		\end{figure}
+		
+	En la Figura \ref{img007}, se observa el nivel de ruido del osciloscopio RIGOL DS1302CA cuyo ancho de banda es de $300MHz$.
+	Su valor de amplitud RMS es de $V_{RMS(100Mhz)}=113\mu V \pm $	
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=5cm]
+			{Imagenes/Ruido300Mhz.png}
+			\caption{Ruido presente a la entrada del osciloscopio RIGOL DS1302CA}
+			\label{img007}
+		\end{figure}
+	En principio se puede suponer que el ruido presente en la entrada del osciloscopio es ruido blanco. Con lo cual, al tener componentes en todo el espectro de frecuencias, al utilizar osciloscopios de mayor ancho de banda la potencia de este ruido deber\'ia aumentar. Esto se puede ver en los primeros dos casos, el osciloscopio de $100MHz$ tiene un nivel de ruido menor al de $200MHz$. 
+	No obstante, esto no ocurre en el caso del osciloscopio de $300MHz$ cuyo nivel de ruido es el menor de todos. Seguramente esto se deba a la tecnolog\'ia misma del osciloscopio que se adec'ua para no tener un nivel de ruido elevado y por ende un osciloscopio de menores prestaciones.
+	
+			
 	\subsection{Medición 3 - Ruido de la fuente}
-	%\TODO
+	En esta secci\'on se mide el ruido presente en una fuente de $5.2V$. La entrada del osciloscopio se conecta en AC y se observa la se\~nal resultante. En la Figura \ref{img008} puede observarse la respuesta temporal y el espectro de dicha se\~nal (para diferenciar los or\'igenes de los ruidos se utiliza como referencia el ruido generado por el osciloscopio)
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=5cm]
+			{Imagenes/RuidoFuente.png}
+			\caption{Ruido generado por una fuente de tensi\'on}
+			\label{img008}
+		\end{figure}
+	Del gr\'afico puede observarse que aproximadamente la diferencia entre el ruido de base  el que aporta la fuente es de $40dB$. Lo cual tambi\'en puede deducirse de la respuesta temporal $20\log(\frac{29.6mV}{179\mu V})=44,4dB$
 	\subsection{Medición 4 - Tiempo de crecimiento de una compuerta}
-	%\TODO
+	Utilizando el osciloscopio de $300MHz$ de ancho de banda, RIGOL DS1302CA, se midi\'o el retardo y tiempo de crecimiento que impone una compuerta AND (del integrado 74LS08). En la Figura \ref{img009}, se puede observar las siguientes medidas $$t_{delay}=8.90ns$$y  $$t_{c}=11.20ns$$
+	De esta manera resulta importante conocer la tecnlog\'ia de fabricaci\'on de estos dispositivos para conocer las limitaciones que presentan en cuanto velocidad.
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=5cm]
+			{Imagenes/Risetime3.png}
+			\caption{Se\~nal de entrada a la compuerta (en amarillo) y se\~nal de salida (en celeste)}
+			\label{img009}
+		\end{figure}
+				
 	\subsection{Medición 5 - Reflectometría}
 	%\TODO
 	\newpage 
