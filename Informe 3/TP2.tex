@@ -40,12 +40,60 @@
 	\subsection{Medición 1 - Resistencias}
 	%TODO
 	\indent 
+	
 	\subsection{Medición 2 - Bobina}
 	%TODO
+	
 	\subsection{Medición 3 - Cortocircuito}
 	%TODO
+
 	\subsection{Medición 4 - Capacitor}
-	%TODO	
+	\indent En esta medición se utilizaron 3 capacitores distintos para medir
+	la resistencia y capacidad equivalente. Los valores utilizados fueron 
+	$100pF$, $180pF$ y $47nF$. \\
+	\indent La imagen \ref{img010} muestra las respuestas de dichas 
+	mediciones. La figura de la izquierda es la respuesta del capacitor de 
+	$100pF$, la del medio posee uno de $180pF$ y la de la derecha $47nF$. \\
+	
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=8cm]
+			{Imagenes/RectangularWindow.png}
+			\caption{Respuestas de los distintos capacitores}
+			\label{img010} %TODO corregir el valor de la imagen y armarla
+		\end{figure}
+
+	\indent Para poder determinar el capacitor y ressitencia equivalente lo 
+	primero que se hace es determinar el tiempo de crecimiento $\tau$. El cual
+	posee la siguiente fórmula
+
+		\begin{equation}
+			\tau = R\cdot C
+		\end{equation}
+	
+	\indent La línea de transmisión posee una impedancia característica de 
+	$50\omega$. Se desprecia la resistencia interna del capacitor. \\
+	\indent Despejando el valor de C, en la tabla \ref{tab002} se reflejan los 
+	resultados calculados con su respectivas incertidumbres. \\
+
+		\begin{table}[!htp]
+			\centering
+			\begin{tabular}{|c|c|c|c|c|}
+				\hline
+    			C teórico & $\tau$ medido & error relativo osciloscopio & C medido &
+				$\Delta$C \\
+				\hline
+				100pF & $5.8~\text{n seg}$ &  & & \\
+				\hline 
+				180pF & $10.4~\text{n seg}$ & & & \\
+				\hline
+				47nF & $2~\mu\text{seg}$ & & & \\
+				\hline
+			\end{tabular}
+			\caption{Comparación de mediciones entre los distintos osciloscopios} 
+			\label{tab002} %TODO corregir el valor de la tabla y terminar de armarla
+		\end{table}
+
 	\newpage
 	\section{Colcusiones}
 	%TODO
