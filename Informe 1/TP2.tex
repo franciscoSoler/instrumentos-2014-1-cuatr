@@ -184,13 +184,11 @@
 		de manera que exista adaptaci\'on. Por otra parte al CH2 del 
 		osciloscopio se conecta una punta X10, la cual sensa la tensi\'on a la
 		entrada del CH1. \\
-		\indent El generador de se\~nales realiza un barrido de frecuencias de
-		$1MHz$ a $400MHz$ en $10s$ \\
-		\indent En la Figura \ref{img008} se puede observar las se\~nales que
-		recibe el CH1 cuando est\'a conectado al generador de funciones (la 
-		cual se guarda como referencia) y la que recibe cuando adem\'as se 
-		carga el nodo del CH1 con la punta que se conecta al CH2.
-		
+		\indent En la Figura \ref{img008} muestra las se\~nales que
+		reciben el CH1 (referencia) y el CH2. Se puede observar que el tiempo
+		de crecimiento del CH2 es menor que el del CH1, esto se debe a que la
+		punta posee una bobina de refuerzo de altas frecuencias, logrando así
+		un tiempo de crecimiento menor al del circuito en medición.
 		
 		\begin{figure}[!htb]
 			\centering
@@ -210,10 +208,9 @@
 	realizar una medición en alta frecuencia, se da el caso que la segunda 
 	posee una impedancia de entrada mayor que la primera.\\
 	\indent En la medición del tiempo de crecimiento del generador se podría
-	pensar que la punta mejora el rise time de la señal, pero esto no es
-	cierto dado que la medición es relativa a la amplitud, y como hay un 
-	efecto de carga, dicha magnitud se ve disminuída en un factor, por lo cual
-	el tiempo que tarda en llegar a	dicho valor es menor.
+	pensar que la punta mejora el rise time de la señal, esto no es
+	cierto dado que la punta posee una bobina de refuerzo para altas 
+	frecuencias. 
 
 \end{document}
 
