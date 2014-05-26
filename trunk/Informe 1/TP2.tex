@@ -13,6 +13,7 @@
 % Paquetes de macros de Circuitos
 %\usepackage{pstricks}
 \usepackage{tikz}
+\usepackage{pdfpages}
 
 % Encabezado y Pié de página
 \input{EncabezadoyPie.tex}
@@ -126,7 +127,12 @@
 		ancho de banda de la se\~nal se reduzca en mayor medida. \\
 
 		\indent En la Figura \ref{img003}, se pueden ver las se\~nales del CH1
-		antes y despu\'es de cargarlo con la punta del CH2. 
+		antes y despu\'es de cargarlo con la punta del CH2. A su vez se 
+		aprecia que esta vez el osciloscopio presenta una respuesta mucho más
+		plana en este rango de frecuencias ($z_{in}$ prácticamente no varía). \\
+		\indent La atenuación en la señal medida por el CH1 luego de conectar
+		el CH2 a la frecuencia de $11 MHz$ es de 
+		$$ 20\cdot \log_{10}10/9 = 0.92db $$
 		
 		\begin{figure}[!htb]
 			\centering
@@ -141,7 +147,9 @@
 		se\~nales que proviene del CH1 y el CH2. \\
 		\indent La frecuencia de corte observada en la Figura es 
 		$$f_{-3dB}=9MHz$$
-		
+		\indent La medición muestra que la punta x1 tiene un mayor ancho de 
+		banda que la que indica el fabricante en la hoja de datos.
+		$BW = 6 MHz$
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=8cm]
@@ -149,7 +157,10 @@
 			\caption{Se\~nales del CH1 (en verde) y del canal CH2 (en celeste)
 			.} \label{img002}
 		\end{figure}						
-		
+	
+		\indent A modo de comparación se midió a $5 MHz$ la diferencia en 
+		decibeles entre el CH1 Y CH2 $$dif = 20*\log_{100/85}  = 1.41db $$
+
 		\subsection{Punta de prueba de corriente}
 		\indent En esta secci\'on se comparan los anchos de banda de puntas de
 		corriente de dos fabricantes, Agilent$_{\textregistered}$  y 
@@ -243,6 +254,15 @@
 	
 	\newpage
 	\section{Anexo}
+	\subsection{Punta pasiva}
+	\includepdf[pages={-}]{hojas de datos/p2220 200MHz 1X10X pasive probe.pdf}
+	\newpage
+	\subsection{Puntas de corriente}
+	
+	\newpage
+	\subsection{Osciloscopio}
+	
+	\includepdf[pages={-}]{hojas de datos/Rigol DS1302CA User's Guide.pdf}
 
 \end{document}
 
