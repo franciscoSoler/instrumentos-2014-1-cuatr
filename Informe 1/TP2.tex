@@ -31,7 +31,7 @@
 	\section{Objetivo}
 	
 	\indent	El objetivo del presente trabajo práctico es determinar el 
-	comportamiento y fiabilidad de 3 tipos de puntas de medición, de tensión 
+	comportamiento de 3 tipos de puntas de medición, de tensión 
 	con alta/baja impedancia de entrada, y de corriente.
 	
 	\newpage
@@ -52,21 +52,20 @@
 		\indent Se conecta el generador de se\~nales a la entrada del CH1 del
 		osciloscopio cuya impedancia de entrada es de $50 \Omega$, al igual 
 		que la impedancia caracter\'istica del cable coaxil que los conecta, 
-		de manera que exista adaptaci\'on. Por otra parte al CH2 del 
-		osciloscopio se conecta una punta X10, la cual sensa la tensi\'on a la
-		entrada del CH1. \\
+		de manera que exista adaptaci\'on. Por otra parte se utiliza una punta
+		x10 en el channel 2 del osciloscopio conectada a un BCN T intercalado
+		entre el CH1 y el cable de conexión al generador. \\
 		\indent El generador de se\~nales realiza un barrido de frecuencias de
 		$1MHz$ a $400MHz$ en $10s$. En la Figura \ref{img001} se puede 
-		observar las se\~nales que recibe el CH1 cuando est\'a conectado al 
-		generador de funciones (la cual se guarda como referencia) y la que 
-		recibe cuando adem\'as se carga el nodo del CH1 con la punta que se 
-		conecta al CH2.
+		observar las se\~nales en el CH1 cuando est\'a conectado al 
+		generador de funciones (la cual se guarda como referencia) y cuando, 
+		adem\'as, se carga el nodo del CH1 con la punta que se conecta al CH2.
 		
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=8cm]
 			{Imagenes/Mediciones instrumentos/NewFile1.png}
-			\caption{Se\~nales recibidas en CH1 cuando est\'a conectado al 
+			\caption{Se\~nales medidas con el CH1 cuando est\'a conectado al 
 			generador de se\~ales (en blanco) y cu\'ando se carga con la punta
 			X10 (en verde).} \label{img001}
 		\end{figure}
@@ -74,12 +73,30 @@
 		\indent Como era de esperar al cargar el nodo con la punta X10, el 
 		ancho de banda disminuye considerablemente. Aproximadamente la 
 		frecuencia de corte observada en la Figura es $$f_{-3dB}=245MHz$$
+
+		\indent Como se puede observar, hay diferentes amplitudes de la señal
+		medida a distintas frecuencias (menores a la frecuencia de corte), 
+		esto podría ser debido al generador o al cambio del $Z_{in}$ del 
+		osciloscopio. Para descartar la primera opción, se realizó la misma
+		medición con otro osciloscopio y se observó que la respuesta no era la
+		misma. Por ende, la respuesta no plana es debido a que el $Z_{in}$ del
+		osciloscopio varía con la frecuencia.\\
+		\indent A modo de Referencia, se midió la diferencia de tensión entre
+		ambas señales en el CH1 a una frecuencia de $130MHz$:
+
+		\begin{equation*}
+			\delta V_{db} = 20*log(6/5) = 1.58 db 
+		\end{equation*}
+
 		\indent En la Figura \ref{img000} se vizualizan las se\~nales que 
 		toman CH1 y CH2. La se\~nal del CH1 es la misma que en el caso 
 		anterior con el ancho de banda reducido por el efecto de carga 
 		generado por la punta X10. Por otra parte la se\~nal del CH2 presenta
 		un sobrepico en altas frecuencias en lugar de actuar como un sistema 
-		de primer orden.
+		de primer orden. Dicho sobrepico se debe a que el conector utilizado 
+		como tierra en la punta se comporta como si fuese una inductancia, 
+		para disminuirla lo más posible, se utilizó el terminal corto que
+		se provee con la punta. \\
 		
 		\begin{figure}[!htb]
 			\centering
@@ -88,6 +105,18 @@
 			\caption{Se\~nales del CH1 (en verde) y del canal CH2 (en celeste
 			).} \label{img000}
 		\end{figure}
+
+		\indent Para calcular la inductancia equivalente que presenta el 
+		terminal de tierra se utiliza la frecuencia de resonancia, la cual 
+		es cuando $x_c = x_l$ y en el gráfico se observa con el sobrepico, el
+		cual está a una frecuencia de $f = 245 MHz$. Tomando una capacidad 
+		equivalente de la punta osciloscopio igual a $5pF$, la inductancia 
+		del conector resulta:
+
+		\begin{equation*}
+			 L = \frac{1}{w^2*c} = 84 nHy 
+		\end{equation*}
+
 									
 		\subsection{Punta de prueba X1}
 		\indent Se realiza la misma experiencia que en el caso anterior, 
@@ -174,7 +203,7 @@
 			Tektronix$_{\textregistered}$.} \label{img007}
 		\end{figure}
 		
-		\subsection{Tiempo de crecimiento del generador}
+		\subsection{Tiempo de crecimiento del conjunto punta-osciloscopio}
 		
 		\indent En esta secci\'on se mide el tiempo de crecimiento del 
 		generador. \\
@@ -211,6 +240,9 @@
 	pensar que la punta mejora el rise time de la señal, esto no es
 	cierto dado que la punta posee una bobina de refuerzo para altas 
 	frecuencias. 
+	
+	\newpage
+	\section{Anexo}
 
 \end{document}
 
