@@ -57,6 +57,12 @@
 		exista adaptaci\'on. Por otra parte se utiliza una punta x10 en el 
 		channel 2 del osciloscopio conectada a un BCN T intercalado entre el 
 		CH1 y el cable de conexión al generador. \\
+		\indent Los modelos de los instrumentos utilizados son:
+		
+		\begin{itemize}
+			\item Osciloscopio Rigol DS1302CA - 300MHz
+			\item Punta RP3300 - 350 MHz
+		\end{itemize}
 
 		\begin{figure}[!htb]
 			\centering
@@ -96,7 +102,7 @@
 		ambas señales en el CH1 a una frecuencia de $130MHz$:
 
 		\begin{equation*}
-			\delta V_{db} = 20*log(6/5) = 1.58 db 
+			\Delta V_{db} = 20*log(6/5) = 1.58 db 
 		\end{equation*}
 
 		\indent En la Figura \ref{img000} se vizualizan las se\~nales que 
@@ -137,6 +143,13 @@
 		capacitancia equivalente mayor que la punta X10, es esperable que el 
 		ancho de banda de la se\~nal se reduzca en mayor medida. \\
 
+		\indent Los modelos de los instrumentos utilizados son:
+		
+		\begin{itemize}
+			\item Osciloscopio Rigol DS1302CA - 300MHz
+			\item Punta RP3300 - 350 MHz
+		\end{itemize}
+
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=8cm]
@@ -167,8 +180,8 @@
 		\indent La frecuencia de corte observada en la Figura es 
 		$$f_{-3dB}=9MHz$$
 		\indent La medición muestra que la punta x1 tiene un mayor ancho de 
-		banda que la que indica el fabricante en la hoja de datos.
-		$BW = 6 MHz$
+		banda que la que indica el fabricante en la hoja de datos
+		$BW = 8 MHz$
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=8cm]
@@ -183,7 +196,7 @@
 		\subsection{Punta de prueba de corriente}
 		\indent En esta secci\'on se comparan los anchos de banda de puntas de
 		corriente de dos fabricantes, Agilent$_{\textregistered}$  y 
-		Tetronix$_{\textregistered} )$. \\
+		Tektronix$_{\textregistered} )$. \\
 		\indent El procedimiento es similar al realizado en las experiencias 
 		previas. Se utiliza un generador de se\~nales que barre frecuencias 
 		desde $300KHz$ a $30MHz$ en un tiempo aproximado de $10s$, la 
@@ -193,7 +206,14 @@
 		obtenidos para las puntas de Agilent$_{\textregistered}$. Los ancho de
 		banda obtenidos de los gr\'aficos, son respectivamente 
 		$$f_{-3dB}=15.6MHz$$ y $$f_{-3dB}=9.5MHz$$
+	
+		\indent Los modelos de los instrumentos utilizados son:
 		
+		\begin{itemize}
+			\item Punta Agilent - 350 MHz
+			\item Punta Tektronix - 
+		\end{itemize}
+
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=8cm]
@@ -232,7 +252,33 @@
 			\caption{Barrido en frecuencia para una punta de 
 			Tektronix$_{\textregistered}$.} \label{img007}
 		\end{figure}
-		
+	
+		\indent Para determinar la frecuencia de corte inferior se utilizó el
+		el banco de medición mostrado en la figura \ref{esq003}. En el CH1 del
+		osciloscopio se dejó conectada la punta pasiva para tener como 
+		referencia la tensión que hay en la resistencia. \\
+		\indent Como las puntas de corriente son muy ruidosas, la medición no
+		se realiza utilizando la detección de envolvente, el ruido eclipsa 
+		completamente la medición. Para disminuir el ruido de alta frecuencia,
+		se configuró el osciloscopio para que tenga un pasa bajo a $20 MHz$\\
+
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=8cm]
+	 		{Esquematicos/esqFreqCorteInfPuntasCorriente.png}
+			\caption{Circuito equivalente del banco de medición freq inf 
+			puntas de corriente}
+		    \label{esq003}
+		\end{figure}
+
+		\indent Las frecuencias de cortes inferiores especificadas por los 
+		manuales de las puntas son:
+
+		\begin{itemize}
+			\item
+			\item
+		\end{itemize}
+
 		\subsection{Tiempo de crecimiento del conjunto punta-osciloscopio}
 		
 		\indent En esta secci\'on se mide el tiempo de crecimiento del 
@@ -266,17 +312,23 @@
 		que se realizó la medición, llegando así a un error grosero. A su vez,
 		tampoco pueden estar muy separados, porque de esta forma ni siquiera 
 		entrarían en consideración. \\
-		\indent En el caso de esta medición, los rise time de los instrumentos
-		son los siguientes:
-
+		\indent En el caso de esta medición, los rise times obtenidos de las 
+		hojas de datos de los fabricantes son los siguientes: 
+		
 		\begin{itemize}
-			\item Generador: 1,7 nseg
-			\item Osciloscopio: 1,5 nseg
+			\item Generador: 1,7 nSeg  
+			\item Osciloscopio: 1,2 nSeg
+			\item punta: 900 pSeg
 		\end{itemize}
-		\indent Como la medida es $1,98 nseg$, puedo saber que el risetime de
-		la punta está en ese orden, pero no lo puedo saber con exactitud, para
-		una mejor medición estaría necesitando que tanto el generador como el
-		osciloscopio posean un Trise mucho menor.
+		\indent Dado que los rise time del generador y del osciloscopio son 
+		ambos mayores al de la punta y próximos entre si, no tiene sentido 
+		realizar el cálculo. \\
+		\indent Para expresar el resultado de la medición con incertidumbres,
+		se obtienen los datos del osciloscopio que posee la siguiente 
+		incertidumbre en el canal horizontal en modo tiempo equivalente
+		$$\frac{1}{50GSa} + 50ppm × reading
+		+ 0.6 ns$$
+		$$Tr_{med} = 1.98 nSeg \pm 0.62 nSeg$$
 
 	\newpage
 	\section{Conclusiones}
