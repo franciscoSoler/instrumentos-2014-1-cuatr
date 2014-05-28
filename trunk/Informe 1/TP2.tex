@@ -50,12 +50,22 @@
 		\end{itemize}
 				 
 		\subsection{Punta de prueba X10}
-		\indent Se conecta el generador de se\~nales a la entrada del CH1 del
-		osciloscopio cuya impedancia de entrada es de $50 \Omega$, al igual 
-		que la impedancia caracter\'istica del cable coaxil que los conecta, 
-		de manera que exista adaptaci\'on. Por otra parte se utiliza una punta
-		x10 en el channel 2 del osciloscopio conectada a un BCN T intercalado
-		entre el CH1 y el cable de conexión al generador. \\
+		\indent Como se observa en la figura \ref{esq001} Se conecta el 
+		generador de se\~nales a la entrada del CH1 del osciloscopio cuya 
+		impedancia de entrada es de $50 \Omega$, al igual que la impedancia 
+		caracter\'istica del cable coaxil que los conecta, de manera que 
+		exista adaptaci\'on. Por otra parte se utiliza una punta x10 en el 
+		channel 2 del osciloscopio conectada a un BCN T intercalado entre el 
+		CH1 y el cable de conexión al generador. \\
+
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=8cm]
+			{Esquematicos/esqFreqCortePuntaX10.png}
+			\caption{Circuito equivalente del banco de medición - punta x10} 
+			\label{esq001}
+		\end{figure}
+
 		\indent El generador de se\~nales realiza un barrido de frecuencias de
 		$1MHz$ a $400MHz$ en $10s$. En la Figura \ref{img001} se puede 
 		observar las se\~nales en el CH1 cuando est\'a conectado al 
@@ -120,11 +130,20 @@
 
 									
 		\subsection{Punta de prueba X1}
-		\indent Se realiza la misma experiencia que en el caso anterior, 
-		excepto que ahora el barrido de frecuencias es de $1MHz$ a $21MHz$ y 
-		la punta que se conecta al CH2 es X1. Dado que la punta X1 posee una 
+		\indent Se realiza la misma experiencia que en el caso anterior, en la
+		figura \ref{esq002} se observa el circuito equivalente del banco de 
+		medición. El barrido de frecuencias es de $1MHz$ a $21MHz$ y la punta
+		que se conecta al CH2 es X1. Dado que la punta X1 posee una 
 		capacitancia equivalente mayor que la punta X10, es esperable que el 
 		ancho de banda de la se\~nal se reduzca en mayor medida. \\
+
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=8cm]
+			{Esquematicos/esqFreqCortePuntaX1.png}
+			\caption{Circuito equivalente del banco de medición - punta X1} 
+			\label{esq002}
+		\end{figure}
 
 		\indent En la Figura \ref{img003}, se pueden ver las se\~nales del CH1
 		antes y despu\'es de cargarlo con la punta del CH2. A su vez se 
@@ -237,6 +256,28 @@
 			\caption{Se\~nales del CH1 (en verde) y del canal CH2 (en celeste)
 			} \label{img008}
 		\end{figure}
+		\indent El risetime medido es igual a $1,98 nSeg$, para obtener el 
+		rise time de la punta, se puede utilizar la siguiente aproximación:
+		$$Tr_{med}^2 = Tr_{gen}^2 + Tr_{punta}^2 + Tr_{osc}^2$$
+		\indent Esta ecuación se la puede aplicar en caso de tener una cascada
+		de cuadripolos, El problema es que los polos de los mismos tienen que 
+		estar medianamente cerca, no lo suficiente, porque sino uno de los 
+		términos (ej el despejado) de mucho menor a los demas rise time con 
+		que se realizó la medición, llegando así a un error grosero. A su vez,
+		tampoco pueden estar muy separados, porque de esta forma ni siquiera 
+		entrarían en consideración. \\
+		\indent En el caso de esta medición, los rise time de los instrumentos
+		son los siguientes:
+
+		\begin{itemize}
+			\item Generador: 1,7 nseg
+			\item Osciloscopio: 1,5 nseg
+		\end{itemize}
+		\indent Como la medida es $1,98 nseg$, puedo saber que el risetime de
+		la punta está en ese orden, pero no lo puedo saber con exactitud, para
+		una mejor medición estaría necesitando que tanto el generador como el
+		osciloscopio posean un Trise mucho menor.
+
 	\newpage
 	\section{Conclusiones}
 	\indent Existe una innumerable cantidad de puntas, hay que tener en cuenta
@@ -247,10 +288,11 @@
 	de alta impedancia es mejor que una de baja impedancia, pero a la hora de
 	realizar una medición en alta frecuencia, se da el caso que la segunda 
 	posee una impedancia de entrada mayor que la primera.\\
-	\indent En la medición del tiempo de crecimiento del generador se podría
-	pensar que la punta mejora el rise time de la señal, esto no es
-	cierto dado que la punta posee una bobina de refuerzo para altas 
-	frecuencias. 
+	\indent A la hora de hacer una medición de alguna magnitud en particular,
+	hay que tomar extrema precaución que dicha magnitud sea la dominante en el
+	circuito completo, ejemplo: para medición del rise time de una punta, es 
+	necesario que el rise time del osciloscopio como del generador sea mucho 
+	menor. 
 	
 	\newpage
 	\section{Anexo}
