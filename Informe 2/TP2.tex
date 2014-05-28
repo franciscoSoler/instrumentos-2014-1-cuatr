@@ -30,20 +30,28 @@
 	\section{Objetivo}
 	
 	\indent	El objetivo del presente trabajo práctico es determinar el 
-	comportamiento y fiabilidad de distintas funcionalidades del osciloscopio 
-	tales como la FFT, el ruido tanto del oscoloscopio como de un generador, 
-	y finalizando con las mediciones de velocidades de propagación utilizando 
-	la reflectometría.
-	
+	comportamiento de distintas funcionalidades del osciloscopio 
+	tales como la FFT y el nivel ruido propio de cada osciloscopio de acuerdo a su ancho de banda. Finalmente se mide el nivel de ruido generado por una fuente de tensi\'on del laboratorio. 
+
 	\newpage
 	\section{Desarrollo}
-
+	
+\indent Para llevar a cabo las mediciones, se utilizan los siguientes
+		instrumentos:
+		\begin{itemize}
+			\item Un generador de señales senoidales.
+			\item Una fuente de tensi\'on.
+			\item Tres osciloscopios de diferente ancho de banda:RIGOL DS1102E ($BW=100MHz$), RIGOL DS1104B ($BW=200MHz$) y RIGOL DS1302CA ($BW=300MHz$).
+			\item Las puntas de X1 y X10 de los osciloscopios.
+			\item Cable coaxil para realizar las distintas conexiones entre instrumentos.
+		\end{itemize}
+		
 	\subsection{Medición 1 - Comportamiento FFT}
-	\indent En esta medición se comparará el comportamiento de la funcionalidad
-	FFT dispuesta en el osciloscopio utilizando cuatro tipos de ventanas 
-	distintas, rectangular, hanning, hamming y blackman.\\
-	\indent Se utilizarán 3 frecuencias contiguas de forma tal de observar como
-	se modifica el pico de la sinc observada (Dependiendo del tipo de ventana, 
+	\indent En esta medición se compara el comportamiento de la funcionalidad
+	FFT dispuesta en el osciloscopio utilizando cuatro tipos de ventanas de muestreo diferente: rectangular, Hanning, Hamming y Blackman.\\
+	El banco de medici\'on est\'a compuesto por el osciloscopio (RIGOL DS1302CA) cuya impedancia de entrada est\'a seleccionada en $50\Omega$ para que est\'e adaptado al cable coaxil que lo conecta con el generador de señales. La frecuencia de la senoidal utilizada debe estar contenida en el ancho de banda del conjunto punta-osciloscopio.
+	\indent Se utilizarán 3 frecuencias contiguas de forma tal de observar c\'omo
+	se modifica la amplitud del pico de la sinc observada (dependiendo del tipo de ventana, 
 	queda recortado cuando no cae en un punto de medición de la FFT). \\
 	\indent En las siguientes figuras, la frecuencia de la señal de la imagen de
 	la izquierda corresponde a $11MHz$, la del medio a $11,7MHz$ y la de la 
@@ -54,61 +62,64 @@
 
 	\begin{figure}[!htb]
 		\centering
-		\includegraphics[width=8cm]
+		\includegraphics[width=12cm]
 		{Imagenes/RectangularWindow.png}
 		\caption{FFT de una señal senoidal utilizando una ventana Cuadrada.}
 		\label{img001}
 	\end{figure}
 
 	\indent En la figura \ref{img002} se puede observar que , a diferencia
-	de utilizar una ventana cuadrada, con la hanning el pico de la sinc no 
+	de utilizar una ventana cuadrada, con la Hanning el pico de la sinc no 
 	disminuye en amplitud, por ende el pico siempre es el mismo.
 
 	\begin{figure}[!htb]
 		\centering
-		\includegraphics[width=8cm]
+		\includegraphics[width=12cm]
 		{Imagenes/HanningWindow.png}
 		\caption{FFT de una señal senoidal utilizando una ventana Hanning.}
 		\label{img002}
 	\end{figure}
 
 	\indent En la figura \ref{img003} se puede observar que con la ventana 
-	hamming no hay grandes diferencias con la hanning, simplemente se observa 
+	Hamming no hay grandes diferencias con la Hanning, simplemente se observa 
 	un lóbulo levemente más angosto.
 
 	\begin{figure}[!htb]
 		\centering
-		\includegraphics[width=8cm]
+		\includegraphics[width=12cm]
 		{Imagenes/HammingWindow.png}
 		\caption{FFT de una señal senoidal utilizando una ventana Hamming.}
 		\label{img003}
 	\end{figure}
 
 	\indent En la figura \ref{img004} se puede observar que con la ventana 
-	blackman no hay grandes diferencias con las dos anteriores, simplemente se 
+	Blackman no hay grandes diferencias con las dos anteriores, simplemente se 
 	observa que el lóbulo es levemente más ancho y que el pico está en una 
 	altura menor, aproximadamente en $2,90dB$ mientras que las otras están en 
 	$4,80dB$.
 
 	\begin{figure}[!htb]
 		\centering
-		\includegraphics[width=8cm]
+		\includegraphics[width=12cm]
 		{Imagenes/BlackmanWindow.png}
 		\caption{FFT de una señal senoidal utilizando una ventana Blackman.}
 		\label{img004}
 	\end{figure}
+	
+	Estas mediciones concuerdan con el manual del fabricante: la ventana rectangular es la de menor ancho de l\'obulo (y por ende la de mejor resoluci\'on de frecuencia) pero tambi\'en es la que ofrece peor resoluci\'on en magnitud. La ventana de Hanning tiene una mejor resoluci\'on en magnitud que la rectangular, la de Hamming tiene una resoluci\'on en magnitud similar a la de Hanning pero mejora en frecuencia ya que tiene un ancho de l\'obulo menor. Respecto de la ventana de Blackman, \'esta es la que posee mejor resoluci\'on de magnitud ya que es la que menos var\'ia al cambiar la frecuencia aunque es la de mayor ancho de l\'obulo.
+	Esta funcionalidad no es \'util si las incertezas que se deben obtener en la medici\'on de amplitud deben ser menores a $1,5dB$ (cota que se adopta del peor caso).
 
 	\subsection{Medición 2 - Ruido interno del osciloscopio}
 	\indent En esta medici\'on, se pretende obtener el piso de ruido existente 
 	en osciloscopios de diferente ancho de banda. Para ello se conecta por 
 	separado a cada uno de los 3 osciloscopios disponibles una carga de 
-	$50\Omega$ para observar el ruido que genera internamente cada osciloscopio.
+	$50\Omega$ para observar el ruido que genera internamente cada osciloscopio. Dado que el solo se analiza el ruido en un determinado intervalo de tiempo (una aproximaci\'on al valor real), es importante que las bases de tiempos sean iguales en los 3 osciloscopios de manera de poder realizar un an\'alisis comparativo
 	\\
 	En la Figura \ref{img005}, se observa el nivel de ruido del osciloscopio 
 	RIGOL DS1102E cuyo ancho de banda es de $100MHz$. Resulta importante conocer
 	la potencia del ruido para poder luego obtener otros par\'ametros como la 
 	relaci\'on se\~nal a ruido, $SNR$.\\
-	\indent Su valor de amplitud RMS es de $V_{RMS(100Mhz)}=179\mu V \pm$
+	\indent Su valor de amplitud RMS es de $V_{RMS(100Mhz)}=179\mu V \pm87\mu V$. Es importante advertir que la incerteza especificada por el fabricante (del $4\%$ para la escala de $2mV/div$, es decir unos $7\mu V$) es mucho menor que el error de cuantizaci\'on del osciloscopio ($80\mu V$).
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=5cm]
@@ -119,7 +130,8 @@
 		
 	\indent En la Figura \ref{img006}, se observa el nivel de ruido del 
 	osciloscopio RIGOL DS1104B cuyo ancho de banda es de $200MHz$. \\
-	\indent Su valor de amplitud RMS es de $V_{RMS(100Mhz)}=367\mu V \pm$		
+	\indent Su valor de amplitud RMS es de $V_{RMS(200Mhz)}=367\mu V \pm95\mu V$		
+	Nuevamente el error de cuantizaci\'on ($80\mu V$) es bastante mayor al de la incerteza del osciloscopio ($15\mu V$)
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=5cm]
@@ -130,14 +142,15 @@
 		
 	\indent En la Figura \ref{img007}, se observa el nivel de ruido del 
 	osciloscopio RIGOL DS1302CA cuyo ancho de banda es de $300MHz$. \\
-	\indent Su valor de amplitud RMS es de $V_{RMS(100Mhz)}=113\mu V \pm $	
+	\indent Su valor de amplitud RMS es de $V_{RMS(300Mhz)}=113\mu V \pm85\mu V $	
+	En este caso el error de cuantizaci\'on ($80\mu V$) es el mismo que antes y la incerteza del osciloscopio es de $5\mu V$.
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=5cm]
 			{Imagenes/Ruido300Mhz.png}
 			\caption{Ruido presente a la entrada del osciloscopio RIGOL DS1302CA}
 			\label{img007}
-		\end{figure}
+		\end{figure}\\
 	\indent En principio se puede suponer que el ruido presente en la entrada 
 	del osciloscopio es ruido blanco. Con lo cual, al tener componentes en todo 
 	el espectro de frecuencias, al utilizar osciloscopios de mayor ancho de 
@@ -146,34 +159,35 @@
 	menor al de $200MHz$. \\
 	\indent No obstante, esto no ocurre en el caso del osciloscopio de $300MHz$ 
 	cuyo nivel de ruido es el menor de todos. Seguramente esto se deba a la 
-	tecnolog\'ia misma del osciloscopio que se adec'ua para no tener un nivel de
+	tecnolog\'ia misma del osciloscopio que se adec\'ua para no tener un nivel de
 	ruido elevado y por ende un osciloscopio de menores prestaciones. \\
 	\indent A modo de comparación, en la tabla \ref{tab001} se muestran todos 
 	los valores medidos.
 	
 	\begin{table}[!htp]
 		\centering
-		\begin{tabular}{|c|c|c|c|c|}
+		\begin{tabular}{|c|c|c|c|c|c|}
 			\hline
-    		Modelo & Ecuantización & V pico a pico& V avg & V rms \\
+    		Modelo & Error de cuant.& Incerteza (Vrms) & V pap & V avg & V rms \\
 			\hline
-			DS1204B & $80~\mu\text{V}$ & $1.12~\text{mV}$ & $273~\mu\text{V}$ 
+			DS1204B & $80~\mu\text{V}$& $95~\mu\text{V}$ & $1.12~\text{mV}$ & $273~\mu\text{V}$ 
 			& $367~\mu\text{V}$ \\
 			\hline 
-			DS1102E & $80~\mu\text{V}$ & $640~\mu\text{V}$ &$139~\mu\text{V}$
+			DS1102E & $80~\mu\text{V}$& $87~\mu\text{V}$ & $640~\mu\text{V}$ &$139~\mu\text{V}$
 			 & $179~\mu\text{V}$ \\
 			\hline
-			DS1302CA & $80~\mu\text{V}$ & $880~\mu\text{V}$ & 
-			$424~\mu\text{V}$ & $473~\mu\text{V}$ \\
+			DS1302CA & $80~\mu\text{V}$& $85~\mu\text{V}$ & $640~\mu\text{V}$ & 
+			$49.4~\mu\text{V}$ & $113~\mu\text{V}$ \\
 			\hline
 		\end{tabular}
 		\caption{Comparación de mediciones entre los distintos osciloscopios} 
 		\label{tab001}
 	\end{table}
+	Del cuadro puede observarse que el osciloscopio de mejores prestaciones es el RIGOL-DS1302CA ya que posee mayor ancho de banda  y un nivel de ruido menor que el resto de los osciloscopios
 			
 	\subsection{Medición 3 - Ruido de la fuente}
 	\indent En esta secci\'on se mide el ruido presente en una fuente de $5.2V$.
-	La entrada del osciloscopio se conecta en AC y se observa la se\~nal 
+	La entrada del osciloscopio (se utiliza el modelo DS1102E ya que sus prestaciones permiten realizar la medic\'on adecuadamente) se conecta en AC y se observa la se\~nal 
 	resultante. En la Figura \ref{img008} puede observarse la respuesta temporal
 	y el espectro de dicha se\~nal (para diferenciar los or\'igenes de los 
 	ruidos se utiliza como referencia el ruido generado por el osciloscopio).
@@ -186,18 +200,36 @@
 			\label{img008}
 		\end{figure}
 	\indent Del gr\'afico puede observarse que aproximadamente la diferencia 
-	entre el ruido de base del que aporta la fuente es de $40dB$. Lo cual 
-	tambi\'en puede deducirse de la respuesta temporal 
-	$20\log(\frac{29.6mV}{179\mu V})=44,4dB$.
-
+	entre el ruido de base del que aporta la fuente es de $40dB$.\\ 
+	El valor de amplitud RMS del ruido (tanto de la fuente como del osciloscopio) es de $V_{RMS}=29,6mV \pm 1,3mV $. En este caso el error de cuantizaci\'on ($80\mu V$) es mucho menor al de la incerteza especificada ($4\%$ de la lectura, es decir, $1,2mV$). Por otra parte es mucho mayor al piso ruido propio del osciloscopio. La diferencia en decibeles entre estos ruidos est\'a dada por la siguiente relaci\'on $$20\log(\frac{V_{RMS(medido)}}{V_{RMS(ruido~ osciloscopio)}})$$.
+	$$20\log(\frac{29,6mV \pm 1,3mV}{367\mu V \pm95\mu V})=38dB \pm 0,3dB$$
+	Lo cual se aproxima razonablemente al valor observado en pantalla. Debe notarse que si bien la incerteza del valor RMS de la se\~nal de ruido es alta ($25\%$ del valor de referencia) la incerteza en dB es mucho menor ($0,8\%$) debido a las caracter\'istica de la funci\'on logaritmica. 
+%FRANNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN esto tiene que ir al tp 1, as� no queda super desorganizado, ya esta corregido solo copialo y pegalo.
 	\subsection{Medición 4 - Tiempo de crecimiento de una compuerta}
 	\indent Utilizando el osciloscopio de $300MHz$ de ancho de banda, RIGOL 
 	DS1302CA, se midi\'o el retardo y tiempo de crecimiento que impone una 
-	compuerta AND (del integrado 74LS08). En la Figura \ref{img009}, se puede 
-	observar las siguientes medidas $$t_{delay}=8.90ns$$y  $$t_{c}=11.20ns$$. \\
+	compuerta AND (del integrado 74LS08).
+	En la figura \ref{banco} se muestra el esquema de conexi\'on utilizado.
+ Como la circuitería del integrado requiere picos de corriente para 
+		poder llevar la salida de un estado bajo a uno alto, es necesario conectar 
+		en el terminal de alimentación un capacitor que sea capaz de entregar dicha 
+		energía. Esto se debe a que el circuito está conectado a través de una línea
+		de transmisión a la fuente de alimentación y el efecto de esta conexión es 
+		generar retardos en la entrega de dichos picos y por ende disminuir el tiempo
+		de crecimiento de la compuerta.\\
+	En la Figura \ref{img009}, se puede observar las siguientes medidas $$t_{delay}=8.90ns \pm0.4ns$$y  $$t_{c}=11.20ns\pm0.5ns$$. \\
+	La hoja de datos del fabricante indica un valor de $t_{delay}=8.ns$ cuando el estado pasa de bajo a alto, lo cual coincide aproximadamente con el valor obtenido.
 	\indent De esta manera resulta importante conocer la tecnlog\'ia de 
 	fabricaci\'on de estos dispositivos para conocer las limitaciones que 
 	presentan en cuanto velocidad.
+	
+		\begin{figure}[!htb]
+				\centering
+				\includegraphics[width=7cm]
+				{Imagenes/banco.png}
+				\caption{Esquema de conexi\'on del integrado 74LS08}
+				\label{banco}
+			\end{figure}
 		
 		\begin{figure}[!htb]
 			\centering
@@ -207,14 +239,8 @@
 			de salida (en celeste)}
 			\label{img009}
 		\end{figure}
-	\indent Como la circuitería del integrado requiere picos de corriente para 
-	poder llevar la salida de un estado bajo a uno alto, es necesario conectar 
-	en el terminal de alimentación un capacitor que sea capaz de entregar dicha 
-	energía. Esto se debe a que el circuito está conectado a través de una línea
-	de transmisión a la fuente de alimentación y el efecto de esta conexión es 
-	generar retardos en la entrega de dichos picos, por ende disminuir el tiempo
-	de crecimiento de la compuerta.
-	
+
+	%HUGOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO esto va para el tp3 sino queda colgado ac�
 	\subsection{Medición 5 - Reflectometría}
 	\indent En esta medición se calcula el largo de distintos cables, para ello
 	se conecta un generador y un osciloscopio en el mismo terminal del cable. El
@@ -274,21 +300,22 @@
 		\caption{Comparación de velocidades de propagación entre distintos 
 		tipos de cables} \label{tab001}
 	\end{table}
-
-	\% 
+ 
 	\newpage 
 	\section{Conclusiónes}
-	\indent El ruido interno del osciloscopio no depende solamente del ancho de 
-	banda del mismo, sino también de la calidad de sus componentes. Esto se 
+	Las funcionalidades del osciloscopio analizadas en este trabajo (FFT y nivel de ruido en relaci\'on al ancho de banda) fueron comprendidas a nivel pr\'actico gracias a las experiencias realizadas en el laboratorio.\\
+	Por ejemplo, se concluy\'o que el ruido interno del osciloscopio no depende solamente del ancho de 
+	banda del mismo (como ocurre idealmente), sino también de la calidad de sus componentes. Esto se 
 	puede apreciar con el osciloscopio de 300MHz, que posee un ruido interno 
-	menor a los otros. \\
-	\indent El uso de la reflectometría es un muy buen método para poder 
-	determinar distintos parámetros de la línea de transmisión a medir, ya sea 
-	el estado de la misma como del largo, etc. \\
-	\indent A la hora de utilizar compuertas o cualquier circuito que requiera 
-	picos de corriente, hay que prestar mucha atención en que frecuencias se 
-	está trabajando para poder utilizar un capacitor que en dichas frecuencias 
-	posea la menor impedancia posible (que entre en resonancia el RLC 
+	menor a los otros de menor ancho de banda. \\
+	Respecto a la FFT, resulta una herramienta \'util si lo que se desea es tener una idea del espectro de la se\~nal bajo an\'alisis. Sin embargo presenta una incertidumbre alta, por lo cual para mediciones de precisi\'on se sugiere utilizar otro instrumento.
+%	\indent El uso de la reflectometría es un muy buen método para poder 
+%	determinar distintos parámetros de la línea de transmisión a medir, ya sea 
+%	el estado de la misma como del largo, etc. \\
+%	\indent A la hora de utilizar compuertas o cualquier circuito que requiera 
+%	picos de corriente, hay que prestar mucha atención en que frecuencias se 
+%	está trabajando para poder utilizar un capacitor que en dichas frecuencias 
+%	posea la menor impedancia posible (que entre en resonancia el RLC 
 	equivalente). \\
 \end{document}
 
