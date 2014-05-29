@@ -67,7 +67,7 @@
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=8cm]
-			{Esquematicos/esqFreqCortePuntaX10.png}
+			{Esquematicos/EsqFrecCortePuntaX10.png}
 			\caption{Circuito equivalente del banco de medición - punta x10} 
 			\label{esq001}
 		\end{figure}
@@ -146,14 +146,14 @@
 		\indent Los modelos de los instrumentos utilizados son:
 		
 		\begin{itemize}
-			\item Osciloscopio Rigol DS1302CA - 300MHz
-			\item Punta RP3300 - 350 MHz
+			\item Osciloscopio: Rigol DS1302CA - 300MHz
+			\item Punta: Rigol RP3300 - 350 MHz
 		\end{itemize}
 
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=8cm]
-			{Esquematicos/esqFreqCortePuntaX1.png}
+			{Esquematicos/EsqFrecCortePuntaX1.png}
 			\caption{Circuito equivalente del banco de medición - punta X1} 
 			\label{esq002}
 		\end{figure}
@@ -203,15 +203,15 @@
 		corriente que circula por el coaxil que se conecta al generador es 
 		sensada por las puntas de corriente (2 por cada fabricante). En la 
 		Figura \ref{img004} y \ref{img005}, se muestran los gr\'aficos 
-		obtenidos para las puntas de Agilent$_{\textregistered}$. Los ancho de
+		obtenidos para las puntas de Agilent$_{\textregistered}$. Los anchos de
 		banda obtenidos de los gr\'aficos, son respectivamente 
 		$$f_{-3dB}=15.6MHz$$ y $$f_{-3dB}=9.5MHz$$
 	
 		\indent Los modelos de los instrumentos utilizados son:
 		
 		\begin{itemize}
-			\item Punta Agilent - 350 MHz
-			\item Punta Tektronix - 
+			\item Punta: Agilent 456A - (100Hz - 8MHz)
+			\item Punta: Tektronix 6021 - (12Hz - 28MHz) 
 		\end{itemize}
 
 		\begin{figure}[!htb]
@@ -236,6 +236,9 @@
 		las Figuras \ref{img006} y \ref{img007}, se muestran los gr\'aficos 
 		obtenidos. De ellos se puede calcular el ancho de banda de cada punta
 		$$f_{-3dB}=2.4MHz$$ y $$f_{-3dB}=1.9MHz$$
+		\indent Las frecuencias de corte superior de las 4 puntas dieron muy 
+		por debajo del ancho de banda determinado por el fabricante en la hoja 
+		de datos.
 		
 		\begin{figure}[!htb]
 			\centering
@@ -254,31 +257,60 @@
 		\end{figure}
 	
 		\indent Para determinar la frecuencia de corte inferior se utilizó el
-		el banco de medición mostrado en la figura \ref{esq003}. En el CH1 del
+		el banco de medición mostrado en la figura \ref{esq002}. En el CH1 del
 		osciloscopio se dejó conectada la punta pasiva para tener como 
 		referencia la tensión que hay en la resistencia. \\
 		\indent Como las puntas de corriente son muy ruidosas, la medición no
 		se realiza utilizando la detección de envolvente, el ruido eclipsa 
 		completamente la medición. Para disminuir el ruido de alta frecuencia,
 		se configuró el osciloscopio para que tenga un pasa bajo a $20 MHz$\\
+%
+%		\begin{figure}[!htb]
+%			\centering
+%			\includegraphics[width=8cm]
+%	 		{Esquematicos/esqFreqCorteInfPuntasCorriente.png}
+%			\caption{Circuito equivalente del banco de medición freq inf 
+%			puntas de corriente}
+%		    \label{esq003}
+%		\end{figure}
 
+		\indent La figura \ref{img009} muestra:  \\
+		\indent Izquierda: la tensión y corrietes medidas por las distintas 
+		puntas a una frecuencia de $500Hz$. Como están dentro del ancho de 
+		banda, la señal se la toma como referencia. \\
+		\indent Centro: Muestra la frecuencia de corte inferior de la punta 
+		Tektronix. \\
+		\indent Derecha: Muestra la frecuencia de corte inferior de la punta 
+		Agilent.\\
+		\indent A modo de comparación, la tabla \ref{tab001} muestra los 
+		resultados obtenidos comparándolos con el ancho de banda teórico.
+		
 		\begin{figure}[!htb]
 			\centering
-			\includegraphics[width=8cm]
-	 		{Esquematicos/esqFreqCorteInfPuntasCorriente.png}
-			\caption{Circuito equivalente del banco de medición freq inf 
-			puntas de corriente}
-		    \label{esq003}
+			\includegraphics[width=12cm]
+	 		{Imagenes/Mediciones instrumentos/frecCortePuntaCorriente.png}
+			\caption{Izquierda: medición dentro del ancho de banda. Centro 
+			frecuencia de corte de punta Tektronix. Derecha: frecuencia de corte
+			inferior de punta Agilent}
+		    \label{img009}
 		\end{figure}
+	
+		\begin{table}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			 & \multicolumn{2}{|c|}{Teórico} & \multicolumn{2}{|c|}{medido} \\
+			\hline
+			& $Finf_{inferior}$ & $F_{superior}$ & $F_{inferior}$ & 
+			$F_{superioro}$ \\
+			\hline
+			Agilent & 64Hz  & 2.4MHz  & 100 Hz & 8MHz \\
+			\hline
+			Tektronix & 17Hz & 15.6MHz  & 12Hz  & 28MHz \\
+			\hline
+		\end{tabular}
+		\end{table}
 
-		\indent Las frecuencias de cortes inferiores especificadas por los 
-		manuales de las puntas son:
-
-		\begin{itemize}
-			\item
-			\item
-		\end{itemize}
-
+		\newpage
 		\subsection{Tiempo de crecimiento del conjunto punta-osciloscopio}
 		
 		\indent En esta secci\'on se mide el tiempo de crecimiento del 
@@ -326,9 +358,8 @@
 		\indent Para expresar el resultado de la medición con incertidumbres,
 		se obtienen los datos del osciloscopio que posee la siguiente 
 		incertidumbre en el canal horizontal en modo tiempo equivalente
-		$$\frac{1}{50GSa} + 50ppm × reading
-		+ 0.6 ns$$
-		$$Tr_{med} = 1.98 nSeg \pm 0.62 nSeg$$
+		$$ \frac{1}{50GSa} + 50ppm * reading + 0.6 ns$$
+		$$ Tr_{med} = 1.98 nSeg \pm 0.62 nSeg$$
 
 	\newpage
 	\section{Conclusiones}
