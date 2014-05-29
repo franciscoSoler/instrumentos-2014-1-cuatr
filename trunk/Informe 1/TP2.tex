@@ -257,22 +257,22 @@
 		\end{figure}
 	
 		\indent Para determinar la frecuencia de corte inferior se utilizó el
-		el banco de medición mostrado en la figura \ref{esq002}. En el CH1 del
+		el banco de medición mostrado en la figura \ref{esq003}. En el CH1 del
 		osciloscopio se dejó conectada la punta pasiva para tener como 
 		referencia la tensión que hay en la resistencia. \\
 		\indent Como las puntas de corriente son muy ruidosas, la medición no
 		se realiza utilizando la detección de envolvente, el ruido eclipsa 
 		completamente la medición. Para disminuir el ruido de alta frecuencia,
 		se configuró el osciloscopio para que tenga un pasa bajo a $20 MHz$\\
-%
-%		\begin{figure}[!htb]
-%			\centering
-%			\includegraphics[width=8cm]
-%	 		{Esquematicos/esqFreqCorteInfPuntasCorriente.png}
-%			\caption{Circuito equivalente del banco de medición freq inf 
-%			puntas de corriente}
-%		    \label{esq003}
-%		\end{figure}
+
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=8cm]
+	 		{Esquematicos/esqPuntaCorriente.png}
+			\caption{Circuito equivalente del banco de medición freq inf 
+			puntas de corriente}
+		    \label{esq003}
+		\end{figure}
 
 		\indent La figura \ref{img009} muestra:  \\
 		\indent Izquierda: la tensión y corrietes medidas por las distintas 
@@ -308,6 +308,8 @@
 			Tektronix & 17Hz & 15.6MHz  & 12Hz  & 28MHz \\
 			\hline
 		\end{tabular}
+		\caption{anchos de banda teórico y medido de las distintas puntas de 
+		corriente }\label{tab001}
 		\end{table}
 
 		\newpage
@@ -348,9 +350,9 @@
 		hojas de datos de los fabricantes son los siguientes: 
 		
 		\begin{itemize}
-			\item Generador: 1,7 nSeg  
-			\item Osciloscopio: 1,2 nSeg
-			\item punta: 900 pSeg
+			\item Generador (Agilent HP 8007B): 1,7 nSeg  
+			\item Osciloscopio (RIGOL DS1302CA - 300MHz): 1,2 nSeg
+			\item punta (RIGOL RP3300): 900 pSeg
 		\end{itemize}
 		\indent Dado que los rise time del generador y del osciloscopio son 
 		ambos mayores al de la punta y próximos entre si, no tiene sentido 
@@ -416,19 +418,19 @@
 	necesario que el rise time del osciloscopio como del generador sea mucho 
 	menor. 
 	
-	\newpage
-	\section{Anexo}
-	\subsection{Punta pasiva}
-	\includepdf[pages={-}]{hojas de datos/RP3300 guide.pdf}
-
-	\newpage
-	\subsection{Puntas de corriente}
-	\includepdf[pages={-}]{hojas de datos/tek P6021 type 134.pdf}
-	\includepdf[pages={-}]{hojas de datos/HP-456A-Manual.pdf}
-	
-	\newpage
-	\subsection{Osciloscopio}
-	\includepdf[pages={-}]{hojas de datos/Rigol DS1302CA User's Guide.pdf}
+	%\newpage
+	%\section{Anexo}
+	%\subsection{Punta pasiva}
+	%\includepdf[pages={-}]{hojas de datos/RP3300 guide.pdf}
+%
+%	\newpage
+%	\subsection{Puntas de corriente}
+%	\includepdf[pages={-}]{hojas de datos/tek P6021 type 134.pdf}
+%	\includepdf[pages={-}]{hojas de datos/HP-456A-Manual.pdf}
+%	
+%	\newpage
+%	\subsection{Osciloscopio}
+%	\includepdf[pages={-}]{hojas de datos/Rigol DS1302CA User's Guide.pdf}
 
 \end{document}
 
