@@ -55,7 +55,9 @@
 	se carg\'o el cable coaxil con la resistencia de $10k\Omega$. Puede verse 
 	que $$\rho=\frac{Z_L-Z_0}{Z_L+Z_0}$$
 	$$\frac{3.24V}{3.40V}=\frac{Z_L- 50\Omega}{Z_L+50\Omega}$$
-	
+	$$(Z_L+50\Omega) \cdot \frac{3.24V}{3.40V}=Z_L- 50\Omega$$
+	$$Z_L = 50\Omega\cdot\frac{1 + \frac{3.24V}{3.40V}}{1-\frac{3.24V}{3.40V}}$$
+	$$Z_L = Z_0\cdot\frac{1 + \rho}{1-\rho} = 2075\Omega$$
 	\indent Por lo tanto $Z_L=2k\Omega$, el cual no es un valor cercano a los
 	$10k\Omega$  esperados.\\
 		
@@ -91,7 +93,7 @@
 	$$\frac{1.44V}{3.40V}=\frac{Z_L- 50\Omega}{Z_L+50\Omega}$$
 	
 	\indent Por lo tanto $Z_L=123\Omega$, el cual es un valor que se encuentra
-	dentro del grado de incertidumbre de la resistencia ($120\Omega \pm 10\%$
+	dentro de la tolerancia de la resistencia ($120\Omega \pm 10\%$
 	para resistores de carb\'on)	
 
 		\begin{figure}[!htb]
@@ -140,18 +142,18 @@
 		\end{figure}
 
 	\indent De los resultados obtenidos, cuyo resumen se muestra en la Tabla 
-	\ref{tab001}, debe notarse que las mediciones de menor error son aquellas 
-	cuya resistencia de carga es cercana a la impedancia caracter\'istica. En
-	particular las resistencias mucho mayores a $Z_0$, como la de $10k\Omega$ 
-	tienen un error elevado y esto se debe a que para $0\leq \rho \leq 1$ 
-	est\'an asociadas resistencias del orden $Z_0 \leq R_L \leq \infty$, con 
-	lo cual la exactitud es menor
+	\ref{tab001}, debe notarse que las mediciones de menor incertidumbre son 
+	aquellas cuya resistencia de carga es cercana a la impedancia 
+	caracter\'istica. En particular las resistencias mucho mayores a $Z_0$, como
+	la de $10k\Omega$ tienen una incertidumbre elevada y esto se debe a que para
+	$0\leq \rho \leq 1$ est\'an asociadas resistencias del orden 
+	$Z_0 \leq R_L \leq \infty$, con lo cual la exactitud es menor.
 	
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|c|}
 				\hline
-    			Valor de referencia & Medici\'on & Error relativo \\
+    			Valor de referencia & Medici\'on & Incertidumbre relativa \\
 				\hline
 				$10k\Omega$ & $2k\Omega$ &$-80 \% $ \\
 				\hline 
@@ -270,8 +272,8 @@
 			\centering
 			\begin{tabular}{|c|c|c|c|c|}
 				\hline
-    			C teórico & $\tau$ medido & error relativo osciloscopio & C 
-				medido & $\Delta$C \\
+    			C teórico & $\tau$ medido & incertidumbre relativa osciloscopio 
+				& C medido & $\Delta$C \\
 				\hline
 				100 pF & $5.8~\text{n seg}$ & 6\% & 120 pF & 7.2 pF \\
 				\hline 
