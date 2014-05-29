@@ -58,6 +58,49 @@
 	$$(Z_L+50\Omega) \cdot \frac{3.24V}{3.40V}=Z_L- 50\Omega$$
 	$$Z_L = 50\Omega\cdot\frac{1 + \frac{3.24V}{3.40V}}{1-\frac{3.24V}{3.40V}}$$
 	$$Z_L = Z_0\cdot\frac{1 + \rho}{1-\rho} = 2075\Omega$$
+
+	\indent Para propagar errores se parte calculando la incertidumbre que posee
+	la medición de $V+$ y $V-$ las cuales son obtenidas directamente de las 
+	incertidumbres del osciloscopio.
+	$$%TODO HUGUITOOOO, BUSCAR Y PEGAR ACA DE LA HOJA DE DATOS LA INCERTIDUMBRE
+	%VERTICAAAAAL$$
+	\indent Primero se procede a calcular la incertidumbre de $\rho$, la cual se
+	obtiene de la siguinte forma
+	
+	$$\rho = \frac{V+}{V-} \pm \Delta\rho$$
+	$$\Delta\rho = (\epsilon_{V+} + \epsilon_{V-})\cdot\rho$$
+
+	\indent Una vez obtenido $\rho$, se procede a calcular cada parte de la 
+	división, se sabe que la incertidumbre absoluta es la misma cuando se suma o
+	resta por una constante, y se sabe que la incertidumbre relativa de la 
+	división o multiplicación es igual a la suma de las incertidumbres relativas
+	de cada variable.
+
+	$$1 + \rho = (1 + \rho) \pm \Delta\rho$$
+	$$1 - \rho = (1 - \rho) \pm \Delta\rho$$
+	$$\epsilon_{\frac{1 + \rho}{1 - \rho}} = \epsilon_{1 + \rho} + 
+	\epsilon_{1 - \rho}$$
+
+	$$\epsilon_{\frac{1 + \rho}{1 - \rho}} = \frac{\Delta\rho}{1 + \rho} + 
+	\frac{\Delta\rho}{1 - \rho}$$
+	$$\epsilon_{\frac{1 + \rho}{1 - \rho}} = \frac{2\cdot\Delta\rho}
+	{1 - \rho^2}$$
+	
+	\indent Ahora se procederá a calcular la incertidumbre absoluta de la 
+	división
+
+	$$\Delta_{\frac{1 + \rho}{1 - \rho}} = \epsilon_{\frac{1 + \rho}{1 - \rho}}
+	\cdot\frac{1+\rho}{1 - \rho}$$
+	
+	$$\Delta_{\frac{1 + \rho}{1 - \rho}} = \frac{2\cdot\Delta\rho}{(1 - \rho)^2}
+	$$
+	\indent Por último solo queda calcular la incertidumbre absoluta de $Z_L$, 
+	la cual, es la calculada anteriormente, pero escalada por $Z_0$ resultando:
+
+	$$\Delta_{Z_L} = Z_0\cdot\Delta\frac{1 + \rho}{1 - \rho}$$
+	$$\Delta_{Z_L} = Z_0\cdot\frac{2\cdot\Delta\rho}{(1 - \rho)^2}$$
+
+
 	\indent Por lo tanto $Z_L=2k\Omega$, el cual no es un valor cercano a los
 	$10k\Omega$  esperados.\\
 		
