@@ -62,8 +62,8 @@
 	\indent Para propagar errores se parte calculando la incertidumbre que posee
 	la medición de $V+$ y $V-$ las cuales son obtenidas directamente de las 
 	incertidumbres del osciloscopio.
-	$$%TODO HUGUITOOOO, BUSCAR Y PEGAR ACA DE LA HOJA DE DATOS LA INCERTIDUMBRE
-	%VERTICAAAAAL$$
+	%TODO HUGUITOOOO, BUSCAR Y PEGAR ACA DE LA HOJA DE DATOS LA INCERTIDUMBRE
+	%VERTICAAAAAL$$º
 	\indent Primero se procede a calcular la incertidumbre de $\rho$, la cual se
 	obtiene de la siguinte forma
 	
@@ -94,12 +94,16 @@
 	
 	$$\Delta_{\frac{1 + \rho}{1 - \rho}} = \frac{2\cdot\Delta\rho}{(1 - \rho)^2}
 	$$
-	\indent Por último solo queda calcular la incertidumbre absoluta de $Z_L$, 
+	\indent Por último solo queda determinar la incertidumbre absoluta de $Z_L$,
 	la cual, es la calculada anteriormente, pero escalada por $Z_0$ resultando:
 
 	$$\Delta_{Z_L} = Z_0\cdot\Delta\frac{1 + \rho}{1 - \rho}$$
 	$$\Delta_{Z_L} = Z_0\cdot\frac{2\cdot\Delta\rho}{(1 - \rho)^2}$$
 
+	\indent De esta forma, queda determinada $Z_L$
+
+	$$Z_L =Z_0\cdot\frac{1+\rho}{1-\rho} \pm Z_0\cdot\frac{2\cdot\Delta\rho}
+	{(1 - \rho)^2}$$
 
 	\indent Por lo tanto $Z_L=2k\Omega$, el cual no es un valor cercano a los
 	$10k\Omega$  esperados.\\
