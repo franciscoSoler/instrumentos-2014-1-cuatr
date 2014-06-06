@@ -89,7 +89,7 @@
 		En la Tabla \ref{tabRLCbobina} se puede observar los resultados obtenidos de la medici\'on de una bobina con nucleo de aire a diferentes frecuencias.
 		\begin{table}[!htp]
 					\centering
-					\begin{tabular}{|c|c|c|c|c|}
+					\begin{tabular}{|c|c|c|c|}
 						\hline
 			    		Frecuencia & Q & L  & R (calculado) \\
 						\hline
@@ -136,6 +136,35 @@
 		\subsection{Mediciones con el impedanc\'imetro}
 		\subsubsection{Frecuencia de resonancia de una bobina con n\'ucleo de aire}
 		\subsubsection{Inductancia de una bobina con nucleo de ferrite}
+		En la Tabla \ref{tabIMPbobina}
+		\begin{table}[!htp]
+					\centering
+					\begin{tabular}{|c|c|c|c}
+						\hline
+			    		Frecuencia & |Z| & arg(Z)  & L (calculado) \\
+						\hline
+						$25.5~MHz$ & $160~\Omega$ & $90^{\circ}$ & $0.99~\mu Hy$ \\
+						\hline
+						$42~MHz$ & $260~\Omega$ & $90^{\circ}$ & $0.98~\mu Hy$\\
+						\hline
+						$44.8~Hz$ & $300~\Omega$ & $85^{\circ}$ & $1.06~\mu Hy$ \\
+						\hline
+						$58.2~Hz$ & $430~\Omega$ & $78^{\circ}$ & $1.17~\mu Hy$ \\
+						\hline									
+						$69.5~Hz$ & $560~\Omega$ & $72^{\circ}$ & $1.28~\mu Hy$ \\
+						\hline									
+						$80.0~Hz$& $640~\Omega$ & $55^{\circ}$ & $1.27~\mu Hy$ \\
+						\hline									
+						$84.0~Hz$ & $550~\Omega$ & $45^{\circ}$ & $1.04~\mu Hy$ \\
+						\hline									
+						$93.0~Hz$ & $430~\Omega$ & $70^{\circ}$ & $0.73~\mu Hy$ \\
+						\hline									
+						$100.0~Hz$ & $750~\Omega$ & $65^{\circ}$ & $1.19~\mu Hy$ \\
+						\hline			
+					\end{tabular}
+					\caption{Mediciones con el RLC} \label{tabIMPbobina}
+				\end{table}	
+					
 		\subsubsection{Param\'etros de una l\'inea de transmisici\'on}
 		Como la impedancia de entrada de una l\'inea de transmisi\'on (la que mide el impedanc\'imetro) est\'a dada por $$Z_{in}=Z_0\frac{Z_L+Z_0\tanh(\gamma L)}{Z_0+Z_L\tanh(\gamma L)}$$
 		Suponiendo que la l\'inea es de bajas p\'erdidas $\gamma=\alpha+j\beta=j\beta=j\frac{2\pi}{\lambda}$ y si adem\'as se impone la condici\'on de que $L=\frac{\lambda}{8}$ entonces la expresi\'on de la impedancia de entrada se reduce a la siguiente
