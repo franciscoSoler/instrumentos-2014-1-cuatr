@@ -61,34 +61,97 @@
 		$$L=\frac{2\pi fL}{Q}$$
 		En la tabla \ref{tab001} se muestran los resultados obtenidos para un inductor haciendo un barrido de frecuencias
 		
+		%Faltan incertezas jeje
 		\begin{table}[!htp]
 					\centering
 					\begin{tabular}{|c|c|c|c|c|}
 						\hline
-			    		Frecuencia & C & Q & L & R \\
+			    		Frecuencia & C & Q & L (calculado) & R (calculado) \\
 						\hline
-						$7.9722~MHz$& $75~pF$& 200 & $5.31~\mu Hy$ &$ 1.33~\Omega$ \\
+						$13.3~MHz$& $25~pF$& 182 & $5.73~\mu Hy$ &$ 2.63~\Omega$ \\
 						\hline
-						$13.3~MHz$& $25~pF$& 182 & $5.72~\mu Hy$ &$ 2.62~\Omega$ \\
+						$10.7~MHz$& $40~pF$& 200 & $5.54~\mu Hy$ &$ 1.86~\Omega$ \\
+						\hline
+						$9.6~MHz$& $50~pF$& 200 & $5.50~\mu Hy$ &$ 1.66~\Omega$ \\
 						\hline  
+						$6.9~MHz$& $100~pF$& 195 & $5.33~\mu Hy$ &$ 1.18~\Omega$ \\
+						\hline  										
+						$4.0~MHz$& $305~pF$& 170 & $5.20~\mu Hy$ &$ 0.77~\Omega$ \\
+						\hline
+						$3.2~MHz$& $470~pF$& 155 & $5.17~\mu Hy$ &$ 0.68~\Omega$ \\
+						\hline  						  	  
 					\end{tabular}
 					\caption{Mediciones con el Q-metro} \label{tab001}
 				\end{table}
 		\subsection{Mediciones con el RLC}		
 		
 		\subsubsection{Inductancia de una bobina con n\'ucleo de aire}
+		En la Tabla \ref{tabRLCbobina} se puede observar los resultados obtenidos de la medici\'on de una bobina con nucleo de aire a diferentes frecuencias.
+		\begin{table}[!htp]
+					\centering
+					\begin{tabular}{|c|c|c|c|c|}
+						\hline
+			    		Frecuencia & Q & L  & R (calculado) \\
+						\hline
+						$100~kHz$& 36.58 & $5.23~\mu Hy$ &$ 25.5~m\Omega$ \\
+						\hline
+						$66.66~kHz$& 29.44 & $5.26~\mu Hy$ &$ 31.8~m\Omega$ \\
+						\hline
+						$50~kHz$& 25.11 & $5.29~\mu Hy$ &$ 42.1~m\Omega$ \\
+						\hline  
+						$40~kHz$& 22.42 & $5.31~\mu Hy$ &$ 50.4~m\Omega$ \\
+						\hline  										
+						$28.572~kHz$& 19.07 & $5.35~\mu Hy$ &$ 59.5~m\Omega$ \\
+						\hline
+						$20~kHz$& 16.1 & $5.40~\mu Hy$ &$ 66.2~m\Omega$ \\
+						\hline  
+						$10~kHz$& 10.78 & $5.46~\mu Hy$ &$ 74.8~m\Omega$ \\
+						\hline 										
+						$1~kHz$& 1.36 & $5.53~\mu Hy$ &$ 89.8~m\Omega$ \\
+						\hline 	  
+					\end{tabular}
+					\caption{Mediciones con el RLC} \label{tabRLCbobina}
+				\end{table}
+						
 		\subsubsection{Capacidad de un capacitor electro\'itico}	
 		\subsubsection{Capacidad de un capacitor cer\'amico}
 		
 		\subsection{Mediciones con el puente de impedancias}
-	
+		En la Tabla \ref{tabPUENTEbobina}
+		\begin{table}[!htp]
+					\centering
+					\begin{tabular}{|c|c|c|c|c|}
+						\hline
+			    		Frecuencia & Q & L  & R (calculado) \\
+						\hline
+						$20~kHz$& 20 & $5.10~\mu Hy$ &$ 32~m\Omega$ \\
+						\hline
+						$1~kHz$& 1.8 & $6.30~\mu Hy$ &$ 22~m\Omega$ \\
+						\hline	  
+					\end{tabular}
+					\caption{Mediciones con el RLC} \label{tabPUENTEbobina}
+				\end{table}	
 		\subsubsection{Inductancia de una bobina con n\'ucleo de aire}
 		
 		\subsection{Mediciones con el impedanc\'imetro}
-		
 		\subsubsection{Frecuencia de resonancia de una bobina con n\'ucleo de aire}
 		\subsubsection{Inductancia de una bobina con nucleo de ferrite}
 		\subsubsection{Param\'etros de una l\'inea de transmisici\'on}
+		Como la impedancia de entrada de una l\'inea de transmisi\'on (la que mide el impedanc\'imetro) est\'a dada por $$Z_{in}=Z_0\frac{Z_L+Z_0\tanh(\gamma L)}{Z_0+Z_L\tanh(\gamma L)}$$
+		Suponiendo que la l\'inea es de bajas p\'erdidas $\gamma=\alpha+j\beta=j\beta=j\frac{2\pi}{\lambda}$ y si adem\'as se impone la condici\'on de que $L=\frac{\lambda}{8}$ entonces la expresi\'on de la impedancia de entrada se reduce a la siguiente
+		$$Z_{in}=Z_0\frac{Z_L+jZ_0}{Z_0+jZ_L}$$
+		Si $Z_L= 0$ entonces $Z_{in}=jZ_0$ \\
+		Si $Z_L \rightarrow \infty$ entonces $Z_{in}\rightarrow-jZ_0$
+		Entonces conectando una l\'inea al impedanc\'imetro a una frecuencia adecuada y dejando el extremo libre de la l\'inea cortocircuitado o abierto se obtiene el valor de la impedancia de la l\'inea, la cual es de $Z_0=75~\Omega$ ($f=7.9~MHz$ $L=3~m$)
+		
+		Por otra parte se si se elije $L=\frac{\lambda}{2},3\frac{\lambda}{2}, 5\frac{\lambda}{2} ...$ y que $Z_L\rightarrow\infty$, entonces puede obtenerse la atenuaci\'on de la l\'inea
+		$$Z_{in}=Z_0\frac{Z_L+Z_0\alpha L}{Z_0+Z_L\alpha L}=\frac{Z_0}{\alpha L}$$
+		Despejando la atenuaci\'on de la l\'inea se obtiene
+		$$\alpha=\frac{Z_0}{Z_{in} L}$$
+		o la atenuaci\'on en decibles cada $100~m$
+		$$\alpha=\frac{Z_0\cdot8.69~dB}{100Z_{in} L}$$
+		
+		Con la misma l\'inea de  $3~m$ con una frecuencia de $32~MHz$ se obtuvo una $Z_{in}=2750~\Omega$ con lo cual $\alpha=80 mdB/m$
 		\subsubsection{Par\'ametros de un cristal}	
 		\subsubsection{Mediciones en un circuito activo}
 			

@@ -3,8 +3,8 @@
 \contentsline {section}{\numberline {2}Desarrollo}{4}{section.2}
 \contentsline {subsection}{\numberline {2.1}Mediciones con el Q-metro}{4}{subsection.2.1}
 \contentsline {subsubsection}{\numberline {2.1.1}Inductancia de una bobina con n\'ucleo de aire}{4}{subsubsection.2.1.1}
-\contentsline {subsection}{\numberline {2.2}Mediciones con el RLC}{5}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}Inductancia de una bobina con n\'ucleo de aire}{5}{subsubsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2}Mediciones con el RLC}{4}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Inductancia de una bobina con n\'ucleo de aire}{4}{subsubsection.2.2.1}
 \contentsline {subsubsection}{\numberline {2.2.2}Capacidad de un capacitor electro\'itico}{5}{subsubsection.2.2.2}
 \contentsline {subsubsection}{\numberline {2.2.3}Capacidad de un capacitor cer\'amico}{5}{subsubsection.2.2.3}
 \contentsline {subsection}{\numberline {2.3}Mediciones con el puente de impedancias}{5}{subsection.2.3}
@@ -13,6 +13,6 @@
 \contentsline {subsubsection}{\numberline {2.4.1}Frecuencia de resonancia de una bobina con n\'ucleo de aire}{5}{subsubsection.2.4.1}
 \contentsline {subsubsection}{\numberline {2.4.2}Inductancia de una bobina con nucleo de ferrite}{5}{subsubsection.2.4.2}
 \contentsline {subsubsection}{\numberline {2.4.3}Param\'etros de una l\'inea de transmisici\'on}{5}{subsubsection.2.4.3}
-\contentsline {subsubsection}{\numberline {2.4.4}Par\'ametros de un cristal}{5}{subsubsection.2.4.4}
-\contentsline {subsubsection}{\numberline {2.4.5}Mediciones en un circuito activo}{5}{subsubsection.2.4.5}
-\contentsline {section}{\numberline {3}Conclusiones}{5}{section.3}
+\contentsline {subsubsection}{\numberline {2.4.4}Par\'ametros de un cristal}{6}{subsubsection.2.4.4}
+\contentsline {subsubsection}{\numberline {2.4.5}Mediciones en un circuito activo}{6}{subsubsection.2.4.5}
+\contentsline {section}{\numberline {3}Conclusiones}{6}{section.3}
