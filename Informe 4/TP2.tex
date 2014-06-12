@@ -30,11 +30,17 @@
 
 	\section{Objetivo}
 	
-	\indent	
+	\indent	El objetivo del presente trabajo práctico es familiarizarse con 
+	el qmetro, el RLC meter, el impedancímetro vectorial. Dicho instrumental
+	sirve para medir impedancias. Luego de realizas las experiencias se 
+	intentará determinar en qué circunstancias conviene utilizar uno en vez 
+	de otro.
+
 	\newpage
 	\section{Desarrollo}
-\indent Para llevar a cabo las mediciones, se utilizan los siguientes
-		instrumentos:
+	
+	\indent Para llevar a cabo las mediciones, se utilizan los siguientes 
+	instrumentos:
 		\begin{itemize}
 			\item algo
 			\item algo
@@ -45,7 +51,9 @@
 	
 		\subsection{Mediciones con el Q-metro}
 		\subsubsection{Inductancia de una bobina con n\'ucleo de aire}
-		El circuito simplificado de un Q-metro se muestra en la Figura \ref{img001}
+		
+		\indent El circuito simplificado de un Q-metro se muestra en la Figura
+		\ref{img001}
 
 			\begin{figure}[!htb]
 				\centering
@@ -54,19 +62,39 @@
 				\caption{Esquema simplificado del Q-metro}
 				\label{img001} 
 			\end{figure}
-		Donde el valor m\'aximo obtenido de tensi\'on para un determinado inductor $L_x$ de inductancia $L$ se da cuando $f=\frac{1}{2\pi\sqrt{LC}}$. Por otra parte puede mostrarse que el valor de Q es $Q=\frac{\omega L}{R}$.
+
+		\indent Como es un circuito serie, la máxima corriente se obtiene en 
+		la resonancia, dado que la reactancia inductiva de la bobina se 
+		cancela con la capacitiva. Si fuesen componentes ideales, la corriente
+		sería infinita y los valores de tensiones de la bobina y del capacitor
+		serían $+\infty$ y $-\infty$ respectivamente. \\
+		\indent Como no son componentes ideales, los mismos tienen pérdidas y
+		se las modelizan con una resistencia, por ende, la corriente no es 
+		infinita. La respectiva tensión del capacitor en situación de 
+		resonancia es $V_c = \frac{X_L\cdot V}{R}$. \\
+		\indent Como el valor de Q es $Q=\frac{\omega L}{R}$, se observa que 
+		$$V_c = Q \cdot V$$
+
+		\indent La frecuencia de resonancia se la puede determinar de la 
+		siguiente forma
+		$$|X_L|=|X_C| \Rightarrow w\cdot L = \frac{1}{w\cdot C}$$
+
+		$$f=\frac{1}{2\pi\sqrt{LC}}$$ 
 		
-		Conocidos los valores de la capacidad, $C$, y la frecuencia, $f$, puede obtenerse el valor de la inductancia de $L_x$ y tambi\'en su resistencia serie equivalente con las siguientes expresiones
+		\indent Conocidos los valores de la capacidad, $C$, y la frecuencia, 
+		$f$, puede obtenerse el valor de la inductancia de $L_x$ y tambi\'en 
+		su resistencia serie equivalente con las siguientes expresiones
 		$$L=\frac{1}{(2\pi)^2 f^2C}$$
-		$$L=\frac{2\pi fL}{Q}$$
-		En la tabla \ref{tab001} se muestran los resultados obtenidos para un inductor haciendo un barrido de frecuencias
+		$$R_s=\frac{2\pi\cdot f\cdot L}{Q}$$
+		\indent En la tabla \ref{tab001} se muestran los resultados obtenidos
+		para un inductor realizando un barrido de frecuencias
 		
-		%Faltan incertezas jeje
+		%Faltan incertezas jeje -----> hacete el vivo ¬¬
 		\begin{table}[!htp]
 					\centering
 					\begin{tabular}{|c|c|c|c|c|}
 						\hline
-			    		Frecuencia & C & Q & L (calculado) & R (calculado) \\
+			    		Frecuencia & C & Q & L (calculado) & $R_s$ (calculado) \\
 						\hline
 						$13.3~MHz$& $25~pF$& 182 & $5.73~\mu Hy$ &$ 2.63~\Omega$ \\
 						\hline
