@@ -31,7 +31,7 @@
 	\section{Objetivo}
 	
 	\indent	El objetivo del presente trabajo práctico es familiarizarse con 
-	el qmetro, el RLC meter, el impedancímetro vectorial. Dicho instrumental
+	el Q-metro, el RLC meter, el impedancímetro vectorial. Dicho instrumental
 	sirve para medir impedancias. Luego de realizas las experiencias se 
 	intentará determinar en qué circunstancias conviene utilizar uno en vez 
 	de otro.
@@ -84,33 +84,41 @@
 		\indent Conocidos los valores de la capacidad, $C$, y la frecuencia, 
 		$f$, puede obtenerse el valor de la inductancia de $L_x$ y tambi\'en 
 		su resistencia serie equivalente con las siguientes expresiones
-		$$L=\frac{1}{(2\pi)^2 f^2C}$$
-		$$R_s=\frac{2\pi\cdot f\cdot L}{Q}$$
-		\indent En la tabla \ref{tab001} se muestran los resultados obtenidos
-		para un inductor realizando un barrido de frecuencias
+		$$L=\frac{1}{(2\pi)^2 f^2C}+\epsilon_L\cdot L$$
+		Donde $\epsilon_L=2\epsilon_f+\epsilon_C=2\cdot 1.5\%+\frac{0.1pF}{C}$, puede calcularse a partir de las especificaciones del  fabricante.
+		
+		$$R_s=\frac{2\pi\cdot f\cdot L}{Q}+\epsilon_{R_s}\cdot R_s$$
+		Donde $\epsilon_{R_s}=\epsilon_f+\epsilon_Q= 1.5\%+ 7\%=8.5\%$ se obtiene tambi\'en de las especificaciones del fabricante.
+		\\
+		\indent En la Tabla \ref{tab001} se muestran los resultados obtenidos
+		para un inductor realizando un barrido de frecuencias.
 		
 		%Faltan incertezas jeje -----> hacete el vivo ¬¬
+		%nonoo pasa que no podia abrir el manual que esta en .djvu jajaja
 		\begin{table}[!htp]
 					\centering
 					\begin{tabular}{|c|c|c|c|c|}
 						\hline
 			    		Frecuencia & C & Q & L (calculado) & $R_s$ (calculado) \\
 						\hline
-						$13.3~MHz$& $25~pF$& 182 & $5.73~\mu Hy$ &$ 2.63~\Omega$ \\
+						$13.3~MHz~\pm1.5\%$& $25~pF~\pm0.1pF$& $182~\pm7\%$ & $5.73~\mu Hy~\pm3.40\%$ &$ 2.63~\Omega~\pm8.5\%$ \\
 						\hline
-						$10.7~MHz$& $40~pF$& 200 & $5.54~\mu Hy$ &$ 1.86~\Omega$ \\
+						$10.7~MHz~\pm1.5\%$& $40~pF~\pm0.1pF$& $200~\pm7\%$ & $5.54~\mu Hy~\pm3.25\%$ &$ 1.86~\Omega~\pm8.5\%$ \\
 						\hline
-						$9.6~MHz$& $50~pF$& 200 & $5.50~\mu Hy$ &$ 1.66~\Omega$ \\
+						$9.6~MHz~\pm1.5\%$& $50~pF~\pm0.1pF$& $200~\pm7\%$ & $5.50~\mu Hy~\pm3.20\%$ &$ 1.66~\Omega~\pm8.5\%$ \\
 						\hline  
-						$6.9~MHz$& $100~pF$& 195 & $5.33~\mu Hy$ &$ 1.18~\Omega$ \\
+						$6.9~MHz~\pm1.5\%$& $100~pF~\pm0.1pF$& $195~\pm7\%$ & $5.33~\mu Hy~\pm3.10\%$ &$ 1.18~\Omega~\pm8.5\%$ \\
 						\hline  										
-						$4.0~MHz$& $305~pF$& 170 & $5.20~\mu Hy$ &$ 0.77~\Omega$ \\
+						$4.0~MHz~\pm1.5\%$& $305~pF~\pm0.1pF$& $170~\pm7\%$ & $5.20~\mu Hy~\pm3.03\%$ &$ 0.77~\Omega~\pm8.5\%$ \\
 						\hline
-						$3.2~MHz$& $470~pF$& 155 & $5.17~\mu Hy$ &$ 0.68~\Omega$ \\
+						$3.2~MHz~\pm1.5\%$& $470~pF~\pm0.1pF$& $155~\pm7\%$ & $5.17~\mu Hy~\pm3.02\%$ &$ 0.68~\Omega~\pm8.5\%$ \\
 						\hline  						  	  
 					\end{tabular}
 					\caption{Mediciones con el Q-metro} \label{tab001}
-				\end{table}
+				\end{table}		
+		De la Tabla puede observarse que las mediciones de inductancia tienen una incerteza baja (menor al $4\%$ en todos los casos) y que la mayor parte de su incerteza est\'a compuesta por la incerteza de la frecuencia. Con lo cual utilizando un instrumento que determine la frecuencia con menor incerteza (como un frecuenc\'imetro) se mejora notablemente la incertidumbre de la inductancia. Esto se realiza, obteniendose una incerteza menor al $ 1\%$ en todos los casos.
+		Por otra parte, los resistencias serie equivalente calculadas tienen un grado de dispersi\'on mayor que en el caso anterior. Esto ocurre principalmente a medida que la frecuencia aumenta ya que empieza a hacerse notar el efecto capacitivo par\'asito que presenta el inductor (notar de la Tabla que el valor de Q alcanza un m\'aximo y que luego debe disminuir hasta 0 cuando alcanza la frecuencia de resonancia).
+		Adem\'as se obtiene con una incerteza dominada principlmemente por la incerteza del factor Q (que es el $7\%$). Con lo cual si se desea obtener una incerteza menor deber\'a elegirse otro instrumento que no tenga un piso de incertidumbre.
 		\subsection{Mediciones con el RLC}		
 		
 		\subsubsection{Inductancia de una bobina con n\'ucleo de aire}
@@ -140,7 +148,7 @@
 					\end{tabular}
 					\caption{Mediciones con el RLC} \label{tabRLCbobina}
 				\end{table}
-						
+				
 		\subsubsection{Capacidad de un capacitor electro\'itico}	
 		\subsubsection{Capacidad de un capacitor cer\'amico}
 		
