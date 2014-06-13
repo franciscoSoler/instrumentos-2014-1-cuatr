@@ -42,8 +42,8 @@
 	\indent Para llevar a cabo las mediciones, se utilizan los siguientes 
 	instrumentos:
 		\begin{itemize}
-			\item algo
-			\item algo
+			\item Q-metro 4342A Hewlett Packard
+			\item LCR 819 GW Instek
 			\item algo
 			\item Cable coaxil para realizar las distintas conexiones entre 
 			instrumentos.
@@ -122,28 +122,30 @@
 		\subsection{Mediciones con el RLC}		
 		
 		\subsubsection{Inductancia de una bobina con n\'ucleo de aire}
-		En la Tabla \ref{tabRLCbobina} se puede observar los resultados obtenidos de la medici\'on de una bobina con nucleo de aire a diferentes frecuencias.
+		En la Tabla \ref{tabRLCbobina} se puede observar los resultados obtenidos de la medici\'on de una bobina con nucleo de aire a diferentes frecuencias, usando el RLC. De ella puede notarse que los valores de inductancia obtenidos son pr\'oximos al valor de referencia y al de las mediciones realizadas con el Q-metro (ver Tabla \ref{tab001}). Sin embargo, debe notarse que a diferencia de los valores obtenidos con el Q-metro , el RLC tiene una incerteza un orden menor, con lo cual resulta ser un instrumento m\'as exacto.
+		Pero, por otra parte, posee la desventaja de tener un rango limitado de frecuencias de operaci\'on (desde $12~Hz$ hasta $100.00~kHz$) con lo cual resulta imposible caracterizar su comportamiento en altas frecuencias.
+		Respecto al valor de la resistencia equivalente, si bien su valor se calcula empleando las f\'ormulas utilizadas previamente, este valor figura en una segunda pantalla del instrumento y su incerteza se especifica al $0.05\%$
 		\begin{table}[!htp]
 					\centering
 					\begin{tabular}{|c|c|c|c|}
 						\hline
 			    		Frecuencia & Q & L  & R (calculado) \\
 						\hline
-						$100~kHz$& 36.58 & $5.23~\mu Hy$ &$ 25.5~m\Omega$ \\
+						$100.000~kHz$& $36.58~\pm0.5\%$ & $5.23~\mu Hy~\pm0.5\%$ &$ 89.8~m\Omega$ \\
 						\hline
-						$66.66~kHz$& 29.44 & $5.26~\mu Hy$ &$ 31.8~m\Omega$ \\
+						$66.660~kHz$& $29.44~\pm0.5\%$ & $5.26~\mu Hy~\pm0.5\%$ &$ 74.8~m\Omega$ \\
 						\hline
-						$50~kHz$& 25.11 & $5.29~\mu Hy$ &$ 42.1~m\Omega$ \\
+						$50.000~kHz$& $25.11~\pm0.5\%$ & $5.29~\mu Hy~\pm0.5\%$ &$ 66.2~m\Omega$ \\
 						\hline  
-						$40~kHz$& 22.42 & $5.31~\mu Hy$ &$ 50.4~m\Omega$ \\
+						$40.000~kHz$& $22.42~\pm0.5\%$ & $5.31~\mu Hy~\pm0.5\%$ &$ 59.5~m\Omega$ \\
 						\hline  										
-						$28.572~kHz$& 19.07 & $5.35~\mu Hy$ &$ 59.5~m\Omega$ \\
+						$28.572~kHz$& $19.07~\pm0.5\%$ & $5.35~\mu Hy~\pm0.5\%$ &$ 50.4~m\Omega$ \\
 						\hline
-						$20~kHz$& 16.1 & $5.40~\mu Hy$ &$ 66.2~m\Omega$ \\
+						$20.000~kHz$& $16.10~\pm0.5\%$ & $5.40~\mu Hy~\pm0.5\%$ &$ 42.1~m\Omega$ \\
 						\hline  
-						$10~kHz$& 10.78 & $5.46~\mu Hy$ &$ 74.8~m\Omega$ \\
+						$10.000~kHz$& $10.78~\pm0.5\%$ & $5.46~\mu Hy~\pm0.5\%$ &$ 31.8~m\Omega$ \\
 						\hline 										
-						$1~kHz$& 1.36 & $5.53~\mu Hy$ &$ 89.8~m\Omega$ \\
+						$1.000~kHz$& $1.36~\pm0.5\%$ & $5.53~\mu Hy~\pm0.5\%$ &$ 25.5~m\Omega$ \\
 						\hline 	  
 					\end{tabular}
 					\caption{Mediciones con el RLC} \label{tabRLCbobina}
