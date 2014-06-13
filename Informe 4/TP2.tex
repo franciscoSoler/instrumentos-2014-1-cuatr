@@ -179,18 +179,18 @@
 		\subsection{Mediciones con el puente de impedancias}
 		En la Tabla \ref{tabPUENTEbobina}
 		\begin{table}[!htp]
-					\centering
-					\begin{tabular}{|c|c|c|c|c|}
-						\hline
-			    		Frecuencia & Q & L  & R (calculado) \\
-						\hline
-						$20~kHz$& 20 & $5.10~\mu Hy$ &$ 32~m\Omega$ \\
-						\hline
-						$1~kHz$& 1.8 & $6.30~\mu Hy$ &$ 22~m\Omega$ \\
-						\hline	  
-					\end{tabular}
-					\caption{Mediciones con el RLC} \label{tabPUENTEbobina}
-				\end{table}	
+			\centering
+			\begin{tabular}{|c|c|c|c|c|}
+				\hline
+				Frecuencia & Q & L  & R (calculado) \\
+				\hline
+				$20~kHz$& 20 & $5.10~\mu Hy$ &$ 32~m\Omega$ \\
+				\hline
+				$1~kHz$& 1.8 & $6.30~\mu Hy$ &$ 22~m\Omega$ \\
+				\hline	  
+			\end{tabular}
+			\caption{Mediciones con el RLC} \label{tabPUENTEbobina}
+		\end{table}	
 		\subsubsection{Inductancia de una bobina con n\'ucleo de aire}
 		
 		\subsection{Mediciones con el impedanc\'imetro}
@@ -263,8 +263,85 @@
 		o la atenuaci\'on en decibles cada $100~m$
 		$$\alpha=\frac{Z_0\cdot8.69~dB}{100Z_{in} L}$$
 		
-		Con la misma l\'inea de  $3~m$ con una frecuencia de $32~MHz$ se obtuvo una $Z_{in}=2750~\Omega$ con lo cual $\alpha=80 mdB/m$
+		Con la misma l\'inea de $3~m$ con una frecuencia de $32~MHz$ se obtuvo 
+		una $Z_{in}=2750~\Omega$ con lo cual $\alpha=80 mdB/m$
+		
 		\subsubsection{Par\'ametros de un cristal}	
+		\indent Un cristal se lo puede modelar como un capacitor en paralelo a 
+		múltiples circuitos RLC serie, cada uno representa un modo de resonancia
+		distinto, a efectos de este trabajo práctico sólo se lo modelará con un 
+		único modo de resonancia, como se muestra en la figura \ref{img004}
+
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=8cm]{Imagenes/esqXtal.png}
+			\caption{Esqemático simplificado del cristal}
+			\label{img004} 
+		\end{figure}
+
+		\indent Dicho circuito equivalente posee dos frecuencias de resonancia,
+		una serie y otra paralelo, ambas muy cercanas entre sí. La resonancia 
+		serie es la menor de las dos, en dicho punto la fase de la impeancia es
+		igual a 0, por ende, puede medirse directamente la resistencia serie 
+		$R_s$. \\
+		\indent Como generalmente la resistencia de la resonancia serie es muy 
+		chica, hay que restar $0.5\Omega$ del efecto de carga de la punta. \\
+		\indent Un gráfico típico de la impeancia de entrada de un xtal en 
+		función de la frecuencia se observa en la imagen \ref{img005}.
+
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=8cm]{Imagenes/esqXtal.png}
+			\caption{Impedancia típica de un xtal en función de la frecuencia}
+			\label{img005} 
+		\end{figure}
+
+		\indent Se puede observar que el circuito se comporta como un capacitor
+		a frecuencias menores uqe la de la resonancia serie, dicho capacitor es 
+		aproximadamente igual a $C_p$ dado que $C_s$ es mucho menor. \\
+		\indent Las otras fórmulas utilizadas para realizar los cálculos del 
+		resto de los parámetros del xtal son las siguientes.
+		
+		$$C_p = \frac{1}{2\omega\cdot x_c}$$
+		$$C_s = C_p \frac{2\cdot(f_p - f_s)}{f_p}$$
+		$$L = \frac{1}{4\pi^2f_s^2C_s}$$
+
+		\indent Donde $f_s$ y $f_p$ son las frecuencias de resonancia serie y 
+		paralelo respctivamente. \\
+		\indent A la hora de medir el Q del cristal se determina utilizando el 
+		método del ancho de banda, el cual consiste en medir las frecuencias 
+		donde la pontencia de salida disminuye unos $3db$, o que es lo mismo, 
+		si se trata de un polo simple como este caso, hay un defasaje de $45º$.
+		Por lo tanto Q queda determinado de la siguiente forma
+		$$Q = \frac{f_0}{\Delta f_{\pm45}}$$
+		\indent Para realizar la medición de los parámetros se utiliza el 
+		impedancímetro vectorial (hp 5100A), el cual mide la fase y el módulo de
+		la impedancia. Los valores obtenidos se vuelcan en la tabla \ref{tab003}
+
+		\begin{table}[!htp]
+			\centering
+			\begin{tabular}{|c|c|c|}
+				\hline
+				Frecuencia [MHz] & |Z| & arg(Z) \\
+				\hline
+				18.9960000 & $2.85~K\Omega$ & $-90^{\circ}$ \\
+				\hline
+				19.9948400 & - & $-45^{\circ}$ \\ 
+				\hline
+				19.9950580 & $17~\Omega$ & $0^{\circ}$ \\
+				\hline
+				19.9952860 & - & $45^{\circ}$ \\ 
+				\hline									
+				20.0311383 & $560~\Omega$ & $45^{\circ}$ \\
+				\hline									
+				20.0311556 & $640~\Omega$ & $0^{\circ}$ \\
+				\hline									
+				20.0311634 & $550~\Omega$ & $-45^{\circ}$ \\
+				\hline									
+			\end{tabular}
+			\caption{Mediciones con el impedancímetro vectorial} \label{tab003}
+		\end{table}	
+
 		\subsubsection{Mediciones en un circuito activo}
 			
 	\section{Conclusiones}
