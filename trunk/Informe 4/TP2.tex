@@ -173,6 +173,29 @@
 		
 		\subsection{Mediciones con el impedanc\'imetro}
 		\subsubsection{Frecuencia de resonancia de una bobina con n\'ucleo de aire}
+		La frecuencia de resonancia se obtiene cuando la parte reactiva de la impedancia a medir tiene fase nula, es decir, cuando
+		$$\omega\cdot L=\frac{1}{\omega \cdot C}$$
+		\\Con lo cual, conocida la frecuencia de resonancia y asumiendo que la inductancia no var\'ia demasiado con la frecuencia puede obtenerse la capacidad equivalente del modelo (el cual se puede observar en la Figura \ref{inductorequiv}). De esta manera
+		
+		$$C=\frac{1}{\omega^2 \cdot L}+\epsilon_C \cdot C$$
+		Donde $\epsilon_C=2\epsilon_w+\epsilon_L\approx \epsilon_L =3.40\%$, ya que la incerteza de la frecuencia (obtenida con un frecunec\'imetro) es mucho menor a la de la inductancia (obtenida con el Q-metro en $f=13.3~MHz$)
+		De esta manera se hall\'o la frecuencia ($f_resonancia=35.440~MHz$) para la cual es obtuvo fase nula y se calcul\'o la capacidad equivalente
+		$$C=\frac{1}{(2\pi 35.440~MHz)^2 \cdot L}\pm \epsilon_C \cdot C=3.52pF \pm~3.40\%$$
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[width=8cm]
+				{Imagenes/induceqquiv.png}
+				\caption{Modelo equivalente del inductor}
+				\label{inductorequiv} 
+			\end{figure}
+			En la Figura \ref{respfreq} se puede observar una simulaci\'on realizada con el modelo equivalente, donde se puede observar la impedancia en funci\'on de la frecuencia y la resonancia en $f_resonancia$.
+			\begin{figure}[!htb]
+				\centering
+				\includegraphics[width=9cm]
+				{Imagenes/respfreq.png}
+				\caption{Respuesta en frecuencia t\'ipica de un inductor}
+				\label{respfreq} 
+			\end{figure}
 		\subsubsection{Inductancia de una bobina con nucleo de ferrite}
 		En la Tabla \ref{tabIMPbobina}
 		\begin{table}[!htp]
