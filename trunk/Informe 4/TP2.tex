@@ -271,24 +271,25 @@
 		$$Z_x=-0.48\Omega+j\cdot 252\Omega$$
 		Es decir, se obtiene una inductancia de $L=0,96 \mu F$ y una resistencia negativa, la cual probablemente se deba a la incerteza del instrumento en la fase ocacionando que el fasor de impedancia que idealmente tiene una fase de 90 grados, tenga una parte real negativa. Se puede concluir que no es un buen instrumento para medir la resistencia serie equivalente de un inductor, pero si lo es para medir inductancias.
 		Por otra parte debe notarse que el barrido en frecuencia continua luego de los 42 MHz, sin embargo no se llega a alcanzar la frecuencia de resonancia donde la fase es nula. Es decir que la transici\'on de fase no es abrupta, lo cual indica que la resistencia serie es de mayor orden que la de la bobina con n\'ucleo de aire. 
-		\subsubsection{Param\'etros de una l\'inea de transmisici\'on}
+		\subsubsection{Param\'etros de una l\'inea de transmisi\'on}
 		Como la impedancia de entrada de una l\'inea de transmisi\'on (la que mide el impedanc\'imetro) est\'a dada por $$Z_{in}=Z_0\frac{Z_L+Z_0\tanh(\gamma L)}{Z_0+Z_L\tanh(\gamma L)}$$
 		Suponiendo que la l\'inea es de bajas p\'erdidas $\gamma=\alpha+j\beta=j\beta=j\frac{2\pi}{\lambda}$ y si adem\'as se impone la condici\'on de que $L=\frac{\lambda}{8}$ entonces la expresi\'on de la impedancia de entrada se reduce a la siguiente
 		$$Z_{in}=Z_0\frac{Z_L+jZ_0}{Z_0+jZ_L}$$
 		Si $Z_L= 0$ entonces $Z_{in}=jZ_0$ \\
-		Si $Z_L \rightarrow \infty$ entonces $Z_{in}\rightarrow-jZ_0$
-		Entonces conectando una l\'inea al impedanc\'imetro a una frecuencia adecuada y dejando el extremo libre de la l\'inea cortocircuitado o abierto se obtiene el valor de la impedancia de la l\'inea, la cual es de $Z_0=75~\Omega$ ($f=7.9~MHz$ $L=3~m$)
+		Si $Z_L \rightarrow \infty$ entonces $Z_{in}\rightarrow-jZ_0$.\\
+		Entonces conectando una l\'inea al impedanc\'imetro a una frecuencia adecuada y dejando el extremo libre de la l\'inea cortocircuitado o abierto se obtiene el valor de la impedancia de la l\'inea, la cual es de $Z_0=75~\Omega~\pm~4.3\%$ ($f=7.9~MHz$ $L=3~m~\pm~0.05m$)
 		
 		Por otra parte se si se elije $L=\frac{\lambda}{2},3\frac{\lambda}{2}, 5\frac{\lambda}{2} ...$ y que $Z_L\rightarrow\infty$, entonces puede obtenerse la atenuaci\'on de la l\'inea
 		$$Z_{in}=Z_0\frac{Z_L+Z_0\alpha L}{Z_0+Z_L\alpha L}=\frac{Z_0}{\alpha L}$$
-		Despejando la atenuaci\'on de la l\'inea se obtiene
-		$$\alpha=\frac{Z_0}{Z_{in} L}$$
+		Despejando la atenuaci\'on de la l\'inea se obtiene (y agregando las incertezas)
+		$$\alpha=\frac{Z_0}{Z_{in} L}~\pm~\epsilon_{\alpha}\cdot\alpha$$
+		con $\epsilon_{\alpha}=\epsilon_{Z_0}+\epsilon_{Z_{in}}+\epsilon_{L}$
 		o la atenuaci\'on en decibles cada $100~m$
-		$$\alpha=\frac{Z_0\cdot8.69~dB}{100Z_{in} L}$$
+		$$\alpha=\frac{100~m\cdot Z_0\cdot8.69~dB}{Z_{in}\cdot L}~\pm~\epsilon_{\alpha}\cdot \alpha$$
 		
-		Con la misma l\'inea de $3~m$ con una frecuencia de $32~MHz$ se obtuvo 
-		una $Z_{in}=2750~\Omega$ con lo cual $\alpha=80 mdB/m$
-		
+		Con la misma l\'inea con la que se obtuvo $Z_0$ y a una frecuencia de $32~MHz$ se obtuvo una $Z_{in}=2750~\pm~5.17\%~\Omega$ con lo cual $\alpha=7,90~dB\cdot m~\pm~11.13\%$
+		A una frecuencia mayor, de $100~MHz$ se obtuvo una $Z_{in}=1350~\pm~7,4\%~\Omega$ con lo cual $\alpha=16,09~dB\cdot m~\pm~13,36\%$\\
+		\indent Como se puede observar al aumentar la frecuencia de operaci\'on la atenuac\'on en la l\'inea no es constante sino que aumenta.
 		\subsubsection{Par\'ametros de un cristal}	
 		\indent Un cristal se lo puede modelar como un capacitor en paralelo a 
 		múltiples circuitos RLC serie, cada uno representa un modo de resonancia
