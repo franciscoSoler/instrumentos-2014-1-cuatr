@@ -44,7 +44,9 @@
 		\begin{itemize}
 			\item Q-metro 4342A Hewlett Packard
 			\item LCR 819 GW Instek
-			\item algo
+			\item Impedanc\'imetro 4815A Hewlett Packard
+			\item Puente de impedancias
+			\item Contador
 			\item Cable coaxil para realizar las distintas conexiones entre 
 			instrumentos.
 		\end{itemize}	
@@ -123,6 +125,7 @@
 		%TODO, colocar que hay que calibrarlo previamnete utilizando 
 		% cortocircuito y circuito abierto para determinar la impedancia serie
 		% y la admitancia paralela
+		Es importante antes de comenzar a medir con el RLC, realizar su calibraci\'on. De esta forma se consideran las impedancias residuales serie y paralela que se a\~naden a la impedancia a medir. Para ello deben dejarse la puntas del instrumento abiertas (para medir la admitancia residual) y en cortocircuito (para medir la impedancia serie residual).
 		\subsubsection{Inductancia de una bobina con n\'ucleo de aire}
 		\indent En la Tabla \ref{tabRLCbobina} se puede observar los resultados 
 		obtenidos de la medici\'on de una bobina con nucleo de aire a diferentes
@@ -143,6 +146,7 @@
 		%TODO huguito en la tabla tenes +- 0,5%, eso está mal, tenés que 
 		% espcificarlo con el valor absoluto manteniendo las unidades
 		% de donde sale la incertidumbre relativa 0.05%? en el cuadro tenés 0.5%
+		%fijate en el manuaaaaaaaaaaaaaaal, una vez que esta encendido 30minutos y a temperatura entre 18 y 28 te dice que todo tiene esa incertidumbre relativa.
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|c|}
@@ -177,6 +181,7 @@
 		\subsubsection{Capacidad de un capacitor cer\'amico}
 		
 		\subsection{Mediciones con el puente de impedancias}
+		\subsubsection{Inductancia de una bobina con n\'ucleo de aire}
 		En la Tabla \ref{tabPUENTEbobina}
 		\begin{table}[!htp]
 			\centering
@@ -189,11 +194,26 @@
 				$1~kHz$& 1.8 & $6.30~\mu Hy$ &$ 22~m\Omega$ \\
 				\hline	  
 			\end{tabular}
-			\caption{Mediciones con el RLC} \label{tabPUENTEbobina}
+			\caption{Mediciones con el puente de impedancias.} \label{tabPUENTEbobina}
 		\end{table}	
-		\subsubsection{Inductancia de una bobina con n\'ucleo de aire}
+		
 		
 		\subsection{Mediciones con el impedanc\'imetro}
+		Hay igual que con el RLC es necesario calibrar el impedanc\'metro antes de realizar una medici\'on usando socket Probe Check.
+		Con este instrumento, para mediciones de resistencia la incerteza relativa se calcula como
+		$$\epsilon_R=4\%\pm(\frac{f}{30~MHz}+\frac{R}{25~k\Omega})\%$$
+		Mientras que para mediciones de \'angulo la incerteza relativa se calcula como
+		$$\epsilon_\phi=3\%\pm(\frac{f}{30~MHz}+\frac{R}{25~k\Omega})\%$$
+		Por otra parte las mediciones de impedancia incluyen tambi\'en efectos resuidales a la impedancia $Z_x$ que se desea medir. Este error sistem\'atico se puede observar en la Figura \ref{impres}, notando que incluye una impedancia serie $Z_s=0.5\Omega+j\cdot\omega\cdot8nHy$ y una admitancia en paralelo a $Z_x$ de $Y_p=j\cdot\omega\cdot0.3pF$
+					\begin{figure}[!htb]
+						\centering
+						\includegraphics[width=8cm]
+						{Imagenes/impedanciares.png}
+						\caption{Impedancia residual del impedanc\'imetro.}
+						\label{impres} 
+					\end{figure}\\
+		De esta forma es posible eliminar este error sistem\'atico y obtener el valor de $Z_x$, a partir del valor medido, $Z_m$, mediante la siguiente expresi\'on
+		$$Z_x=\frac{Z_m-Z_s}{1-Y_p(Z_m-Z_s)}$$
 		\subsubsection{Frecuencia de resonancia de una bobina con n\'ucleo de aire}
 		La frecuencia de resonancia se obtiene cuando la parte reactiva de la impedancia a medir tiene fase nula, es decir, cuando
 		$$\omega\cdot L=\frac{1}{\omega \cdot C}$$
@@ -207,7 +227,7 @@
 				\centering
 				\includegraphics[width=8cm]
 				{Imagenes/induceqquiv.png}
-				\caption{Modelo equivalente del inductor}
+				\caption{Modelo equivalente del inductor.}
 				\label{inductorequiv} 
 			\end{figure}
 			En la Figura \ref{respfreq} se puede observar una simulaci\'on realizada con el modelo equivalente, donde se puede observar la impedancia en funci\'on de la frecuencia y la resonancia en $f_resonancia$.
@@ -215,39 +235,42 @@
 				\centering
 				\includegraphics[width=9cm]
 				{Imagenes/respfreq.png}
-				\caption{Respuesta en frecuencia t\'ipica de un inductor}
+				\caption{Respuesta en frecuencia t\'ipica de un inductor.}
 				\label{respfreq} 
 			\end{figure}
 		\subsubsection{Inductancia de una bobina con nucleo de ferrite}
-		En la Tabla \ref{tabIMPbobina}
+		En la Tabla \ref{tabIMPbobina} se muestran los resultados obtenidos en m\'odulo y fase para un barrido en frecuencia entre $25~MHz$ a $100~MHz$. Debe notarse que hasta una frecuencia de  $42~MHz$, la bobina contin\'ua comport\'andose como un inductor de inductancia $L=\frac{\left|Z\right|}{2\pi\cdot f}~\pm~\epsilon_L\cdot L$. Donde $\epsilon_L=\epsilon_f+\epsilon_{\left|Z\right|}\approx\epsilon_{\left|Z\right|}$
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|c|}
 				\hline
-				Frecuencia & |Z| & arg(Z)  & L (calculado) \\
+				Frecuencia & $\left|Z\right|$ & arg(Z)  & L (calculado) \\
 				\hline
-				$25.5~MHz$ & $160~\Omega$ & $90^{\circ}$ & $0.99~\mu Hy$ \\
+				$25.5~MHz$ & $160~\Omega~\pm~4.9\%$ & $90^{\circ}~\pm~3.9\%$ & $0.99~\mu Hy$ \\
 				\hline
-				$42~MHz$ & $260~\Omega$ & $90^{\circ}$ & $0.98~\mu Hy$\\
+				$42~MHz$ & $260~\Omega~\pm~5.4\%$ & $90^{\circ}~\pm~4.4\%$ & $0.98~\mu Hy$\\
 				\hline
-				$44.8~Hz$ & $300~\Omega$ & $85^{\circ}$ & $1.06~\mu Hy$ \\
+				$44.8~MHz$ & $300~\Omega~\pm~5.5\%$ & $85^{\circ}~\pm~4.5\%$ & $1.06~\mu Hy$ \\
 				\hline
-				$58.2~Hz$ & $430~\Omega$ & $78^{\circ}$ & $1.17~\mu Hy$ \\
+				$58.2~MHz$ & $430~\Omega~\pm~6.0\%$ & $78^{\circ}~\pm~5.0\%$ & $1.17~\mu Hy$ \\
 				\hline									
-				$69.5~Hz$ & $560~\Omega$ & $72^{\circ}$ & $1.28~\mu Hy$ \\
+				$69.5~MHz$ & $560~\Omega~\pm~6.3\%$ & $72^{\circ}~\pm~5.3\%$ & $1.28~\mu Hy$ \\
 				\hline									
-				$80.0~Hz$& $640~\Omega$ & $55^{\circ}$ & $1.27~\mu Hy$ \\
+				$80.0~MHz$& $640~\Omega~\pm~6.7\%$ & $55^{\circ}~\pm~5.7\%$ & $1.27~\mu Hy$ \\
 				\hline									
-				$84.0~Hz$ & $550~\Omega$ & $45^{\circ}$ & $1.04~\mu Hy$ \\
+				$84.0~MHz$ & $550~\Omega~\pm~6.8\%$ & $45^{\circ}~\pm~5.8\%$ & $1.04~\mu Hy$ \\
 				\hline									
-				$93.0~Hz$ & $430~\Omega$ & $70^{\circ}$ & $0.73~\mu Hy$ \\
+				$93.0~MHz$ & $430~\Omega~\pm~7.1\%$ & $70^{\circ}~\pm~6.1\%$ & $0.73~\mu Hy$ \\
 				\hline									
-				$100.0~Hz$ & $750~\Omega$ & $65^{\circ}$ & $1.19~\mu Hy$ \\
+				$100.0~MHz$ & $750~\Omega~\pm~7.4\%$ & $65^{\circ}~\pm~6.4\%$ & $1.19~\mu Hy$ \\
 				\hline			
 			\end{tabular}
-			\caption{Mediciones con el RLC} \label{tabIMPbobina}
+			\caption{Mediciones con el impedanc\'imetro de una bobina con n\'ucleo de ferrite} \label{tabIMPbobina}
 		\end{table}	
-					
+		Si se utiliza la f\'ormula para eliminar el error siste\'atico de la medic\'on se obtiene que (para la frecuencia de 42 MHz, donde todav\'ia se comporta como un inductor)
+		$$Z_x=-0.48\Omega+j\cdot 252\Omega$$
+		Es decir, se obtiene una inductancia de $L=0,96 \mu F$ y una resistencia negativa, la cual probablemente se deba a la incerteza del instrumento en la fase ocacionando que el fasor de impedancia que idealmente tiene una fase de 90 grados, tenga una parte real negativa. Se puede concluir que no es un buen instrumento para medir la resistencia serie equivalente de un inductor, pero si lo es para medir inductancias.
+		Por otra parte debe notarse que el barrido en frecuencia continua luego de los 42 MHz, sin embargo no se llega a alcanzar la frecuencia de resonancia donde la fase es nula. Es decir que la transici\'on de fase no es abrupta, lo cual indica que la resistencia serie es de mayor orden que la de la bobina con n\'ucleo de aire. 
 		\subsubsection{Param\'etros de una l\'inea de transmisici\'on}
 		Como la impedancia de entrada de una l\'inea de transmisi\'on (la que mide el impedanc\'imetro) est\'a dada por $$Z_{in}=Z_0\frac{Z_L+Z_0\tanh(\gamma L)}{Z_0+Z_L\tanh(\gamma L)}$$
 		Suponiendo que la l\'inea es de bajas p\'erdidas $\gamma=\alpha+j\beta=j\beta=j\frac{2\pi}{\lambda}$ y si adem\'as se impone la condici\'on de que $L=\frac{\lambda}{8}$ entonces la expresi\'on de la impedancia de entrada se reduce a la siguiente
@@ -275,7 +298,7 @@
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=8cm]{Imagenes/esqXtal.png}
-			\caption{Esqemático simplificado del cristal}
+			\caption{Esqemático simplificado del cristal.}
 			\label{img004} 
 		\end{figure}
 
@@ -288,11 +311,11 @@
 		chica, hay que restar $0.5\Omega$ del efecto de carga de la punta. \\
 		\indent Un gráfico típico de la impeancia de entrada de un xtal en 
 		función de la frecuencia se observa en la imagen \ref{img005}.
-
+		%ffRANnnnnnnnnnnnn sacale el fondo gris!!!!!!!!!!!!!!!!!!!!!!!!
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=8cm]{Imagenes/esqXtal.png}
-			\caption{Impedancia típica de un xtal en función de la frecuencia}
+			\caption{Impedancia típica de un xtal en función de la frecuencia.}
 			\label{img005} 
 		\end{figure}
 
