@@ -28,7 +28,7 @@
 	\newpage
 
 
-	\section{Objetivo}
+\section{Objetivo}
 	
 	\indent	El objetivo del presente trabajo práctico es familiarizarse con 
 	el Q-metro, el RLC meter, el impedancímetro vectorial. Dicho instrumental
@@ -37,7 +37,7 @@
 	de otro.
 
 	\newpage
-	\section{Desarrollo}
+\section{Desarrollo}
 	
 	\indent Para llevar a cabo las mediciones, se utilizan los siguientes 
 	instrumentos:
@@ -51,8 +51,8 @@
 			instrumentos.
 		\end{itemize}	
 	
-		\subsection{Mediciones con el Q-metro}
-		\subsubsection{Inductancia de una bobina con n\'ucleo de aire}
+	\subsection{Mediciones con el Q-metro}
+	\subsubsection{Inductancia de una bobina con n\'ucleo de aire}
 		
 		\indent El circuito simplificado de un Q-metro se muestra en la Figura
 		\ref{img001}
@@ -144,7 +144,7 @@
 		obtener una incerteza menor deber\'a elegirse otro instrumento que no 
 		tenga un piso de incertidumbre.
 
-		\subsection{Mediciones con el RLC}		
+	\subsection{Mediciones con el RLC}		
 		%TODO, colocar que hay que calibrarlo previamnete utilizando 
 		% cortocircuito y circuito abierto para determinar la impedancia serie
 		% y la admitancia paralela
@@ -239,7 +239,7 @@
 		\end{table}	
 		
 		
-		\subsection{Mediciones con el impedanc\'imetro}
+	\subsection{Mediciones con el impedanc\'imetro}
 		
 		\indent Hay igual que con el RLC es necesario calibrar el 
 		impedanc\'metro antes de realizar una medici\'on usando socket Probe 
@@ -497,7 +497,7 @@
 		\end{equation}
 		
 		\indent Para realizar la medición de los parámetros se utiliza el 
-		impedancímetro vectorial (hp 5100A), el cual mide la fase y el módulo de
+		impedancímetro vectorial (hp 4815A), el cual mide la fase y el módulo de
 		la impedancia. Los valores obtenidos se vuelcan en la tabla \ref{tab003}
 		% TODO faltan incetridumbres
 		\begin{table}[!htp]
@@ -560,8 +560,34 @@
 		mucho mayor con respecto a la serie.
 
 		\subsubsection{Mediciones en un circuito activo}
-			
-	\section{Conclusiones}
+		
+		\indent Para realizar la medición de un circuito activo utilizando el 
+		impedancímetro vectorial hay que tener varias consideraciones en cuenta.
+		
+		\begin{itemize}
+			\item Hay que excluir tanto la señal alterna como la contínua de la 
+			medición.
+			\item El nivel de señal del punto de medición debe estar en la zona 
+			lineal de funcionamiento del circuito, dado que la impedancia sólo 
+			se define para circuitos lineales.
+			\indent Todas las mediciones con el impedancímetro vectorial 4815A 
+			deben ser referenciadas a tierra.
+		\end{itemize}
+		
+		\indent El circuito a medir es el mostrado en la figura \ref{img006} y 
+		particularmente el único punto que se puede medir con la alimentación 
+		conectada es 
+
+		%TODO conocer que mierda mido del circuito abierto que obviamente no 
+		% tengo idea..
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=8cm]{Imagenes/ActiveCircuit.png}
+			\caption{Circuito activo a medir.}
+			\label{img006} 
+		\end{figure}
+	
+\section{Conclusiones}
 	\indent Viva Venezuela!\\
 \end{document}
 
