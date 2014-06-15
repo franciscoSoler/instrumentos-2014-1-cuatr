@@ -266,7 +266,7 @@
 			{Imagenes/impedanciares.png}
 			\caption{Impedancia residual del impedanc\'imetro.}
 			\label{impres} 
-		\end{figure}\\
+		\end{figure}
 		
 		\indent De esta forma es posible eliminar este error sistem\'atico y 
 		obtener el valor de $Z_x$, a partir del valor medido, $Z_m$, mediante la
@@ -458,7 +458,7 @@
 		chica, hay que restar $0.5\Omega$ del efecto de carga de la punta. \\
 		\indent Un gráfico típico de la impeancia de entrada de un xtal en 
 		función de la frecuencia se observa en la imagen \ref{img005}.
-		%ffRANnnnnnnnnnnnn sacale el fondo gris!!!!!!!!!!!!!!!!!!!!!!!!
+		%TODO cambiar la imagen por la real del xtal en func de la frec 
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=8cm]{Imagenes/esqXtal.png}
@@ -471,10 +471,18 @@
 		aproximadamente igual a $C_p$ dado que $C_s$ es mucho menor. \\
 		\indent Las otras fórmulas utilizadas para realizar los cálculos del 
 		resto de los parámetros del xtal son las siguientes.
+	
+		\begin{equation} \label{eq001}
+			C_p = \frac{1}{2\omega\cdot x_c}		
+		\end{equation}
 		
-		$$C_p = \frac{1}{2\omega\cdot x_c}$$
-		$$C_s = C_p \frac{2\cdot(f_p - f_s)}{f_p}$$
-		$$L = \frac{1}{4\pi^2f_s^2C_s}$$
+		\begin{equation} \label{eq002}
+			C_s = C_p \frac{2\cdot(f_p - f_s)}{f_p}
+		\end{equation}
+
+		\begin{equation} \label{eq003}
+			L = \frac{1}{4\pi^2f_s^2C_s}
+		\end{equation}
 
 		\indent Donde $f_s$ y $f_p$ son las frecuencias de resonancia serie y 
 		paralelo respctivamente. \\
@@ -483,11 +491,15 @@
 		donde la pontencia de salida disminuye unos $3db$, o que es lo mismo, 
 		si se trata de un polo simple como este caso, hay un defasaje de $45º$.
 		Por lo tanto Q queda determinado de la siguiente forma
-		$$Q = \frac{f_0}{\Delta f_{\pm45}}$$
+		
+		\begin{equation} \label{eq004}
+			Q = \frac{f_0}{\Delta f_{\pm45}}
+		\end{equation}
+		
 		\indent Para realizar la medición de los parámetros se utiliza el 
 		impedancímetro vectorial (hp 5100A), el cual mide la fase y el módulo de
 		la impedancia. Los valores obtenidos se vuelcan en la tabla \ref{tab003}
-
+		% TODO faltan incetridumbres
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|}
@@ -511,6 +523,41 @@
 			\end{tabular}
 			\caption{Mediciones con el impedancímetro vectorial} \label{tab003}
 		\end{table}	
+		
+		\indent Utilizando los datos medidos obtenidos en la tabla \ref{tab003}
+		y las ecuaciones \ref{eq001}, \ref{eq002}, \ref{eq003} y \ref{eq004} se
+		obtienen los parámetros del cristal, mostrados en la tabla \ref{tab004}
+		% TODO completar incertidumbres
+		\begin{table}[!htp]
+			\centering
+			\begin{tabular}{|c|c|c|}
+				\hline
+				Parámetro & Valor & Incertdumbre absoluta \\
+				\hline
+				$C_p$ & $2.94~pF$ & \\
+				\hline
+				$C_s$ & $10.6~fF$ & \\ 
+				\hline
+				$L_s$ & $5.98~mHy$ & \\
+				\hline
+				$R_s$ & $16.5~\Omega$ & \\ 
+				\hline									
+				$Q_p$ & $798054$ & \\
+				\hline
+				$Q_s$ & $44832$  & \\
+				\hline
+			\end{tabular}
+			\caption{Mediciones con el impedancímetro vectorial} \label{tab003}
+		\end{table}	
+
+		\indent Si bien se utilizó un generador externo para la medición del Q 
+		del xtal, dado que posee una estabilidad mucho mayor al generador 
+		interno del impedancímetro, resultó muy dificultoso realizar las 
+		mediciones donde la fase está en la posicion de $\pm45º$. Esto se debe 
+		en gran parte que el Q es muy alto, por ende en un $\Delta f$ muy chico 
+		cambia mucho la fase. Se puede observar que en la resonancia paralelo el
+		cristal posee un Q mucho más alto, por ende la estabilidad del mismo es 
+		mucho mayor con respecto a la serie.
 
 		\subsubsection{Mediciones en un circuito activo}
 			
