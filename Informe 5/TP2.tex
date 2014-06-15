@@ -49,28 +49,58 @@
 \indent Para llevar a cabo las mediciones, se utilizan los siguientes
 		instrumentos:
 		\begin{itemize}
-			\item Analizador de espectro HM 5005
+			\item Analizador de espectro HM 5006
 			\item Analizador de espectro LPT 6000
 			\item Generador de funciones Agilent N9310A
+			\item Cable coaxil para conexi\'on de los instrumentos
 		\end{itemize}	
-	
+		%HUGO
 		\subsection{Selectividad}
-		\indent En la Figura \ref{img001}
+		La resoluci\'on en frecuencia de un analizador de espectro es su capacidad para poder distinguir 2 se\~nales senoidales de la misma amplitud. Este valor se especifica como el ancho de banda de los filtros FI cuando su respuesta cae $3~dB$. 
+		Sin embargo, si las se\~nales es\'an separadas en la frecuencia de resoluci\'on pero con diferente amplitud puede ocurrir que una quede enmascarada dentro de la otra. De esta manera surge otra especificaci\'on que es la selectividad, la cual se define como la relaci\'on entre el ancho de banda cuando la respuesta cae $60~dB$ y cuando cae $3~dB$. Matem\'aticamente 
+		$$S=\frac{BW(-60~dB)}{BW(-3~dB)}$$
 	
+		En esta secci\'on se obtiene la selectividad de los analizadores de espectro HM5006 y PSA 6000 con diferentes resoluciones. Para ello se conectan por medio de un cable coaxil a un generador Agilent N9310A que produce un se\~nal senoidal. En la Tabla \ref{selectividad} se puede observar los resultados obtenidos.
 		
-		\begin{figure}[!htb]
-				\centering
-				\includegraphics[width=8cm]
-				{Imagenes/SCREN443.PNG}
-				\caption{Medici\'on para la resistencia de $10k\Omega$. La 
-				referencia (en blanco) esta graficada con la l\'inea abierta.}
-				\label{img001} 
-		\end{figure}
-		\subsection{Distorsi\'on arm\'onica de un generador de funciones}	
+		\begin{table}[!htp]
+			\centering
+			\begin{tabular}{|c|c|c|c|c|}
+				\hline
+				Analizador & Resoluci\'on & $BW(-60~dB)$ & $BW(-30~dB)$ & Selectividad \\
+				\hline
+				$13.3~MHz~\pm1.5\%$& $25~pF~\pm0.1pF$& $182~\pm7\%$ & 
+				$5.73~\mu Hy~\pm3.40\%$ &$ 2.63~\Omega~\pm8.5\%$ \\
+				\hline
+				$10.7~MHz~\pm1.5\%$& $40~pF~\pm0.1pF$& $200~\pm7\%$ & 
+				$5.54~\mu Hy~\pm3.25\%$ &$ 1.86~\Omega~\pm8.5\%$ \\
+				\hline
+				$9.6~MHz~\pm1.5\%$& $50~pF~\pm0.1pF$& $200~\pm7\%$ & 
+				$5.50~\mu Hy~\pm3.20\%$ &$ 1.66~\Omega~\pm8.5\%$ \\
+				\hline  
+				$6.9~MHz~\pm1.5\%$& $100~pF~\pm0.1pF$& $195~\pm7\%$ & 
+				$5.33~\mu Hy~\pm3.10\%$ &$ 1.18~\Omega~\pm8.5\%$ \\
+				\hline  										 	  	  
+			\end{tabular}
+			\caption{Mediciones con el Q-metro} \label{selectividad}
+		\end{table}	
+		%HUGO. Me encanta la THD 
+		\subsection{Distorsi\'on arm\'onica de un generador de funciones}
+				\indent En la Figura \ref{img001}
+				\begin{figure}[!htb]
+						\centering
+						\includegraphics[width=8cm]
+						{Imagenes/SCREN443.PNG}
+						\caption{Medici\'on para la resistencia de $10k\Omega$. La 
+						referencia (en blanco) esta graficada con la l\'inea abierta.}
+						\label{img001} 
+				\end{figure}
+		%No esntendi mucho lo de la distorsión por. FRAN?			
 		\subsection{Distorsi\'on por intermodulaci\'on del analizador de espectro}
 		\subsection{Frecuencia de conversi\'on de un generador digital}
+		%HUGO. Creeo que entendi lo de ruido de fase
 		\subsection{Ruido de fase}
 		\subsection{Modulaci\'on AM}
+		%HUGO. Las funciones de Bessel de FM son para mi jeje
 		\subsection{Modulaci\'on FM}
 		\subsection{Figura de ruido}
 	\section{Conclusiones}
