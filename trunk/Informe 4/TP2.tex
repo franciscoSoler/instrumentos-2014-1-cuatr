@@ -52,7 +52,7 @@
 		\end{itemize}	
 	
 	\subsection{Mediciones con el Q-metro}
-	\subsubsection{Inductancia de una bobina con n\'ucleo de aire}
+		\subsubsection{Inductancia de una bobina con n\'ucleo de aire}
 		
 		\indent El circuito simplificado de un Q-metro se muestra en la Figura
 		\ref{img001}
@@ -94,7 +94,7 @@
 		Donde $\epsilon_{R_s}=\epsilon_f+\epsilon_Q= 1.5\%+ 7\%=8.5\%$ se 
 		obtiene tambi\'en de las especificaciones del fabricante.
 		\\
-		\indent En la Tabla \ref{tab001} se muestran los resultados obtenidos
+		\indent En la Tabla \ref{tab:001} se muestran los resultados obtenidos
 		para un inductor realizando un barrido de frecuencias.
 		
 		%Faltan incertezas jeje -----> hacete el vivo ¬¬
@@ -124,7 +124,7 @@
 				$5.17~\mu Hy~\pm3.02\%$ &$ 0.68~\Omega~\pm8.5\%$ \\
 				\hline  						  	  
 			\end{tabular}
-			\caption{Mediciones con el Q-metro} \label{tab001}
+			\caption{Mediciones con el Q-metro} \label{tab:001}
 		\end{table}		
 		\indent De la Tabla puede observarse que las mediciones de inductancia 
 		tienen una incerteza baja (menor al $4\%$ en todos los casos) y que la 
@@ -145,15 +145,13 @@
 		tenga un piso de incertidumbre.
 
 	\subsection{Mediciones con el RLC}		
-		%TODO, colocar que hay que calibrarlo previamnete utilizando 
-		% cortocircuito y circuito abierto para determinar la impedancia serie
-		% y la admitancia paralela
 		\indent Es importante antes de comenzar a medir con el RLC, realizar su 
 		calibraci\'on. De esta forma se consideran las impedancias residuales 
 		serie y paralela que se a\~naden a la impedancia a medir. Para ello 
 		deben dejarse la puntas del instrumento abiertas (para medir la 
 		admitancia residual) y en cortocircuito (para medir la impedancia serie 
-		residual).
+		residual). Es importante destacar que dicho cálculo lo realiza en 
+		todas las frecuencias que se realiza la medición.
 
 		\subsubsection{Inductancia de una bobina con n\'ucleo de aire}
 		
@@ -161,7 +159,7 @@
 		obtenidos de la medici\'on de una bobina con nucleo de aire a diferentes
 		frecuencias, usando el RLC. De ella puede notarse que los valores de 
 		inductancia obtenidos son pr\'oximos al valor de referencia y al de las 
-		mediciones realizadas con el Q-metro (ver Tabla \ref{tab001}). Sin 
+		mediciones realizadas con el Q-metro (ver Tabla \ref{tab:001}). Sin 
 		embargo, debe notarse que a diferencia de los valores obtenidos con el 
 		Q-metro , el RLC tiene una incerteza un orden menor, con lo cual resulta
 		ser un instrumento m\'as exacto. \\
@@ -302,9 +300,10 @@
 		\end{cases}
 		\]
 
-		\indent En la tabla \ref{tab002} se muestran los valores obtenidos 
-		realizando un barrido en frecuencia, y en la tabla \ref{tab003} 
-		realizándolo en tensión. \\
+		\indent En la tabla \ref{tab:002} se muestran los valores obtenidos 
+		realizando un barrido en frecuencia con la tensión fija sin 
+		polarización, y en la tabla \ref{tab:003} realizándolo en tensión 
+		dejando la frecuencia fija a 100Hz. \\
 		\indent Respecto a las incertidumbres de las mediciones, la pantalla las
 		especifica al 0.5\%. 
 
@@ -314,33 +313,57 @@
 				\hline
 				Frecuencia [KHz] & $C_{med}~\mu F$ & $R_{med}~\Omega$ & R (calculado) \\
 				\hline
-				$20~kHz$& 20 & $5.10~\mu Hy$ &$ 32~m\Omega$ \\
+				0.012 &	207.2 &	1.9 \\
 				\hline
-				$1~kHz$& 1.8 & $6.30~\mu Hy$ &$ 22~m\Omega$ \\
+				0.120 &	197.66 & 0.57 \\
+				\hline
+				0.500 &	190.06 & 0.38 \\
+				\hline
+				1.000 &	186.1 &	0.35 \\
+				\hline
+				10.00 &	153.82 & 0.3 \\
+				\hline
+				20.00 &	126.3 &	0.3 \\   
+				\hline
+				40.00 &	78.3 & 0.3 \\
+				\hline
+				50.00 &	61.1 & 0.3 \\
+				\hline
+				66.66 &	41.42 &	0.29 \\
+				\hline
+				100.0 &	21.69 &	0.29 \\
 				\hline	  
 			\end{tabular}
 			\caption{Barrido en frecuencia del capacitor electrolítico con RLC 
 			meter.} 
-			\label{tab002}
+			\label{tab:002}
 		\end{table}	
 
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|c|c|}
 				\hline
-				Frecuencia & Q & L  & R (calculado) \\
+				Tensión [V] & $C_{med}~\mu F$ & $R_{med}~K\Omega$ \\
 				\hline
-				$20~kHz$& 20 & $5.10~\mu Hy$ &$ 32~m\Omega$ \\
+				25 &	209.21 & 0.66 \\
 				\hline
-				$1~kHz$& 1.8 & $6.30~\mu Hy$ &$ 22~m\Omega$ \\
+				22.3 &	206.67 & 0.65 \\
+				\hline
+				13.8 &	202.55 & 0.63 \\
+				\hline
+				6.9 &	200.5 &	0.63 \\
+				\hline
+				2.6 &	198.7 &	0.62 \\
+				\hline
+				0.6 &	198.82 & 0.62 \\
 				\hline	  
 			\end{tabular}
 			\caption{Barrido de tensión del capacitor electrolítico con RLC 
 			meter.} 
-			\label{tab003}
+			\label{tab:003}
 		\end{table}	
 
-
+		\indent 
 		\subsubsection{Capacidad de un capacitor cer\'amico}
 		%TODO francisco	
 	
@@ -675,7 +698,7 @@
 				$Q_s$ & $44832$  & \\
 				\hline
 			\end{tabular}
-			\caption{Mediciones con el impedancímetro vectorial} \label{tab003}
+			\caption{Mediciones con el impedancímetro vectorial} \label{tab004}
 		\end{table}	
 
 		\indent Si bien se utilizó un generador externo para la medición del Q 
