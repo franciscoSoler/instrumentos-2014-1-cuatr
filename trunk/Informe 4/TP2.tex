@@ -993,11 +993,67 @@
 				\hline
 			\end{tabular}
 			\caption{Mediciones con el impedancímetro vectorial} \label{tab004}
-		\end{table}	
+		\end{table}
+		\todo[inline]{terminar}
+
 		\subsubsection{Medición de un capacitor cerámico}
 		% todo 
 		\todo{hacer}
-		\indent A continuación se realizó la medición de un capacitor cerámico 
+		\indent A continuación se realizó la medición de un capacitor cerámico,
+		para ello, se colocó directamente el capacitor en la punta del
+		impedancímetro. Como el equivalente del mismo es un circuito RLC serie,
+		como se muestra en la imagen \ref{imagenCapacitor} 
+		\todo[inline]{cambiarNombre y poner el rlc serie}
+		Se debe buscar la frecuencia de resonancia, en este punto se anulan la 
+		parte activa de la impedancia, por ende la impedancia resultante posee
+		fase 0. Se midió cuando hay $\pm 45º$ y en una frecuencia donde las fases
+		son $\pm 90º$ para determinar la inductancia y capacidad del equivalente.
+		\\
+		\indent la tabla \ref{unaTab} \todo[inline]{corregir el nombre de la 
+		referencia y en la tabla igual} muestra los valores medidos con sus 
+		respectivas incertidumbres. 
+		\indent Para determinar la incertidumbre de la medición 
+		\todo[inline]{buscar en manual las incertidumbres de la medición}
+		
+		\begin{table}[!htp]
+			\centering
+			\begin{tabular}{|c|c|c|c|c|}
+				\hline
+				Frecuencia [MHz] & $X_{med}~[\Omega] $ & $\Delta X_{med}$ & 
+				angulo [º] & $\Delta angulo$ [º] \\
+				\hline
+				0.500 & 14.5 &   &  -90 &  \\
+				\hline
+				6.0 & 1.0 &   & -45 &  \\
+				\hline
+				9.08854 & 0.8 &   & 0 &  \\ 
+				\hline
+				14.85 & 1.2 &   & 45 &  \\
+				\hline
+				88.3 & 6.6 &   & 90 &  \\ 
+				\hline									
+			\end{tabular}
+			\caption{Mediciones con el impedancímetro vectorial} \label{unaTab}
+		\end{table}
+
+		\indent Utilizando los valores obtenidos de la tabla \ref{unaTab} y 
+		realizando los cálculos de las ecauciones \ref{unaEcuacion}se calcularon los
+		valores de los componentes del modelo de la capacidad. \\
+		
+		\begin{align}\label{unaEcuacion}
+			L = \omega X_L
+			C = \frac{1}{\omega X_C}
+		\end{align}
+
+		\indent Cabe destacar que como $R_s$ es muy chica, hay que tener en 
+		cuenta el efecto de carga que genera la punta del impedancímetro, la 
+		cual es de $0.5 \Omega$, por lo tanto hay que restar dicho valor en el
+		resultado. La tabla \ref{otraTab} muestra los resultados obtenidos.
+		
+		\indent una conclusión
+		\todo[inline]{agregar algo sobre lo obtenido}
+		
+
 \section{Conclusiones}
 	\indent Viva Venezuela!\\
 \end{document}
