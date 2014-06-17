@@ -269,9 +269,9 @@
 
 		\begin{align}\label{eq:004}
 			\frac{1}{C} &= \frac{\omega_1^2}{\omega_2}X_2 + 
-				\frac{\omega_1^2}{\omega_2^2}\frac{1}{C} - \omega_1X_1 \\
+				\frac{\omega_1^2}{\omega_2^2}\frac{1}{C} - \omega_1X_1 \nonumber \\
 			(1 - \frac{\omega_1^2}{\omega_2^2})\frac{1}{C} &= 
-			\frac{\omega_1^2}{\omega_2}X_2 - \omega_1X_1 \\
+			\frac{\omega_1^2}{\omega_2}X_2 - \omega_1X_1 \nonumber \\
 			C &= \frac{1 - \frac{\omega_1^2}{\omega_2^2}}
 				{\omega_1(\frac{\omega_1}{\omega_2}X_2 - X_1)}
 		\end{align}
@@ -298,15 +298,15 @@
 		\indent Las ecuaciones para determinar las incertidumbres absolutas 
 		tanto de C como de L se muestran a continuación
 
-		\[
-		\begin{cases}\label{eq:007} 
+		\begin{equation}\label{eq:007}
+			\begin{cases}
 			\Delta L = (\frac{\Delta C_1}{C_1^2} + \frac{\Delta C_2}{C_2^2}) 
 						\frac{1}{\omega_1^2 - \omega_2^2} \\ 
 			\Delta C =  \frac{\omega_2^2 - \omega_1^2}{(\frac{\omega_1^2}{C_2} -
 						\frac{\omega_2^2}{C_1})^2}(\Delta C_1\frac{\omega_2^2}
 						{C_1^2} + \Delta C_2 \frac{\omega_1^2}{C_2^2})
-		\end{cases}
-		\]
+			\end{cases}
+		\end{equation}
 
 		\indent En la tabla \ref{tab:002} se muestran los valores obtenidos 
 		realizando un barrido en frecuencia con la tensión fija sin 
@@ -583,8 +583,10 @@
 		\indent Como se puede observar y a modo de comparacion con las 
 		mediciones realizadas en el apartado anterior, el capacitor se 
 		comporta como una bobina a una frecuencia \todo[inline]{insertar frecuencia},
-		la cual es  mucho mayor que el capacitor electrolítico
-		a frecuencias a partir de 
+		la cual es  mucho mayor que el capacitor electrolítico. \\
+		\indent En la medición de la respuesta en función de la variación de 
+		tensión de alimentación no se observa un cambio apreciable en los 
+		parámetros.
 		%Todo
 		\todo{terminar}
 % TODO 
@@ -922,7 +924,7 @@
 				$R_s$ & $16.5~\Omega$ & \\ 
 				\hline									
 				$Q_p$ & $798054$ & \\
-			\hline
+				\hline
 				$Q_s$ & $44832$  & \\
 				\hline
 			\end{tabular}
@@ -955,7 +957,7 @@
 		
 		\indent El circuito a medir es el mostrado en la figura \ref{img006} y 
 		particularmente el único punto que se puede medir con la alimentación 
-		conectada es 
+		conectada es el tanque que hay en el colector del transistor
 
 		%TODO 
 		\todo{conocer que mierda mido del circuito abierto que obviamente no 
@@ -966,7 +968,36 @@
 			\caption{Circuito activo a medir.}
 			\label{img006} 
 		\end{figure}
-	
+
+		\indent Se fue haciendo un barrido en frecuencia hasta los 6 MHz, y se
+		midió la fase y la impedancia del circuito en dicho punto. La tabla \ref{tabbla}
+		muestra los resultados
+
+		\begin{table}[!htp]
+			\centering
+			\begin{tabular}{|c|c|c|}
+				\hline
+				Parámetro & Valor & Incertdumbre absoluta \\
+				\hline
+				$C_p$ & $2.94~pF$ & \\
+				\hline
+				$C_s$ & $10.6~fF$ & \\ 
+				\hline
+				$L_s$ & $5.98~mHy$ & \\
+				\hline
+				$R_s$ & $16.5~\Omega$ & \\ 
+				\hline									
+				$Q_p$ & $798054$ & \\
+				\hline
+				$Q_s$ & $44832$  & \\
+				\hline
+			\end{tabular}
+			\caption{Mediciones con el impedancímetro vectorial} \label{tab004}
+		\end{table}	
+		\subsubsection{Medición de un capacitor cerámico}
+		% todo 
+		\todo{hacer}
+		\indent A continuación se realizó la medición de un capacitor cerámico 
 \section{Conclusiones}
 	\indent Viva Venezuela!\\
 \end{document}
