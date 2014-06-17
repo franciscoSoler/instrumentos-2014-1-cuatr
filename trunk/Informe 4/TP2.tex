@@ -19,6 +19,14 @@
 % Carátula del Trabajo
 \title{ \input{Portada.tex} }
 
+% \usepackage[disable]{todonotes} % notes not showed
+\usepackage[draft]{todonotes}   % notes showed
+
+% Select what to do with command \comment:  
+% \newcommand{\comment}[1]{}  %comment not showed
+\newcommand{\comment}[1]
+{\par {\bfseries \color{blue} #1 \par}} %comment showed
+
 \begin{document}
 	\maketitle % Hace que el título anterior sea el principal del documento
 	\newpage
@@ -97,8 +105,8 @@
 		\indent En la Tabla \ref{tab:001} se muestran los resultados obtenidos
 		para un inductor realizando un barrido de frecuencias.
 		
-		%Faltan incertezas jeje -----> hacete el vivo ¬¬
-		%nonoo pasa que no podia abrir el manual que esta en .djvu jajaja
+		%todo 
+		\todo[inline]{cambiar las incertidumbres a absolutas}
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|c|c|}
@@ -171,12 +179,13 @@
 		valor se calcula empleando las f\'ormulas utilizadas previamente, este 
 		valor figura en una segunda pantalla del instrumento y su incerteza se 
 		especifica al $0.05\%$
-		%TODO huguito en la tabla tenes +- 0,5%, eso está mal, tenés que 
-		% espcificarlo con el valor absoluto manteniendo las unidades
-		% de donde sale la incertidumbre relativa 0.05%? en el cuadro tenés 0.5%
-		%fijate en el manuaaaaaaaaaaaaaaal, una vez que esta encendido 30minutos
-		%y a temperatura entre 18 y 28 te dice que todo tiene esa incertidumbre 
-		%relativa.
+		%TODO 
+		\todo[inline]{huguito en la tabla tenes +- 0,5\%, eso está mal, tenés que 
+		espcificarlo con el valor absoluto manteniendo las unidades
+		de donde sale la incertidumbre relativa 0.05\%? en el cuadro tenés 0.5\%
+		fijate en el manuaaaaaaaaaaaaaaal, una vez que esta encendido 30minutos
+		y a temperatura entre 18 y 28 te dice que todo tiene esa incertidumbre 
+		relativa.}
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|c|}
@@ -276,8 +285,9 @@
 		\end{equation}
 
 		\indent Para poder determinar la incertidumbre se utiliza el teorema 
-		% TODO choto este que te dicen en numérico (huguito decime el nombre que
-		% no lo se XD) 
+		% TODO 
+		\todo{choto este que te dicen en numérico (huguito decime el nombre que
+		no lo se XD) }
 		el cual se muestra en la ecuación \ref{eq:006}
 
 		\begin{equation}\label{eq:006}
@@ -305,7 +315,8 @@
 		\indent Respecto a las incertidumbres de las mediciones, la pantalla las
 		especifica al 0.5\%. 
 
-		% TODO calcular las incertidumbres en funcion de las formulas de mas arriba
+		% TODO 
+		\todo{calcular las incertidumbres en funcion de las formulas de mas arriba}
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|c|c|}
@@ -339,7 +350,8 @@
 			\label{tab:002}
 		\end{table}	
 		
-		% TODO calcular las incertidumbres segun la formula de mas arriba
+		% TODO 
+		\todo{calcular las incertidumbres segun la formula de mas arriba}
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|c|c|}
@@ -365,18 +377,85 @@
 			\label{tab:003}
 		\end{table}	
 
-		\indent Utilizando los valores de entrada  
-		%TODO terminar
+		\indent Utilizando valores contínuos de capacidades medidas de la tabla
+		\ref{tab:002} y \ref{tab:003} en las ecuaciones mencionadas anteriormente
+		(\ref{eq:003}, \ref{eq:005} y \ref{eq:007}) se obtienen los valores de
+		la capacidad e inductancia serie del modelo RLC serie del capacitor. \\
+		\indent La tabla \ref{tab:004} muestra cómo varían dichos parámetros en 
+		función de la frecuencia y la tabla \ref{tab:005} en función de la 
+		tensión.
+		
+		\begin{table}[!htp]
+			\centering
+			\begin{tabular}{|c|c|c|c|c|c|c|}
+				\hline
+				Frecuencia [KHz] & $C_s~\mu F$ & $\Delta C_s$ & 
+				$L_s~mHy$  & $\Delta L_s~mHy$  & $R_s~\Omega$ & 
+				$\Delta R_s~\Omega$ \\
+				\hline
+				0.012 - 0.120 &	207.2 &  & 1.9 & \\
+				\hline
+				0.120 - 0.500 &	197.66 &   & 0.57 & \\
+				\hline
+				0.500 - 1.000 &	190.06 &   & 0.38 & \\
+				\hline
+				1.000 - 10.00 &	186.1 &   &	0.35 & \\
+				\hline
+				10.00 - 20.00 &	153.82 &   & 0.3 & \\
+				\hline
+				20.00 - 40.00 &	126.3 &   &	0.3 & \\   
+				\hline
+				40.00 - 50.00 &	78.3 &   & 0.3 & \\
+				\hline
+				50.00 - 66.66 &	61.1 &   & 0.3 & \\
+				\hline
+				66.66 - 100.0 &	41.42 &   &	0.29 & \\
+				%100.0 &	21.69 &   &	0.29 & \\
+				\hline	  
+			\end{tabular}
+			\caption{Parámetros del capacitor en función de la frecuencia.} 
+			\label{tab:004}
+		\end{table}	
+
+		\begin{table}[!htp]
+			\centering
+			\begin{tabular}{|c|c|c|c|c|c|c|}
+				\hline
+				Tensión [V] & $C_s~\mu F$ & $\Delta C_s$ & 
+				$L_s~mHy$  & $\Delta L_s~mHy$  & $R_s~\Omega$ & 
+				$\Delta R_s~\Omega$ \\
+				\hline
+				25 &	209.21 &   & 0.66 & \\
+				\hline
+				22.3 &	206.67 &   & 0.65 & \\
+				\hline
+				13.8 &	202.55 &   & 0.63 & \\
+				\hline
+				6.9 &	200.5 &	  & 0.63 & \\
+				\hline
+				2.6 &	198.7 &	  & 0.62 & \\
+				\hline
+				0.6 &	198.82 &   & 0.62 & \\
+				\hline	  
+			\end{tabular}
+			\caption{Parámetros del capacitor en función de la tensión.} 
+			\label{tab:005}
+		\end{table}	
+		\indent Como se puede observar, el capacitor se comporta como una bobina
+		a frecuencias a partir de 
+		%Todo
+		\todo{terminar}
 		\subsubsection{Capacidad de un capacitor cer\'amico}
 		\indent Las mediciones son realizadas utilizando el mismo procedimiento
 		que en la sección anterior, barrido en frecuencia dejando la tensión 
 		fija y barrido en tensión dejando la frecuencia fija en 100 KHz esta 
 		vez. \\
-		%TODO cambiar los valores de referencia!!!
+		%TODO 
+		\todo{cambiar los valores de referencia!!!}
 		\indent Las fórmulas para calcular la $L_s$, $C_s$ y sus incertidumbres 
 		son las ecuaciones \ref{eq:003}, \ref{eq:005} y \ref{eq:007} 
 		respectivamente. \\
-		\indent Las tablas \ref{tab:004} y \ref{tab:005} muestran los resultados
+		\indent Las tablas \ref{tab:006} y \ref{tab:007} muestran los resultados
 		de las mediciones 
 	
 		\begin{table}[!htp]
@@ -409,7 +488,7 @@
 			\end{tabular}
 			\caption{Barrido de frecuencia del capacitor cerámico con RLC 
 			meter.} 
-			\label{tab:004}
+			\label{tab:006}
 		\end{table}	
 
 		\begin{table}[!htp]
@@ -419,13 +498,6 @@
 				Tensión [V] & $C_{med}~\mu F$ & $\Delta C$ & $R_{med}~K\Omega$
 				& $\Delta R$\\
 				\hline
-				0.019	1.26
-				0.019	1.24
-				0.022	1.29
-				0.022	1.27
-				0.023	1.3
-				0.023	1.23
-
 				25 &	0.019 &   & 1.26 & \\
 				\hline
 				22.3 &	0.019 &   & 1.24 & \\
@@ -441,17 +513,91 @@
 			\end{tabular}
 			\caption{Barrido de tensión del capacitor cerámico con RLC 
 			meter.} 
-			\label{tab:005}
+			\label{tab:007}
 		\end{table}	
-		% TODO terminar de poner las incertezas en las tablas, calcular y... 
-		% poner el resultado, hacer un promedio despues??? o no?
+		
+		\indent Utilizando valores contínuos de capacidades medidas de la tabla
+		\ref{tab:006} y \ref{tab:007} en las ecuaciones mencionadas anteriormente
+		(\ref{eq:003}, \ref{eq:005} y \ref{eq:007}) se obtienen los valores de
+		la capacidad e inductancia serie del modelo RLC serie del capacitor. \\
+		\indent La tabla \ref{tab:008} muestra cómo varían dichos parámetros en 
+		función de la frecuencia y la tabla \ref{tab:009} en función de la 
+		tensión.
+		
+		\begin{table}[!htp]
+			\centering
+			\begin{tabular}{|c|c|c|c|c|c|c|}
+				\hline
+				Frecuencia [KHz] & $C_s~\mu F$ & $\Delta C_s$ & 
+				$L_s~mHy$  & $\Delta L_s~mHy$  & $R_s~\Omega$ & 
+				$\Delta R_s~\Omega$ \\
+				\hline
+				0.012 - 0.120 &	207.2 &  & 1.9 & \\
+				\hline
+				0.120 - 0.500 &	197.66 &   & 0.57 & \\
+				\hline
+				0.500 - 1.000 &	190.06 &   & 0.38 & \\
+				\hline
+				1.000 - 10.00 &	186.1 &   &	0.35 & \\
+				\hline
+				10.00 - 20.00 &	153.82 &   & 0.3 & \\
+				\hline
+				20.00 - 40.00 &	126.3 &   &	0.3 & \\   
+				\hline
+				40.00 - 50.00 &	78.3 &   & 0.3 & \\
+				\hline
+				50.00 - 66.66 &	61.1 &   & 0.3 & \\
+				\hline
+				66.66 - 100.0 &	41.42 &   &	0.29 & \\
+				%100.0 &	21.69 &   &	0.29 & \\
+				\hline	  
+			\end{tabular}
+			\caption{Parámetros del capacitor en función de la frecuencia.} 
+			\label{tab:008}
+		\end{table}	
+
+		\begin{table}[!htp]
+			\centering
+			\begin{tabular}{|c|c|c|c|c|c|c|}
+				\hline
+				Tensión [V] & $C_s~\mu F$ & $\Delta C_s$ & 
+				$L_s~mHy$  & $\Delta L_s~mHy$  & $R_s~\Omega$ & 
+				$\Delta R_s~\Omega$ \\
+				\hline
+				25 &	209.21 &   & 0.66 & \\
+				\hline
+				22.3 &	206.67 &   & 0.65 & \\
+				\hline
+				13.8 &	202.55 &   & 0.63 & \\
+				\hline
+				6.9 &	200.5 &	  & 0.63 & \\
+				\hline
+				2.6 &	198.7 &	  & 0.62 & \\
+				\hline
+				0.6 &	198.82 &   & 0.62 & \\
+				\hline	  
+			\end{tabular}
+			\caption{Parámetros del capacitor en función de la tensión.} 
+			\label{tab:009}
+		\end{table}	
+		\indent Como se puede observar y a modo de comparacion con las 
+		mediciones realizadas en el apartado anterior, el capacitor se 
+		comporta como una bobina a una frecuencia \todo[inline]{insertar frecuencia},
+		la cual es  mucho mayor que el capacitor electrolítico
+		a frecuencias a partir de 
+		%Todo
+		\todo{terminar}
+% TODO 
+		\todo{terminar de poner las incertezas en las tablas, calcular y... 
+		poner el resultado, hacer un promedio despues??? o no?}
 	\subsection{Mediciones con el puente de impedancias}
 		\subsubsection{Inductancia de una bobina con n\'ucleo de aire}
 		\indent Para esta medición se conectó directamente la bobina al puente, 
 		en dicho instrumento se puede variar la frecuencia y las impedancias
 		meter, se realizó un barrido de frecuecias y se obtuvieron 
 		En la Tabla \ref{tabPUENTEbobina}
-		% TODO no tengo idea como funcionaba el puente, lametnablemente
+		% TODO 
+		\todo{no tengo idea como funcionaba el puente, lametnablemente}
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|c|c|}
@@ -467,7 +613,8 @@
 			\label{tabPUENTEbobina}
 		\end{table}	
 		
-		%todo francisco
+		%todo 
+		\todo{francisco}
 	\subsection{Mediciones con el impedanc\'imetro}
 		
 		\indent Hay igual que con el RLC es necesario calibrar el 
@@ -687,7 +834,8 @@
 		chica, hay que restar $0.5\Omega$ del efecto de carga de la punta. \\
 		\indent Un gráfico típico de la impeancia de entrada de un xtal en 
 		función de la frecuencia se observa en la imagen \ref{img005}.
-		%TODO cambiar la imagen por la real del xtal en func de la frec 
+		%TODO 
+		\todo{cambiar la imagen por la real del xtal en func de la frec }
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=8cm]{Imagenes/esqXtal.png}
@@ -728,7 +876,8 @@
 		\indent Para realizar la medición de los parámetros se utiliza el 
 		impedancímetro vectorial (hp 4815A), el cual mide la fase y el módulo de
 		la impedancia. Los valores obtenidos se vuelcan en la tabla \ref{tab003}
-		% TODO faltan incetridumbres
+		% TODO 
+		\todo{faltan incetridumbres}
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|}
@@ -756,7 +905,8 @@
 		\indent Utilizando los datos medidos obtenidos en la tabla \ref{tab003}
 		y las ecuaciones \ref{eq001}, \ref{eq002}, \ref{eq003} y \ref{eq004} se
 		obtienen los parámetros del cristal, mostrados en la tabla \ref{tab004}
-		% TODO completar incertidumbres
+		% TODO 
+		\todo{completar incertidumbres}
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|}
@@ -807,8 +957,9 @@
 		particularmente el único punto que se puede medir con la alimentación 
 		conectada es 
 
-		%TODO conocer que mierda mido del circuito abierto que obviamente no 
-		% tengo idea..
+		%TODO 
+		\todo{conocer que mierda mido del circuito abierto que obviamente no 
+		tengo idea..}
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=8cm]{Imagenes/ActiveCircuit.png}
