@@ -631,15 +631,16 @@
 		impedanc\'metro antes de realizar una medici\'on usando socket Probe 
 		Check. \\
 		\indent Con este instrumento, para mediciones de resistencia la 
-		incerteza relativa se calcula como
+		incerteza absoluta se calcula como
 		
-		$$\epsilon_R=4\%\pm(\frac{f}{30~MHz}+\frac{R}{25~k\Omega})\%$$
+		$$\Delta R=\pm 4\%\cdot R_{fe}\pm(\frac{f}{30~MHz}+\frac{R}{25~k\Omega})\%\cdot R_{med}$$
 		
-		\indent Mientras que para mediciones de \'angulo la incerteza relativa 
+		\indent Mientras que para mediciones de \'angulo la incerteza absoluta 
 		se calcula como
 		
-		$$\epsilon_\phi=3\%\pm(\frac{f}{30~MHz}+\frac{R}{25~k\Omega})\%$$
-		
+		$$\Delta\phi=\pm(3+\frac{f}{30~MHz}+\frac{R}{25~k\Omega})$$
+		\todo[inline]{acabo de corregir las explresiones de error huguitoooooaaaaahhh
+		hay que corregirlas en todas las mediciones }
 		\indent Por otra parte las mediciones de impedancia incluyen tambi\'en 
 		efectos resuidales a la impedancia $Z_x$ que se desea medir. Este error 
 		sistem\'atico se puede observar en la Figura \ref{impres}, notando que 
