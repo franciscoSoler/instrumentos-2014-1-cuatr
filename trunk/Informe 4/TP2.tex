@@ -595,11 +595,18 @@
 	\subsection{Mediciones con el puente de impedancias}
 		\subsubsection{Inductancia de una bobina con n\'ucleo de aire}
 		\indent Para esta medición se conectó directamente la bobina al puente, 
-		en dicho instrumento se puede variar la frecuencia y las impedancias
-		meter, se realizó un barrido de frecuecias y se obtuvieron 
-		En la Tabla \ref{tabPUENTEbobina}
-		% TODO 
-		\todo{no tengo idea como funcionaba el puente, lametnablemente}
+		dicho instrumento acepta que se le pueda conectar un generadore externo.
+		\\
+		\indent El procedimiento de medición es el siguiente, una vez conectada
+		la impedancia al puente, se modifican 2 resistencias, una equilibrando
+		la parte activa y la otra la reactiva del puente, con el objetivo de 
+		balancear dicho circuito. \\
+		\indent Dicho procedimiento debe ser iterativo, primero se intenta 
+		balancear la parte activa, luego la reactiva; se repiten dichos pasos
+		hasta lograr que el puente quede definitivamente balanceado. En la 
+		tabla \ref{tabPUENTEbobina} se muestran las mediciones obtenidas.
+	
+		\todo[inline]{incertidumbreeeees}
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|c|c|}
@@ -616,7 +623,8 @@
 		\end{table}	
 		
 		%todo 
-		\todo{francisco}
+		\todo{hablar de las incertidumbres del procedimiento, que puede medir
+		grandes valores de Q. Que incertidumbre posee la Rs???}
 	\subsection{Mediciones con el impedanc\'imetro}
 		
 		\indent Hay igual que con el RLC es necesario calibrar el 
@@ -840,8 +848,8 @@
 		\todo{cambiar la imagen por la real del xtal en func de la frec }
 		\begin{figure}[!htb]
 			\centering
-			\includegraphics[width=8cm]{Imagenes/esqXtal.png}
-			\caption{Impedancia típica de un xtal en función de la frecuencia.}
+			\includegraphics[width=8cm]{Imagenes/curvaCaractXtal.png}
+			\caption{Curva característica del xtal.}
 			\label{img005} 
 		\end{figure}
 
@@ -946,8 +954,6 @@
 		impedancímetro vectorial hay que tener varias consideraciones en cuenta.
 		
 		\begin{itemize}
-			\item Hay que excluir tanto la señal alterna como la contínua de la 
-			medición.
 			\item El nivel de señal del punto de medición debe estar en la zona 
 			lineal de funcionamiento del circuito, dado que la impedancia sólo 
 			se define para circuitos lineales.
@@ -956,12 +962,12 @@
 		\end{itemize}
 		
 		\indent El circuito a medir es el mostrado en la figura \ref{img006} y 
-		particularmente el único punto que se puede medir con la alimentación 
-		conectada es el tanque que hay en el colector del transistor
-
-		%TODO 
-		\todo{conocer que mierda mido del circuito abierto que obviamente no 
-		tengo idea..}
+		particularmente el punto de medición es la entrada del mismo. \\
+		\indent Con respecto a la respuesta del mismo, entre las frecuencias 
+		de 4 a 6 MHz presenta una impedancia negativa, particularmente en el 3º
+		cuadrante del plano de impedancias. Como el impedancímetro mide fase y
+		módulo, puede realizar dicha medición sin problemas.
+		
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=8cm]{Imagenes/ActiveCircuit.png}
@@ -969,10 +975,11 @@
 			\label{img006} 
 		\end{figure}
 
-		\indent Se fue haciendo un barrido en frecuencia hasta los 6 MHz, y se
-		midió la fase y la impedancia del circuito en dicho punto. La tabla \ref{tabbla}
-		muestra los resultados
+		\indent Se fue haciendo un barrido en frecuencia en el rango indicado,
+		y se midió la fase y la impedancia del circuito en dicho punto. La 
+		tabla \ref{tabbla} muestra los resultados
 
+		\todo[inline]{incertidumbreeees}
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|}
@@ -992,18 +999,25 @@
 				$Q_s$ & $44832$  & \\
 				\hline
 			\end{tabular}
-			\caption{Mediciones con el impedancímetro vectorial} \label{tab004}
+			\caption{Mediciones de la entrada del circuito con el 
+			impedancímetro vectorial} \label{tabbla}
 		\end{table}
-		\todo[inline]{terminar}
-
+		
 		\subsubsection{Medición de un capacitor cerámico}
 		% todo 
 		\todo{hacer}
-		\indent A continuación se realizó la medición de un capacitor cerámico,
-		para ello, se colocó directamente el capacitor en la punta del
-		impedancímetro. Como el equivalente del mismo es un circuito RLC serie,
-		como se muestra en la imagen \ref{imagenCapacitor} 
-		\todo[inline]{cambiarNombre y poner el rlc serie}
+		\indent A continuación se realizó la medición de un capacitor cerámico
+		de 22 nF, para ello, se colocó directamente el capacitor en la punta 
+		del impedancímetro. Como el equivalente del mismo es un circuito RLC 
+		serie, como se muestra en la imagen \ref{imagenCapacitor} 
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=8cm]{Imagenes/EsqCapacitor.png}
+			\caption{Modelo Equivalente del capacitor.}
+			\label{imagenCapacitor} 
+		\end{figure}
+		
 		Se debe buscar la frecuencia de resonancia, en este punto se anulan la 
 		parte activa de la impedancia, por ende la impedancia resultante posee
 		fase 0. Se midió cuando hay $\pm 45º$ y en una frecuencia donde las fases
@@ -1037,8 +1051,8 @@
 		\end{table}
 
 		\indent Utilizando los valores obtenidos de la tabla \ref{unaTab} y 
-		realizando los cálculos de las ecauciones \ref{unaEcuacion}se calcularon los
-		valores de los componentes del modelo de la capacidad. \\
+		realizando los cálculos de las ecauciones \ref{unaEcuacion} se 
+		calcularon los valores de los componentes del modelo de la capacidad. \\
 		
 		\begin{align}\label{unaEcuacion}
 			L = \omega X_L
@@ -1049,7 +1063,23 @@
 		cuenta el efecto de carga que genera la punta del impedancímetro, la 
 		cual es de $0.5 \Omega$, por lo tanto hay que restar dicho valor en el
 		resultado. La tabla \ref{otraTab} muestra los resultados obtenidos.
-		
+		\todo[inline]{agregar incertezas}	
+		\begin{table}[!htp]
+			\centering
+			\begin{tabular}{|c|c|c|}
+				\hline
+				Parámetro & Valor & Incertidumbre Absoluta \\ 
+				\hline
+				$C_s$ & 22 nF & \\
+				\hline
+				$L_s$ & 12 nHy & \\
+				\hline
+				$R_s$ & 0.3 &  \\ 
+				\hline
+			\end{tabular}
+			\caption{Mediciones con el impedancímetro vectorial} \label{unaTab}
+		\end{table}
+
 		\indent una conclusión
 		\todo[inline]{agregar algo sobre lo obtenido}
 		
