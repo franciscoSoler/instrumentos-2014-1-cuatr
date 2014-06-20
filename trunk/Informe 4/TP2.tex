@@ -313,36 +313,34 @@
 		polarización, y en la tabla \ref{tab:003} realizándolo en tensión 
 		dejando la frecuencia fija a 100Hz. \\
 		\indent Respecto a las incertidumbres de las mediciones, la pantalla las
-		especifica al 0.5\%. 
+		especifica al 0.05\%. 
 
-		% TODO 
-		\todo{calcular las incertidumbres en funcion de las formulas de mas arriba}
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|c|c|}
 				\hline
-				Frecuencia [KHz] & $C_{med}~\mu F$ & $\Delta C$ & 
-				$R_{med}~\Omega$ & $\Delta R$ \\
+				Frecuencia [KHz] & $C_{med}~\mu F$ & $\Delta C~\mu F$ & 
+				$R_{med}~\Omega$ & $\Delta R~\Omega$ \\
 				\hline
-				0.012 &	207.2 &  & 1.9 & \\
+				0.012 &	207.1 & 0.1 & 1.9 & 0.1 \\
 				\hline
-				0.120 &	197.66 &   & 0.57 & \\
+				0.120 &	198.7 & 0.1 & 0.57 & 0.03 \\
 				\hline
-				0.500 &	190.06 &   & 0.38 & \\
+				0.500 &	190.1 & 0.1 & 0.38 & 0.02 \\
 				\hline
-				1.000 &	186.1 &   &	0.35 & \\
+				1.000 &	186.1 & 0.1 & 0.35 & 0.02 \\
 				\hline
-				10.00 &	153.82 &   & 0.3 & \\
+				10.00 &	153.82 & 0.08 & 0.30 & 0.02 \\
 				\hline
-				20.00 &	126.3 &   &	0.3 & \\   
+				20.00 &	126.36 & 0.07 & 0.30 & 0.02 \\   
 				\hline
-				40.00 &	78.3 &   & 0.3 & \\
+				40.00 &	78.31 & 0.04 & 0.30 & 0.02 \\
 				\hline
-				50.00 &	61.1 &   & 0.3 & \\
+				50.00 &	61.13 & 0.04 & 0.30 & 0.02 \\
 				\hline
-				66.66 &	41.42 &   &	0.29 & \\
+				66.66 &	41.44 & 0.03 & 0.29 & 0.02 \\
 				\hline
-				100.0 &	21.69 &   &	0.29 & \\
+				100.0 &	21.71 & 0.02 & 0.29 & 0.02 \\
 				\hline	  
 			\end{tabular}
 			\caption{Barrido en frecuencia del capacitor electrolítico con RLC 
@@ -350,26 +348,24 @@
 			\label{tab:002}
 		\end{table}	
 		
-		% TODO 
-		\todo{calcular las incertidumbres segun la formula de mas arriba}
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|c|c|}
 				\hline
-				Tensión [V] & $C_{med}~\mu F$ & $\Delta C$ & $R_{med}~K\Omega$
-				& $\Delta R$\\
+				Tensión [V] & $C_{med}~\mu F$ & $\Delta C~\mu F$ & 
+				$R_{med}~K\Omega$ & $\Delta R~\Omega$\\
 				\hline
-				25 &	209.21 &   & 0.66 & \\
+				25 &	209 & 11 & 0.66 & 0.04 \\
 				\hline
-				22.3 &	206.67 &   & 0.65 & \\
+				22.3 &	206 & 11 & 0.65 & 0.04 \\
 				\hline
-				13.8 &	202.55 &   & 0.63 & \\
+				13.8 &	202 & 11 & 0.63 & 0.04 \\
 				\hline
-				6.9 &	200.5 &	  & 0.63 & \\
+				6.9 &	201 & 11 & 0.63 & 0.04 \\
 				\hline
-				2.6 &	198.7 &	  & 0.62 & \\
+				2.6 &	199 & 10 & 0.62 & 0.04 \\
 				\hline
-				0.6 &	198.82 &   & 0.62 & \\
+				0.6 &	199 & 10 & 0.62 & 0.04 \\
 				\hline	  
 			\end{tabular}
 			\caption{Barrido de tensión del capacitor electrolítico con RLC 
@@ -384,32 +380,34 @@
 		\indent La tabla \ref{tab:004} muestra cómo varían dichos parámetros en 
 		función de la frecuencia y la tabla \ref{tab:005} en función de la 
 		tensión.
-		
+		%todo
+		\todo{si uso las formulas o L o C me dan negativos.... no chequee las 
+		incertidumbres, como lo resolvemos huguito????}
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|c|c|c|c|}
 				\hline
-				Frecuencia [KHz] & $C_s~\mu F$ & $\Delta C_s$ & 
-				$L_s~mHy$  & $\Delta L_s~mHy$  & $R_s~\Omega$ & 
-				$\Delta R_s~\Omega$ \\
+				Frecuencia [KHz] & $C_s~[\mu F]$ & $\Delta C_s~[\mu F]$ & 
+				$L_s~[mHy]$  & $\Delta L_s~[mHy]$  & $R_s~[\Omega]$ & 
+				$\Delta R_s~[\Omega]$ \\
 				\hline
-				0.012 - 0.120 &	207.2 &  & 1.9 & \\
+				0.012 - 0.120 &	207.2 &  &  &  & 1.24 & 0.07 \\
 				\hline
-				0.120 - 0.500 &	197.66 &   & 0.57 & \\
+				0.120 - 0.500 &	197.66 &  &  &  & 0.48 & 0.03 \\
 				\hline
-				0.500 - 1.000 &	190.06 &   & 0.38 & \\
+				0.500 - 1.000 &	190.06 &  &  &  & 0.37 & 0.02 \\
 				\hline
-				1.000 - 10.00 &	186.1 &   &	0.35 & \\
+				1.000 - 10.00 &	186.1 &  &  &  & 0.33 & 0.02 \\
 				\hline
-				10.00 - 20.00 &	153.82 &   & 0.3 & \\
+				10.00 - 20.00 &	153.82 &  &  &  & 0.30 & 0.02 \\
 				\hline
-				20.00 - 40.00 &	126.3 &   &	0.3 & \\   
+				20.00 - 40.00 &	126.3 &  &  &  & 0.30 & 0.02 \\   
 				\hline
-				40.00 - 50.00 &	78.3 &   & 0.3 & \\
+				40.00 - 50.00 &	78.3 &  &  &  & 0.30 & 0.02 \\
 				\hline
-				50.00 - 66.66 &	61.1 &   & 0.3 & \\
+				50.00 - 66.66 &	61.1 &  &  &  & 0.30 & 0.02 \\
 				\hline
-				66.66 - 100.0 &	41.42 &   &	0.29 & \\
+				66.66 - 100.0 &	41.42 &  &  &  & 0.29 & 0.02 \\
 				%100.0 &	21.69 &   &	0.29 & \\
 				\hline	  
 			\end{tabular}
@@ -421,21 +419,21 @@
 			\centering
 			\begin{tabular}{|c|c|c|c|c|c|c|}
 				\hline
-				Tensión [V] & $C_s~\mu F$ & $\Delta C_s$ & 
-				$L_s~mHy$  & $\Delta L_s~mHy$  & $R_s~\Omega$ & 
-				$\Delta R_s~\Omega$ \\
+				Tensión [V] & $C_s~[\mu F]$ & $\Delta C_s~[\mu F]$ & 
+				$L_s~[mHy]$  & $\Delta L_s~[mHy]$  & $R_s~[\Omega]$ & 
+				$\Delta R_s~[\Omega]$ \\
 				\hline
-				25 &	209.21 &   & 0.66 & \\
+				25 &	209.21 &   & 0.66 & 0.04 \\
 				\hline
-				22.3 &	206.67 &   & 0.65 & \\
+				22.3 &	206.67 &   & 0.65 & 0.04 \\
 				\hline
-				13.8 &	202.55 &   & 0.63 & \\
+				13.8 &	202.55 &   & 0.63 & 0.04 \\
 				\hline
-				6.9 &	200.5 &	  & 0.63 & \\
+				6.9 &	200.5 &	  & 0.63 & 0.04 \\
 				\hline
-				2.6 &	198.7 &	  & 0.62 & \\
+				2.6 &	198.7 &	  & 0.62 & 0.04 \\
 				\hline
-				0.6 &	198.82 &   & 0.62 & \\
+				0.6 &	198.82 &   & 0.62 & 0.04 \\
 				\hline	  
 			\end{tabular}
 			\caption{Parámetros del capacitor en función de la tensión.} 
@@ -462,28 +460,28 @@
 			\centering
 			\begin{tabular}{|c|c|c|c|c|}
 				\hline
-				Frecuencia [KHz] & $C_{med}~\mu F$ & $\Delta C$ & 
-				$R_{med}~\Omega$ & $\Delta R$ \\
+				Frecuencia [KHz] & $C_{med}~[nF]$ & $\Delta C~[nF]$ & 
+				$R_{med}~[\Omega]$ & $\Delta R~[\Omega]$ \\
 				\hline
-				0.012 &	23.88 &   &	23.33 & \\
+				0.012 &	23.88 & 0.02 & 23.33 & 0.01 \\
 				\hline
-				0.120 &	23.29 &   &	0.76 & \\
+				0.120 &	23.29 & 0.02 & 0.76 & 0.01 \\
 				\hline
-				0.500 &	23.18 &   & 0.134 & \\
+				0.500 &	23.18 & 0.02 & 0.134 & 0.01 \\
 				\hline
-				1.000 &	23.1 &   &	0.064 & \\
+				1.000 &	23.10 & 0.02 & 0.064 & 0.001 \\
 				\hline
-				10.00 &	22.82 &   & 0.007 & \\
+				10.00 &	22.82 & 0.02 & 0.007 & 0.001 \\
 				\hline
-				20.00 &	22.71 &   & 0.0035 & \\
+				20.00 &	22.71 & 0.02 & 0.0035 & 0.001 \\
 				\hline
-				40.00 &	22.54 &   &	0.0018 & \\
+				40.00 &	22.54 & 0.02 & 0.0018 & 0.001 \\
 				\hline
-				50.00 &	22.48 &   &	0.0015 & \\
+				50.00 &	22.48 & 0.02 & 0.0015 & 0.001 \\
 				\hline
-				66.666 & 22.44 &   & 0.0012 & \\
+				66.666 & 22.44 & 0.02 & 0.0012 & 0.001 \\
 				\hline
-				100.0 &	22.53 &   &	0.001038 & \\
+				100.0 &	22.53 & 0.02 & 0.001038 & 0.000001 \\
 				\hline
 			\end{tabular}
 			\caption{Barrido de frecuencia del capacitor cerámico con RLC 
@@ -495,20 +493,20 @@
 			\centering
 			\begin{tabular}{|c|c|c|c|c|}
 				\hline
-				Tensión [V] & $C_{med}~\mu F$ & $\Delta C$ & $R_{med}~K\Omega$
-				& $\Delta R$\\
+				Tensión [V] & $C_{med}~[nF]$ & $\Delta C~[nF]$ & 
+				$R_{med}~[K\Omega]$ & $\Delta R~[K\Omega]$\\
 				\hline
-				25 &	0.019 &   & 1.26 & \\
+				25 &	19.01 & 0.02 & 1.26 & 0.01 \\
 				\hline
-				22.3 &	0.019 &   & 1.24 & \\
+				22.3 &	19.51 & 0.02 & 1.24 & 0.01 \\
 				\hline
-				13.8 &	0.022 &   & 1.29 & \\
+				13.8 &	22.02 & 0.02 & 1.29 & 0.01 \\
 				\hline
-				6.9 &	0.022 &	  & 1.27 & \\
+				6.9 &	22.22 & 0.02 & 1.27 & 0.01 \\
 				\hline
-				2.6 &	0.023 &	  & 1.3 & \\
+				2.6 &	23.20 & 0.02 & 1.3 & 0.01 \\
 				\hline
-				0.6 &	0.023 &   & 1.23 & \\
+				0.6 &	23.25 & 0.02 & 1.23 & 0.01 \\
 				\hline	  
 			\end{tabular}
 			\caption{Barrido de tensión del capacitor cerámico con RLC 
@@ -632,13 +630,18 @@
 		Check. \\
 		\indent Con este instrumento, para mediciones de resistencia la 
 		incerteza absoluta se calcula como
-		
-		$$\Delta R=\pm 4\%\cdot R_{fe}\pm(\frac{f}{30~MHz}+\frac{R}{25~k\Omega})\%\cdot R_{med}$$
+		\begin{equation}\label{modulo}
+			\Delta R=\pm 4\%\cdot R_{fe}\pm(\frac{f}{30~MHz}+\frac{R}{25~k
+			\Omega})\%\cdot R_{med}
+		\end{equation}
 		
 		\indent Mientras que para mediciones de \'angulo la incerteza absoluta 
 		se calcula como
 		
-		$$\Delta\phi=\pm(3+\frac{f}{30~MHz}+\frac{R}{25~k\Omega})$$
+		\begin{equation}\label{angulo} 
+			\Delta\phi=\pm(3+\frac{f}{30~MHz}+\frac{R}{25~k\Omega})
+		\end{equation}
+		
 		\todo[inline]{acabo de corregir las explresiones de error huguitoooooaaaaahhh
 		hay que corregirlas en todas las mediciones }
 		\indent Por otra parte las mediciones de impedancia incluyen tambi\'en 
@@ -980,24 +983,24 @@
 		y se midió la fase y la impedancia del circuito en dicho punto. La 
 		tabla \ref{tabbla} muestra los resultados
 
-		\todo[inline]{incertidumbreeees}
 		\begin{table}[!htp]
 			\centering
-			\begin{tabular}{|c|c|c|}
+			\begin{tabular}{|c|c|c|c|c|}
 				\hline
-				Parámetro & Valor & Incertdumbre absoluta \\
+				Frecuencia [kHz] & $X_{med}~[K\Omega]$ & 
+				$\Delta X_{med}~[K\Omega]$ & angulo [º] & $\Delta angulo~[º]$ \\
 				\hline
-				$C_p$ & $2.94~pF$ & \\
+				4500.04 & 5.2 & 0.4 & -i78 & 4 \\
 				\hline
-				$C_s$ & $10.6~fF$ & \\ 
+				4800.04 & 5.4 & 0.4 & -95 & 4 \\ 
 				\hline
-				$L_s$ & $5.98~mHy$ & \\
+				5200.04 & 2.6 & 0.2 & -162 & 4 \\
 				\hline
-				$R_s$ & $16.5~\Omega$ & \\ 
+				5500.05 & 1.05 & 0.2 & -122 & 4 \\ 
 				\hline									
-				$Q_p$ & $798054$ & \\
+				5800.04 & 1.2 & 0.2 & -98 & 4 \\
 				\hline
-				$Q_s$ & $44832$  & \\
+				6000.01 & 1.25 & 0.2 & -96 & 4 \\
 				\hline
 			\end{tabular}
 			\caption{Mediciones de la entrada del circuito con el 
@@ -1005,8 +1008,6 @@
 		\end{table}
 		
 		\subsubsection{Medición de un capacitor cerámico}
-		% todo 
-		\todo{hacer}
 		\indent A continuación se realizó la medición de un capacitor cerámico
 		de 22 nF, para ello, se colocó directamente el capacitor en la punta 
 		del impedancímetro. Como el equivalente del mismo es un circuito RLC 
@@ -1024,11 +1025,11 @@
 		fase 0. Se midió cuando hay $\pm 45º$ y en una frecuencia donde las fases
 		son $\pm 90º$ para determinar la inductancia y capacidad del equivalente.
 		\\
-		\indent la tabla \ref{unaTab} \todo[inline]{corregir el nombre de la 
-		referencia y en la tabla igual} muestra los valores medidos con sus 
-		respectivas incertidumbres. 
-		\indent Para determinar la incertidumbre de la medición 
-		\todo[inline]{buscar en manual las incertidumbres de la medición}
+		\indent la tabla \ref{unaTab} muestra los valores medidos con sus 
+		respectivas incertidumbres. \\
+		\indent Para determinar la incertidumbre de la medición se utiliza la 
+		fórmula del manual mostradas en las ecuaciones \ref{modulo} y 
+		\ref{angulo}
 		
 		\begin{table}[!htp]
 			\centering
@@ -1037,15 +1038,15 @@
 				Frecuencia [MHz] & $X_{med}~[\Omega] $ & $\Delta X_{med}$ & 
 				angulo [º] & $\Delta angulo$ [º] \\
 				\hline
-				0.500 & 14.5 &   &  -90 &  \\
+				0.500 & 14.5 & 1.2 & -90 & 3 \\
 				\hline
-				6.0 & 1.0 &   & -45 &  \\
+				6.0 & 1.0 & 0.4 & -45 & 4 \\
 				\hline
-				9.08854 & 0.8 &   & 0 &  \\ 
+				9.08854 & 0.8 & 0.4 & 0 & 4 \\ 
 				\hline
-				14.85 & 1.2 &   & 45 &  \\
+				14.85 & 1.2 & 0.4 & 45 & 4 \\
 				\hline
-				88.3 & 6.6 &   & 90 &  \\ 
+				88.3 & 6.6 & 0.6 & 90 & 6 \\ 
 				\hline									
 			\end{tabular}
 			\caption{Mediciones con el impedancímetro vectorial} \label{unaTab}
@@ -1056,34 +1057,35 @@
 		calcularon los valores de los componentes del modelo de la capacidad. \\
 		
 		\begin{align}\label{unaEcuacion}
-			L = \omega X_L
-			C = \frac{1}{\omega X_C}
+			L = \frac{X_L}{\omega} \nonumber \\
+			C = \frac{1}{\omega X_C} \nonumber
 		\end{align}
 
 		\indent Cabe destacar que como $R_s$ es muy chica, hay que tener en 
 		cuenta el efecto de carga que genera la punta del impedancímetro, la 
 		cual es de $0.5 \Omega$, por lo tanto hay que restar dicho valor en el
 		resultado. La tabla \ref{otraTab} muestra los resultados obtenidos.
-		\todo[inline]{agregar incertezas}	
+		
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|}
 				\hline
 				Parámetro & Valor & Incertidumbre Absoluta \\ 
 				\hline
-				$C_s$ & 22 nF & \\
+				$C_s$ & 22 nF & 2 nF \\
 				\hline
-				$L_s$ & 12 nHy & \\
+				$L_s$ & 12 nHy & 2 nHy \\
 				\hline
-				$R_s$ & 0.3 &  \\ 
+				$R_s$ & $0.3 \Omega$ & $0.4 \Omega$ \\ 
 				\hline
 			\end{tabular}
 			\caption{Mediciones con el impedancímetro vectorial} \label{unaTab}
 		\end{table}
 
-		\indent una conclusión
-		\todo[inline]{agregar algo sobre lo obtenido}
-		
+		\indent Se puede observar que la resistencia serie del capacitor es 
+		muy chica, por ende, la incertidumbre de la medición es muy grande, no 
+		se la puede determinar de forma exacta utilizando dicho instrumento, 
+		pero si se puede conocer de que magnitud es. 
 
 \section{Conclusiones}
 	\indent Viva Venezuela!\\
