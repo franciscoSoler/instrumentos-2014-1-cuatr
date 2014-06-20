@@ -79,10 +79,10 @@
 				$160~kHz~\pm~16~kHz\%$ &$ 5.33~\pm~1.07$ \\
 				\hline
 				PSA 6000& $3~kHz$& $32.5~kHz~\pm~\%$ & 
-				$3.5~kHz~\pm~\%$ &$ 9.29$ \\
+				$3.5~kHz~\pm~?\%$ &$ 9.29~\pm~?$ \\
 				\hline  
 				PSA 6000& $300~Hz$& $3.5~kHz~\pm~\%$ & 
-				$250~Hz~\pm~\%$ &$ 14$ \\
+				$250~Hz~\pm~?\%$ &$ 14~\pm~?$ \\
 				\hline  										 	  	  
 			\end{tabular}
 			\caption{Resultados obtenidos para los analizadores 5066 y PSA 6000} \label{selectividad}
@@ -117,13 +117,96 @@
 		%No esntendi mucho lo de la distorsión por. FRAN?			
 		\subsection{Distorsi\'on por intermodulaci\'on del analizador de espectro}
 		\subsection{Frecuencia de conversi\'on de un generador digital}
-		En esta secci\'on
-		%HUGO. Creeo que entendi lo de ruido de fase
+		Un generador de funciones digital, mediante un conversor digital-anal\'ogico, transforma una palabra de bits en un valor de tensi\'on. Evidentemente esta conversi\'on la realiza a determinada frecuencia ($125~MSa/s$), con lo cual es razonable que \'esta componente est\'e presente en el espectro de la se\~nal de salida del generador. En esta secci\'on, se busca obtener la frecuencia de convers\'on, $125~MHz$ y su amplitud respecto de la frecuencia de salida. En la Figura \ref{freqres} se puede ver la presencia de una componente residual que est\'a $88.5~dB~\pm~1.5~dB$ por debajo de la amplitud de la se\~nal de entrada que es de $0~dB~\pm~1.5~dB$. Como se esperaba su frecuencia es de $125~MHz~\pm~?~MHz$
+		\begin{figure}[!htb]
+				\centering
+				\includegraphics[width=8cm]
+				{Imagenes/SCREN448.PNG}
+				\caption{Espectro residual de la frecuencia del conversor digital-anal\'ogico del generador de se\~nales.}
+				\label{freqres} 
+		\end{figure}
+		
+		%HUGO. Preguntar phase noise
 		\subsection{Ruido de fase}
 		\subsection{Modulaci\'on AM}
 		%HUGO. Las funciones de Bessel de FM son para mi jeje
 		\subsection{Modulaci\'on FM}
+		Se puede demostrar que en una modulaci\'on FM, si la entrada a modular es del tipo $f_{in}=a\cdot \cos(w_{in}\cdot t)$, la se\~nal modulada es 
+		$$\phi(t)=A\cdot\sum_{n=-\infty}^{+\infty}J_n(m_f)\cos((w_c+n\cdot w_{in})\cdot t)$$
+		Donde $J_n(\cdot)$ es la funci\'on de Bessel de orden $n$ y $m_f$ es el \'indice de modulaci\'on. En la Figura \ref{bessel} se puede observar los gr\'aficos de la funci\'on de Bessel hasta el orden 5.
+		\begin{figure}[!htb]
+				\centering
+				\includegraphics[width=8cm]
+				{Imagenes/bessel.PNG}
+				\caption{Funciones de Bessel.}
+				\label{bessel} 
+		\end{figure}\\
+		Es decir que el espectro de salida ideal consiste en deltas ubicadas en $f=f_c,f_c\pm f_{in},f_c\pm 2f_{in},...$, cuyo pesao est\'a dado por $J_0(m_f),J_1(m_f),J_2(m_f),...$ respectivamente.
+		Se propone encontrar los primeros dos ceros de la funci\'on de Bessel de orden 0. Esto se puede conseguir conectando un generador de modulaci\'on FM (Siglent SDG1050) al analizador de espectro PSA 6000 y modificando el \'indice de modulaci\'on hasta que la frecuencia portadora desaparezca (es decir, que $J_0(m_f)=0$).
+		El primer cero se consigue cuando $f_{\mbox{desv\'io}}=4.8~kHz$, es decir cuando $m_f=\frac{f_{\mbox{desv\'io}}}{f_{\mbox{modulaci\'on}}}=\frac{4.8~kHz}{2~kHz}=2.4$. El cual es un valor bastante exacto, ya que matem\'aticamente el primer cero se encuentra en $z_1=2.4048$
+		El segundo cero se encuentra cuando $f_{\mbox{desv\'io}}11.04~kHz$, es decir cuando $m_f==\frac{11.04~kHz}{2~kHz}=5.52$. Tambi\'en en este caso, el resultado obtenido es muy cercano al real, el cual es de $z_2=5.5201$
+		Por otra parte en esta secci\'on se busca comprobar la ley emp\'irica de Carson, la cual postula que el $98\%$ de la potencia de una se\~nal est\'a comprendida dentro de un ancho de banda de
+		$$BW=2\cdot(f_{\mbox{desv\'io}}+f_{\mbox{modulaci\'on}})$$.
+		
+		En las Figuras \ref{FM48}, \ref{FM10} y \ref{FM18}, se pueden ver los espectros obtenidos para modulaciones FM con $f_{\mbox{desv\'io}}=4.8~kHz$, $f_{\mbox{desv\'io}}=10~kHz$ y $f_{\mbox{desv\'io}}=18~kHz$, respectivamente. El analizador de espectro posee una funcionalidad que permite setear un porcentaje de potencia de la se\~nal modulada y devuelve el ancho de banda asociado a esa potencia.
+		
+		En la Tabla \ref{carson}, se pueden observar los resultados obtenidos utilizando el analizador de espetro para obtener el ancho de banda que contiene el $95\%$ de la potencia y el que se obtiene usando la regla de Carson.
+		
+		
+		
+		\begin{figure}[!htb]
+				\centering
+				\includegraphics[width=8cm]
+				{Imagenes/SCREN460.PNG}
+				\caption{Espectro de una modulaci\'on FM, con $f_{\mbox{modulaci\'on}}=2~kHz$ y $f_{\mbox{desv\'io}}=4.8~kHz$.}
+				\label{FM48} 
+		\end{figure}		
+		
+		\begin{figure}[!htb]
+				\centering
+				\includegraphics[width=8cm]
+				{Imagenes/SCREN461.PNG}
+				\caption{Espectro de una modulaci\'on FM, con $f_{\mbox{modulaci\'on}}=2~kHz$ y $f_{\mbox{desv\'io}}=10~kHz$.}
+				\label{FM10} 
+		\end{figure}		
+		
+		\begin{figure}[!htb]
+				\centering
+				\includegraphics[width=8cm]
+				{Imagenes/SCREN462.PNG}
+				\caption{Espectro de una modulaci\'on FM, con $f_{\mbox{modulaci\'on}}=2~kHz$ y $f_{\mbox{desv\'io}}=18~kHz$.}
+				\label{FM18} 
+		\end{figure}
+				\begin{table}[!htp]
+					\centering
+					\begin{tabular}{|c|c|c|c|}
+						\hline
+						$f_{\mbox{modulaci\'on}}$ & $f_{\mbox{desv\'io}}$ & $BW(Carson)$ & $BW(PSA 6000)$\\
+						\hline
+						$2~kHz$ & $4.8~kHz$& $13.6~kHz$ & $12~kHz$\\
+						\hline
+						$2~kHz$ & $10~kHz$& $24~kHz$ & $21.6~kHz$\\
+						\hline
+						$2~kHz$ & $18~kHz$& $40~kHz$ & $37.5~kHz$\\
+						\hline						
+						\hline
+					\end{tabular}
+					\caption{Resultados obtenidos para calcular el ancho de banda de potencia} \label{carson}
+				\end{table}	
+		Como era  esperado, de la Tabla puede notarse  que el ancho de banda obtenido usando la regla de Carson es pr\'oximo al obtenido con el analizador de espectro. Por otra parte, debe notarse que el ancho de banda obtenido usando la regla de Carson es mayor, lo cual es l\'ogico pues la potencia de la se\~nal que abarca ($98\%$) es mayor que el que se calcula con el analizador de espectro ($95\%$).
 		\subsection{Figura de ruido}
+		La figura de ruido de un dispositivo se define como la degradaci\'on de la relaci\'on se\~nal a ruido, que sufre una se\~nal cuando para a trav\'es de un dispositivo. Matem\'aticamente puede expresarse como $$F=\frac{\frac{S_i}{N_i}}{\frac{S_o}{N_o}}$$
+		Para el analizador de espectro, \'esta expresi\'on puede simplificarse ya que la ganancia del analizador es unitaria con lo cual $\frac{S_o}{S_i}=1$ entonces
+		$$F=\frac{N_o}{N_i}$$
+		Colocando a la entrada del analizador de espectro una carga de $50\Omega$, el ruido a la entrada se convierte en 
+		$$N_i=kTB=-174~dBm$$,
+		\begin{figure}[!htb]
+				\centering
+				\includegraphics[width=8cm]
+				{Imagenes/SCREN464.PNG}
+				\caption{Ruido a la salida  analizador de espectro.}
+				\label{noise} 
+		\end{figure}
 	\section{Conclusiones}
 	\indent
 \end{document}
