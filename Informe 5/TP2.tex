@@ -50,8 +50,9 @@
 		instrumentos:
 		\begin{itemize}
 			\item Analizador de espectro HM 5006
-			\item Analizador de espectro LPT 6000
+			\item Analizador de espectro PSA 6000
 			\item Generador de funciones Agilent N9310A
+			\item Generador de funciones Siglent SDG1050
 			\item Cable coaxil para conexi\'on de los instrumentos
 		\end{itemize}	
 		%HUGO
@@ -60,43 +61,63 @@
 		Sin embargo, si las se\~nales es\'an separadas en la frecuencia de resoluci\'on pero con diferente amplitud puede ocurrir que una quede enmascarada dentro de la otra. De esta manera surge otra especificaci\'on que es la selectividad, la cual se define como la relaci\'on entre el ancho de banda cuando la respuesta cae $60~dB$ y cuando cae $3~dB$. Matem\'aticamente 
 		$$S=\frac{BW(-60~dB)}{BW(-3~dB)}$$
 	
-		En esta secci\'on se obtiene la selectividad de los analizadores de espectro HM5006 y PSA 6000 con diferentes resoluciones. Para ello se conectan por medio de un cable coaxil a un generador Agilent N9310A que produce un se\~nal senoidal. En la Tabla \ref{selectividad} se puede observar los resultados obtenidos.
+		En esta secci\'on se obtiene la selectividad de los analizadores de espectro HM 5006 y PSA 6000 con diferentes resoluciones. Para ello se conectan por medio de un cable coaxil a un generador Agilent N9310A que produce un se\~nal senoidal de $100~MHz$. En la Tabla \ref{selectividad} se puede observar los resultados obtenidos. En la Figura \ref{Selec} se pueden observar los espectros obtenidos por el analizador PSA 6000, utilizando resoluciones diferentes.
+		La incerteza relativa de la frecuencia en el analizador HM 5006 es del $10\%$, mientras que la  del analizador PSA 6000 sigue la siguente f\'ormula
+		$$\Delta f=\pm\left(f\cdot \%_{ref} +3\%\cdot Span+50\%\cdot RBW \right)$$
+		%Cual es el \%_{ref}, el manual lo nombra una sola vez jajaja pero no dice que valor tiene.
 		
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|c|c|}
 				\hline
-				Analizador & Resoluci\'on & $BW(-60~dB)$ & $BW(-30~dB)$ & Selectividad \\
+				Analizador & Resoluci\'on & $BW(-60~dB)$ & $BW(-3~dB)$ & Selectividad \\
 				\hline
-				$13.3~MHz~\pm1.5\%$& $25~pF~\pm0.1pF$& $182~\pm7\%$ & 
-				$5.73~\mu Hy~\pm3.40\%$ &$ 2.63~\Omega~\pm8.5\%$ \\
+				HM 5006 & $250~kHz$& $300~kHz~\pm~30~kHz$ & 
+				$900~kHz~\pm~90~kHz\%$ &$ 3~\pm~0.6$ \\
 				\hline
-				$10.7~MHz~\pm1.5\%$& $40~pF~\pm0.1pF$& $200~\pm7\%$ & 
-				$5.54~\mu Hy~\pm3.25\%$ &$ 1.86~\Omega~\pm8.5\%$ \\
+				HM 5006 & $20~kHz$& $30~kHz~\pm~3~kHz\%$ & 
+				$160~kHz~\pm~16~kHz\%$ &$ 5.33~\pm~1.07$ \\
 				\hline
-				$9.6~MHz~\pm1.5\%$& $50~pF~\pm0.1pF$& $200~\pm7\%$ & 
-				$5.50~\mu Hy~\pm3.20\%$ &$ 1.66~\Omega~\pm8.5\%$ \\
+				PSA 6000& $3~kHz$& $32.5~kHz~\pm~\%$ & 
+				$3.5~kHz~\pm~\%$ &$ 9.29$ \\
 				\hline  
-				$6.9~MHz~\pm1.5\%$& $100~pF~\pm0.1pF$& $195~\pm7\%$ & 
-				$5.33~\mu Hy~\pm3.10\%$ &$ 1.18~\Omega~\pm8.5\%$ \\
+				PSA 6000& $300~Hz$& $3.5~kHz~\pm~\%$ & 
+				$250~Hz~\pm~\%$ &$ 14$ \\
 				\hline  										 	  	  
 			\end{tabular}
-			\caption{Mediciones con el Q-metro} \label{selectividad}
+			\caption{Resultados obtenidos para los analizadores 5066 y PSA 6000} \label{selectividad}
 		\end{table}	
+		\begin{figure}[!htb]
+				\centering
+				\includegraphics[width=8cm]
+				{Imagenes/SCREN443.PNG}
+				\caption{Espectros obtenidos con $RBW=300~Hz$ (en amarillo) y con $RBW=3~kHz$ (en celeste)}
+				\label{Selec} 
+		\end{figure}		
+		
 		%HUGO. Me encanta la THD 
 		\subsection{Distorsi\'on arm\'onica de un generador de funciones}
-				\indent En la Figura \ref{img001}
-				\begin{figure}[!htb]
-						\centering
-						\includegraphics[width=8cm]
-						{Imagenes/SCREN443.PNG}
-						\caption{Medici\'on para la resistencia de $10k\Omega$. La 
-						referencia (en blanco) esta graficada con la l\'inea abierta.}
-						\label{img001} 
-				\end{figure}
+		Cuando un sistema no lineal tiene una entrada que consiste en una se\~al senoidal de frecuencia $f_0$, a la salida de este sistema las frecuencia presentes son $f_0$ y m\'ultiplos de esta frecuencia $2f_0$,$3f_0$, etc, llamados arm\'onicos de la fundamental $f_0$.
+		De esta manera se define la distorsi\'on arm\'onica cuyo valor da una idea de qu\'e tan lineal es el sistema y se define como
+		$$THD=\frac{\sum_{n=1}^{+\infty}a^2_n}{a^2_0}$$
+		Donde $a_n$ son los coeficientes de la serie de Fourier de cada componente de frecuencia $f_n$.
+		En esta secci\'on se mide la THD del generador de funciones N9310A. Para ello se conecta el generador al analizador de espectros PSA 6000 por medio de un cable coaxil. La se\~nal del generador tiene una frecuencia de $500~MHz$. En la Figura \ref{THD} se puede observar las componentes espectrales de la se\~nal.
+		\begin{figure}[!htb]
+				\centering
+				\includegraphics[width=8cm]
+				{Imagenes/SCREN445.PNG}
+				\caption{Frecuencia fundamental y primeros dos arm\'onicos de la se\~nal generada por el N9310A.}
+				\label{THD} 
+		\end{figure}
+		Con lo cual puede calcularse la distrosi\'on, despreciando los arm\'onicos superiores al segundo
+		$$THD=\frac{a^2_1+a^2_2}{a^2_0}$$
+		$$THD=\frac{10^{\frac{-51.35}{5}}+10^{\frac{-65.24}{5}}}{10^{\frac{-12.89}{5}}}=10^{-7}$$
+		%'No se si poner aca incerteza, creo que es más importante lo de abajo que es lo que espeficica el manual'. La verdad: Paja jajaja
+		La cual es una distorsi\'on bastante baja. Por otra parte, el fabricante del generador asegura que las amplitudes de los arm\'onicos se encuentran $30~dB$ por debajo de la amplitud de la fundamental. Esto es f\'acil de comprobar ya que $A_0-A_1=(-12.89~dB\pm~1.5~dB)-(-51.35~dB\pm~1.5~dB)=38.46~dB~\pm~3~dB$, en cuyo peor ($35.46~~\pm~dB$) caso es mayor a lo especificado.
 		%No esntendi mucho lo de la distorsión por. FRAN?			
 		\subsection{Distorsi\'on por intermodulaci\'on del analizador de espectro}
 		\subsection{Frecuencia de conversi\'on de un generador digital}
+		En esta secci\'on
 		%HUGO. Creeo que entendi lo de ruido de fase
 		\subsection{Ruido de fase}
 		\subsection{Modulaci\'on AM}
@@ -106,4 +127,6 @@
 	\section{Conclusiones}
 	\indent
 \end{document}
+
+
 
