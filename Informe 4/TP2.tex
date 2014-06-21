@@ -105,8 +105,6 @@
 		\indent En la Tabla \ref{tab:001} se muestran los resultados obtenidos
 		para un inductor realizando un barrido de frecuencias.
 		
-		%todo 
-		\todo[inline]{cambiar las incertidumbres a absolutas}
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|c|c|}
@@ -179,41 +177,35 @@
 		valor se calcula empleando las f\'ormulas utilizadas previamente, este 
 		valor figura en una segunda pantalla del instrumento y su incerteza se 
 		especifica al $0.05\%$
-		%TODO 
-		\todo[inline]{huguito en la tabla tenes +- 0,5\%, eso está mal, tenés que 
-		espcificarlo con el valor absoluto manteniendo las unidades
-		de donde sale la incertidumbre relativa 0.05\%? en el cuadro tenés 0.5\%
-		fijate en el manuaaaaaaaaaaaaaaal, una vez que esta encendido 30minutos
-		y a temperatura entre 18 y 28 te dice que todo tiene esa incertidumbre 
-		relativa.}
+		
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|c|}
 				\hline
 				Frecuencia & Q & L  & R (calculado) \\
 				\hline
-				$100.000~kHz$& $36.58~\pm0.5\%$ & $5.23~\mu Hy~\pm0.5\%$ &
+				$100.000~kHz$& $36.58~\pm0.05\%$ & $5.23~\mu Hy~\pm0.05\%$ &
 				$ 89.8~m\Omega$ \\
 				\hline
-				$66.660~kHz$& $29.44~\pm0.5\%$ & $5.26~\mu Hy~\pm0.5\%$ &
+				$66.660~kHz$& $29.44~\pm0.05\%$ & $5.26~\mu Hy~\pm0.05\%$ &
 				$ 74.8~m\Omega$ \\
 				\hline
-				$50.000~kHz$& $25.11~\pm0.5\%$ & $5.29~\mu Hy~\pm0.5\%$ &
+				$50.000~kHz$& $25.11~\pm0.05\%$ & $5.29~\mu Hy~\pm0.05\%$ &
 				$ 66.2~m\Omega$ \\
 				\hline  
-				$40.000~kHz$& $22.42~\pm0.5\%$ & $5.31~\mu Hy~\pm0.5\%$ &
+				$40.000~kHz$& $22.42~\pm0.05\%$ & $5.31~\mu Hy~\pm0.05\%$ &
 				$ 59.5~m\Omega$ \\
 				\hline  										
-				$28.572~kHz$& $19.07~\pm0.5\%$ & $5.35~\mu Hy~\pm0.5\%$ &
+				$28.572~kHz$& $19.07~\pm0.05\%$ & $5.35~\mu Hy~\pm0.05\%$ &
 				$ 50.4~m\Omega$ \\
 				\hline
-				$20.000~kHz$& $16.10~\pm0.5\%$ & $5.40~\mu Hy~\pm0.5\%$ &
+				$20.000~kHz$& $16.10~\pm0.05\%$ & $5.40~\mu Hy~\pm0.05\%$ &
 				$ 42.1~m\Omega$ \\
 				\hline  
-				$10.000~kHz$& $10.78~\pm0.5\%$ & $5.46~\mu Hy~\pm0.5\%$ &
+				$10.000~kHz$& $10.78~\pm0.05\%$ & $5.46~\mu Hy~\pm0.05\%$ &
 				$ 31.8~m\Omega$ \\
 				\hline 										
-				$1.000~kHz$& $1.36~\pm0.5\%$ & $5.53~\mu Hy~\pm0.5\%$ &
+				$1.000~kHz$& $1.36~\pm0.05\%$ & $5.53~\mu Hy~\pm0.05\%$ &
 				$ 25.5~m\Omega$ \\
 				\hline 	  
 			\end{tabular}
@@ -284,11 +276,8 @@
 				{\frac{\omega_1^2}{C_{med2}} - \frac{\omega_2^2}{C_{med1}}}
 		\end{equation}
 
-		\indent Para poder determinar la incertidumbre se utiliza el teorema 
-		% TODO 
-		\todo{choto este que te dicen en numérico (huguito decime el nombre que
-		no lo se XD) }
-		el cual se muestra en la ecuación \ref{eq:006}
+		\indent Para poder determinar la incertidumbre se utiliza la expresión 
+		que se muestra en la ecuación \ref{eq:006}
 
 		\begin{equation}\label{eq:006}
 			\Delta f = 	|\frac{\partial f}{\partial x_1}|\Delta x_1 + ... + 
@@ -324,23 +313,23 @@
 				\hline
 				0.012 &	207.1 & 0.1 & 1.9 & 0.1 \\
 				\hline
-				0.120 &	198.7 & 0.1 & 0.57 & 0.03 \\
+				0.120 &	198.7 & 0.1 & 0.57 & 0.01 \\
 				\hline
-				0.500 &	190.1 & 0.1 & 0.38 & 0.02 \\
+				0.500 &	190.1 & 0.1 & 0.38 & 0.01 \\
 				\hline
-				1.000 &	186.1 & 0.1 & 0.35 & 0.02 \\
+				1.000 &	186.1 & 0.1 & 0.35 & 0.01 \\
 				\hline
-				10.00 &	153.82 & 0.08 & 0.30 & 0.02 \\
+				10.00 &	153.82 & 0.08 & 0.30 & 0.01 \\
 				\hline
-				20.00 &	126.36 & 0.07 & 0.30 & 0.02 \\   
+				20.00 &	126.36 & 0.07 & 0.30 & 0.01 \\   
 				\hline
-				40.00 &	78.31 & 0.04 & 0.30 & 0.02 \\
+				40.00 &	78.31 & 0.04 & 0.30 & 0.01 \\
 				\hline
-				50.00 &	61.13 & 0.04 & 0.30 & 0.02 \\
+				50.00 &	61.13 & 0.04 & 0.30 & 0.01 \\
 				\hline
-				66.66 &	41.44 & 0.03 & 0.29 & 0.02 \\
+				66.66 &	41.44 & 0.03 & 0.29 & 0.01 \\
 				\hline
-				100.0 &	21.71 & 0.02 & 0.29 & 0.02 \\
+				100.0 &	21.71 & 0.02 & 0.29 & 0.01 \\
 				\hline	  
 			\end{tabular}
 			\caption{Barrido en frecuencia del capacitor electrolítico con RLC 
@@ -352,20 +341,20 @@
 			\centering
 			\begin{tabular}{|c|c|c|c|c|}
 				\hline
-				Tensión [V] & $C_{med}~\mu F$ & $\Delta C~\mu F$ & 
-				$R_{med}~K\Omega$ & $\Delta R~\Omega$\\
+				Tensión [V] & $C_{med}~[\mu F]$ & $\Delta C~[\mu F]$ & 
+				$R_{med}~[K\Omega]$ & $\Delta R~[\Omega]$\\
 				\hline
-				25 &	209 & 11 & 0.66 & 0.04 \\
+				25 &	209 & 0.1 & 0.660 & 0.4 \\
 				\hline
-				22.3 &	206 & 11 & 0.65 & 0.04 \\
+				22.3 &	206 & 0.1 & 0.651 & 0.4 \\
 				\hline
-				13.8 &	202 & 11 & 0.63 & 0.04 \\
+				13.8 &	202 & 0.1 & 0.634 & 0.4 \\
 				\hline
-				6.9 &	201 & 11 & 0.63 & 0.04 \\
+				6.9 &	201 & 0.1 & 0.632 & 0.4 \\
 				\hline
-				2.6 &	199 & 10 & 0.62 & 0.04 \\
+				2.6 &	199 & 0.1 & 0.628 & 0.4 \\
 				\hline
-				0.6 &	199 & 10 & 0.62 & 0.04 \\
+				0.6 &	199 & 0.1 & 0.625 & 0.4 \\
 				\hline	  
 			\end{tabular}
 			\caption{Barrido de tensión del capacitor electrolítico con RLC 
@@ -380,76 +369,55 @@
 		\indent La tabla \ref{tab:004} muestra cómo varían dichos parámetros en 
 		función de la frecuencia y la tabla \ref{tab:005} en función de la 
 		tensión.
-		%todo
-		\todo{si uso las formulas o L o C me dan negativos.... no chequee las 
-		incertidumbres, como lo resolvemos huguito????}
+		
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|c|c|c|c|}
 				\hline
 				Frecuencia [KHz] & $C_s~[\mu F]$ & $\Delta C_s~[\mu F]$ & 
-				$L_s~[mHy]$  & $\Delta L_s~[mHy]$  & $R_s~[\Omega]$ & 
+				$L_s~[\mu Hy]$  & $\Delta L_s~[\mu Hy]$  & $R_s~[\Omega]$ & 
 				$\Delta R_s~[\Omega]$ \\
 				\hline
-				0.012 - 0.120 &	207.2 &  &  &  & 1.24 & 0.07 \\
+				0.012 - 0.120 &	207.1 & 0.1 & -358 & 9 & 1.24 & 0.07 \\
 				\hline
-				0.120 - 0.500 &	197.66 &  &  &  & 0.48 & 0.03 \\
+				0.120 - 0.500 &	199.3 & 0.2 & -24.5 & 0.6 & 0.48 & 0.03 \\
 				\hline
-				0.500 - 1.000 &	190.06 &  &  &  & 0.37 & 0.02 \\
+				0.500 - 1.000 &	191.5 & 0.2 & -3.9 & 0.2 & 0.37 & 0.02 \\
 				\hline
-				1.000 - 10.00 &	186.1 &  &  &  & 0.33 & 0.02 \\
+				1.000 - 10.00 &	186.5 & 0.1 & -0.289 & 0.002 & 0.33 & 0.02 \\
 				\hline
-				10.00 - 20.00 &	153.82 &  &  &  & 0.30 & 0.02 \\
+				10.00 - 20.00 &	165.8 & 0.2 & -0.1195 & 0.0007 & 0.30 & 0.02 \\
 				\hline
-				20.00 - 40.00 &	126.3 &  &  &  & 0.30 & 0.02 \\   
+				20.00 - 40.00 &	158.7 & 0.2 & -0.1025 & 0.0003 & 0.30 & 0.02 \\
 				\hline
-				40.00 - 50.00 &	78.3 &  &  &  & 0.30 & 0.02 \\
+				40.00 - 50.00 &	157 & 1 & -0.1012 & 0.0005 & 0.30 & 0.02 \\
 				\hline
-				50.00 - 66.66 &	61.1 &  &  &  & 0.30 & 0.02 \\
+				50.00 - 66.66 &	158 & 2 & -0.1015 & 0.0004 & 0.30 & 0.02 \\
 				\hline
-				66.66 - 100.0 &	41.42 &  &  &  & 0.29 & 0.02 \\
-				%100.0 &	21.69 &   &	0.29 & \\
+				66.66 - 100.0 &	151 & 2 & -0.1000 & 0.0003 & 0.29 & 0.02 \\
 				\hline	  
 			\end{tabular}
 			\caption{Parámetros del capacitor en función de la frecuencia.} 
 			\label{tab:004}
 		\end{table}	
-
-		\begin{table}[!htp]
-			\centering
-			\begin{tabular}{|c|c|c|c|c|c|c|}
-				\hline
-				Tensión [V] & $C_s~[\mu F]$ & $\Delta C_s~[\mu F]$ & 
-				$L_s~[mHy]$  & $\Delta L_s~[mHy]$  & $R_s~[\Omega]$ & 
-				$\Delta R_s~[\Omega]$ \\
-				\hline
-				25 &	209.21 &   & 0.66 & 0.04 \\
-				\hline
-				22.3 &	206.67 &   & 0.65 & 0.04 \\
-				\hline
-				13.8 &	202.55 &   & 0.63 & 0.04 \\
-				\hline
-				6.9 &	200.5 &	  & 0.63 & 0.04 \\
-				\hline
-				2.6 &	198.7 &	  & 0.62 & 0.04 \\
-				\hline
-				0.6 &	198.82 &   & 0.62 & 0.04 \\
-				\hline	  
-			\end{tabular}
-			\caption{Parámetros del capacitor en función de la tensión.} 
-			\label{tab:005}
-		\end{table}	
-		\indent Como se puede observar, el capacitor se comporta como una bobina
-		a frecuencias a partir de 
-		%Todo
-		\todo{terminar}
+		
+		\indent Como se puede apreciar en la tabla \ref{tab:004}, $L_s$ dió 
+		negativa, esto no tiene sentido físico. Se cometió un error grosero en 
+		la medición, la cual fue no calibrar el RLC para que anule los efectos 
+		del cable de conexión. Por lo tanto el modelo del circuito a medir ya no
+		es más el equivalente de solo un capacitor. \\
+		\indent En la tabla \ref{tab:003} se midió cómo varía la capacidad en 
+		función de la tensión, como se hizo a una frecuencia de 100 Hz, se puede
+		despreciar el efecto inductivo que tiene el modelo, dado que es a una 
+		frecuencia menor a la resonancia serie. Se puede apreciar una variación 
+		bastante apreciable, alrededor del 5\% del valor total.
+		
 		\subsubsection{Capacidad de un capacitor cer\'amico}
 		\indent Las mediciones son realizadas utilizando el mismo procedimiento
 		que en la sección anterior, barrido en frecuencia dejando la tensión 
 		fija y barrido en tensión dejando la frecuencia fija en 100 KHz esta 
 		vez. \\
-		%TODO 
-		\todo{cambiar los valores de referencia!!!}
+		
 		\indent Las fórmulas para calcular la $L_s$, $C_s$ y sus incertidumbres 
 		son las ecuaciones \ref{eq:003}, \ref{eq:005} y \ref{eq:007} 
 		respectivamente. \\
@@ -519,77 +487,48 @@
 		(\ref{eq:003}, \ref{eq:005} y \ref{eq:007}) se obtienen los valores de
 		la capacidad e inductancia serie del modelo RLC serie del capacitor. \\
 		\indent La tabla \ref{tab:008} muestra cómo varían dichos parámetros en 
-		función de la frecuencia y la tabla \ref{tab:009} en función de la 
-		tensión.
+		función de la frecuencia.
 		
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|c|c|c|c|}
 				\hline
-				Frecuencia [KHz] & $C_s~\mu F$ & $\Delta C_s$ & 
+				Frecuencia [KHz] & $C_s~\mu F$ & $\Delta C_s~[pF]$ & 
 				$L_s~mHy$  & $\Delta L_s~mHy$  & $R_s~\Omega$ & 
 				$\Delta R_s~\Omega$ \\
 				\hline
-				0.012 - 0.120 &	207.2 &  & 1.9 & \\
+				0.012 - 0.120 &	23.89 & 21 & -1885 & 128 & 1.9 & \\
 				\hline
-				0.120 - 0.500 &	197.66 &   & 0.57 & \\
+				0.120 - 0.500 &	23.30 & 23 & -22 & 8 & 0.57 & \\
 				\hline
-				0.500 - 1.000 &	190.06 &   & 0.38 & \\
+				0.500 - 1.000 &	23.21 & 34 & -5 & 3 & 0.38 & \\
 				\hline
-				1.000 - 10.00 &	186.1 &   &	0.35 & \\
+				1.000 - 10.00 &	23.10 & 21 & -0.14 & 0.02 & 0.35 & \\
 				\hline
-				10.00 - 20.00 &	153.82 &   & 0.3 & \\
+				10.00 - 20.00 &	22.86 & 34 & -0.0179 & 0.007 & 0.3 & \\
 				\hline
-				20.00 - 40.00 &	126.3 &   &	0.3 & \\   
+				20.00 - 40.00 &	22.77 & 34 & -0.007 & 0.002 & 0.3 & \\   
 				\hline
-				40.00 - 50.00 &	78.3 &   & 0.3 & \\
+				40.00 - 50.00 &	22.65 & 93 & -0.003 & 0.003 & 0.3 & \\
 				\hline
-				50.00 - 66.66 &	61.1 &   & 0.3 & \\
+				50.00 - 66.66 &	22.53 & 72 & -0.001 & 0.001 & 0.3 & \\
 				\hline
-				66.66 - 100.0 &	41.42 &   &	0.29 & \\
-				%100.0 &	21.69 &   &	0.29 & \\
+				66.66 - 100.0 &	22.37 & 52 & 0.0008 & 0.0003 & 0.29 & \\
 				\hline	  
 			\end{tabular}
 			\caption{Parámetros del capacitor en función de la frecuencia.} 
 			\label{tab:008}
 		\end{table}	
 
-		\begin{table}[!htp]
-			\centering
-			\begin{tabular}{|c|c|c|c|c|c|c|}
-				\hline
-				Tensión [V] & $C_s~\mu F$ & $\Delta C_s$ & 
-				$L_s~mHy$  & $\Delta L_s~mHy$  & $R_s~\Omega$ & 
-				$\Delta R_s~\Omega$ \\
-				\hline
-				25 &	209.21 &   & 0.66 & \\
-				\hline
-				22.3 &	206.67 &   & 0.65 & \\
-				\hline
-				13.8 &	202.55 &   & 0.63 & \\
-				\hline
-				6.9 &	200.5 &	  & 0.63 & \\
-				\hline
-				2.6 &	198.7 &	  & 0.62 & \\
-				\hline
-				0.6 &	198.82 &   & 0.62 & \\
-				\hline	  
-			\end{tabular}
-			\caption{Parámetros del capacitor en función de la tensión.} 
-			\label{tab:009}
-		\end{table}	
-		\indent Como se puede observar y a modo de comparacion con las 
-		mediciones realizadas en el apartado anterior, el capacitor se 
-		comporta como una bobina a una frecuencia \todo[inline]{insertar frecuencia},
-		la cual es  mucho mayor que el capacitor electrolítico. \\
+		\indent Como se puede apreciar, también la inductancia calculada 
+		presenta un valor negativo, se le atribuye al mismo error grosero 
+		cometido anteriormente, dado que ambas mediciones se realizaron de forma
+		continuada. \\ 
 		\indent En la medición de la respuesta en función de la variación de 
-		tensión de alimentación no se observa un cambio apreciable en los 
-		parámetros.
-		%Todo
-		\todo{terminar}
-% TODO 
-		\todo{terminar de poner las incertezas en las tablas, calcular y... 
-		poner el resultado, hacer un promedio despues??? o no?}
+		tensión de alimentación no se observan cambios apreciables en los 
+		parámetros, a diferencia del capacitor electrolítico, en el cual la 
+		variación era del 5\%.
+	
 	\subsection{Mediciones con el puente de impedancias}
 		\subsubsection{Inductancia de una bobina con n\'ucleo de aire}
 		\indent Para esta medición se conectó directamente la bobina al puente, 
@@ -848,8 +787,7 @@
 		chica, hay que restar $0.5\Omega$ del efecto de carga de la punta. \\
 		\indent Un gráfico típico de la impeancia de entrada de un xtal en 
 		función de la frecuencia se observa en la imagen \ref{img005}.
-		%TODO 
-		\todo{cambiar la imagen por la real del xtal en func de la frec }
+		
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=8cm]{Imagenes/curvaCaractXtal.png}
@@ -890,27 +828,27 @@
 		\indent Para realizar la medición de los parámetros se utiliza el 
 		impedancímetro vectorial (hp 4815A), el cual mide la fase y el módulo de
 		la impedancia. Los valores obtenidos se vuelcan en la tabla \ref{tab003}
-		% TODO 
-		\todo{faltan incetridumbres}
+		
 		\begin{table}[!htp]
 			\centering
-			\begin{tabular}{|c|c|c|}
+			\begin{tabular}{|c|c|c|c|c|}
 				\hline
-				Frecuencia [MHz] & |Z| & arg(Z) \\
+				Frecuencia [MHz] & |Z| & $\Delta |Z|$ & arg(Z) [º] & 
+				$\Delta arg(Z)~[º]$ \\
 				\hline
-				18.9960000 & $2.85~K\Omega$ & $-90^{\circ}$ \\
+				18.9960000 & $2.85~K\Omega$ & 150 & $-90^{\circ}$ & 4 \\
 				\hline
-				19.9948400 & - & $-45^{\circ}$ \\ 
+				19.9948400 & - & - & $-45^{\circ}$ & 4 \\ 
 				\hline
-				19.9950580 & $17~\Omega$ & $0^{\circ}$ \\
+				19.9950580 & $17~\Omega$ & 2 & $0^{\circ}$ & 4 \\
 				\hline
-				19.9952860 & - & $45^{\circ}$ \\ 
+				19.9952860 & - & - & $45^{\circ}$ & 4 \\ 
 				\hline									
-				20.0311383 & $560~\Omega$ & $45^{\circ}$ \\
+				20.0311383 & $560~\Omega$ & 44 & $45^{\circ}$ & 4 \\
 				\hline									
-				20.0311556 & $640~\Omega$ & $0^{\circ}$ \\
+				20.0311556 & $640~\Omega$ & 45 & $0^{\circ}$ & 4 \\
 				\hline									
-				20.0311634 & $550~\Omega$ & $-45^{\circ}$ \\
+				20.0311634 & $550~\Omega$ & 44 & $-45^{\circ}$ & 4 \\
 				\hline									
 			\end{tabular}
 			\caption{Mediciones con el impedancímetro vectorial} \label{tab003}
@@ -919,25 +857,24 @@
 		\indent Utilizando los datos medidos obtenidos en la tabla \ref{tab003}
 		y las ecuaciones \ref{eq001}, \ref{eq002}, \ref{eq003} y \ref{eq004} se
 		obtienen los parámetros del cristal, mostrados en la tabla \ref{tab004}
-		% TODO 
-		\todo{completar incertidumbres}
+		
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|}
 				\hline
 				Parámetro & Valor & Incertdumbre absoluta \\
 				\hline
-				$C_p$ & $2.94~pF$ & \\
+				$C_p$ & $2.9~pF$ & 0.2 \\
 				\hline
-				$C_s$ & $10.6~fF$ & \\ 
+				$C_s$ & $10.6~fF$ & 0.6 \\ 
 				\hline
-				$L_s$ & $5.98~mHy$ & \\
+				$L_s$ & $6.0~mHy$ & 0.3 \\
 				\hline
-				$R_s$ & $16.5~\Omega$ & \\ 
+				$R_s$ & $16.5~\Omega$ & 1.3 \\ 
 				\hline									
-				$Q_p$ & $798054$ & \\
+				$Q_p$ & $798054$ & - \\
 				\hline
-				$Q_s$ & $44832$  & \\
+				$Q_s$ & $44832$  & - \\
 				\hline
 			\end{tabular}
 			\caption{Mediciones con el impedancímetro vectorial} \label{tab004}
@@ -1058,7 +995,7 @@
 		
 		\begin{align}\label{unaEcuacion}
 			L = \frac{X_L}{\omega} \nonumber \\
-			C = \frac{1}{\omega X_C} \nonumber
+			C = \frac{1}{\omega X_C} 
 		\end{align}
 
 		\indent Cabe destacar que como $R_s$ es muy chica, hay que tener en 
@@ -1086,7 +1023,7 @@
 		muy chica, por ende, la incertidumbre de la medición es muy grande, no 
 		se la puede determinar de forma exacta utilizando dicho instrumento, 
 		pero si se puede conocer de que magnitud es. 
-
+\newpage
 \section{Conclusiones}
 	\indent Viva Venezuela!\\
 \end{document}
