@@ -541,27 +541,46 @@
 		\indent Dicho procedimiento debe ser iterativo, primero se intenta 
 		balancear la parte activa, luego la reactiva; se repiten dichos pasos
 		hasta lograr que el puente quede definitivamente balanceado. En la 
-		tabla \ref{tabPUENTEbobina} se muestran las mediciones obtenidas.
-	
-		\todo[inline]{incertidumbreeeees}
+		tabla \ref{tabPUENTEbobina} se muestran las mediciones obtenidas. \\
+		\indent Con respecto a las incertidumbres de las respectivas mediciones,
+		la incertidumbre absoluta de la lectura de L es 
+		$$\Delta L = \pm (0.1\%~rdg +0.01\%~fs +0.2\%rdg~on~lowest~range)$$
+		\indent La incertidumbre de la medición de Q es 
+		$$\Delta Q = \pm5\%~rdg$$
+
 		\begin{table}[!htp]
 			\centering
-			\begin{tabular}{|c|c|c|c|c|}
+			\begin{tabular}{|c|c|c|c|c|c|c|}
 				\hline
-				Frecuencia & Q & L  & R (calculado) \\
-				\hlinse
-				$20~kHz$& 20 & $5.10~\mu Hy$ &$ 32~m\Omega$ \\
+				Frecuencia & Q & $\Delta Q$ & L & $Delta L$  & $R_s$ & 
+				$\Delta R_s $ \\
 				\hline
-				$1~kHz$& 1.8 & $6.30~\mu Hy$ &$ 22~m\Omega$ \\
+				$20~kHz$& 20 & 1 & $5.10~\mu Hy$ & $0.02~\mu Hy$ & 
+				$ 32~m\Omega$ & $2~m\Omega$\\
+				\hline
+				$1~kHz$& 1.8 & 0.09 & $6.30~\mu Hy$ & $0.02~\mu Hy$ & 
+				$ 22~m\Omega$ & $2~m\Omega$\\
 				\hline	  
 			\end{tabular}
 			\caption{Mediciones con el puente de impedancias.} 
 			\label{tabPUENTEbobina}
 		\end{table}	
 		
-		%todo 
-		\todo{hablar de las incertidumbres del procedimiento, que puede medir
-		grandes valores de Q. Que incertidumbre posee la Rs???}
+		\indent Para poder calcular la resistencia serie se procedió a utilizar 
+		la fórmula del Q, la cual es 
+
+		$$Q = \frac{X_L}{R_s}$$
+
+		\indent La incertidumbre de dicha medición es sencillamente la suma de 
+		las incertidumbres relativas de las mediciones. \\
+		\indent Se puede apreciar que el valor de la inductancia varía con 
+		respecto a la frecuencia, en este caso en particular, ante un decremento
+		de 20 veces, la inductancia se incrementó en 1.23 veces. \\
+		\indent Cabe destacar que el valor $R_s$ posee alrededor del 10\% de 
+		incertidumbre, el cual es un valor bastante considerable. Si la bobina 
+		tuviese un Q mucho mayor, dicha insertidumbre se incrementa aun mas y la
+		medición del $R_s$ se desecharía. 
+
 	\subsection{Mediciones con el impedanc\'imetro}
 		
 		\indent Hay igual que con el RLC es necesario calibrar el 
@@ -617,7 +636,10 @@
 		en la Figura \ref{inductorequiv}). De esta manera
 		
 		$$C=\frac{1}{\omega^2 \cdot L}+\epsilon_C \cdot C$$
-		
+		\todo[inline]{no se de donde sacaste la L medida o calculada, si me pongo a 
+		corregir esto agregaría la tabla de las mediciones de la impedancia con
+		el ángulo medido con el impedancimetro, es eso o que quede asi, no se, 
+		ya estoy podrido de este puto informe..}
 		\indent Donde $\epsilon_C=2\epsilon_w+\epsilon_L\approx \epsilon_L =
 		3.40\%$, ya que la incerteza de la frecuencia (obtenida con un 
 		frecunec\'imetro) es mucho menor a la de la inductancia (obtenida con el
