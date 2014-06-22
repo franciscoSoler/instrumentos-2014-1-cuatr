@@ -129,8 +129,58 @@
 		%HUGO. Preguntar phase noise
 		\subsection{Ruido de fase}
 		\subsection{Modulaci\'on AM}
+		En una modulaci\'on AM, la se\~nal que contiene la informaci\'on que se desea transmitir se utiliza para modular la amplitud de una se\~nal senoidal de frecuencia determinada, llamada portadora.
+		Matem\'aticamente, si la se\~nal que se desea transmitir tiene un espectro $X(\omega)$, el espectro de la se\~nal modulada es $\Phi(\omega)=\frac{1}{2}X(\omega-\omega_c)+\frac{1}{2}X(\omega+\omega_c)+A\cdot\pi\cdot\delta(\omega-\omega_c)+A\cdot\pi\cdot\delta(\omega+\omega_c)$, donde $\omega_c$ es la frecuencia de la portadora y $A$ es una constante de la modulaci\'on. (Cuando la modulaci\'on no incluye las deltas en el espectro, se llama modulaci\'on AM con portadora suprimida)
+		De todas maneras lo que se puede observar con el analizador de espectro es la parte correspondiente a las frecuencias positivas, es decir,
+		$$\Phi(\omega)=\frac{1}{2}X(\omega-\omega_c)+A\cdot\pi\cdot\delta(\omega-\omega_c)$$
+		Si la se\~nal a transmitir es senoidal de frecuencia angular $\omega_0$ y amplitud $f$, entonces el espectro que puede observarse en el analizador de espectro debe ser $$\Phi(\omega)=\frac{1}{2}f\cdot\pi\cdot\delta(\omega-(\omega_c-\omega_0))+\frac{1}{2}f\cdot\pi\cdot\delta(\omega-(\omega_c+\omega_0))+A\cdot\pi\cdot\delta(\omega-\omega_c)$$
+		Al la relaci\'on $m_{AM}=\frac{f}{A}$ se la denomina \'indice de modulaci\'on y debe ser menor a 1 si la detecci\'on se realiza por envolvente.
+		En esta secci\'on se utiliza el analizador de espectro para ver c\'omo var\'ian las componentes de una modulaci\'on AM al variar el \'indice de modulaci\'on, $m_{AM}$. Para ello se conecta el generador Siglent SDG1050 para crear una se\~nal modulada AM ($w_c=10~MHz$ y $w_0=2~kHz$) al analizador de espectro PSA 6000. En las Figuras \ref{AM1},\ref{AM2}y\ref{AM3} se pueden observar los espectros obtenidos para modulaciones con $m_{AM}=1$, $m_{AM}=0.25$ y $m_{AM}=0.03$, respectivamente. Las diferencias entre la amplitud de la portadora y las amplitudes laterales se pueden estimar a partir de la siguiente relaci\'on
+		$$A_{diff}(dB)=20\cdot\log(\frac{2}{m_{AM}})$$
+		En la Tabla\ref{AM}, se resumen los resultados obtenidos y se compara con el calculo te\'orico. Como se puede observar los resultados son cercanos y la incertidumbre de la medici\'on incluye los valores anal\'iticos.
+		
+		\begin{table}[!htp]
+			\centering
+			\begin{tabular}{|c|c|c|}
+				\hline
+				$m_{AM}$ & $A_{diff}(dB)$ (Medido) & $A_{diff}(dB)$(Estimado) \\
+				\hline
+				$1$ & $6.29~dB\pm~1.5~dB$& $6.02~dB$ \\
+				\hline
+				$0.25$ & $18.5~dB\pm~1.5~dB$& $18.06~dB$ \\
+				\hline
+				$0.03$ & $36~dB\pm~1.5~dB$& $36.47~dB$ \\															 	  	  
+			\end{tabular}
+			\caption{Diferencias entre las amplitudes de la portadora y la se\~nal de entrada obtenidas y estimadas} \label{AM}
+		\end{table}	
+		
+		
 		%HUGO. Las funciones de Bessel de FM son para mi jeje
+
+		\begin{figure}[!htb]
+				\centering
+				\includegraphics[width=8cm]
+				{Imagenes/SCREN456.PNG}
+				\caption{Espectro residual de la frecuencia del conversor digital-anal\'ogico del generador de se\~nales.}
+				\label{AM1} 
+		\end{figure}
+		\begin{figure}[!htb]
+				\centering
+				\includegraphics[width=8cm]
+				{Imagenes/SCREN457.PNG}
+				\caption{Espectro residual de la frecuencia del conversor digital-anal\'ogico del generador de se\~nales.}
+				\label{AM2} 
+		\end{figure}
+		\begin{figure}[!htb]
+				\centering
+				\includegraphics[width=8cm]
+				{Imagenes/SCREN458.PNG}
+				\caption{Espectro residual de la frecuencia del conversor digital-anal\'ogico del generador de se\~nales.}
+				\label{AM3} 
+		\end{figure}
+		Por \'ultimo debe notarse que exiten diferencias entre las amplitudes de los picos laterales, cuando en teor\'ia deber\'ian ser id\'enticos. Las diferencias encontradas son de $0.4~dB$, $0.35~dB$ y $0.15~dB$ para $m_{AM}=1$, $m_{AM}=0.25$ y $m_{AM}=0.03$, respectivamente. Pero la incerteza de cada medici\'on es $\pm1.5~dB$ con lo cual no es posible conocer el origen de esta diferencia.
 		\subsection{Modulaci\'on FM}
+		Una modulaci\'on FM consiste b\'asicamente de modular la frecuencia de una se\~nal portadora con la se\~nal que contiene la informaci\'on que se desea transmitir. 
 		Se puede demostrar que en una modulaci\'on FM, si la entrada a modular es del tipo $f_{in}=a\cdot \cos(w_{in}\cdot t)$, la se\~nal modulada es 
 		$$\phi(t)=A\cdot\sum_{n=-\infty}^{+\infty}J_n(m_f)\cos((w_c+n\cdot w_{in})\cdot t)$$
 		Donde $J_n(\cdot)$ es la funci\'on de Bessel de orden $n$ y $m_f$ es el \'indice de modulaci\'on. En la Figura \ref{bessel} se puede observar los gr\'aficos de la funci\'on de Bessel hasta el orden 5.
@@ -151,8 +201,7 @@
 		En las Figuras \ref{FM48}, \ref{FM10} y \ref{FM18}, se pueden ver los espectros obtenidos para modulaciones FM con $f_{\mbox{desv\'io}}=4.8~kHz$, $f_{\mbox{desv\'io}}=10~kHz$ y $f_{\mbox{desv\'io}}=18~kHz$, respectivamente. El analizador de espectro posee una funcionalidad que permite setear un porcentaje de potencia de la se\~nal modulada y devuelve el ancho de banda asociado a esa potencia.
 		
 		En la Tabla \ref{carson}, se pueden observar los resultados obtenidos utilizando el analizador de espetro para obtener el ancho de banda que contiene el $95\%$ de la potencia y el que se obtiene usando la regla de Carson.
-		
-		
+			
 		
 		\begin{figure}[!htb]
 				\centering
@@ -199,7 +248,9 @@
 		Para el analizador de espectro, \'esta expresi\'on puede simplificarse ya que la ganancia del analizador es unitaria con lo cual $\frac{S_o}{S_i}=1$ entonces
 		$$F=\frac{N_o}{N_i}$$
 		Colocando a la entrada del analizador de espectro una carga de $50\Omega$, el ruido a la entrada se convierte en 
-		$$N_i=kTB=-174~dBm$$,
+		$$N_i(dB)=kTB=-174~dBm$$, donde $k$ es la constante de Boltzmann, $T$ es la temperatura absoluta en Kelvin y $B$ es el ancho de banda seleccionado.
+		En la Figura \ref{noise}, se muestra el resultado obtenido de medir el ruido de salida. Con la entrada adaptada a $50\Omega$ se puede ir variando la secci\'on del espectro a considerar para obtener su densidad espectral de potencia. Como se puede ver se obtiene $N_o(dB)=kTB=-145.52~dBm$ con lo cual
+		$$F(dB)=N_o(dB)-N_i(dB)=-145.52~dBm-(-174~dBm)=28.48~dB$$
 		\begin{figure}[!htb]
 				\centering
 				\includegraphics[width=8cm]
@@ -207,9 +258,19 @@
 				\caption{Ruido a la salida  analizador de espectro.}
 				\label{noise} 
 		\end{figure}
+		Es importante notar que esta figura de ruido tambi\'en depende de la banda de frecuencias en la que se calcule la potencia de ruido de salida. De hecho Agilent tiene especificado el nivel de ruido para 3 rangos de frecuencia.
+		\begin{itemize}
+			\item $N_o(dB)\leq-105~dBm$: 	$150~kHz-1~GHz$
+			\item $N_o(dB)\leq-100~dBm$:	 $1~GHz-2.4~GHz$
+			\item $N_o(dB)\leq-95~dBm$:	 $2.4~GHz-6.2~GHz$
+		\end{itemize}
+		Las cuales pueden traducirse en especificaciones de figura de ruido, $F$, restando la potencia de ruido de entrada
+		\begin{itemize}
+			\item $F\leq69-~dB$: 	$150~kHz-1~GHz$
+			\item $F\leq74~dB$:	 $1~GHz-2.4~GHz$
+			\item $F\leq79~dB$:	 $2.4~GHz-6.2~GHz$
+		\end{itemize}
+		Dado que se opera en una regi\'on centrada en $3~GHz$, la especificaci\'on se corresponde con la tercer banda ($2.4~GHz-6.2~GHz$) y c\'omo se puede advertir se cumple holgadamente, $28.48~dB\ll79~dB$.
 	\section{Conclusiones}
 	\indent
 \end{document}
-
-
-
