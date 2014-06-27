@@ -139,36 +139,38 @@
 		frecuencia con menor incerteza (como un frecuenc\'imetro) se mejora 
 		notablemente la incertidumbre de la inductancia. Esto se realiza, 
 		obteniendose una incerteza menor al $ 1\%$ en todos los casos. \\
-		\indent Por otra parte, los resistencias serie equivalente calculadas 
-		tienen un grado de dispersi\'on mayor que en el caso anterior. Esto 
-		ocurre principalmente a medida que la frecuencia aumenta ya que empieza 
-		a hacerse notar el efecto capacitivo par\'asito que presenta el inductor
-		(notar de la Tabla que el valor de Q alcanza un m\'aximo y que luego 
-		debe disminuir hasta 0 cuando alcanza la frecuencia de resonancia). \\
-		\indent Adem\'as se obtiene con una incerteza dominada principlmemente 
-		por la incerteza del factor Q (que es el $7\%$). Con lo cual si se desea
-		obtener una incerteza menor deber\'a elegirse otro instrumento que no 
-		tenga un piso de incertidumbre.
-
+		\indent Por otra parte, se observa un incremento de la resistencia
+		serie a medidia que se aumenta la frecuencia, con el efecto skin se 
+		explica este fenómeno; la sección efectiva del alambre disminuye, 
+		logrando así un incremento en la resistencia. Dicha medición se obtiene 
+		con una incerteza dominada principlmemente por la incerteza del factor 
+		Q (que es el $7\%$). Con lo cual si se desea obtener una incerteza menor
+		deber\'a elegirse otro instrumento que no tenga un piso de incertidumbre
+		tan grande. \\
+		\indent Notar de la Tabla que el valor de Q alcanza un m\'aximo y que 
+		luego debe disminuir hasta 0 cuando alcanza la frecuencia de resonancia)
+		. \\
+	
 	\subsection{Mediciones con el RLC}		
 		\indent Es importante antes de comenzar a medir con el RLC, realizar su 
-		calibraci\'on. De esta forma se consideran las impedancias residuales 
-		serie y paralela que se a\~naden a la impedancia a medir. Para ello 
-		deben dejarse la puntas del instrumento abiertas (para medir la 
-		admitancia residual) y en cortocircuito (para medir la impedancia serie 
-		residual). Es importante destacar que dicho cálculo lo realiza en 
-		todas las frecuencias que se realiza la medición.
+		calibraci\'on. De esta forma se consideran y se descuentan las 
+		impedancias residuales serie y paralela que se a\~naden a la impedancia 
+		a medir debido al cable de conexión. Para ello deben dejarse la puntas 
+		del instrumento abiertas (para medir la impedancia paralela residual) y 
+		en cortocircuito (para medir la impedancia serie residual). Es 
+		importante destacar que dicha corrección lo realiza en todas las 
+		frecuencias que se realiza la medición.
 
 		\subsubsection{Inductancia de una bobina con n\'ucleo de aire}
 		
 		\indent En la Tabla \ref{tabRLCbobina} se puede observar los resultados 
 		obtenidos de la medici\'on de una bobina con nucleo de aire a diferentes
 		frecuencias, usando el RLC. De ella puede notarse que los valores de 
-		inductancia obtenidos son pr\'oximos al valor de referencia y al de las 
-		mediciones realizadas con el Q-metro (ver Tabla \ref{tab:001}). Sin 
-		embargo, debe notarse que a diferencia de los valores obtenidos con el 
-		Q-metro , el RLC tiene una incerteza un orden menor, con lo cual resulta
-		ser un instrumento m\'as exacto. \\
+		inductancia obtenidos son pr\'oximos al de las mediciones realizadas con
+		el Q-metro (ver Tabla \ref{tab:001}). Sin embargo, debe notarse que a 
+		diferencia de los valores obtenidos con el Q-metro , el RLC tiene una 
+		incerteza un orden menor, con lo cual resulta ser un instrumento m\'as 
+		exacto. \\
 		\indent Pero, por otra parte, posee la desventaja de tener un rango 
 		limitado de frecuencias de operaci\'on (desde $12~Hz$ hasta 
 		$100.00~kHz$) con lo cual resulta imposible caracterizar su 
@@ -574,12 +576,16 @@
 		\indent La incertidumbre de dicha medición es sencillamente la suma de 
 		las incertidumbres relativas de las mediciones. \\
 		\indent Se puede apreciar que el valor de la inductancia varía con 
-		respecto a la frecuencia, en este caso en particular, ante un decremento
-		de 20 veces, la inductancia se incrementó en 1.23 veces. \\
+		respecto a la frecuencia. \\
 		\indent Cabe destacar que el valor $R_s$ posee alrededor del 10\% de 
-		incertidumbre, el cual es un valor bastante considerable. Si la bobina 
-		tuviese un Q mucho mayor, dicha insertidumbre se incrementa aun mas y la
-		medición del $R_s$ se desecharía. 
+		incertidumbre, el cual es un valor bastante considerable. \\
+		\indent En el caso particular de esta bobina con núcleo de aire, se 
+		debería desechar cualquier medición de L, dada la incertidumbre de la 
+		medición y que el la frecuencia máxima del RLC meter es solo de 100 KHz,
+		en cambio, la frecuencia de autorresonancia medida con el Q metro en el 
+		siguiente apartado resulta de 35.44MHz, por ende, 100KHz es una 
+		frecuencia muy chica con respecto a la frecuencia a la que se trabaja 
+		con dicha bobina.
 
 	\subsection{Mediciones con el impedanc\'imetro}
 		
@@ -769,10 +775,10 @@
 		
 		\indent Con la misma l\'inea con la que se obtuvo $Z_0$ y a una 
 		frecuencia de $32~MHz$ se obtuvo una $Z_{in}=(2750\pm153)~\Omega$ con
-		lo cual $\alpha=7.90~dB\cdot m\pm1.02$ \\
+		lo cual $\alpha = (7.90\pm1.02)\frac{dB}{100m} $ \\
 		\indent A una frecuencia mayor, de $100~MHz$ se obtuvo una 
 		$Z_{in}=(1350~\pm166)\Omega$ con lo cual 
-		$\alpha=16.09~dB\cdot m\pm3.16$\\
+		$\alpha = (16.09\pm3.16)\frac{dB}{100m}$\\
 		\indent Como se puede observar al aumentar la frecuencia de operaci\'on 
 		la atenuac\'on en la l\'inea no es constante sino que aumenta.
 		
