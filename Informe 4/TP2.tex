@@ -923,7 +923,7 @@
 		\indent El circuito a medir es el mostrado en la figura \ref{img006} y 
 		particularmente el punto de medición es la entrada del mismo. \\
 		\indent Con respecto a la respuesta del mismo, entre las frecuencias 
-		de 4 a 6 MHz presenta una impedancia negativa, particularmente en el 3º
+		de 4 a 6 MHz presenta una resistencia negativa, particularmente en el 3º
 		cuadrante del plano de impedancias. Como el impedancímetro mide fase y
 		módulo, puede realizar dicha medición sin problemas.
 		
@@ -1041,6 +1041,40 @@
 		muy chica, por ende, la incertidumbre de la medición es muy grande, no 
 		se la puede determinar de forma exacta utilizando dicho instrumento, 
 		pero si se puede conocer de que magnitud es. 
+		\indent A modo de comparación, se calculará el módulo de la impedancia 
+		del modelo en las mismas frecuencias (tabla \ref{tab:009}) y se las 
+		comparará con lo medido, para poder determinar si el modelo se condice.
+
+		\begin{table}[!htp]
+			\centering
+			\begin{tabular}{|c|c|c|}
+				\hline
+				Parámetro & Valor & Incertidumbre Absoluta \\ 
+				\hline
+				$C_s$ & 22 nF & 2 nF \\
+				\hline
+				$L_s$ & 12 nHy & 2 nHy \\
+				\hline
+				$R_s$ & $0.3 \Omega$ & $0.4 \Omega$ \\ 
+				\hline
+			\end{tabular}
+			\caption{Mediciones con el impedancímetro vectorial} \label{tab:009}
+		\end{table}
+
+		\indent El gráfico \ref{img:001} muestra la comparación del módulo de 
+		las impedancias del modelo y medidas.
+
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=8cm]{Imagenes/EsqCapacitor.png}
+			\caption{comparación entre modelo capcitor y mediciones vs 
+			frecuencia.}
+			\label{img:001} 
+		\end{figure}
+
+		\indent Se puede observar que el modelo se condice con lo medido.
+
+
 \newpage
 \section{Conclusiones}
 	\indent Viva Venezuela!\\
