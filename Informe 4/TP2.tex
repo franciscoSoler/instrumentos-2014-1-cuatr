@@ -61,7 +61,7 @@
 	
 	\subsection{Mediciones con el Q-metro}
 		\subsubsection{Inductancia de una bobina con n\'ucleo de aire}
-		
+		\label{inductancia}
 		\indent El circuito simplificado de un Q-metro se muestra en la Figura
 		\ref{img001}
 
@@ -72,7 +72,6 @@
 				\caption{Esquema simplificado del Q-metro}
 				\label{img001} 
 			\end{figure}
-
 		\indent Como es un circuito serie, la máxima corriente se obtiene en 
 		la resonancia, dado que la reactancia inductiva de la bobina se 
 		cancela con la capacitiva. Si fuesen componentes ideales, la corriente
@@ -214,8 +213,8 @@
 			\caption{Mediciones con el RLC} \label{tabRLCbobina}
 		\end{table}
 				
-		\subsubsection{Capacidad de un capacitor electro\'itico}	
-		\indent Para esta medición se realió un barrido en frecuencia 
+		\subsubsection{Capacidad de un capacitor electrol\'itico}	
+		\indent Para esta medición se realizó un barrido en frecuencia 
 		manteniendo la tensión constante y un barrido de tensión manteniendo la
 		frecuecia constante. El modelo utilizado en el RLC meter es de un $RC 
 		serie$, pero como el modelo real del capacitor es un $RLC serie$, el 
@@ -369,7 +368,7 @@
 		(\ref{eq:003}, \ref{eq:005} y \ref{eq:007}) se obtienen los valores de
 		la capacidad e inductancia serie del modelo RLC serie del capacitor. \\
 		\indent La tabla \ref{tab:004} muestra cómo varían dichos parámetros en 
-		función de la frecuencia y la tabla \ref{tab:005} en función de la 
+		función de la frecuencia y la tabla \ref{tab:003} en función de la 
 		tensión.
 		
 		\begin{table}[!htp]
@@ -640,15 +639,15 @@
 		en la Figura \ref{inductorequiv}). De esta manera
 		
 		$$C=\frac{1}{\omega^2 \cdot L}+\epsilon_C \cdot C$$
-		\todo[inline]{no se de donde sacaste la L medida o calculada, si me pongo a 
-		corregir esto agregaría la tabla de las mediciones de la impedancia con
-		el ángulo medido con el impedancimetro, es eso o que quede asi, no se, 
-		ya estoy podrido de este puto informe..}
+		%\todo[inline]{no se de donde sacaste la L medida o calculada, si me pongo a 
+	%	corregir esto agregaría la tabla de las mediciones de la %impedancia con
+		%el ángulo medido con el impedancimetro, es eso o que quede asi, no se, 
+	%	ya estoy podrido de este puto informe..}
 		\indent Donde $\epsilon_C=2\epsilon_w+\epsilon_L\approx \epsilon_L =
 		3.40\%$, ya que la incerteza de la frecuencia (obtenida con un 
 		frecunec\'imetro) es mucho menor a la de la inductancia (obtenida con el
-		Q-metro en $f=13.3~MHz$) \\
-		\indent De esta manera se hall\'o la frecuencia ($f_resonancia=
+		Q-metro en $f=13.3~MHz$, como se muestra en la Secci\'on \ref{inductancia}) \\
+		\indent De esta manera se hall\'o la frecuencia ($f_{resonancia}=
 		35.440~MHz$) para la cual es obtuvo fase nula y se calcul\'o la 
 		capacidad equivalente
 		
@@ -664,7 +663,7 @@
 		\indent En la Figura \ref{respfreq} se puede observar una simulaci\'on 
 		realizada con el modelo equivalente, donde se puede observar la 
 		impedancia en funci\'on de la frecuencia y la resonancia en 
-		$f_resonancia$.
+		$f_{resonancia}$.
 		
 		\begin{figure}[!htb]
 			\centering
@@ -674,7 +673,7 @@
 			\label{respfreq} 
 		\end{figure}
 		
-		\subsubsection{Inductancia de una bobina con nucleo de ferrite}
+		\subsubsection{Inductancia de una bobina con n\'ucleo de ferrite}
 		
 		\indent En la Tabla \ref{tabIMPbobina} se muestran los resultados 
 		obtenidos en m\'odulo y fase para un barrido en frecuencia entre 
@@ -714,7 +713,7 @@
 			n\'ucleo de ferrite} \label{tabIMPbobina}
 		\end{table}	
 		
-		\indent Si se utiliza la f\'ormula para eliminar el error siste\'atico 
+		\indent Si se utiliza la f\'ormula para eliminar el error sistem\'atico 
 		de la medic\'on se obtiene que (para la frecuencia de 42 MHz, donde 
 		todav\'ia se comporta como un inductor)
 		
@@ -803,7 +802,7 @@
 		$R_s$. \\
 		\indent Como generalmente la resistencia de la resonancia serie es muy 
 		chica, hay que restar $0.5\Omega$ del efecto de carga de la punta. \\
-		\indent Un gráfico típico de la impeancia de entrada de un xtal en 
+		\indent Un gráfico típico de la impedancia de entrada de un cristal en 
 		función de la frecuencia se observa en la imagen \ref{img005}.
 		
 		\begin{figure}[!htb]
@@ -814,7 +813,7 @@
 		\end{figure}
 
 		\indent Se puede observar que el circuito se comporta como un capacitor
-		a frecuencias menores uqe la de la resonancia serie, dicho capacitor es 
+		a frecuencias menores que la de la resonancia serie, dicho capacitor es 
 		aproximadamente igual a $C_p$ dado que $C_s$ es mucho menor. \\
 		\indent Las otras fórmulas utilizadas para realizar los cálculos del 
 		resto de los parámetros del xtal son las siguientes.
@@ -832,10 +831,10 @@
 		\end{equation}
 
 		\indent Donde $f_s$ y $f_p$ son las frecuencias de resonancia serie y 
-		paralelo respctivamente. \\
+		paralelo respectivamente. \\
 		\indent A la hora de medir el Q del cristal se determina utilizando el 
 		método del ancho de banda, el cual consiste en medir las frecuencias 
-		donde la pontencia de salida disminuye unos $3db$, o que es lo mismo, 
+		donde la potencia de salida disminuye unos $3~dB$, o que es lo mismo, 
 		si se trata de un polo simple como este caso, hay un defasaje de $45º$.
 		Por lo tanto Q queda determinado de la siguiente forma
 		
@@ -844,7 +843,7 @@
 		\end{equation}
 		
 		\indent Para realizar la medición de los parámetros se utiliza el 
-		impedancímetro vectorial (hp 4815A), el cual mide la fase y el módulo de
+		impedancímetro vectorial (HP 4815A), el cual mide la fase y el módulo de
 		la impedancia. Los valores obtenidos se vuelcan en la tabla \ref{tab003}
 		
 		\begin{table}[!htp]
@@ -880,7 +879,7 @@
 			\centering
 			\begin{tabular}{|c|c|c|}
 				\hline
-				Parámetro & Valor & Incertdumbre absoluta \\
+				Parámetro & Valor & Incertidumbre absoluta \\
 				\hline
 				$C_p$ & $2.9~pF$ & 0.2 \\
 				\hline
@@ -945,7 +944,7 @@
 				Frecuencia [kHz] & $X_{med}~[K\Omega]$ & 
 				$\Delta X_{med}~[K\Omega]$ & angulo [º] & $\Delta angulo~[º]$ \\
 				\hline
-				4500.04 & 5.2 & 0.4 & -i78 & 4 \\
+				4500.04 & 5.2 & 0.4 & -78 & 4 \\
 				\hline
 				4800.04 & 5.4 & 0.4 & -95 & 4 \\ 
 				\hline
@@ -966,7 +965,7 @@
 		\indent A continuación se realizó la medición de un capacitor cerámico
 		de 22 nF, para ello, se colocó directamente el capacitor en la punta 
 		del impedancímetro. Como el equivalente del mismo es un circuito RLC 
-		serie, como se muestra en la imagen \ref{imagenCapacitor} 
+		serie, como se muestra en la Figura \ref{imagenCapacitor} 
 		
 		\begin{figure}[!htb]
 			\centering
@@ -980,7 +979,7 @@
 		fase 0. Se midió cuando hay $\pm 45º$ y en una frecuencia donde las fases
 		son $\pm 90º$ para determinar la inductancia y capacidad del equivalente.
 		\\
-		\indent la tabla \ref{unaTab} muestra los valores medidos con sus 
+		\indent La tabla \ref{unaTab} muestra los valores medidos con sus 
 		respectivas incertidumbres. \\
 		\indent Para determinar la incertidumbre de la medición se utiliza la 
 		fórmula del manual mostradas en las ecuaciones \ref{modulo} y 
@@ -1034,7 +1033,7 @@
 				$R_s$ & $0.3 \Omega$ & $0.4 \Omega$ \\ 
 				\hline
 			\end{tabular}
-			\caption{Mediciones con el impedancímetro vectorial} \label{unaTab}
+			\caption{Mediciones con el impedancímetro vectorial} \label{otraTab}
 		\end{table}
 
 		\indent Se puede observar que la resistencia serie del capacitor es 
@@ -1077,6 +1076,12 @@
 
 \newpage
 \section{Conclusiones}
-	\indent Viva Venezuela!\\
+	\indent A partir de las experiencias realizadas, lo primero que debe advertirse es el comportamiento no ideal de aquellos componentes (resistencias, capacitores, inductancias, etc) respecto de la frecuencia de operaci\'on. A modo de ejemplo, en este trabajo se ha visto que en altas frecuencias las inductancias par\'asitas de los capacitores tienen un efecto dominante y el componente se comporta como un inductor. Un efecto similar ocurre con las bobinas, cuyo comportamiento es el de un capacitor por encima de la frecuencia de resonancia.
+	
+	\indent El conocimiento del comportamiento de cada componente cuando var\'ia la frecuencia permite obtener modelos m\'as refinados del mismo y de esta forma un entendimiento m\'as amplio de su operaci\'on. Evidentemente esto est\'a relacionado con la tecnolog\'ia de cada componente, es decir, dependiendo de c\'omo se fabrique, \'este se comportar\'a idealmente en un rango de frecuencias m\'as o menos amplio.
+	
+	\indent A los fines de realizar un dise\~no electr\'onico, es importante caracterizar a los componentes, para que su funcionamiento sea el previsto. Para ello existe diferente instrumental disponible (Q-metro, puente de impedancias, RLC, impedanc\'imetro, etc) dependiendo de qu\'e par\'ametro se desee conocer. Es importante destacar este \'ultimo punto ya que, c\'omo se ha mostrado en este trabajo, no todos los instrumentos tiene el mismo grado de exactitud al realizar determinada medici\'on. Con lo cu\'al es importante saber c\'uando usar cada instrumento. A modo de ejemplo tanto el RLC como el impedanc\'imetro pueden medir la resistencia serie de un capacitor, sin embargo con el primer instrumento se obtiene con una incerteza del $0.05 \%$ mientras que con el impedanc\'imetro \'esta es del orden del $100\%$. Por otra parte el rango de frecuencias donde eval\'ua el RLC es menor al del impedanc\'imetro.
+	
+	\indent Se concluye que la realizaci\'on de este trabajo permiti\'o la adquisici\'on de criterio para utilizar diferente instrumental seg\'un sea requerido\\
 \end{document}
 
