@@ -219,83 +219,22 @@
 		frecuecia constante. El modelo utilizado en el RLC meter es de un $RC 
 		serie$, pero como el modelo real del capacitor es un $RLC serie$, el 
 		valor de capacidad obtenido no es el real, por ende es necesario 
-		realizar la correción. Para ello, es necesario tomar de a dos muestras
-		para determinar los valores $L_s$ y $C_s$, siguiendo la ecuación 
-		\ref{eq:001}
+		realizar la correción. Para ello, a la menor frecuencia de medición, con
+		la reactancia medida, se calcula el valor del $C_s$, con la mayor 
+		frecuencia se obtiene el valor del $L_s$, a una frecuencia intermedia se
+		utiliza el valor medido del $R_s$. \\
+		\indent Una vez obtenidos dichos parámetros, se calcula el módulo de la
+		impedancia total y se la compara con la medida. \\
+		\indent La ecuación \ref{eq:001} muestra el cálculo de la reactancia del
+		modelo utilizado. La ecuación \ref{eq:002} muestra la reactancia del 
+		capacitor medido con el RLC meter.
 		
 		\begin{equation}\label{eq:001}
-			X_{med} = \frac{1}{\omega_1\cdot c_{med}} = \omega_1\cdot L_s - 
-			\frac{1}{\omega_1\cdot C_s}
+			X_{mod} = \omega_1\cdot L_s - \frac{1}{\omega_1\cdot C_s}
 		\end{equation}
-		
-		\indent Reescribiendo el sistema de ecuaciones se observa
-		
-		\[
-		\begin{cases} 
-			L = \frac{X_1}{\omega_1} + \frac{1}{\omega_1^2\cdot C} \\ 
-			\frac{1}{C} = \omega_2^2\cdot L - \omega_2\cdot X_2
-		\end{cases}
-		\]
-		
-		\indent Si agregamos la 2º ecuación dentro de la primer ecuación 
-		se logra obtener el valor de L
-
-		\begin{align}\label{eq:002}
-			L &= \frac{X_1}{\omega_1} + \frac{\omega_2^2}{\omega_1^2}L 
-				- \frac{\omega_2}{\omega_1^2}X_2 \nonumber \\ 
-			(1 - \frac{\omega_2^2}{\omega_1^2})L &= \frac{X_1}{\omega_1}
-				- \frac{\omega_2}{\omega_1^2}X_2 \nonumber \\
-			L &= \frac{X_1 - \frac{\omega_2}{\omega_1}X_2}
-				{\omega_1(1 - \frac{\omega_2^2}{\omega_1^2})}
-		\end{align}
-
-		\indent Utilizando el resultado de la ecuación \ref{eq:002} y la primera
-		igualdad de la ecuación \ref{eq:001} resulta
-
-		\begin{equation}\label{eq:003}
-			L = \frac{\frac{1}{C_{med1}} - \frac{1}{C_{med2}}}
-					{\omega_1^2 - \omega_2^2}
-		\end{equation}
-
-		\indent Realizando el mismo procedimiento a partir del sistema de 
-		ecuaciones se obtiene el valor de C
-
-		\begin{align}\label{eq:004}
-			\frac{1}{C} &= \frac{\omega_1^2}{\omega_2}X_2 + 
-				\frac{\omega_1^2}{\omega_2^2}\frac{1}{C} - \omega_1X_1 \nonumber \\
-			(1 - \frac{\omega_1^2}{\omega_2^2})\frac{1}{C} &= 
-			\frac{\omega_1^2}{\omega_2}X_2 - \omega_1X_1 \nonumber \\
-			C &= \frac{1 - \frac{\omega_1^2}{\omega_2^2}}
-				{\omega_1(\frac{\omega_1}{\omega_2}X_2 - X_1)}
-		\end{align}
-
-		\indent Tomando una vez mas la primer igualdad de la ecuación 
-		\ref{eq:001} con el resultado obtenido de \ref{eq:004} se obtiene
-
-		\begin{equation}\label{eq:005}
-			C = \frac{\omega_2^2 - \omega_1^2}
-				{\frac{\omega_1^2}{C_{med2}} - \frac{\omega_2^2}{C_{med1}}}
-		\end{equation}
-
-		\indent Para poder determinar la incertidumbre se utiliza la expresión 
-		que se muestra en la ecuación \ref{eq:006}
-
-		\begin{equation}\label{eq:006}
-			\Delta f = 	|\frac{\partial f}{\partial x_1}|\Delta x_1 + ... + 
-						|\frac{\partial f}{\partial x_n}|\Delta x_n
-		\end{equation}
-
-		\indent Las ecuaciones para determinar las incertidumbres absolutas 
-		tanto de C como de L se muestran a continuación
-
-		\begin{equation}\label{eq:007}
-			\begin{cases}
-			\Delta L = (\frac{\Delta C_1}{C_1^2} + \frac{\Delta C_2}{C_2^2}) 
-						\frac{1}{\omega_1^2 - \omega_2^2} \\ 
-			\Delta C =  \frac{\omega_2^2 - \omega_1^2}{(\frac{\omega_1^2}{C_2} -
-						\frac{\omega_2^2}{C_1})^2}(\Delta C_1\frac{\omega_2^2}
-						{C_1^2} + \Delta C_2 \frac{\omega_1^2}{C_2^2})
-			\end{cases}
+	
+		\begin{equation}\label{eq:002}
+			X_{med} = \frac{1}{\omega C_{med}}
 		\end{equation}
 
 		\indent En la tabla \ref{tab:002} se muestran los valores obtenidos 
@@ -337,6 +276,85 @@
 			meter.} 
 			\label{tab:002}
 		\end{table}	
+
+		\indent Utilizando las ecuaciones \ref{eq:003} y \ref{eq:004} para 
+		calcular los valres de $C_s$ y $L_s$, se obtiene en la tabla 
+		\ref{tab:010} los parámetros del capacitor equivalente.
+
+		\begin{equation}\label{eq:003}
+			C = \frac{1}{\omega\cdot X_{med}}
+		\end{equation}
+		
+		\begin{equation}\label{eq:004}
+			L = \frac{\omega}{X_{med}}
+		\end{equation}
+		
+		\todo[inline]{modificar esta tabla }
+		\begin{table}[!htp]
+			\centering
+			\begin{tabular}{|c|c|c|c|c|}
+				\hline
+				Tensión [V] & $C_{med}~[\mu F]$ & $\Delta C~[\mu F]$ & 
+				$R_{med}~[K\Omega]$ & $\Delta R~[\Omega]$\\
+				\hline
+				25 &	209 & 0.1 & 0.660 & 0.4 \\
+				\hline
+				22.3 &	206 & 0.1 & 0.651 & 0.4 \\
+				\hline
+				13.8 &	202 & 0.1 & 0.634 & 0.4 \\
+				\hline
+				6.9 &	201 & 0.1 & 0.632 & 0.4 \\
+				\hline
+				2.6 &	199 & 0.1 & 0.628 & 0.4 \\
+				\hline
+				0.6 &	199 & 0.1 & 0.625 & 0.4 \\
+				\hline	  
+			\end{tabular}
+			\caption{Barrido de tensión del capacitor electrolítico con RLC 
+			meter.} 
+			\label{tab:010}
+		\end{table}	
+
+		\indent Los valores contenidos en la tabla \ref{tab:010} se utilizaron 
+		junto a la ecuación \ref{eq:002} para poder obtener los valores de la 
+		reactancia total en las mismas frecuencias en que se realizaron las 
+		mediciones con el RLC meter. La tabla \ref{tab:011} muestra los 
+		resultados.
+
+		\todo[inline]{modificar esta tabla }
+		\begin{table}[!htp]
+			\centering
+			\begin{tabular}{|c|c|c|c|c|}
+				\hline
+				Tensión [V] & $C_{med}~[\mu F]$ & $\Delta C~[\mu F]$ & 
+				$R_{med}~[K\Omega]$ & $\Delta R~[\Omega]$\\
+				\hline
+				25 &	209 & 0.1 & 0.660 & 0.4 \\
+				\hline
+				22.3 &	206 & 0.1 & 0.651 & 0.4 \\
+				\hline
+				13.8 &	202 & 0.1 & 0.634 & 0.4 \\
+				\hline
+				6.9 &	201 & 0.1 & 0.632 & 0.4 \\
+				\hline
+				2.6 &	199 & 0.1 & 0.628 & 0.4 \\
+				\hline
+				0.6 &	199 & 0.1 & 0.625 & 0.4 \\
+				\hline	  
+			\end{tabular}
+			\caption{Barrido de tensión del capacitor electrolítico con RLC 
+			meter.} 
+			\label{tab:011}
+		\end{table}	
+
+		\indent A modo de comparación, se muestra en la figura \ref{img:002}
+		una comparación entre los valores de las reactancias de ambos modelos,
+		el RC serie medido con respecto al RLC serie real.
+
+		\todo[inline]{agregar la imagen con ref=img:002}
+		
+		\indent Como se puede apreciar en la imagen \ref{img:002}, ambas 
+		impedancias concuerdan a través de la frecuencia.
 		
 		\begin{table}[!htp]
 			\centering
@@ -363,50 +381,6 @@
 			\label{tab:003}
 		\end{table}	
 
-		\indent Utilizando valores contínuos de capacidades medidas de la tabla
-		\ref{tab:002} y \ref{tab:003} en las ecuaciones mencionadas anteriormente
-		(\ref{eq:003}, \ref{eq:005} y \ref{eq:007}) se obtienen los valores de
-		la capacidad e inductancia serie del modelo RLC serie del capacitor. \\
-		\indent La tabla \ref{tab:004} muestra cómo varían dichos parámetros en 
-		función de la frecuencia y la tabla \ref{tab:003} en función de la 
-		tensión.
-		
-		\begin{table}[!htp]
-			\centering
-			\begin{tabular}{|c|c|c|c|c|c|c|}
-				\hline
-				Frecuencia [KHz] & $C_s~[\mu F]$ & $\Delta C_s~[\mu F]$ & 
-				$L_s~[\mu Hy]$  & $\Delta L_s~[\mu Hy]$  & $R_s~[\Omega]$ & 
-				$\Delta R_s~[\Omega]$ \\
-				\hline
-				0.012 - 0.120 &	207.1 & 0.1 & -358 & 9 & 1.24 & 0.07 \\
-				\hline
-				0.120 - 0.500 &	199.3 & 0.2 & -24.5 & 0.6 & 0.48 & 0.03 \\
-				\hline
-				0.500 - 1.000 &	191.5 & 0.2 & -3.9 & 0.2 & 0.37 & 0.02 \\
-				\hline
-				1.000 - 10.00 &	186.5 & 0.1 & -0.289 & 0.002 & 0.33 & 0.02 \\
-				\hline
-				10.00 - 20.00 &	165.8 & 0.2 & -0.1195 & 0.0007 & 0.30 & 0.02 \\
-				\hline
-				20.00 - 40.00 &	158.7 & 0.2 & -0.1025 & 0.0003 & 0.30 & 0.02 \\
-				\hline
-				40.00 - 50.00 &	157 & 1 & -0.1012 & 0.0005 & 0.30 & 0.02 \\
-				\hline
-				50.00 - 66.66 &	158 & 2 & -0.1015 & 0.0004 & 0.30 & 0.02 \\
-				\hline
-				66.66 - 100.0 &	151 & 2 & -0.1000 & 0.0003 & 0.29 & 0.02 \\
-				\hline	  
-			\end{tabular}
-			\caption{Parámetros del capacitor en función de la frecuencia.} 
-			\label{tab:004}
-		\end{table}	
-		
-		\indent Como se puede apreciar en la tabla \ref{tab:004}, $L_s$ dió 
-		negativa, esto no tiene sentido físico. Se cometió un error grosero en 
-		la medición, la cual fue no calibrar el RLC para que anule los efectos 
-		del cable de conexión. Por lo tanto el modelo del circuito a medir ya no
-		es más el equivalente de solo un capacitor. \\
 		\indent En la tabla \ref{tab:003} se midió cómo varía la capacidad en 
 		función de la tensión, como se hizo a una frecuencia de 100 Hz, se puede
 		despreciar el efecto inductivo que tiene el modelo, dado que es a una 
@@ -420,8 +394,7 @@
 		vez. \\
 		
 		\indent Las fórmulas para calcular la $L_s$, $C_s$ y sus incertidumbres 
-		son las ecuaciones \ref{eq:003}, \ref{eq:005} y \ref{eq:007} 
-		respectivamente. \\
+		son las ecuaciones \ref{eq:003} y \ref{eq:004} respectivamente. \\
 		\indent Las tablas \ref{tab:006} y \ref{tab:007} muestran los resultados
 		de las mediciones 
 	
@@ -483,48 +456,24 @@
 			\label{tab:007}
 		\end{table}	
 		
-		\indent Utilizando valores contínuos de capacidades medidas de la tabla
-		\ref{tab:006} y \ref{tab:007} en las ecuaciones mencionadas anteriormente
-		(\ref{eq:003}, \ref{eq:005} y \ref{eq:007}) se obtienen los valores de
-		la capacidad e inductancia serie del modelo RLC serie del capacitor. \\
-		\indent La tabla \ref{tab:008} muestra cómo varían dichos parámetros en 
-		función de la frecuencia.
-		
-		\begin{table}[!htp]
-			\centering
-			\begin{tabular}{|c|c|c|c|c|c|c|}
-				\hline
-				Frecuencia [KHz] & $C_s~\mu F$ & $\Delta C_s~[pF]$ & 
-				$L_s~mHy$  & $\Delta L_s~mHy$  & $R_s~\Omega$ & 
-				$\Delta R_s~\Omega$ \\
-				\hline
-				0.012 - 0.120 &	23.89 & 21 & -1885 & 128 & 1.9 & \\
-				\hline
-				0.120 - 0.500 &	23.30 & 23 & -22 & 8 & 0.57 & \\
-				\hline
-				0.500 - 1.000 &	23.21 & 34 & -5 & 3 & 0.38 & \\
-				\hline
-				1.000 - 10.00 &	23.10 & 21 & -0.14 & 0.02 & 0.35 & \\
-				\hline
-				10.00 - 20.00 &	22.86 & 34 & -0.0179 & 0.007 & 0.3 & \\
-				\hline
-				20.00 - 40.00 &	22.77 & 34 & -0.007 & 0.002 & 0.3 & \\   
-				\hline
-				40.00 - 50.00 &	22.65 & 93 & -0.003 & 0.003 & 0.3 & \\
-				\hline
-				50.00 - 66.66 &	22.53 & 72 & -0.001 & 0.001 & 0.3 & \\
-				\hline
-				66.66 - 100.0 &	22.37 & 52 & 0.0008 & 0.0003 & 0.29 & \\
-				\hline	  
-			\end{tabular}
-			\caption{Parámetros del capacitor en función de la frecuencia.} 
-			\label{tab:008}
-		\end{table}	
+		\indent Utilizando las ecuaciones anteriormente mencionadas para 
+		calcular los parámetros del capacitor (\ref{eq:003} y \ref{eq004}), se 
+		obtiene la tabla \ref{tab:012}.
 
-		\indent Como se puede apreciar, también la inductancia calculada 
-		presenta un valor negativo, se le atribuye al mismo error grosero 
-		cometido anteriormente, dado que ambas mediciones se realizaron de forma
-		continuada. \\ 
+		\todo[inline]{insertar la tabla que tiene los parametros del capacitor}
+
+		\indent Con dichos parámetros se realizó el barrido en frecuencias 
+		para obtener la reactancia del mismo. La tabla \ref{tab:013} posee 
+		dichos resultados.
+
+		\todo[inline]{insertar la tabla del modulo de la reactancia en frec}
+
+		\indent A modo de comparación se muestra el gráfico \ref{img:004} de las comparaciones
+		de las reactancias medida y calculadas en la tabla \ref{tab:013}
+
+		\todo[inline]{insertar en grafico 004 la comparacion}
+		\indent Se puede apreciar que las mediciones se condicen con el modelo 
+		del capacitor. \\
 		\indent En la medición de la respuesta en función de la variación de 
 		tensión de alimentación no se observan cambios apreciables en los 
 		parámetros, a diferencia del capacitor electrolítico, en el cual la 
@@ -639,10 +588,6 @@
 		en la Figura \ref{inductorequiv}). De esta manera
 		
 		$$C=\frac{1}{\omega^2 \cdot L}+\epsilon_C \cdot C$$
-		%\todo[inline]{no se de donde sacaste la L medida o calculada, si me pongo a 
-	%	corregir esto agregaría la tabla de las mediciones de la %impedancia con
-		%el ángulo medido con el impedancimetro, es eso o que quede asi, no se, 
-	%	ya estoy podrido de este puto informe..}
 		\indent Donde $\epsilon_C=2\epsilon_w+\epsilon_L\approx \epsilon_L =
 		3.40\%$, ya que la incerteza de la frecuencia (obtenida con un 
 		frecunec\'imetro) es mucho menor a la de la inductancia (obtenida con el
@@ -675,10 +620,11 @@
 		
 		\subsubsection{Inductancia de una bobina con n\'ucleo de ferrite}
 		
-		\indent En la Tabla \ref{tabIMPbobina} se muestran los resultados 
-		obtenidos en m\'odulo y fase para un barrido en frecuencia entre 
-		$25~MHz$ a $100~MHz$. Debe notarse que hasta una frecuencia de  $42~MHz$
-		, la bobina contin\'ua comport\'andose como un inductor de inductancia 
+		\indent En esta sección se mide una bobina con núcleo de ferrite. En la 
+		Tabla \ref{tabIMPbobina} se muestran los resultados obtenidos en 
+		m\'odulo y fase para un barrido en frecuencia entre $25~MHz$ a $100~MHz$
+		. Debe notarse que hasta una frecuencia de  $42~MHz$, la bobina 
+		contin\'ua comport\'andose como un inductor de inductancia 
 		$L=\frac{\left|Z\right|}{2\pi\cdot f}~\pm~\epsilon_L\cdot L$. Donde 
 		$\epsilon_L=\epsilon_f+\epsilon_{\left|Z\right|}\approx
 		\epsilon_{\left|Z\right|}$
