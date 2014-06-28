@@ -35,7 +35,7 @@
 	\newpage
 	\section{Introducci\'on}
 	\subsection{Analizador de espectro}
-	Un analizador de espectro es b\'asicamente un instrumento que permite visualizar la composici\'on espectral de frecuencias de una se\~nal de entrada. Un diagrama en bloques simplificado puede observarse en la Figura \ref{diagramadebloques}. En la Figura se puede observar que la se\~nal de entrada pasa inicialmente por un atenuador y por un filtro pasabajos (cuyo uso determina sin ambig\"uedad el rango de frecuencias con las que se opera, aunque si se lo elimina permite extender el rango de frecuencias del analizador ). Luego pasa a un multiplicador donde se multiplica con la se\~nal generada por un oscilador local estable. A la salida del multiplicador se encuentran se\~nales cuyas frecuencias son sumas y diferencias de las frecuencias del oscilador local y de la se\~nal de entrada. Las componentes m\'as relevantes se encuentran en $f=f_{osc}-f_{\text{se\~nal}}$ y $f=f_{osc}+f_{\text{se\~nal}}$, pero en general, cuando se utiliza el filtro pasabajo de entrada la componente que interesa es solamente $f=f_{osc}-f_{\text{se\~nal}}$.
+	Un analizador de espectro es b\'asicamente un instrumento que permite observar la composici\'on espectral de frecuencias de una se\~nal de entrada. Un diagrama en bloques simplificado puede observarse en la Figura \ref{diagramadebloques}. En la Figura se puede observar que la se\~nal de entrada pasa inicialmente por un atenuador y por un filtro pasabajos (cuyo uso determina sin ambig\"uedad el rango de frecuencias con las que se opera, aunque si se lo elimina permite extender el rango de frecuencias del analizador ). Luego pasa a un multiplicador donde se multiplica con la se\~nal generada por un oscilador local estable. A la salida del multiplicador se encuentran se\~nales cuyas frecuencias son sumas y diferencias de las frecuencias del oscilador local y de la se\~nal de entrada. Las componentes m\'as relevantes se encuentran en $f=f_{osc}-f_{\text{se\~nal}}$ y $f=f_{osc}+f_{\text{se\~nal}}$, pero en general, cuando se utiliza el filtro pasabajo de entrada la componente que interesa es solamente $f=f_{osc}-f_{\text{se\~nal}}$.
 	Si alguna de estas se\~nales producidas tiene la frecuencia del filtro pasabanda intermedio, $f_{IF}$, \'esta es luego amplificada logar\'itmicamente (la escala generalmente utilizada en pantalla es en decibeles), rectificada por un detector de envolvente, filtrada por un filtro de video y es utilizada para establecer la se\~nal vertical de la pantalla.
 	Con respecto al eje horizontal (el de frecuencias), un generador de rampa controla su barrido de izquierda a derecha. A su vez este mismo generador se encarga de controlar la frecuencia del oscilador local, la cual var\'ia proporcionalmente con la tensi\'on de la rampa. De esta forma se pueden barrer las frecuencias presentes en la se\~nal de entrada y mostrarlas en pantalla.
 	\begin{figure}[!htb]
@@ -54,8 +54,8 @@
 		\begin{itemize}
 			\item Analizador de espectro HM 5006
 			\item Analizador de espectro PSA 6000
-			\item Generador de funciones Agilent N9310A
-			\item Generador de funciones Siglent SDG1050
+			\item Sintetizador de frecuencias Agilent N9310A
+			\item Generador de funciones arbitrariasSiglent SDG1050
 			\item Cable coaxil para conexi\'on de los instrumentos
 		\end{itemize}	
 		%HUGO
@@ -67,25 +67,26 @@
 		En esta secci\'on se obtiene la selectividad de los analizadores de espectro HM 5006 y PSA 6000 con diferentes resoluciones. Para ello se conectan por medio de un cable coaxil a un generador Agilent N9310A que produce un se\~nal senoidal de $100~MHz$. En la Tabla \ref{selectividad} se puede observar los resultados obtenidos. En la Figura \ref{Selec} se pueden observar los espectros obtenidos por el analizador PSA 6000, utilizando resoluciones diferentes.
 		La incerteza relativa de la frecuencia en el analizador HM 5006 es del $10\%$, mientras que la  del analizador PSA 6000 sigue la siguente f\'ormula
 		$$\Delta f=\pm\left(f\cdot \%_{ref} +3\%\cdot Span+50\%\cdot RBW \right)$$
+		
 		%Cual es el \%_{ref}, el manual lo nombra una sola vez jajaja pero no dice que valor tiene.
 		
 		\begin{table}[!htp]
 			\centering
 			\begin{tabular}{|c|c|c|c|c|}
 				\hline
-				Analizador & Resoluci\'on & $BW(-60~dB)$ & $BW(-3~dB)$ & Selectividad \\
+				Analizador & Resoluci\'on & $BW(-3~dB)$ & $BW(-60~dB)$ & Selectividad \\
 				\hline
 				HM 5006 & $250~kHz$& $300~kHz~\pm~30~kHz$ & 
-				$900~kHz~\pm~90~kHz\%$ &$ 3~\pm~0.6$ \\
+				$900~kHz~\pm~90~kHz$ &$ 3~\pm~20\%$ \\
 				\hline
-				HM 5006 & $20~kHz$& $30~kHz~\pm~3~kHz\%$ & 
-				$160~kHz~\pm~16~kHz\%$ &$ 5.33~\pm~1.07$ \\
+				HM 5006 & $20~kHz$& $30~kHz~\pm~3~kHz$ & 
+				$160~kHz~\pm~16~kHz$ &$ 5.33~\pm~20\%$ \\
 				\hline
-				PSA 6000& $3~kHz$& $32.5~kHz~\pm~\%$ & 
-				$3.5~kHz~\pm~?\%$ &$ 9.29~\pm~?$ \\
+				PSA 6000& $3~kHz$& $32.5~kHz~\pm~4.5~kHz$ & 
+				$3.5~kHz~\pm~4.5~kHz$ &$ 9.29~\pm~142\%$ \\
 				\hline  
-				PSA 6000& $300~Hz$& $3.5~kHz~\pm~\%$ & 
-				$250~Hz~\pm~?\%$ &$ 14~\pm~?$ \\
+				PSA 6000& $300~Hz$& $3.5~kHz~\pm~3.15~kHz$ & 
+				$250~Hz~\pm~3.15~kHz$ &$ 14~\pm~1350\%?$ \\
 				\hline  										 	  	  
 			\end{tabular}
 			\caption{Resultados obtenidos para los analizadores 5066 y PSA 6000} \label{selectividad}
@@ -97,12 +98,12 @@
 				\caption{Espectros obtenidos con $RBW=300~Hz$ (en amarillo) y con $RBW=3~kHz$ (en celeste)}
 				\label{Selec} 
 		\end{figure}		
-		
+		Como se puede notar, usando el analizador PSA 6000 la incerteza de la frecuencia est\'a dominada por los t\'erminos correspondientes a la incerteza del Span y de la resoluci\'on de ancho de banda (RBW), los cuales son elevados para la medici\'on que se realiza. La selectividad obtenida por lo tanto tiene una incerteza alta y no resulta \'util m\'as que para tener una idea del orden de su magnitud.
 		%HUGO. Me encanta la THD 
 		\subsubsection{Distorsi\'on arm\'onica de un generador de funciones}
 		Cuando un sistema no lineal tiene una entrada que consiste en una se\~al senoidal de frecuencia $f_0$, a la salida de este sistema las frecuencia presentes son $f_0$ y m\'ultiplos de esta frecuencia $2f_0$,$3f_0$, etc, llamados arm\'onicos de la fundamental $f_0$.
 		De esta manera se define la distorsi\'on arm\'onica cuyo valor da una idea de qu\'e tan lineal es el sistema y se define como
-		$$THD=\frac{\sum_{n=1}^{+\infty}a^2_n}{a^2_0}$$
+		$$THD=\sqrt{\frac{\sum_{n=1}^{+\infty}a^2_n}{a^2_0}}$$
 		Donde $a_n$ son los coeficientes de la serie de Fourier de cada componente de frecuencia $f_n$.
 		En esta secci\'on se mide la THD del generador de funciones N9310A. Para ello se conecta el generador al analizador de espectros PSA 6000 por medio de un cable coaxil. La se\~nal del generador tiene una frecuencia de $500~MHz$. En la Figura \ref{THD} se puede observar las componentes espectrales de la se\~nal.
 		\begin{figure}[!htb]
@@ -113,15 +114,15 @@
 				\label{THD} 
 		\end{figure}
 		Con lo cual puede calcularse la distrosi\'on, despreciando los arm\'onicos superiores al segundo
-		$$THD=\frac{a^2_1+a^2_2}{a^2_0}$$
-		$$THD=\frac{10^{\frac{-51.35}{5}}+10^{\frac{-65.24}{5}}}{10^{\frac{-12.89}{5}}}=10^{-7}$$
+		$$THD=\sqrt{\frac{a^2_1+a^2_2}{a^2_0}}$$
+		$$THD=\sqrt{\frac{10^{\frac{-51.35}{5}}+10^{\frac{-65.24}{5}}}{10^{\frac{-12.89}{5}}}}=3.16\cdot10^{-4}$$
 		%'No se si poner aca incerteza, creo que es más importante lo de abajo que es lo que espeficica el manual'. La verdad: Paja jajaja
-		La cual es una distorsi\'on bastante baja. Por otra parte, el fabricante del generador asegura que las amplitudes de los arm\'onicos se encuentran $30~dB$ por debajo de la amplitud de la fundamental. Esto es f\'acil de comprobar ya que $A_0-A_1=(-12.89~dB\pm~1.5~dB)-(-51.35~dB\pm~1.5~dB)=38.46~dB~\pm~3~dB$, en cuyo peor ($35.46~~\pm~dB$) caso es mayor a lo especificado.
+		La cual es una distorsi\'on bastante baja. Por otra parte, el fabricante del generador asegura que las amplitudes de los arm\'onicos se encuentran $30~dB$ por debajo de la amplitud de la fundamental. Esto es f\'acil de comprobar ya que $A_0-A_1=(-12.89~dB\pm~1.5~dB)-(-51.35~dB\pm~1.5~dB)=38.46~dB~\pm~3~dB$, en cuyo peor caso ($35.46~dB$) es mayor a lo especificado.
 		%No esntendi mucho lo de la distorsión por. FRAN?			
 		\subsubsection{Distorsi\'on por intermodulaci\'on del analizador de espectro}
 		
 		\subsubsection{Frecuencia de conversi\'on de un generador digital}
-		Un generador de funciones digital, mediante un conversor digital-anal\'ogico, transforma una palabra de bits en un valor de tensi\'on. Evidentemente esta conversi\'on la realiza a determinada frecuencia ($125~MSa/s$), con lo cual es razonable que \'esta componente est\'e presente en el espectro de la se\~nal de salida del generador. En esta secci\'on, se busca obtener la frecuencia de convers\'on, $125~MHz$ y su amplitud respecto de la frecuencia de salida. En la Figura \ref{freqres} se puede ver la presencia de una componente residual que est\'a $88.5~dB~\pm~1.5~dB$ por debajo de la amplitud de la se\~nal de entrada que es de $0~dB~\pm~1.5~dB$. Como se esperaba su frecuencia es de $125~MHz~\pm~?~MHz$
+		Un generador de funciones arbitrarias digital, mediante un conversor digital-anal\'ogico, transforma una palabra de bits en un valor de tensi\'on. Evidentemente esta conversi\'on la realiza a determinada frecuencia ($125~MSa/s$), con lo cual es razonable que \'esta componente est\'e presente en el espectro de la se\~nal de salida del generador. En esta secci\'on, se busca obtener la frecuencia de conversi\'on, $125~MHz$ y su amplitud respecto de la frecuencia de salida. En la Figura \ref{freqres} se puede ver la presencia de una componente residual que est\'a $88.5~dB~\pm~1.5~dB$ por debajo de la amplitud de la se\~nal de entrada que es de $0~dB~\pm~1.5~dB$. Es decir que se la diferencia con respecto a la frecuencia portadora es $88.5~dB~\pm~3~dB$ y como se esperaba, su frecuencia es de $125~MHz~\pm~3.275~kHz$
 		\begin{figure}[!htb]
 				\centering
 				\includegraphics[width=8cm]
@@ -150,7 +151,7 @@
 		$$\Phi(\omega)=\frac{1}{2}X(\omega-\omega_c)+A\cdot\pi\cdot\delta(\omega-\omega_c)$$
 		Si la se\~nal a transmitir es senoidal de frecuencia angular $\omega_0$ y amplitud $f$, entonces el espectro que puede observarse en el analizador de espectro debe ser $$\Phi(\omega)=\frac{1}{2}f\cdot\pi\cdot\delta(\omega-(\omega_c-\omega_0))+\frac{1}{2}f\cdot\pi\cdot\delta(\omega-(\omega_c+\omega_0))+A\cdot\pi\cdot\delta(\omega-\omega_c)$$
 		Al la relaci\'on $m_{AM}=\frac{f}{A}$ se la denomina \'indice de modulaci\'on y debe ser menor a 1 si la detecci\'on se realiza por envolvente.
-		En esta secci\'on se utiliza el analizador de espectro para ver c\'omo var\'ian las componentes de una modulaci\'on AM al variar el \'indice de modulaci\'on, $m_{AM}$. Para ello se conecta el generador Siglent SDG1050 para crear una se\~nal modulada AM ($w_c=10~MHz$ y $w_0=2~kHz$) al analizador de espectro PSA 6000. En las Figuras \ref{AM1},\ref{AM2}y\ref{AM3} se pueden observar los espectros obtenidos para modulaciones con $m_{AM}=1$, $m_{AM}=0.25$ y $m_{AM}=0.03$, respectivamente. Las diferencias entre la amplitud de la portadora y las amplitudes laterales se pueden estimar a partir de la siguiente relaci\'on
+		En esta secci\'on se utiliza el analizador de espectro para ver c\'omo var\'ian las componentes de una modulaci\'on AM al variar el \'indice de modulaci\'on, $m_{AM}$. Para ello se conecta el generador de funciones arbitrarias Siglent SDG1050 para crear una se\~nal modulada AM ($w_c=10~MHz$ y $w_0=2~kHz$) al analizador de espectro PSA 6000. En las Figuras \ref{AM1},\ref{AM2}y\ref{AM3} se pueden observar los espectros obtenidos para modulaciones con $m_{AM}=1$, $m_{AM}=0.25$ y $m_{AM}=0.03$, respectivamente. Las diferencias entre la amplitud de la portadora y las amplitudes laterales se pueden estimar a partir de la siguiente relaci\'on
 		$$A_{diff}(dB)=20\cdot\log(\frac{2}{m_{AM}})$$
 		En la Tabla\ref{AM}, se resumen los resultados obtenidos y se compara con el calculo te\'orico. Como se puede observar los resultados son cercanos y la incertidumbre de la medici\'on incluye los valores anal\'iticos.
 		
@@ -158,13 +159,13 @@
 			\centering
 			\begin{tabular}{|c|c|c|}
 				\hline
-				$m_{AM}$ & $A_{diff}(dB)$ (Medido) & $A_{diff}(dB)$(Estimado) \\
+				$m_{AM}$ & $A_{diff}(dB)$ (Medido) & $A_{diff}(dB)$(Calculado) \\
 				\hline
 				$1$ & $6.29~dB\pm~1.5~dB$& $6.02~dB$ \\
 				\hline
 				$0.25$ & $18.5~dB\pm~1.5~dB$& $18.06~dB$ \\
 				\hline
-				$0.03$ & $36~dB\pm~1.5~dB$& $36.47~dB$ \\															 	  	  
+				$0.03$ & $36~dB\pm~1.5~dB$& $36.47~dB$ 															 	  	  
 			\end{tabular}
 			\caption{Diferencias entre las amplitudes de la portadora y la se\~nal de entrada obtenidas y estimadas} \label{AM}
 		\end{table}	
@@ -207,9 +208,11 @@
 				\label{bessel} 
 		\end{figure}\\
 		Es decir que el espectro de salida ideal consiste en deltas ubicadas en $f=f_c,f_c\pm f_{in},f_c\pm 2f_{in},...$, cuyo pesao est\'a dado por $J_0(m_f),J_1(m_f),J_2(m_f),...$ respectivamente.
-		Se propone encontrar los primeros dos ceros de la funci\'on de Bessel de orden 0. Esto se puede conseguir conectando un generador de modulaci\'on FM (Siglent SDG1050) al analizador de espectro PSA 6000 y modificando el \'indice de modulaci\'on hasta que la frecuencia portadora desaparezca (es decir, que $J_0(m_f)=0$).
-		El primer cero se consigue cuando $f_{\mbox{desv\'io}}=4.8~kHz$, es decir cuando $m_f=\frac{f_{\mbox{desv\'io}}}{f_{\mbox{modulaci\'on}}}=\frac{4.8~kHz}{2~kHz}=2.4$. El cual es un valor bastante exacto, ya que matem\'aticamente el primer cero se encuentra en $z_1=2.4048$
-		El segundo cero se encuentra cuando $f_{\mbox{desv\'io}}11.04~kHz$, es decir cuando $m_f==\frac{11.04~kHz}{2~kHz}=5.52$. Tambi\'en en este caso, el resultado obtenido es muy cercano al real, el cual es de $z_2=5.5201$
+		Se propone encontrar los primeros dos ceros de la funci\'on de Bessel de orden 0. Esto se puede conseguir conectando un generador de modulaci\'on FM (el Siglent SDG1050 posee esta caracter\'istica) al analizador de espectro PSA 6000 y modificando el \'indice de modulaci\'on hasta que la frecuencia portadora desaparezca (es decir, que $J_0(m_f)=0$).
+		El primer cero se consigue cuando $f_{\mbox{desv\'io}}=4.8~kHz$, es decir cuando $m_f=\frac{f_{\mbox{desv\'io}}}{f_{\mbox{modulaci\'on}}}=\frac{4.8~kHz}{2~kHz}=2.4$. El cual es un valor bastante exacto, ya que matem\'aticamente el primer cero se encuentra en $z_1=2.4048$.
+		
+		El segundo cero se encuentra cuando $f_{\mbox{desv\'io}}=11.04~kHz$, es decir cuando $m_f=\frac{11.04~kHz}{2~kHz}=5.52$. Tambi\'en en este caso, el resultado obtenido es muy cercano al real, el cual es de $z_2=5.5201$
+		
 		Por otra parte en esta secci\'on se busca comprobar la ley emp\'irica de Carson, la cual postula que el $98\%$ de la potencia de una se\~nal est\'a comprendida dentro de un ancho de banda de
 		$$BW=2\cdot(f_{\mbox{desv\'io}}+f_{\mbox{modulaci\'on}})$$.
 		
@@ -247,11 +250,11 @@
 						\hline
 						$f_{\mbox{modulaci\'on}}$ & $f_{\mbox{desv\'io}}$ & $BW(Carson)$ & $BW(PSA 6000)$\\
 						\hline
-						$2~kHz$ & $4.8~kHz$& $13.6~kHz$ & $12~kHz$\\
+						$2~kHz$ & $4.8~kHz$& $13.6~kHz$ & $12~kHz\pm~3.2~kHz$\\
 						\hline
-						$2~kHz$ & $10~kHz$& $24~kHz$ & $21.6~kHz$\\
+						$2~kHz$ & $10~kHz$& $24~kHz$ & $21.6~kHz\pm~3.2~kHz$\\
 						\hline
-						$2~kHz$ & $18~kHz$& $40~kHz$ & $37.5~kHz$\\
+						$2~kHz$ & $18~kHz$& $40~kHz$ & $37.5~kHz\pm~3.2~kHz$\\
 						\hline						
 						\hline
 					\end{tabular}
@@ -264,8 +267,8 @@
 		$$F=\frac{N_o}{N_i}$$
 		Colocando a la entrada del analizador de espectro una carga de $50\Omega$, el ruido a la entrada se convierte en 
 		$$N_i(dB)=kTB=-174~dBm$$, donde $k$ es la constante de Boltzmann, $T$ es la temperatura absoluta en Kelvin y $B$ es el ancho de banda seleccionado.
-		En la Figura \ref{noise}, se muestra el resultado obtenido de medir el ruido de salida. Con la entrada adaptada a $50\Omega$ se puede ir variando la secci\'on del espectro a considerar para obtener su densidad espectral de potencia. Como se puede ver se obtiene $N_o(dB)=kTB=-145.52~dBm$ con lo cual
-		$$F(dB)=N_o(dB)-N_i(dB)=-145.52~dBm-(-174~dBm)=28.48~dB$$
+		En la Figura \ref{noise}, se muestra el resultado obtenido de medir el ruido de salida. Con la entrada adaptada a $50\Omega$ se puede ir variando la secci\'on del espectro a considerar para obtener su densidad espectral de potencia. Como se puede ver se obtiene $N_o(dB)=kTB=-145.52~dBm\pm~1.5~dB$ con lo cual
+		$$F(dB)=N_o(dB)-N_i(dB)=-145.52~dBm-(-174~dBm)=28.48~dB\pm~1.5~dB$$
 		\begin{figure}[!htb]
 				\centering
 				\includegraphics[width=8cm]
@@ -273,7 +276,7 @@
 				\caption{Ruido a la salida  analizador de espectro.}
 				\label{noise} 
 		\end{figure}
-		Es importante notar que esta figura de ruido tambi\'en depende de la banda de frecuencias en la que se calcule la potencia de ruido de salida. De hecho Agilent tiene especificado el nivel de ruido para 3 rangos de frecuencia.
+		Es importante notar que esta figura de ruido tambi\'en depende de la banda de frecuencias en la que se calcule la potencia de ruido de salida. De hecho LP Technologies tiene especificado el nivel de ruido para 3 rangos de frecuencia.
 		\begin{itemize}
 			\item $N_o(dB)\leq-105~dBm$: 	$150~kHz-1~GHz$
 			\item $N_o(dB)\leq-100~dBm$:	 $1~GHz-2.4~GHz$
@@ -285,7 +288,7 @@
 			\item $F\leq74~dB$:	 $1~GHz-2.4~GHz$
 			\item $F\leq79~dB$:	 $2.4~GHz-6.2~GHz$
 		\end{itemize}
-		Dado que se opera en una regi\'on centrada en $3~GHz$, la especificaci\'on se corresponde con la tercer banda ($2.4~GHz-6.2~GHz$) y c\'omo se puede advertir se cumple holgadamente, $28.48~dB\ll79~dB$.
+		Dado que se opera en una regi\'on centrada en $3~GHz$, la especificaci\'on se corresponde con la tercer banda ($2.4~GHz-6.2~GHz$) y c\'omo se puede advertir se cumple holgadamente, $28.48~dB\pm~1.5~dB\ll79~dB$.
 		
 	\subsection{Mediciones con el analizador de redes}
 		\subsubsection{Transferencia de un pasabanda}
