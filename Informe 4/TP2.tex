@@ -289,69 +289,72 @@
 			L = \frac{\omega}{X_{med}}
 		\end{equation}
 		
-		\todo[inline]{modificar esta tabla }
 		\begin{table}[!htp]
 			\centering
-			\begin{tabular}{|c|c|c|c|c|}
+			\begin{tabular}{|c|c|c|}
 				\hline
-				Tensión [V] & $C_{med}~[\mu F]$ & $\Delta C~[\mu F]$ & 
-				$R_{med}~[K\Omega]$ & $\Delta R~[\Omega]$\\
+				Parámetro & Valor & $\Delta~Valor$ \\ 
 				\hline
-				25 &	209 & 0.1 & 0.660 & 0.4 \\
+				$C_s$ &	$207.1~\mu F$ & $0.1~\mu F$ \\
 				\hline
-				22.3 &	206 & 0.1 & 0.651 & 0.4 \\
+				$R_s$ &	$0.30~\Omega$ & $0.01~\Omega$ \\
 				\hline
-				13.8 &	202 & 0.1 & 0.634 & 0.4 \\
+				$L_s$ &	116.68 nHy & 0.06 nHy \\
 				\hline
-				6.9 &	201 & 0.1 & 0.632 & 0.4 \\
-				\hline
-				2.6 &	199 & 0.1 & 0.628 & 0.4 \\
-				\hline
-				0.6 &	199 & 0.1 & 0.625 & 0.4 \\
-				\hline	  
 			\end{tabular}
-			\caption{Barrido de tensión del capacitor electrolítico con RLC 
-			meter.} 
+			\caption{Parámetros del modelo del capacitor electrolítico.}
 			\label{tab:010}
 		\end{table}	
 
 		\indent Los valores contenidos en la tabla \ref{tab:010} se utilizaron 
-		junto a la ecuación \ref{eq:002} para poder obtener los valores de la 
-		reactancia total en las mismas frecuencias en que se realizaron las 
-		mediciones con el RLC meter. La tabla \ref{tab:011} muestra los 
-		resultados.
-
-		\todo[inline]{modificar esta tabla }
+		junto a la ecuación \ref{eq:001} para poder obtener los valores del 
+		módulo de la reactancia total en las mismas frecuencias en que se 
+		realizaron las mediciones con el RLC meter. La tabla \ref{tab:011} 
+		muestra los resultados.
+		
 		\begin{table}[!htp]
 			\centering
-			\begin{tabular}{|c|c|c|c|c|}
+			\begin{tabular}{|c|c|c|}
 				\hline
-				Tensión [V] & $C_{med}~[\mu F]$ & $\Delta C~[\mu F]$ & 
-				$R_{med}~[K\Omega]$ & $\Delta R~[\Omega]$\\
+				Frecuencia [KHz] & $X_{med}~[\Omega]$ & $X_{total}~[\Omega]$ \\
 				\hline
-				25 &	209 & 0.1 & 0.660 & 0.4 \\
+				0.012 &	64.05 & 64.04 \\
 				\hline
-				22.3 &	206 & 0.1 & 0.651 & 0.4 \\
+				0.120 &	6.67 & 6.40 \\
 				\hline
-				13.8 &	202 & 0.1 & 0.634 & 0.4 \\
+				0.500 &	1.67 & 1.53 \\
 				\hline
-				6.9 &	201 & 0.1 & 0.632 & 0.4 \\
+				1.000 &	0.86 & 0.77 \\
 				\hline
-				2.6 &	199 & 0.1 & 0.628 & 0.4 \\
+				10.00 &	0.10 & 0.07 \\
 				\hline
-				0.6 &	199 & 0.1 & 0.625 & 0.4 \\
+				20.00 &	0.06 & 0.02 \\
+				\hline
+				40.00 & 0.05 & 0.01 \\
+				\hline
+				50.00 & 0.05 & 0.02 \\
+				\hline
+				66.66 &	0.06 & 0.04 \\
+				\hline
+				100.0 &	0.07 & 0.07 \\
 				\hline	  
 			\end{tabular}
-			\caption{Barrido de tensión del capacitor electrolítico con RLC 
-			meter.} 
+			\caption{Módulo de la reactancia del modelo y medido del capacitor 
+			electrolítico.}
 			\label{tab:011}
 		\end{table}	
 
 		\indent A modo de comparación, se muestra en la figura \ref{img:002}
-		una comparación entre los valores de las reactancias de ambos modelos,
-		el RC serie medido con respecto al RLC serie real.
-
-		\todo[inline]{agregar la imagen con ref=img:002}
+		una comparación entre los valores de los módulos de las reactancias de 
+		ambos modelos, el RC serie medido con respecto al RLC serie real.
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=8cm]{Imagenes/capacitorElectrolitico.png}
+			\caption{comparación entre modelo capcitor y mediciones vs 
+			frecuencia.}
+			\label{img:002} 
+		\end{figure}
 		
 		\indent Como se puede apreciar en la imagen \ref{img:002}, ambas 
 		impedancias concuerdan a través de la frecuencia.
@@ -409,19 +412,19 @@
 				\hline
 				0.120 &	23.29 & 0.02 & 0.76 & 0.01 \\
 				\hline
-				0.500 &	23.18 & 0.02 & 0.134 & 0.01 \\
+				0.500 &	23.18 & 0.02 & 0.134 & 0.001 \\
 				\hline
 				1.000 &	23.10 & 0.02 & 0.064 & 0.001 \\
 				\hline
 				10.00 &	22.82 & 0.02 & 0.007 & 0.001 \\
 				\hline
-				20.00 &	22.71 & 0.02 & 0.0035 & 0.001 \\
+				20.00 &	22.71 & 0.02 & 0.0035 & 0.0001 \\
 				\hline
-				40.00 &	22.54 & 0.02 & 0.0018 & 0.001 \\
+				40.00 &	22.54 & 0.02 & 0.0018 & 0.0001 \\
 				\hline
-				50.00 &	22.48 & 0.02 & 0.0015 & 0.001 \\
+				50.00 &	22.48 & 0.02 & 0.0015 & 0.0001 \\
 				\hline
-				66.666 & 22.44 & 0.02 & 0.0012 & 0.001 \\
+				66.666 & 22.44 & 0.02 & 0.0012 & 0.0001 \\
 				\hline
 				100.0 &	22.53 & 0.02 & 0.001038 & 0.000001 \\
 				\hline
@@ -457,23 +460,79 @@
 		\end{table}	
 		
 		\indent Utilizando las ecuaciones anteriormente mencionadas para 
-		calcular los parámetros del capacitor (\ref{eq:003} y \ref{eq004}), se 
+		calcular los parámetros del capacitor (\ref{eq:003} y \ref{eq:004}), se 
 		obtiene la tabla \ref{tab:012}.
 
-		\todo[inline]{insertar la tabla que tiene los parametros del capacitor}
+		\begin{table}[!htp]
+			\centering
+			\begin{tabular}{|c|c|c|}
+				\hline
+				Parámetro & Valor & $\Delta~Valor$ \\ 
+				\hline
+				$C_s$ &	$23.88~nF$ & $0.02~nF$ \\
+				\hline
+				$R_s$ &	$0.0035~\Omega$ & $0.0001~\Omega$ \\
+				\hline
+				$L_s$ &	$112.43~\mu Hy$ & $0.06~\mu Hy$ \\
+				\hline
+			\end{tabular}
+			\caption{Parámetros del modelo del capacitor cerámico.}
+			\label{tab:012}
+		\end{table}
 
 		\indent Con dichos parámetros se realizó el barrido en frecuencias 
 		para obtener la reactancia del mismo. La tabla \ref{tab:013} posee 
 		dichos resultados.
 
-		\todo[inline]{insertar la tabla del modulo de la reactancia en frec}
+		\begin{table}[!htp]
+			\centering
+			\begin{tabular}{|c|c|c|}
+				\hline
+				Frecuencia [KHz] & $X_{med}~[\Omega]$ & $X_{calc}~[\Omega]$ \\
+				\hline
+				0.012 &	555.40 & 555.40 \\
+				\hline
+				0.120 &	56.95 & 55.54 \\
+				\hline
+				0.500 &	13.73 & 13.33 \\
+				\hline
+				1.000 &	6.89 & 6.66 \\
+				\hline
+				10.00 &	0.70 & 0.66 \\
+				\hline
+				20.00 &	0.35 & 0.32 \\
+				\hline
+				40.00 & 0.18 & 0.14 \\
+				\hline
+				50.00 & 0.14 & 0.10 \\
+				\hline
+				66.66 &	0.11 & 0.05 \\
+				\hline
+				100.0 &	0.07 & 0.003 \\
+				\hline	  
+			\end{tabular}
+			\caption{Módulo de la reactancia del modelo y medido del capacitor 
+			cerámico.}
+			\label{tab:013}
+		\end{table}
 
-		\indent A modo de comparación se muestra el gráfico \ref{img:004} de las comparaciones
-		de las reactancias medida y calculadas en la tabla \ref{tab:013}
+		\indent A modo de comparación se muestra el gráfico \ref{img:004} de las
+		curvas de los módulos de las reactancias medidas y calculadas en la 
+		tabla \ref{tab:013}.
 
-		\todo[inline]{insertar en grafico 004 la comparacion}
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=8cm]{Imagenes/capacitorCeramico.png}
+			\caption{comparación entre modelo capcitor y mediciones vs 
+			frecuencia.}
+			\label{img:004} 
+		\end{figure}
+
 		\indent Se puede apreciar que las mediciones se condicen con el modelo 
-		del capacitor. \\
+		del capacitor en las frecuencias menores, a mayores fecuencias hay 
+		diferencia dado que a 100 KHz el capacitor sigue presentando una 
+		respuesta capacitva, por ende el modelo a frecuencias mayores no 
+		se asemeja a este capacitor en particular. \\
 		\indent En la medición de la respuesta en función de la variación de 
 		tensión de alimentación no se observan cambios apreciables en los 
 		parámetros, a diferencia del capacitor electrolítico, en el cual la 
