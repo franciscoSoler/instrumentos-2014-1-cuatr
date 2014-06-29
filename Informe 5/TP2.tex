@@ -84,7 +84,58 @@
 	
 	\newpage
 	\subsection{Analizador de redes}
-	\todo[inline]{hacer}
+	\indent El analizador de redes es un instrumento que permite medir la 
+	magnitud y fase de un elemento, su retardo de grupo, las impedancias de los 
+	puertos en un gr\'afico de Smith, par\'ametros de transmisi\'on y reflexi\'on y, en 
+	el dominio del tiempo, la distancia entre un terminal y una desadaptaci\'on en
+	una l\'inea de transmisi\'on. \\
+	\indent Est\'a compuesto de un generador que entrega una se\~nal de referencia, 
+	un elemento que permite separar las se\~nales y un receptor. La separaci\'on de 
+	se\~nales permite medir una porci\'on de la se\~nal incidente para realizar 
+	relaciones de mediciones y separa las se\~nales incidente y reflejada 
+	presentes en el terminal del equipo bajo prueba. En la Figura \ref{img:001} 
+	se muestra el diagrama en bloques de un analizador de redes.
+
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=12cm]
+		{Imagenes/diagAnalRedes.png}
+		\caption{Diagrama en bloques de un analizador de redes}
+		\label{img:001} 
+	\end{figure}
+
+	\indent Antes de realizar una medici\'on, el analizador de redes debe ser 
+	calibrado en el rango de frecuencias en el cual se desea realizar la 
+	medici\'on. La calibraci\'on consiste en ajustar el equipo mediante un kit de 
+	calibraci\'on para compensar la medici\'on y que la misma se realice 
+	directamente sobre el terminal a medir. De otra manera, se estar\'ian midiendo
+	tambi\'en los conectores y cables de la conexi\'on, cuando en realidad se desea 
+	ensayar los terminales del equipo. El kit de calibraci\'on est\'a formado por un
+	cortocircuito, un circuito abierto y una carga de 50$\Omega$ de RF (son 3 
+	elementos que a las frecuencias de trabajo del equipo se comportan de dicha 
+	manera). \\
+	\indent Los pasos a seguir para realizar cualquier medici\'on son los 
+	siguientes:
+	
+	\begin{itemize}
+		\item Se seleccionan en el instrumento el rango de frecuencias, la 
+		cantidad de puertos, la cantidad de puntos de la medici\'on y la potencia 
+		de la se\~nal de referencia (low or high). 
+		\item Debe indicarse el kit de calibraci\'on que se va a utilizar, ya que
+		hay varios modelos tanto en la configuraci\'on de sus conectores como en 
+		su tipo de operaci\'on. Los mec\'anicos son de conexi\'on manual, mientras que
+		los kits electr\'onicos poseen una interfaz que evita que el usuario deba 
+		interactuar durante el proceso de calibraci\'on. 
+		\item Una vez realizados los pasos anteriores, el equipo indica los 
+		pasos a seguir. En este caso, se utiliz\'o un kit mec\'anico. Primero pide 
+		el circuito abierto, luego el cortocircuito y por \'ultimo la carga. Si se
+		utilizaran 2 puertos, se deber\'a repetir la conexi\'on para el puerto 2 y 
+		por \'ultimo se requerir\'a que se conecte un puente entre el puerto 1 y el 
+		2. 
+		\item Si se requiere medir en otro rango de frecuencias, se debe 
+		realizar nuevamente la calibraci\'on en dicho rango. 
+	\end{itemize}
+	
 \section{Desarrollo}
 	\subsection{Mediciones con el analizador de espectro}
 \indent Para llevar a cabo las mediciones, se utilizan los siguientes
@@ -196,7 +247,7 @@
 		$$THD=\sqrt{\frac{10^{\frac{-51.35}{5}}+10^{\frac{-65.24}{5}}}{10^{
 		\frac{-12.89}{5}}}}=3.16\cdot10^{-4}$$
 		
-		%'No se si poner aca incerteza, creo que es más importante lo de abajo 
+		%'No se si poner aca incerteza, creo que es m\'as importante lo de abajo 
 		% que es lo que espeficica el manual'. La verdad: Paja jajaja
 		
 		\indent La cual es una distorsi\'on bastante baja. Por otra parte, el 
@@ -205,7 +256,7 @@
 		es f\'acil de comprobar ya que 
 		$A_0-A_1=(-12.89~dB\pm~1.5~dB)-(-51.35~dB\pm~1.5~dB)=38.46~dB~\pm~3~dB$,
 		en cuyo peor caso ($35.46~dB$) es mayor a lo especificado.
-		%No esntendi mucho lo de la distorsión por. FRAN?			
+		%No esntendi mucho lo de la distorsi\'on por. FRAN?			
 		
 		\subsubsection{Distorsi\'on por intermodulaci\'on del analizador de 
 		espectro}
