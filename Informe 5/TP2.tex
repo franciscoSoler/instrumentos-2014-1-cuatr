@@ -295,54 +295,55 @@
 		\indent Normalmente se lo puede apreciar en el display del instrumento 
 		como una deformaci\'on del piso de ruido en forma de campana o pollera 
 		en los alrededores de la frecuencia que se est\'e midiendo. \\
-		\indent En este caso se va a evaluar el ruido de fase para una señal
+		\indent En este caso se va a evaluar el ruido de fase para una se\~nal
 		sinusoidal de frecuencia 100MHz. La idea es medir la potencia que posee 
-		la señal de ruido en un ancho de banda de 1 Hz y dividir dicha potencia 
-		con la potencia de la portadora. La imagen \ref{img:002} muestra un 
-		diagrama de la medición. 
+		la se\~nal de ruido en un ancho de banda de 1 Hz y dividir dicha 
+		potencia con la potencia de la portadora. La imagen \ref{img:002} 
+		muestra un diagrama de la medici\'on. 
 
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=12cm]
 			{Imagenes/diagAnalRedes.png}
-			\caption{Medición del ruido de fase con el analizador de espectro}
+			\caption{Procedimiento de medici\'on del ruido de fase}
 			\label{img:002} 
 		\end{figure}
 
 		\indent Generalmente tarda demasiado utilizar un resolution bandwidti de
-		1 Hz, por lo tanto se utiliza uno mayor y luego se realiza la conversión
-		, a su vez, cabe destacar que, para realizar correctamente la medición 
-		de la potencia del ruido, al ancho de banda se lo tiene que multiplicar
-		por un factor que depende del resolution bandwidth, como se utilizó uno 
-		de 300 Hz, el factor de multiplicación es de 1.128. \\
-		\indent A su vez, a la medición hay que sumarle unos 2.5 dB por las 
-		sumas de las incertidumbres de la medición.
+		1 Hz, por lo tanto se utiliza uno mayor y luego se realiza la 
+		conversi\'on, a su vez, cabe destacar que, para realizar correctamente 
+		la medici\'on de la potencia del ruido, al ancho de banda se lo tiene 
+		que multiplicar por un factor que depende del resolution bandwidth, como
+		se utiliz\'o uno de 300 Hz, el factor de multiplicaci\'on es de 1.128.\\
+		\indent A su vez, a la medici\'on hay que sumarle unos 2.5 dB por las 
+		sumas de las incertidumbres de la medici\'on. \\
+		\indent Dado que la campana de ruido de fase se extiende en un "span" de
+		frecuencias aproximadamente de 20 KHz y es sim\'etrica con respecto a la
+		frecuencia central se determin\'o tomar una muestra a los 5 KHz y la 
+		otra a los 10 KHz de la portadora. \\
+		\indent A continuaci\'on, en la figura \ref{img:003} se muestran las 
+		mediciones de dichos puntos 
 		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=12cm]
+			{Imagenes/diagAnalRedes.png}
+			\caption{Mediciones del ruido de fase con el analizador de espectro}
+			\label{img:003} 
+		\end{figure}
+		
+		\indent Con los datos de la imagen, se observa que el ancho de banda 
+		tomado para el ruido es de 5 KHz, diferencia de potencia de ruido en ese
+		ancho de banda con respecto a la potencia del carrier se calcula 
+		realizando el promedio de las diferencias de potencia como se muestra en
+		la ecuaci\'on \ref{eq:001}
+
+		\begin{equation} \label{eq:001}
+			difPot = 10\log_{10}(\frac{10^{\frac{difPot1}{10}} + 10^{\frac
+			{difPot2}{10}}}{2}) = 10\log_{10}(\frac{10^{\frac{difPot1}{10}} + 
+			10^{\frac{difPot2}{10}}}{2}) =
+		\end{equation}
 		\todo[inline]{terminar}
-		La idea es seleccionar en el
-		analizador de espectro una ventana determinada donde medir la
-		densidad espectral de potencia (expresada en dBm por unidad de Hz).
-		Como se explicará en una experiencia posterior, este valor no deberia
-		variar si el piso de ruido es cte. (es decir, debería ser independiente
-		del BW de FI que se toma). También deberia ser independiente de el
-		ancho de la ventana seleccionada si el piso de ruido es constante. En
-		el caso que nos compete, el piso de ruido no es constante sino que
-		posee forma de campana, por lo que se elegirá un ancho de ventana
-		que contenga poca variación de la curva de ruido.
-		En base a este análisis se determinaron los siguientes valores de BW
-		de FI y de ancho de ventana para medir:
-		Res BW (filtro FI) = 1 kHz
-		Ancho de ventana = 200 Hz
-		Dado que la campana de ruido de fase se extiende en un 'span' de
-		frecuencias de apoximadamente 20 KHz y es simétrica con respecto a
-		la frecuencia central se determnó tomar 10 muestras de la densidad
-		espectral de potencia cada 1KHz de paso desde la fundamental y en
-		el sentido de las frecuencias crecientes.
-		A continuación se incluyen las capturas correspondientes a la
-		medición de densidad espectral de potencia para la venana centrada
-		en la frecuencia fundamental y para la ventana centrada en los 10
-		puntos de muestreo seleccionados. Las capturas a continuación
-		corresponden a los siguientes casos respectivamente:
 		
 		\indent La especificaci\'on dada por el fabricante para el ruido de fase
 		es 
