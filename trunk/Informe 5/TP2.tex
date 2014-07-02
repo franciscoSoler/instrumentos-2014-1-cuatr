@@ -260,7 +260,24 @@
 		
 		\subsubsection{Distorsi\'on por intermodulaci\'on del analizador de 
 		espectro}
-		\todo[inline]{hacer esta garchaaaaa}
+		La distorsi\'on por intermodulaci\'on ocurre cuando a un sistema ingresan simultaneamente dos o m\'as se\~nales senoidales de diferente frecuencia generando a la salida del mismo la presencia espectral de componentes cuyas frecuencias son sumas y diferencias de las frecuencias de entrada.
+		Para analizar la distorsi\'on que posee el analizador de espectro se realiza la sigiente experiencia: se conecta al analizador de espectro PSA 6000, por medio de una "T" dos se\~nales de 0dBm de frecuencias $f=10~MHz$ y $f=10~MHz+10~kHz$, provenientes del generador de funciones arbitrarias. Utilizando una atenuaci\'on de 30 dB en el analizador de espectro, no se puede apreciar la presencia de componentes espectrales adicionales a las de entrada, pero como se puede ver en la Figura \ref{intermod1}, con una atenuaci\'on de 20 dB esto s\'i ocurre. M\'as a\'un, aumentando las se\~nales del generador a 3 dBm,las componentes de intermodulaci\'on son mucho m\'as considerables como se puede ver en la Figura \ref{intermod2}. Esto ocure ya que el mixer debe trabajar con se\~nales de baja amplitud para no agregar alinealidades a su operaci\'on. 
+		\begin{figure}[!htb]
+				\centering
+				\includegraphics[width=8cm]
+				{Imagenes/SCREN446.png}
+				\caption{Espectro obtenido con se\~nales de 0 dBm y atenuaci\'on de 20 dB}
+				\label{intermod1} 
+		\end{figure}
+				
+		\begin{figure}[!htb]
+				\centering
+				\includegraphics[width=8cm]
+				{Imagenes/SCREN447.png}
+				\caption{Espectro obtenido con se\~nales de 3 dBm y atenuaci\'on de 20 dB}
+				\label{intermod2} 
+		\end{figure}
+				
 		\subsubsection{Frecuencia de conversi\'on de un generador digital}
 		\indent Un generador de funciones arbitrarias digital, mediante un 
 		conversor digital-anal\'ogico, transforma una palabra de bits en un 
@@ -630,60 +647,90 @@
 		banda de paso se especifica en  $800~MHz-900~MHz$. En la Figura 
 		\ref{transferenciabandpass} se observa la tranferencia obtenida al 
 		medir con el analizador Agilent N9923A. Como se puede observar el ancho 
-		de banda obtenido es mayor al especificado por el fabricante, 
+		de banda obtenido, $584~MHz-1164~MHz$ (tomando como criterio que las frecuencias de corte son las est\'an $3~dB$ por debajo de la amplitud de la frecuencia de paso del filtro) es mayor al especificado por el fabricante, 
 		probablemente esto se deba al bajo nivel de potencia con el cual se 
 		est\'a realizando la medici\'on, ya que la especificaci\'on est\'a 
-		referida a un nivel de potencia de $750~W$
+		referida a un nivel de potencia de $750~W$.
+		En la Tabla \ref{tablon} se resumen las mediciones obtenidas cuyas incertezas se determinan a partir de un software calculador de incertezas porporcionado por Agilent
 		
 		%CAMBIAR IMAGENNNNNNNNNNNNNNNNNNNNN
 		\begin{figure}[!htb]
 				\centering
 				\includegraphics[width=8cm]
-				{Imagenes/bessel.png}
+				{Imagenes/transferenciapasabanda.PNG}
 				\caption{Tranferencia (par\'ametro $S_{21}$) del pasabanda.}
 				\label{transferenciabandpass} 
 		\end{figure}
-
+		
+		\begin{table}[!htp]
+			\centering
+			\begin{tabular}{|c|c|c|c|}
+				\hline
+				Frecuencia & Amplitud (dB) & Incerteza (dB)\\
+				\hline
+				$584.091~MHz$ & $-3.171$ & $0.04$ \\
+				$800.000~MHz$ & $0.3261$ & $0.07$ \\	
+				$850.000~MHz$ & $-0.004$ & $0.09$ \\	
+				$900.000~MHz$ & $-0.2372$ & $0.06$ \\
+				$1163.636~MHz$ & $-3.219$ & $0.04$ \\	
+									
+			\end{tabular}
+			\caption{Resultados obtenidos de la medici\'on del ancho de banda del pasabanda} \label{tablon}
+		\end{table}	
+		
+		
 		\subsubsection{Transferencia de 2 cables coaxiles}
-		\indent En esta secc\'on se  busca obtener la transferencia de dos 
+		\indent En esta secci\'on se  busca obtener la transferencia de dos 
 		cables coaxiles de $Z_0=50~\Omega$, uno fino y otro grueso. En ambos 
-		casos para se deb\'io recurrir a la utilizaci\'on conectores extra para 
+		casos se deb\'io recurrir a la utilizaci\'on conectores extra para 
 		poder conectar los coaxiles con el analizador de redes, por lo tanto en 
 		su transferencia se incluye tambi\'en el efecto de estos conectores. En 
 		las Figuras \ref{caoxilflaco} y \ref{coaxilgordo}, se muestran las 
 		transferencias obtenidas para el cable coaxil fino y el grueso, 
-		respectivamente.
+		respectivamente. Los resultados num\'ericos se muestran en la Tabla \ref{puta}, los cuales permiten ver que el cable coaxil grueso posee un ancho de banda mayor que el del cable coaxil fino.
 		
-		%CAMBIAR IMAGENNNNNNNNNNNNNNNNNNNNN
+
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=8cm]
-			{Imagenes/bessel.png}
+			{Imagenes/transferenciacablefino.png}
 			\caption{Tranferencia (par\'ametro $S_{21}$)del cable coaxil 
 			fino.}
 			\label{caoxilflaco} 
 		\end{figure}
 		
-		%CAMBIAR IMAGENNNNNNNNNNNNNNNNNNNNN
+
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=8cm]
-			{Imagenes/bessel.png}
+			{Imagenes/transferenciacablegroso.png}
 			\caption{Tranferencia (par\'ametro $S_{21}$) del cable coaxil 
 			grueso.}
 			\label{coaxilgordo} 
 		\end{figure}
-
+		
+	\begin{table}[!htp]
+			\centering
+			\begin{tabular}{|c|c|c|c|}
+				\hline
+			Cable coaxil	& Frecuencia & Amplitud (dB) & Incerteza (dB)\\
+				\hline
+			'Fino'	 &$3028.265~MHz$ & $-3.012$ & $0.06$ \\
+			'Grueso' &$5931.841~MHz$ & $-3.017$ & $0.07$ \\				
+			\end{tabular}
+			\caption{Resultados obtenidos de la medici\'on del ancho de banda de los cables coaxiles} \label{puta}
+		\end{table}	
+		
 		\indent Para poder analizar el efecto de los conectores se quita el 
 		cable coaxil, y se dejan a \'estos conectados al analizador para poder 
 		obtener su transferencia, la cual se grafica en la Figura 
-		\ref{tranferenciaconectorrr}
+		\ref{tranferenciaconectorrr}. A modo de ejemplo, como se puede ver para una frecuencia de $4595.923~MHz$ (en la cual el cable coaxil grueso posee una transferencia de $-0.5~dB~\pm~0.06dB$) la transferencia del conector es de $0.3~dB~\pm~0.07dB$, es decir, para esa frecuencia la trasferencia correspondiente al cable coaxil es de $-0.8~dB~\pm~0.13dB$. 
 		
-		%CAMBIAR IMAGENNNNNNNNNNNNNNNNNNNNN
+
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=8cm]
-			{Imagenes/bessel.png}
+			{Imagenes/transferenciaconector.png}
 			\caption{Tranferencia (par\'ametro $S_{21}$) de los conectores.}
 			\label{tranferenciaconectorrr} 
 		\end{figure}
@@ -700,16 +747,15 @@
 			\item Analizador de espectro HM 5006
 		\end{itemize}
 		
-		\indent En la Figura \ref*{tranferenciacHM}, se puede ver que para la 
-		frecuencia de corte especificada por el fabricante, $500~MHz$, la 
-		impedancia de entrada es de $4564564$, la cual se corresponde con la 
+		\indent En la Figura \ref{tranferenciacHM}, se puede ver que para una
+		frecuencia de $506.377~MHz$ (cercana a la frecuencia de corte especificada por el fabricante, $506~MHz$) la 
+		impedancia de entrada es de $49.18\Omega+j\cdot3.83\Omega$, la cual se corresponde con la 
 		especificada de $50~\Omega$.
 		
-		%CAMBIAR IMAGENNNNNNNNNNNNNNNNNNNNN
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=8cm]
-			{Imagenes/bessel.png}
+			{Imagenes/SmithimpedancaiHM5006.png}
 			\caption{Carta de Smith de la impedancia del analizador HM 5006.}
 			\label{tranferenciacHM} 
 		\end{figure}		
@@ -720,19 +766,17 @@
 		\indent El impedanc\'imetro opera hasta una frecuencia de $108~MHz$, con
 		lo cual es deseable que su impedancia de entrada se comporte de manera 
 		constante en ese rango. En la Figura 
-		\ref*{tranferenciaimpedanciamiterro} se puede observar el resultado 
-		obtenido.
+		\ref{tranferenciaimpedanciamiterro} se puede observar el resultado 
+		obtenido, que es de $59.2\Omega+j\cdot7.61\Omega$ 
 		
-		%CAMBIAR IMAGENNNNNNNNNNNNNNNNNNNNN
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=8cm]
-			{Imagenes/bessel.png}
+			{Imagenes/Smithimpedancaiimpedancimetro.png}
 			\caption{Carta de Smith de la impedancia del impedanc\'imetro HP 
 			4815A}
 			\label{tranferenciaimpedanciamiterro} 
 		\end{figure}		
 	\section{Conclusiones}
-	\todo[inline]{viva colombia!!!!}
-	\indent
+	\indent En este trabajo se analiz\'o el funcionamiento del analizador de espectro y el analizador de redes. Con ello se realizaron diversas mediciones tales como obtenci\'on de la figura de ruido de un instrumento, la distorsi\'on arm\'onica, la transferencia de un cuadripolo, entre otros. Es evidente las mediciones realizadas en algunos casos puede hacerse con cualquiera de los dos instrumentos estudiados, sin embargo no se puede garantizar que la medici\'on resulte efectiva en cuanto a la exactitud que se obtiene. Es importante determinar qu\'e instrumento es adecuado para cada medici\'on. A modo de ejemplo, la transferencia de un cuadripolo puede obtenerse utilizando el analizador de expectro si este posee un modo de operaci\'on Zero Span, pero las incertezas que se obtienen son del orden de $1.5~dB$, mientras que utilizando el analizador de redes estas son del orden de $0.1~dB$, notablemente de menor magnitud.
 \end{document}
