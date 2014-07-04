@@ -110,7 +110,7 @@
 	calibraci\'on para compensar la medici\'on y que la misma se realice 
 	directamente sobre el terminal a medir. De otra manera, se estar\'ian midiendo
 	tambi\'en los conectores y cables de la conexi\'on, cuando en realidad se desea 
-	ensayar los terminales del equipo. El kit de calibraci\'on est\'a formado por un
+	medir el dispositivo presente entre los terminales del equipo. El kit de calibraci\'on est\'a formado por un
 	cortocircuito, un circuito abierto y una carga de 50$\Omega$ de RF (son 3 
 	elementos que a las frecuencias de trabajo del equipo se comportan de dicha 
 	manera). \\
@@ -144,8 +144,8 @@
 			\item Analizador de espectro HM 5006
 			\item Analizador de espectro PSA 6000
 			\item Sintetizador de frecuencias Agilent N9310A
-			\item Generador de funciones arbitrariasSiglent SDG1050
-			\item Cable coaxil para conexi\'on de los instrumentos
+			\item Generador de funciones arbitrarias Siglent SDG1050
+			\item Cable coaxil para conexi\'on de los instrumentos.
 		\end{itemize}	
 
 		\subsubsection{Selectividad}
@@ -192,7 +192,7 @@
 				$3.5~kHz~\pm~4.5~kHz$ &$ 9.29~\pm~142\%$ \\
 				\hline  
 				PSA 6000& $300~Hz$& $3.5~kHz~\pm~3.15~kHz$ & 
-				$250~Hz~\pm~3.15~kHz$ &$ 14~\pm~1350\%?$ \\
+				$250~Hz~\pm~3.15~kHz$ &$ 14~\pm~1350\%$ \\
 				\hline  										 	  	  
 			\end{tabular}
 			\caption{Resultados obtenidos para los analizadores 5066 y PSA 6000}
@@ -226,7 +226,7 @@
 		
 		\indent Donde $a_n$ son los coeficientes de la serie de Fourier de cada 
 		componente de frecuencia $f_n$. \\
-		\indent En esta secci\'on se mide la THD del generador de funciones 
+		\indent En esta secci\'on se mide la THD del sintetizador de frecuencias  
 		N9310A. Para ello se conecta el generador al analizador de espectros PSA
 		6000 por medio de un cable coaxil. La se\~nal del generador tiene una 
 		frecuencia de $500~MHz$. En la Figura \ref{THD} se puede observar las 
@@ -241,7 +241,7 @@
 				\label{THD} 
 		\end{figure}
 		
-		\indent Con lo cual puede calcularse la distrosi\'on, despreciando los 
+		\indent Con lo cual puede calcularse la distorsi\'on, despreciando los 
 		arm\'onicos superiores al segundo
 		$$THD=\sqrt{\frac{a^2_1+a^2_2}{a^2_0}}$$
 		$$THD=\sqrt{\frac{10^{\frac{-51.35}{5}}+10^{\frac{-65.24}{5}}}{10^{
@@ -261,7 +261,7 @@
 		\subsubsection{Distorsi\'on por intermodulaci\'on del analizador de 
 		espectro}
 		La distorsi\'on por intermodulaci\'on ocurre cuando a un sistema ingresan simultaneamente dos o m\'as se\~nales senoidales de diferente frecuencia generando a la salida del mismo la presencia espectral de componentes cuyas frecuencias son sumas y diferencias de las frecuencias de entrada.
-		Para analizar la distorsi\'on que posee el analizador de espectro se realiza la sigiente experiencia: se conecta al analizador de espectro PSA 6000, por medio de una "T" dos se\~nales de 0dBm de frecuencias $f=10~MHz$ y $f=10~MHz+10~kHz$, provenientes del generador de funciones arbitrarias. Utilizando una atenuaci\'on de 30 dB en el analizador de espectro, no se puede apreciar la presencia de componentes espectrales adicionales a las de entrada, pero como se puede ver en la Figura \ref{intermod1}, con una atenuaci\'on de 20 dB esto s\'i ocurre. M\'as a\'un, aumentando las se\~nales del generador a 3 dBm,las componentes de intermodulaci\'on son mucho m\'as considerables como se puede ver en la Figura \ref{intermod2}. Esto ocure ya que el mixer debe trabajar con se\~nales de baja amplitud para no agregar alinealidades a su operaci\'on. 
+		Para analizar la distorsi\'on que posee el analizador de espectro se realiza la sigiente experiencia: se conecta al analizador de espectro PSA 6000, por medio de una "T" dos se\~nales de 0 dBm de frecuencias $f=10~MHz$ y $f=10~MHz+10~kHz$, provenientes del generador de funciones arbitrarias. Utilizando una atenuaci\'on de 30 dB en el analizador de espectro, no se puede apreciar la presencia de componentes espectrales adicionales a las de entrada, pero como se puede ver en la Figura \ref{intermod1}, con una atenuaci\'on de 20 dB esto s\'i ocurre (cuyas amplitudes est\'an $52.78~dB\pm1.5~dB$ por debajo de la componente fundamental). M\'as a\'un, aumentando las se\~nales del generador a 3 dBm, las componentes de intermodulaci\'on son mucho m\'as considerables como se puede ver en la Figura \ref{intermod2}. En este caso las amplitudes est\'an $43.79~dB\pm1.5~dB$ por debajo de la componente fundamental. Esto ocure ya que el mixer debe trabajar con se\~nales de baja amplitud para no agregar alinealidades a su operaci\'on. 
 		\begin{figure}[!htb]
 				\centering
 				\includegraphics[width=8cm]
@@ -289,7 +289,7 @@
 		salida. En la Figura \ref{freqres} se puede ver la presencia de una 
 		componente residual que est\'a $88.5~dB~\pm~1.5~dB$ por debajo de la 
 		amplitud de la se\~nal de entrada que es de $0~dB~\pm~1.5~dB$. Es decir 
-		que se la diferencia con respecto a la frecuencia portadora es 
+		que la diferencia con respecto a la frecuencia portadora es 
 		$88.5~dB~\pm~3~dB$ y como se esperaba, su frecuencia es de 
 		$125~MHz~\pm~3.275~kHz$
 		
@@ -304,9 +304,7 @@
 		
 		%HUGO. Preguntar phase noise
 		\subsubsection{Ruido de fase}
-		\indent El objetivo de esta medici\'on es evaluar el uso del analizador 
-		de espectro para medir el ruido de fase. Este ruido se debe 
-		principalente a peque\~nas variaciones en la frecuencia instantanea de 
+		\indent Este ruido se debe principalmente a peque\~nas variaciones en la frecuencia instantanea de 
 		los osciladores involucrados. Tanto el generador como el oscilador VCO 
 		del instrumento aportan a generar este tipo de ruido. \\
 		\indent Normalmente se lo puede apreciar en el display del instrumento 
@@ -315,7 +313,7 @@
 		\indent En este caso se va a evaluar el ruido de fase para una se\~nal
 		sinusoidal de frecuencia 100MHz. La idea es medir la potencia que posee 
 		la se\~nal de ruido en un ancho de banda de 1 Hz y dividir dicha 
-		potencia con la potencia de la portadora. La imagen \ref{img:002} 
+		potencia con la potencia de la portadora. La Figura \ref{img:002} 
 		muestra un diagrama de la medici\'on. 
 
 		\begin{figure}[!htb]
@@ -332,7 +330,7 @@
 		la medici\'on de la potencia del ruido, al ancho de banda se lo tiene 
 		que multiplicar por un factor que depende del resolution bandwidth, como
 		se utiliz\'o uno de 300 Hz, el factor de multiplicaci\'on es de 1.128.\\
-		\indent A su vez, a la medici\'on hay que sumarle unos 2.51 dB por las 
+		\indent A su vez, a la medici\'on hay que sumarle unos 2.51 dB por la 
 		detecci\'on de envolvente m\'as el amplificador logar\'itmico.  \\
 		\indent Dado que la campana de ruido de fase se extiende en un "span" de
 		frecuencias aproximadamente de 20 KHz y es sim\'etrica con respecto a la
@@ -603,7 +601,7 @@
 		medir el ruido de salida. Con la entrada adaptada a $50\Omega$ se puede 
 		ir variando la secci\'on del espectro a considerar para obtener su 
 		densidad espectral de potencia. Como se puede ver se obtiene 
-		$N_o(dB)=kTB=-145.52~dBm\pm~1.5~dB$ con lo cual
+		$N_o(dB)=-145.52~dBm\pm~1.5~dB$ con lo cual
 		
 		$$F(dB)=N_o(dB)-N_i(dB)=-145.52~dBm-(-174~dBm)=28.48~dB\pm~1.5~dB$$
 		
@@ -641,6 +639,7 @@
 		$28.48~dB\pm~1.5~dB\ll79~dB$.
 		
 	\subsection{Mediciones con el analizador de redes}
+	Para obtener las incertezas de las mediciones de los par\'ametros S se puede utilizar un software que proporciona Agilent, en el cual se especifica el modelo del analizador de redes empleado y el kit de calibraci\'on asociado. Como el modelo que se utiliz\'o (N9923A) para medir no figura entre los modelos seleccionables, se eligi\'o el analizador N5221A, para tener una idea de las incertidumbres que podr\'ian obtenerse con el N9923A.
 		\subsubsection{Transferencia de un pasabanda}
 		\indent En esta secci\'on se busca obtener, utilizando el analizador de 
 		redes, la funci\'on de trasferencia de un pasabanda PolyPhaser cuya 
@@ -651,9 +650,8 @@
 		probablemente esto se deba al bajo nivel de potencia con el cual se 
 		est\'a realizando la medici\'on, ya que la especificaci\'on est\'a 
 		referida a un nivel de potencia de $750~W$.
-		En la Tabla \ref{tablon} se resumen las mediciones obtenidas cuyas incertezas se determinan a partir de un software calculador de incertezas porporcionado por Agilent
+		En la Tabla \ref{tablon} se resumen las mediciones obtenidas cuyas incertezas se determinan a partir de un software calculador de incertezas porporcionado por Agilent.		
 		
-		%CAMBIAR IMAGENNNNNNNNNNNNNNNNNNNNN
 		\begin{figure}[!htb]
 				\centering
 				\includegraphics[width=8cm]
@@ -741,24 +739,46 @@
 		utilizados en el laboratorio. La forma m\'as conveniente de presentar el
 		resultado es utilizando la carta de Smith, ya que muestra como var\'ia a
 		impedancia, en su parte real e  imaginaria, a medida que var\'ia la 
-		frecuencia.
+		frecuencia. Tambi\'en resulta \'util el gr\'afico de m\'odulo y fase del par\'ametro $S_{22}$ (se utiliz\'o el puerto 2 para medir la impedancia de entrada de los instrumentos), es decir el coeficiente de refleci\'on, ya que las incertezas est\'an especificadas por el software para ese par\'ametro.
 		
+		Del trabajo realizado para l\'ineas de transmisi\'on se sabe que el coeficiente de reflexi\'on est\'a dado por la siguiente expres\'ion
+		$$\rho=\frac{Z_L-Z_0}{Z_L+Z_0}$$
+		y que dada la medici\'on del coeficiente de reflexi\'on y conocidas sus incertezas, puede obtenerse la incerteza de la impedancia de carga en la l\'inea mediante la siguiente ecuaci\'on
+		\begin{equation}
+		Z_L =Z_0\cdot\frac{1+\rho}{1-\rho} \pm Z_0\cdot\frac{2\cdot\Delta\rho}
+					{(1 - \rho)^2}
+		\label{ecuaciototot}
+		\end{equation}
+		Esta es la forma en que se calcular\'an las impedancias y sus respectivas incertezas.
 		\begin{itemize}
 			\item Analizador de espectro HM 5006
 		\end{itemize}
 		
 		\indent En la Figura \ref{tranferenciacHM}, se puede ver que para una
-		frecuencia de $506.377~MHz$ (cercana a la frecuencia de corte especificada por el fabricante, $506~MHz$) la 
-		impedancia de entrada es de $49.18\Omega+j\cdot3.83\Omega$, la cual se corresponde con la 
-		especificada de $50~\Omega$.
+		frecuencia de $506.377~MHz$ (cercana a la frecuencia de corte especificada por el fabricante de $500~MHz$) la 
+		impedancia de entrada es de $49.18\Omega+j\cdot3.83\Omega$. La cual, como se puede notar tiene parte imaginaria a diferencia de los $50~\Omega$ especificados por el fabricante.
+		Por otra parte usando la ecuaci\'on \ref{ecuaciototot},con los datos de la Figura \ref{tranferenciacHM} y utilizando el calculador de incertezas de $S_{22}$ se obtiene
+		$Z_L =49.2410\Omega + j\cdot 3.8590\Omega \pm (1.1401\Omega +j\cdot17.1787\Omega)$.
 		
+		Como se puede notar su valor de referencia es el mismo que se obtiene en el gr\'afico de la carta de Smith. Por otra parte es notoria la incerteza de la parte compleja, la cual se debe a la incerteza de fase elevada que proporciona el calculador de incertezas de Agilent cuando el coeficiente de reflexi\'on tendiendo a cero.
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=8cm]
 			{Imagenes/SmithimpedancaiHM5006.png}
 			\caption{Carta de Smith de la impedancia del analizador HM 5006.}
 			\label{tranferenciacHM} 
+		\end{figure}
+		
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=8cm]
+			{Imagenes/CoeficientereflexionHM.png}
+			\caption{M\'odulo y fase del coeficiente de reflexi\'on.}
+			\label{CoeficientereflexionHM} 
 		\end{figure}		
+		
+		
+			
 		\begin{itemize}
 			\item Impedanc\'imetro HP 4815A
 		\end{itemize}
@@ -767,16 +787,27 @@
 		lo cual es deseable que su impedancia de entrada se comporte de manera 
 		constante en ese rango. En la Figura 
 		\ref{tranferenciaimpedanciamiterro} se puede observar el resultado 
-		obtenido, que es de $59.2\Omega+j\cdot7.61\Omega$ 
+		obtenido de graficar la carta de Smith, que es de $59.2\Omega+j\cdot7.61\Omega$.
 		
 		\begin{figure}[!htb]
 			\centering
 			\includegraphics[width=8cm]
 			{Imagenes/Smithimpedancaiimpedancimetro.png}
 			\caption{Carta de Smith de la impedancia del impedanc\'imetro HP 
-			4815A}
+			4815A.}
 			\label{tranferenciaimpedanciamiterro} 
-		\end{figure}		
+		\end{figure}	
+			
+		\begin{figure}[!htb]
+					\centering
+					\includegraphics[width=8cm]
+					{Imagenes/CoeficientereflexionIMPE.png}
+					\caption{M\'odulo y fase del coeficiente de reflexi\'on.}
+					\label{CoeficientereflexionIMPE} 
+				\end{figure}
+	Por otra parte usando nuevamente la ecuaci\'on \ref{ecuaciototot}, las incertezas del calculador y con los datos de la Figura \ref{CoeficientereflexionIMPE} se obtiene
+	$Z_L =59.1954 \Omega + j\cdot 7.6024\Omega \pm (3.1351\Omega +j\cdot20.6766\Omega)$. Resultado que vuelve a coincidir con el proporcionado en la carta de Smith y como en el caso anterior, presenta una incerteza compleja alta ocasionada por la elevada incerteza de la fase del coeficiente de reflexi\'on proporcionada. De cualquier manera el resultado difiere considerablemente de los $50~\Omega$ especificados
+	\newpage
 	\section{Conclusiones}
 	\indent En este trabajo se analiz\'o el funcionamiento del analizador de espectro y el analizador de redes. Con ello se realizaron diversas mediciones tales como obtenci\'on de la figura de ruido de un instrumento, la distorsi\'on arm\'onica, la transferencia de un cuadripolo, entre otros. Es evidente las mediciones realizadas en algunos casos puede hacerse con cualquiera de los dos instrumentos estudiados, sin embargo no se puede garantizar que la medici\'on resulte efectiva en cuanto a la exactitud que se obtiene. Es importante determinar qu\'e instrumento es adecuado para cada medici\'on. A modo de ejemplo, la transferencia de un cuadripolo puede obtenerse utilizando el analizador de expectro si este posee un modo de operaci\'on Zero Span, pero las incertezas que se obtienen son del orden de $1.5~dB$, mientras que utilizando el analizador de redes estas son del orden de $0.1~dB$, notablemente de menor magnitud.
 \end{document}
