@@ -73,52 +73,260 @@
 	lo utiliza como entrada. \\
 	\indent Los otros dos puertos del mixer, IF y RF, pueden intercambiarse 
 	dependiendo de que es lo que se busque. Si se utiliza al puerto IF como 
-	entrada, se logra obtener la suma de frecuencias, si la entrada es el RF, se
-	obtiene la resta. La relación entre la entrada y salida de frecuencias se 
-	muestra en la ecuación \ref{eq:002}
+	entrada, se logra obtener la suma y resta de frecuencias, si la entrada es 
+	el RF, se obtiene la resta. La relación entre la entrada y salida de 
+	frecuencias se muestra en la ecuación \ref{eq:002}
 
 	\begin{equation}\label{eq:002}
 		f_{IF} = |f_{LO} - f_{RF}|
 	\end{equation}
 
+	\indent En la figura \ref{img:001}, que representa ambas configuraciones de 
+	funcionamiento, se puede observar que en el caso de upconversion se observa
+	la suma y resta de frecuencias. Si se observan ambas se la llama 
+	upconversion de doble ancho de banda. Es posible armar uno de ancho de banda
+	simple, en este caso la suma o la resta de frecuecias es intencionalmente 
+	cancelada dentro del mixer. Dichos dispositivos se los llama single sideband
+	modulators. \\
+	\indent En principio, cualquier componente no lineal puede ser utilizado 
+	para armar un mixer; actualmente se utilizan diodos schottky, transistores 
+	GaAs FETs y CMOS. La elección depende de la aplicación. Los mixers FET y 
+	CMOS se utilizan cuando la performance es menos importante y el costo es 
+	crucial. Para aplicaciones de alta performance se utilizan mixers de didos 
+	schottky.
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=8cm]
+		{Imagenes/qmetro.png}
+		\caption{(a) mixer de un diodo. características I-V para (b)
+		conmutador ideal y (c) diodo schottky real.}
+		\label{img:002} 
+	\end{figure}
 
-A frequency domain representation of
-downconversion and upconversion is illustrated in Fig.
-1. Take careful note of the upconversion case—the close
-proximity of the sum and difference frequencies (f RF1
-and f RF2 ) in the frequency domain implies that both are
-available at the RF output port. This type of upconversion
-is known as double sideband upconversion. Single
-sideband upconversion is also possible, in which case
-either the sum or the difference frequency is intentionally
-canceled inside the mixer. Mixers that perform this more
-sophisticated functionality are called single sideband
-(SSB) upconverters (or single sideband modulators) and
-will be addressed in a future article.
-As Fig. 1 depicts, IF/RF signals tend to be information
-bearing signals (as denoted by the broadened spectra
-surrounding the RF and IF center frequencies). During
-frequency conversion, the information carried by the
-RF (IF) signal is frequency translated to the IF (RF)
-output. Therefore, mixers perform the critical function
-of translating in the frequency domain.
-In principle, any nonlinear device can be used to make
-a mixer circuit. As it happens, only a few nonlinear
-devices make “good” mixers. The devices of choice
-for modern mixer designers are Schottky diodes, GaAs
-FETs and CMOS transistors. The choice depends on the
-application. FET and CMOS mixers are typically used
-in higher volume applications where cost is the main
-driver and performance is less important. For the more
-challenging, high performance applications, Schottky
-diode mixers are used almost exclusively. All Marki
-Microwave mixers are designed using Schottky diode
-technology. For this reason, this Tutorial will focus on
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=8cm]
+		{Imagenes/qmetro.png}
+		\caption{comparaciones de la salida de un mixer de un diodo en el 
+		dominio del tiempo y frecuencia con características de switching 
+		de diodos ideales y reales} 
+		\label{img:003} 
+	\end{figure}
+
+
+	\subsubsection{Mixer de un diodo: Conmutador ideal vs diodo real}
+	\indent El mixer más simple consiste en un único diodo, como se muestra en 
+	la figura \ref{img:002}a. Se utiliza una gran señal de LO y otra pequeña de 
+	RF combinadas en el ánodo del diodo. En el enfoque ideal, como la señal del 
+	LO es dominante, la transconductancia del diodo es solo afectada por la 
+	misma. A su vez, se asume que el diodo switchea instantáneamente como se 
+	muestra en la figura \ref{img:002}b. Dispositivos que cumplen con lo 
+	anteriormente mencionado se los llaman conmutadores ideales y poseen la 
+	máxima performance como mixer. \\
+	\indent El proceso de mezclado se produce debido a la respuesta del diodo 
+	con respecto a la señal LO. Debio a que diodo es forzado a circuito abierto 
+	y cerrado por la señal LO, la señal pequeña de RF es chopeada. Si se 
+	analizan las componentes de Fourier de la señal de salida de la conmutación 
+	de dicho mixer (ver figuras \ref{img:003}a y \ref{img:003}c), se observa que
+	cumple con la siguiente relación:
+
+	\begin{equation*}
+		f_{IF} = nf_{LO}\pm f_{RF}~\text{(n es impar)}
+	\end{equation*}
+
+	\indent Por ende, en el caso ideal de un conmutador de switcheo, solo los 
+	armónicos impares del LO se mixean con el tono fundamental de RF. \\
+	\indent Como dicha función transferencia nunca puede alcanzarse en el caso 
+	real, hay un tiempo de transición del estado bajo a uno alto (como se 
+	muestra en la figura \ref{img:002}c), la señal RF tambíen modula la 
+	transconductancia de los diodos en algún porcentaje. La combinación de las 
+	características reales de los diodos y la modulación de la transconductancia
+	causan todos los componentes de armónicos de la señal IF. Las figuras 
+	\ref{img:003}b y \ref{img:003}d muestran la señal de salida en tiempo real y
+	el equivalente en el dominio de la frecuencia. Matemáticamente, los 
+	componentes de frecuencias generados por un diodo solo se muestran en la 
+	ecuación \ref{eq:003}
+
+	\begin{equation}\label{eq:003}
+ 		f_{IF} = n f_{LO}\pm m f_{RF}~\text{m y n son enteros}
+	\end{equation}
+
+	\indent Como solo se desea una única frecuencia de salida (cuando n y m = 1)
+	, eliminar todos los armónicos es el objetivo principal de un buen diseño 
+	de un mixer. Este análisis muestra los siguientes atributos de los mixers de
+	frecuencia:
+
+	\begin{itemize}
+		\item La mezcla se produce por el comportamiento de switcheo del diodo.
+		\item La mayoría de los armónicos no deseados son generados por la 
+		intermodulación no lineal de las señales de RF y LO en la región de 
+		transmisión del diodo.
+		\item Los mejores mixers utilizan diodos que se apriximan al conmutador 
+		ideal.
+		\item Mientras menor sea la potencia de la señal RF, la performance de 
+		espureos mejora (dado que la señal del LO controlará la 
+		transconductancia del diodo de forma más efectiva).
+	\end{itemize}
+
+	\subsubsection{mixer balanceados}
+	\indent Uno de los problemas que genera utilizar un único diodo como mixer 
+	es que el LO debe radiar parte de la potencia de entrada desde el puerto de 
+	entrada, esto genera una sensibilidad menor, que la potencia de salida 
+	disminuya aún mas y la generación de frecuencias spureas en la salida por 
+	mixeos entre armónicos. 
+
+
+
+
+	A double-balanced diode mixer normally make use of four diodes in a ring or star configuration with both the
+	LO and RF being balanced. All ports of the mixer are inherently isolated from each other. Matched diode rings
+	(fabricated in close proximity on the same substrate material) are readily available in SOT143 plastic packages.
+	The advantages of a double-balanced design over a
+	a
+	single balanced design are increased linearity,
+	improved suppression of spurious products (all
+	even order products of the LO and/or the RF are
+	d
+	b
+	suppressed) ant the inherent isolation between all
+	LO
+	ports. The disadvantages are that they require a
+	higher level LO drive and require two baluns.
+	Figure 9 shows a block diagram of a double-
+	c
+	balanced quad-ring diode mixer. Details of the star
+	topology can be found in [2].
+
+The operation of a double balanced mixer is best
+understood by considering the diodes as switches.
+The LO alternately turns the right hand pair and
+RF
+left hand pair of diodes on and off in anti-phase.
+Points ‘a’ and ‘c’ are virtual earths to the RF
+Figure 9: Block diagram of a double-balanced
+signal and can be considered as connected to
+diode mixer
+ground. Thus points ‘b’ and ‘d’ (the balanced RF
+signal) are alternately connected to ground (at
+points ‘a’ and ‘c’). This means an in-phase RF signal and an anti-phase RF signal are alternately routed to the
+IF port under control of the LO. Thus the signal at the IF port is effectively the RF signal multiplied by an LO
+square wave of peak magnitude ±1.
+
+
+This action is easily demonstrated using simple mathematical processing software. Figure 10 shows a sinusoidal
+voltage waveform at a frequency of 1GHz, this is the RF waveform. Figure 11 shows a square wave at a
+frequency of 870MHz, this is the LO switching waveform. Multiplication of the two will produce a waveform
+wit a strong component at the difference frequency (IF) of 130MHz.
+
+Figure 12 shows the result of multiplying the RF and LO waveforms. A low frequency sinusoid is clearly
+visible. This is a replica of the RF signal (i.e. a sinusoid) translated to the IF frequency of 130MHz. Although
+this method of mixer analysis
+provides
+a
+qualitative
+1
+understanding of how the
+mixer functions, it is not
+adequate to predict the RF
+functionality. Ideal square
+Vif 0
+wave multiplication, such as
+n
+this, results in a conversion
+loss of 3.9dB. In practice
+diode-ring
+mixers
+have
+additional losses (in the
+1
+baluns and diodes) and
+0
+5
+10
+15
+20
+25
+30
+35
+40
+imperfections which increase
+t
+n
+the conversion loss actually
+Figure 12: IF voltage waveform (Vrf*Vlo) versus time in ns
+achieved. A loss of between
+6 and 8dB is typical for a
+
+
+well designed diode ring mixer. In order to predict accurately the mixer’s performance, large signal circuit
+simulation must be performed.
+The block diagram in Figure 9 shows the differential RF and LO signals provided using wire-wound ferrite
+transformers. Wire-wound transformers can be used at frequencies up to over 2GHz but lower cost printed or
+lumped element baluns are often implemented in practical mixers. At higher frequencies wire wound
+transformers become impractical and printed and/or lumped baluns become the norm. Care should be taken to
+consider how the performance of these baluns differs from wound transformers; additional filtering may be
+necessary. An overview of practical balun configurations is given in Section 5.
+
+	
+	
+	8
+	9. At higher local oscillator power levels the desired output increases
+	while the spurious output decreases. This raises the suppression and
+	the intercept point. At lower levels both desired output and spurious
+	decrease so the intercept point levels off to a constant value.
+	4
+	0
+	-4
+	-8
+	-12
+	-16
+	-20
+	-10
+	-8
+	-6
+	-4
+	-2
+	LOCAL OSCILLATOR POWER (dBm)
+	0
+	Figure 9. Two-Tone Distortion
+	Early mixer designs prevented loss of signal power in the local
+	oscillator circuit by loosely coupling the local oscillator power to the
+	mixer diode. This technique is wasteful of local oscillator power and it
+	sends as much power to the input, possibly an antenna, as it sends to
+	the diode. This local oscillator radiation could be interpreted as a
+	target return when received by a radar. This problem may be alleviated
+	by using a directional coupler to send the local oscillator power to the
+	mixer diode. Coupling must be loose so that L.O. power is still wasted.
+	A balanced mixer (Figure 10) provides a better solution. The hybrid
+	circuit splits the L.O. power to the two diodes with little coupling to the
+	antenna. A low pass filter is needed to prevent loss of power to the
+	intermediate frequency amplifier. Additional advantages are reduction
+	of L.O. noise and harmonic mixing. L.O. noise is rejected because two
+	signals originating in the same port produce I.F. outputs that cancel.
+	This is a property of the hybrid circuit. Similarly, even order harmonics
+	of either the L.O. or the signal produce cancelling outputs.
+	In the double balanced mixer (Figure 11) even order harmonics of both
+	the L.O. and the signal frequency are rejected. This mixer does not
+	require a low pass filter to isolate the I.F. circuit. The three ports are
+	isolated from each other by the symmetry of the circuit. These mixers
+	usually cover a broader band than the others. Ratios as high as 1000:1
+	are available. Microwave equivalents of these mixer circuits are
+	available. Bandwidth ratios as high as 40:1 are available at microwave
+	frequencies.
+	Intermodulation distortion is reduced [5] when local oscillator power is
+	increased. Several design techniques are used to allow higher drive.
+	A higher barrier diode may be used to retain linear response at higher
+	drive levels. More than one diode may be used in each arm of the ring
+	in a double balanced mixer. This permits higher drive level without
+	overheating the diodes. Two rings may also be used to increase the
+	local oscillator level. This technique is also used for image tuning.
+
 
 \newpage
 \section{Desarrollo}
 	\subsection{Parámetros de un mixer}
-	\todo[]
+	\todo{bla}
 		\subsubsection{Conversion Loss}
 		\todo{traducir}
 		Mixing efficiency is measured by the conversion loss, the ratio of signal
