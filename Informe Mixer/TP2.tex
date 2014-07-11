@@ -174,154 +174,97 @@
 	es que el LO debe radiar parte de la potencia de entrada desde el puerto de 
 	entrada, esto genera una sensibilidad menor, que la potencia de salida 
 	disminuya aún mas y la generación de frecuencias spureas en la salida por 
-	mixeos entre armónicos. 
+	mixeos entre armónicos. \\
+	\indent Como consecuencias surgen los mixers balanceados, este nombre no 
+	viene dado por la cantidad de diodos que poseen, sino por la cantidad de 
+	spureos que quedan en la señal resultante, balanceados 50\% y doble 
+	balanceados 25\%. \\
+	\indent Normalmente un mixer doblemente balanceado utiliza cuatro diodos en 
+	una configuración de anillo o estrella. Cada puerto del mismo permanece
+	aislado del resto. Las ventajas de uno doblemente balanceado frente a uno 
+	simple son las siguientes:
+	
+	\begin{itemize}
+		\item Aumenta la linealidad
+		\item Mejora la supresión de espureos
+		\item Se incrementa la aislación entre puertos
+		\item Posee un ancho de banda superior
+	\end{itemize}
 
+	\indent En contraposición, las desventajas son
 
+	\begin{itemize}
+		\item Se requieren dos transformadores balun
+		\item Se requiere una mayor potencia de señal LO
+		\item Posee menor ganancia
+		\item La frecuencia de corte superior es menor
+	\end{itemize}
 
-
-	A double-balanced diode mixer normally make use of four diodes in a ring or star configuration with both the
-	LO and RF being balanced. All ports of the mixer are inherently isolated from each other. Matched diode rings
-	(fabricated in close proximity on the same substrate material) are readily available in SOT143 plastic packages.
-	The advantages of a double-balanced design over a
-	a
-	single balanced design are increased linearity,
-	improved suppression of spurious products (all
-	even order products of the LO and/or the RF are
-	d
-	b
-	suppressed) ant the inherent isolation between all
-	LO
-	ports. The disadvantages are that they require a
-	higher level LO drive and require two baluns.
-	Figure 9 shows a block diagram of a double-
-	c
-	balanced quad-ring diode mixer. Details of the star
-	topology can be found in [2].
-
-The operation of a double balanced mixer is best
-understood by considering the diodes as switches.
-The LO alternately turns the right hand pair and
-RF
-left hand pair of diodes on and off in anti-phase.
-Points ‘a’ and ‘c’ are virtual earths to the RF
-Figure 9: Block diagram of a double-balanced
-signal and can be considered as connected to
-diode mixer
-ground. Thus points ‘b’ and ‘d’ (the balanced RF
-signal) are alternately connected to ground (at
-points ‘a’ and ‘c’). This means an in-phase RF signal and an anti-phase RF signal are alternately routed to the
-IF port under control of the LO. Thus the signal at the IF port is effectively the RF signal multiplied by an LO
-square wave of peak magnitude ±1.
-
-
-This action is easily demonstrated using simple mathematical processing software. Figure 10 shows a sinusoidal
-voltage waveform at a frequency of 1GHz, this is the RF waveform. Figure 11 shows a square wave at a
-frequency of 870MHz, this is the LO switching waveform. Multiplication of the two will produce a waveform
-wit a strong component at the difference frequency (IF) of 130MHz.
-
-Figure 12 shows the result of multiplying the RF and LO waveforms. A low frequency sinusoid is clearly
-visible. This is a replica of the RF signal (i.e. a sinusoid) translated to the IF frequency of 130MHz. Although
-this method of mixer analysis
-provides
-a
-qualitative
-1
-understanding of how the
-mixer functions, it is not
-adequate to predict the RF
-functionality. Ideal square
-Vif 0
-wave multiplication, such as
-n
-this, results in a conversion
-loss of 3.9dB. In practice
-diode-ring
-mixers
-have
-additional losses (in the
-1
-baluns and diodes) and
-0
-5
-10
-15
-20
-25
-30
-35
-40
-imperfections which increase
-t
-n
-the conversion loss actually
-Figure 12: IF voltage waveform (Vrf*Vlo) versus time in ns
-achieved. A loss of between
-6 and 8dB is typical for a
-
-
-well designed diode ring mixer. In order to predict accurately the mixer’s performance, large signal circuit
-simulation must be performed.
-The block diagram in Figure 9 shows the differential RF and LO signals provided using wire-wound ferrite
-transformers. Wire-wound transformers can be used at frequencies up to over 2GHz but lower cost printed or
-lumped element baluns are often implemented in practical mixers. At higher frequencies wire wound
-transformers become impractical and printed and/or lumped baluns become the norm. Care should be taken to
-consider how the performance of these baluns differs from wound transformers; additional filtering may be
-necessary. An overview of practical balun configurations is given in Section 5.
+	\indent La figura \ref{img:004} muestra un diagrama de un mixer doblemente 
+	balanceado. El funcionamiento se puede explicar mejor si se consideran los 
+	diodos como switches. \\
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=8cm]{Imagenes/qmetro.png}
+		\caption{Mixer doblemente balanceado}
+		\label{img:004}
+	\end{figure}
 
 	
+	\indent El LO abre y cierra cada rama del puente de diodos de
+	forma alternada, cada rama está en contrafase. Los puntos "a" y "c" son 
+	tierras virtuales con respecto a la señal entrante de RF. Por lo tanto, "b" 
+	y "d" (la señal RF balanceada) es alternadamente conectada a tierra (puntos 
+	"a" y "c"). Esto significa que las parte de la señal RF en fase y anti fase 
+	con respecot al LO es anternadamente conectada a la tierra. Por lo tanto, la
+	señal en el puerto IF es efectivamente la señal RF multiplicada por una 
+	señal cuadrada de magnitud pico $\pm 1$ y frecuencia LO. \\
 	
-	8
-	9. At higher local oscillator power levels the desired output increases
-	while the spurious output decreases. This raises the suppression and
-	the intercept point. At lower levels both desired output and spurious
-	decrease so the intercept point levels off to a constant value.
-	4
-	0
-	-4
-	-8
-	-12
-	-16
-	-20
-	-10
-	-8
-	-6
-	-4
-	-2
-	LOCAL OSCILLATOR POWER (dBm)
-	0
-	Figure 9. Two-Tone Distortion
-	Early mixer designs prevented loss of signal power in the local
-	oscillator circuit by loosely coupling the local oscillator power to the
-	mixer diode. This technique is wasteful of local oscillator power and it
-	sends as much power to the input, possibly an antenna, as it sends to
-	the diode. This local oscillator radiation could be interpreted as a
-	target return when received by a radar. This problem may be alleviated
-	by using a directional coupler to send the local oscillator power to the
-	mixer diode. Coupling must be loose so that L.O. power is still wasted.
-	A balanced mixer (Figure 10) provides a better solution. The hybrid
-	circuit splits the L.O. power to the two diodes with little coupling to the
-	antenna. A low pass filter is needed to prevent loss of power to the
-	intermediate frequency amplifier. Additional advantages are reduction
-	of L.O. noise and harmonic mixing. L.O. noise is rejected because two
-	signals originating in the same port produce I.F. outputs that cancel.
-	This is a property of the hybrid circuit. Similarly, even order harmonics
-	of either the L.O. or the signal produce cancelling outputs.
-	In the double balanced mixer (Figure 11) even order harmonics of both
-	the L.O. and the signal frequency are rejected. This mixer does not
-	require a low pass filter to isolate the I.F. circuit. The three ports are
-	isolated from each other by the symmetry of the circuit. These mixers
-	usually cover a broader band than the others. Ratios as high as 1000:1
-	are available. Microwave equivalents of these mixer circuits are
-	available. Bandwidth ratios as high as 40:1 are available at microwave
-	frequencies.
-	Intermodulation distortion is reduced [5] when local oscillator power is
-	increased. Several design techniques are used to allow higher drive.
-	A higher barrier diode may be used to retain linear response at higher
-	drive levels. More than one diode may be used in each arm of the ring
-	in a double balanced mixer. This permits higher drive level without
-	overheating the diodes. Two rings may also be used to increase the
-	local oscillator level. This technique is also used for image tuning.
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=8cm]{Imagenes/qmetro.png}
+		\caption{Señal del RF, tensión vs tiempo en nseg}
+		\label{img:005}
+	\end{figure}
 
+	\indent La figura \ref{img:005} muestra una señal senoidal de 1GHz en el
+	puerto RF. La figura \ref{img:006} muestra una señal cuadrada en una 
+	frecuencia de 870MHz, es la señal de switching del puerto LO. La 
+	multiplicación resultante (en el puerto IF) es mostrada en la figura 
+	\ref{img:007}, y, como se puede observar, posee una frecuencia de 130MHz. \\
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=8cm]{Imagenes/qmetro.png}
+		\caption{Señal del LO, tensión vs tiempo en nseg}
+		\label{img:006}
+	\end{figure}
+	
+	\indent Si bien este análisis explica a grandes razgos como funciona el 
+	mixer, no es adecuado para determinar las pérdidas del mismo, dado que, si 
+	se utilizara una cuadrada ideal, dicho proceso debería tener una conversion
+	loss de 3.9 dB. En la práctica ronda en los 6 a 8 dB, debido a las pérdidas
+	de los diodos, los transformadores, etc. \\
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=8cm]{Imagenes/qmetro.png}
+		\caption{Tension de IF (Vrf*Vlo) versus tiempo en nseg}
+		\label{img:007}
+	\end{figure}
+
+	\indent En la figura \ref{img:004} se utilizan transformadores con ferrites 
+	para generar las señales RF y LO diferenciales. Dichos transformadores 
+	pueden ser utilizados hasta 1-2 GHz, para frecuencias mayores ya se deben 
+	reemplazar por líneas de transimisión. En este caso se elgieron los 
+	ferrites toroidales FT37-67, que, según la especificación, llegan hasta 1GHz
+	como transformadores. Otro tipo de ferrite es el balun que tambíen posee las
+	mismas especificaciones, pero como no se consiguieron se utilizaron los 
+	primeros.\\
+	\indent Hay que tener en cuenta, que para bobinar dicho ferrite, hay que 
+	twistear los cables, en este caso en particular son de a tres cables a la 
+	vez y dos de ellos conforman el secundario del transformador.
 
 \newpage
 \section{Desarrollo}
@@ -329,19 +272,10 @@ necessary. An overview of practical balun configurations is given in Section 5.
 	\todo{bla}
 		\subsubsection{Conversion Loss}
 		\todo{traducir}
-		Mixing efficiency is measured by the conversion loss, the ratio of signal
-		input power to intermediate frequency output power. The intermediate
-		frequency is the difference between the signal frequency and the local
-		oscillator frequency. The diode may also generate the sum of these two
-		frequencies. In this case the mixer may be called an upconverter. For a
-		given local oscillator frequency, the difference frequency may be
-		produced by two signal frequencies – one above the L.O. frequency and
-		one below. Of course, noise is also contributed at these two
-		frequencies. In some cases, the mixer is designed to respond to both
-		these frequencies. A mixer of this type is called a double sideband
-		mixer. More commonly the mixer is designed to respond to one of
-		these inputs. Since noise comes from both frequencies the double
-		sideband mixer is better – typically 3 dB better.
+		\indent La eficiencia del mixer se mide por la conversion loss, es la 
+		relación entre la señal de entrada en el puerto RF con respecto a la 
+		salida, puerto IF.
+		
 				Another complication of noise figure is the effect of the amplifier
 		following the mixer. Diode manufacturers include the effect of a 1.5 dB
 		noise figure I.F. amplifier in the mixer noise figure. Mixer
