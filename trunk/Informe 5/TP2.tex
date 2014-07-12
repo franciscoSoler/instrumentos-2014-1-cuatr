@@ -85,7 +85,7 @@
 	\newpage
 	\subsection{Analizador de redes}
 	\indent El analizador de redes es un instrumento que permite medir la 
-	magnitud y fase de un elemento, su retardo de grupo, las impedancias de los 
+	magnitud y fase, retardo de grupo, las impedancias de los 
 	puertos en un gr\'afico de Smith, par\'ametros de transmisi\'on y reflexi\'on y, en 
 	el dominio del tiempo, la distancia entre un terminal y una desadaptaci\'on en
 	una l\'inea de transmisi\'on. \\
@@ -105,10 +105,9 @@
 	\end{figure}
 
 	\indent Antes de realizar una medici\'on, el analizador de redes debe ser 
-	calibrado en el rango de frecuencias en el cual se desea realizar la 
+	calibrado de acuerdo al rango de frecuencias, la cantidad de puntos a calcular y el ancho de banda de resoluci\'on, entre otros, en el cual se desea realizar la 
 	medici\'on. La calibraci\'on consiste en ajustar el equipo mediante un kit de 
-	calibraci\'on para compensar la medici\'on y que la misma se realice 
-	directamente sobre el terminal a medir. De otra manera, se estar\'ian midiendo
+	calibraci\'on. De otra manera, se estar\'ian midiendo
 	tambi\'en los conectores y cables de la conexi\'on, cuando en realidad se desea 
 	medir el dispositivo presente entre los terminales del equipo. El kit de calibraci\'on est\'a formado por un
 	cortocircuito, un circuito abierto y una carga de 50$\Omega$ de RF (son 3 
@@ -132,8 +131,8 @@
 		utilizaran 2 puertos, se deber\'a repetir la conexi\'on para el puerto 2 y 
 		por \'ultimo se requerir\'a que se conecte un puente entre el puerto 1 y el 
 		2. 
-		\item Si se requiere medir en otro rango de frecuencias, se debe 
-		realizar nuevamente la calibraci\'on en dicho rango. 
+		\item Si se requiere medir con otros par\'ametros (ancho de banda de resoluci\'on, cantidad de puntos, span, etc), se debe 
+		realizar nuevamente la calibraci\'on. 
 	\end{itemize}
 	
 \section{Desarrollo}
@@ -172,7 +171,7 @@
 		es del $10\%$, mientras que la  del analizador PSA 6000 sigue la 
 		siguente f\'ormula
 		$$\Delta f=\pm\left(f\cdot \%_{ref} +3\%\cdot Span+50\%\cdot RBW \right)$$
-		
+		La incerteza del $RBW$ est\'a especificada en un $20\%$ por el fabricante y es la que se utiliza para calcular $BW(-3~dB)$.
 		%Cual es el \%_{ref}, el manual lo nombra una sola vez jajaja pero no dice que valor tiene.
 		
 		\begin{table}[!htp]
@@ -188,11 +187,11 @@
 				HM 5006 & $20~kHz$& $30~kHz~\pm~3~kHz$ & 
 				$160~kHz~\pm~16~kHz$ &$ 5.33~\pm~20\%$ \\
 				\hline
-				PSA 6000& $3~kHz$& $32.5~kHz~\pm~4.5~kHz$ & 
-				$3.5~kHz~\pm~4.5~kHz$ &$ 9.29~\pm~142\%$ \\
+				PSA 6000& $3~kHz$& $3~kHz~\pm~600~Hz$ & 
+				$32.5~kHz~\pm~4.5~kHz$ &$ 10.83~\pm~33.8\%$ \\
 				\hline  
-				PSA 6000& $300~Hz$& $3.5~kHz~\pm~3.15~kHz$ & 
-				$250~Hz~\pm~3.15~kHz$ &$ 14~\pm~1350\%$ \\
+				PSA 6000& $300~Hz$&$ 300~Hz~\pm~60~Hz$  & 
+				$3.5~kHz~\pm~450~Hz$ &$ 11.66~\pm~32.85\%$ \\
 				\hline  										 	  	  
 			\end{tabular}
 			\caption{Resultados obtenidos para los analizadores 5066 y PSA 6000}
@@ -207,12 +206,10 @@
 				\label{Selec} 
 		\end{figure}		
 		
-		\indent Como se puede notar, usando el analizador PSA 6000 la incerteza 
-		de la frecuencia est\'a dominada por los t\'erminos correspondientes a 
-		la incerteza del Span y de la resoluci\'on de ancho de banda (RBW), los 
-		cuales son elevados para la medici\'on que se realiza. La selectividad 
-		obtenida por lo tanto tiene una incerteza alta y no resulta \'util m\'as
-		que para tener una idea del orden de su magnitud.
+		\indent Como se puede notar, usando el analizador PSA 6000 la incerteza de la selectividad est\'a dominada por la incerteza correspondiente a la resoluci\'on de ancho de banda (RBW) (especificada en un $20\%$). De todas maneras se corresponde  con la especificaci\'on  provista por el fabricante, la cual es de 
+		\begin{itemize}
+		\item Selectivity: 60 dB/ 3 dB ratio $<15:1$
+		\end{itemize}
 		%HUGO. Me encanta la THD 
 		
 		\subsubsection{Distorsi\'on arm\'onica de un generador de funciones}
@@ -596,7 +593,7 @@
 		$$N_i(dB)=kTB=-174~dBm$$
 		
 		\indent Donde $k$ es la constante de Boltzmann, $T$ es la temperatura 
-		absoluta en Kelvin y $B$ es el ancho de banda seleccionado. \\
+		absoluta en Kelvin y $B$ es el ancho de banda seleccionado, el cual es de $1~Hz$. \\
 		\indent En la Figura \ref{noise}, se muestra el resultado obtenido de 
 		medir el ruido de salida. Con la entrada adaptada a $50\Omega$ se puede 
 		ir variando la secci\'on del espectro a considerar para obtener su 
@@ -722,7 +719,7 @@
 		\indent Para poder analizar el efecto de los conectores se quita el 
 		cable coaxil, y se dejan a \'estos conectados al analizador para poder 
 		obtener su transferencia, la cual se grafica en la Figura 
-		\ref{tranferenciaconectorrr}. A modo de ejemplo, como se puede ver para una frecuencia de $4595.923~MHz$ (en la cual el cable coaxil grueso posee una transferencia de $-0.5~dB~\pm~0.06dB$) la transferencia del conector es de $0.3~dB~\pm~0.07dB$, es decir, para esa frecuencia la trasferencia correspondiente al cable coaxil es de $-0.8~dB~\pm~0.13dB$. 
+		\ref{tranferenciaconectorrr}. A modo de ejemplo, como se puede ver para una frecuencia de $4595.923~MHz$ (en la cual el cable coaxil grueso posee una transferencia de $-0.5~dB~\pm~0.06dB$) la transferencia del conector es de $0.3~dB~\pm~0.07dB$, es decir, para esa frecuencia la trasferencia correspondiente al cable coaxil es probablemente menor pero queda enmascarada por la transferencia del conector. 
 		
 
 		\begin{figure}[!htb]
@@ -806,7 +803,8 @@
 					\label{CoeficientereflexionIMPE} 
 				\end{figure}
 	Por otra parte usando nuevamente la ecuaci\'on \ref{ecuaciototot}, las incertezas del calculador y con los datos de la Figura \ref{CoeficientereflexionIMPE} se obtiene
-	$Z_L =59.1954 \Omega + j\cdot 7.6024\Omega \pm (3.1351\Omega +j\cdot20.6766\Omega)$. Resultado que vuelve a coincidir con el proporcionado en la carta de Smith y como en el caso anterior, presenta una incerteza compleja alta ocasionada por la elevada incerteza de la fase del coeficiente de reflexi\'on proporcionada. De cualquier manera el resultado difiere considerablemente de los $50~\Omega$ especificados
+	$Z_L =59.1954 \Omega + j\cdot 7.6024\Omega \pm (3.1351\Omega +j\cdot20.6766\Omega)$. Resultado que vuelve a coincidir con el proporcionado en la carta de Smith y como en el caso anterior, presenta una incerteza compleja alta ocasionada por la elevada incerteza de la fase del coeficiente de reflexi\'on proporcionada. De cualquier manera el resultado difiere considerablemente de los $25~\Omega+\frac{1}{\omega\cdot0.01\mu F}=25~\Omega+j\cdot0.14\Omega$ especificados por el fabricante.
+	
 	\newpage
 	\section{Conclusiones}
 	\indent En este trabajo se analiz\'o el funcionamiento del analizador de espectro y el analizador de redes. Con ello se realizaron diversas mediciones tales como obtenci\'on de la figura de ruido de un instrumento, la distorsi\'on arm\'onica, la transferencia de un cuadripolo, entre otros. Es evidente las mediciones realizadas en algunos casos puede hacerse con cualquiera de los dos instrumentos estudiados, sin embargo no se puede garantizar que la medici\'on resulte efectiva en cuanto a la exactitud que se obtiene. Es importante determinar qu\'e instrumento es adecuado para cada medici\'on. A modo de ejemplo, la transferencia de un cuadripolo puede obtenerse utilizando el analizador de expectro si este posee un modo de operaci\'on Zero Span, pero las incertezas que se obtienen son del orden de $1.5~dB$, mientras que utilizando el analizador de redes estas son del orden de $0.1~dB$, notablemente de menor magnitud.
