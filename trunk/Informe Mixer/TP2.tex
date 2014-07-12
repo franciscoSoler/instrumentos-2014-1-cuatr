@@ -274,7 +274,7 @@
 		\indent La eficiencia del mixer se mide de acuerdo a las p\'erdidas por conversi\'on (conversion loss, en ingl\'es), es decir, la 
 		relación entre la potencia de la señal del puerto RF con respecto a la potencia de la señal del puerto IF. Matem\'aticamente esto es,
 		$$\textmd{P\'erdidas por conversi\'on}=10\cdot\log\left(\frac{P_{RF}}{P_{IF}}\right)$$
-		Evidentemente se busca que \'este tenga un valor bajo, ya que no se desea gastar demasiada potencia. Valores t\'ipicos de p\'erdidas por conversi\'on son de $4.5~dB$ a $9~dB$, debido a las p\'erdidas en las l\'ineas de transmisi\'on, la resistencia serie de los diodos, desajustes en los transformadores, entre otros.
+		Evidentemente se busca que \'este tenga un valor bajo, ya que no se desea gastar potencia en exceso. Valores t\'ipicos de p\'erdidas por conversi\'on son de $4.5~dB$ a $9~dB$, debido a las p\'erdidas en las l\'ineas de transmisi\'on, la resistencia serie de los diodos, desajustes en los transformadores, entre otros.
 		Una forma sencilla de medir este par\'ametro es colocar en el puerto RF una señal de potencia conocida (proporcionada por un sintetizador de frecuencias, por ejemplo) y utilizando un analizador de espectro observar la potencia de la señal del puerto RF.
 		
 		\subsubsection{Aislación entre puertos}
@@ -287,32 +287,48 @@
 		\end{itemize}
 		La aislaci\'on se mide de la siguiente manera: dada una se\~nal de potencia $P_{in}$ en el puerto LO (o RF, depende de qu\'e aislaci\'on se desee obtener), con un analizador de espectro se observa la potencia, $P_{out}$, de la señal del puerto RF (o IF) a la frecuencia de la señal que se encuentra en el puerto LO (o RF). De esta manera la aislaci\'on se calcula como		$$\textmd{Aislaci\'on}=10\cdot\log\left(\frac{P_{in}}{P_{out}}\right)$$
 		Es importante notar que cada puerto que no se utilice en la medici\'on deben estar terminado en una impedancia de funcionamiento real.
-		De todas maneras, cuando se especifica la aislaci\'on de un mixer, \'esta debe realizarse sobre una banda de frecuencias. Con lo cual resulta m\'as pr\'actico medirlo utilizando el analizador de redes, prestando especial atenci\'on a los niveles de potencia utilizados para medir en el mixer.
+		
+		Por otra parte, cuando se especifica la aislaci\'on de un mixer, \'esta debe realizarse sobre una banda de frecuencias. Con lo cual resulta m\'as pr\'actico medirlo utilizando el analizador de redes, prestando especial atenci\'on a los niveles de potencia utilizados para medir en el mixer.
 		\subsubsection{Componentes espurias}
 		Como en todo dispositivo electr\'onico, el mixer presenta algunas alinealidades con lo cual adem\'as de la presencia de la frecuencia de inter\'es ($f_{IF}=f_{RF}-f_{LO}$), est\'an presentes otras componentes espectrales ($f_{espurias}=m\cdot f_{RF}-n\cdot f_{LO}$ con $m$ y $n$ enteros). Se especifica como la diferencia (en dB) entre la amplitud de la frecuencia $f_{IF}$ y la amplitud de las componentes espurias. Se especifica para una frecuencia y nivel de potencia determinados de la señal del puerto LO.
 		Esta especificaci\'on puede obtenerse midiendo con un analizador de espectro las amplitudes de la frecuencia $f_{IF}$ y de las frecuencias espurias $f_{espurias}$.
-		
+
 		\subsubsection{Figura de ruido}
 		\indent La figura de ruido es otra medición para ver la eficiencia del 
 		mezclado. Es la relación de la señal ruido de la entrada con respecto a
 		la señal ruido de la salida. Es decir
 		
 		$$F=\frac{\frac{S_i}{N_i}}{\frac{S_o}{N_o}}$$
+		La cual puede re-escribirse de la siguiente manera expres\'andola en decibeles 
+		$$F=10\cdot\log\left(\frac{S_i}{S_o}\cdot\frac{N_o}{N_i}\right)$$
+		Y usando la definici\'on de p\'erdidas por conversi\'on, finalmente queda
+		$$F=\textmd{P\'erdidas por conversi\'on}+10\cdot\log\left(\frac{N_o}{N_i}\right)$$
 		
-		Esta medici\'on
-		\subsubsection{Compresión 1 dB}
-		\todo{hacer}
+		\subsubsection{Compresi\'on de conversi\'on}
+		La compresi\'on de conversi\'on es una medida del m\'aximo nivel de se\~nal para la cual el mixer proporciona una operaci\'on lineal. A bajos niveles de potencia de la se\~nal del puerto RF, las p\'erdidas por conversi\'on son constantes. No obstante, cuando la potencia de la se\~nal del puerto RF est\'a aproximadamente dentro de los 10 dB del nivel de potencia de la se\~nal del puerto LO, la potencia de la se\~nal del puerto IF no sigue los aumentos de potencia de la se\~nal del puerto RF. Con lo cual las p\'erdidas por conversi\'on empiezan a aumentar pasado este nivel de potencia en el puerto RF. El criterio usado para medir la desviaci\'on respecto del funcionamiento lineal del mixer es el siguiente: cuando las p\'erdidas por conversi\'on son 1 dB m\'as grandes que cuando se trabaja con niveles bajos de potencia, se alcanza el m\'aximo nivel de se\~nal del puerto RF permitido. 
+		
+		\subsubsection{Rango din\'amico}
+		El rango din\'amico del mixer es el rango de potencias de se\~nal en el puerto RF para el cual el mixer proporcional un funcionamiento \'util.
+		El punto de compresi\'on de conversi\'on acota superiormente el rango din\'amico y la figura de ruido acota inferiormente el rango din\'amico por lo cual queda \'este queda especificado por las mediciones previas.
+
+		\subsubsection{DC Offset}
+		Es una medida del desbalance del mixer. Para un mixer perfectamente balanceado el offset de continua es cero.
 
 
-	\subsection{Diseño a armar}
-
-\todo[inline]{completar esta otra}
-
-\newpage
-\section{Conclusión}
-\todo{y esta mierda tambien}
-
-\newpage
-\section{Conclusiones}
+	\section{Diseño a armar}
+	\todo[inline]{completar esta otra}
+	
+	\section{Mediciones}
+	\todo[inline]{ojala sea este fuckiiiing martes :D}
+	\subsubsection{Impedancias de entrada y salida}
+	\subsubsection{P\'erdidas por conversi\'on}
+	\subsubsection{Aislación entre puertos}
+	\subsubsection{Componentes espurias}
+	\subsubsection{Figura de ruido}
+	\subsubsection{El punto de compresi\'on de conversi\'on}
+	\subsubsection{Rango din\'amico}
+	\subsubsection{DC Offset}
+	\newpage
+	\section{Conclusiones}
 	\indent Vamos Argentinaaaaa!!!
 \end{document}
