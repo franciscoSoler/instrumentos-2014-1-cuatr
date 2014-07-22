@@ -48,7 +48,7 @@ sus prestaciones.
 	\indent Un mixer de frecuencia es un circuito electrónico de 3 puertos. Dos
 	de los mismos son entradas y el tercero se corresponde con la salida. El 
 	mixer ideal mezcla ambas señales logrando así que la frecuencia de la señal 
-	de salida es la suma o la resta de las de las entradas, como se muestra en 
+	de salida sea la suma o la resta de las de las entradas, como se muestra en 
 	la Ecuación \ref{eq:001}. La Figura \ref{img:001} muestra una representación
 	gráfica del funcionamiento.
 	
@@ -58,7 +58,7 @@ sus prestaciones.
 
 	\begin{figure}[!htb]
 		\centering
-		\includegraphics[width=8cm]
+		\includegraphics[width=10cm]
 		{Images/MixerFunction.png}
 		\caption{Suma y resta de frecuencias en un mixer ideal}
 		\label{img:001} 
@@ -84,9 +84,9 @@ sus prestaciones.
 	\begin{equation}\label{eq:002}
 		f_{IF} = |f_{LO} - f_{RF}|
 	\end{equation}
-	\todo[inline]{si se queda con la resta no se llama downconverter y si se queda con la suma es upconverter??
-	sisi, la resta es downconverter, la suma es upconverter, si mal no recuerdo
-	... me gusta que hayas comenzado a utilizar los todos ;)}
+%	\todo[inline]{si se queda con la resta no se llama downconverter y si se queda con la suma es upconverter??
+%	sisi, la resta es downconverter, la suma es upconverter, si mal no recuerdo
+%	... me gusta que hayas comenzado a utilizar los todos ;)}
 	\indent En la Figura \ref{img:001}, que representa ambas configuraciones de 
 	funcionamiento, se puede observar que en el caso de upconversion se observa
 	la suma y resta de frecuencias. Si se observan ambas se la llama 
@@ -103,7 +103,7 @@ sus prestaciones.
 	
 	\begin{figure}[!htb]
 		\centering
-		\includegraphics[width=8cm]
+		\includegraphics[width=10cm]
 		{Images/OneDiodeMixer.png}
 		\caption{(a) Mixer de un diodo. características I-V para (b)
 		conmutador ideal y (c) diodo schottky real.}
@@ -112,7 +112,7 @@ sus prestaciones.
 
 	\begin{figure}[!htb]
 		\centering
-		\includegraphics[width=8cm]
+		\includegraphics[width=10cm]
 		{Images/OneDiodeMixerFunction.png}
 		\caption{Comparaci\'on de la salida de un mixer de un diodo en el 
 		dominio del tiempo y frecuencia con características de switching 
@@ -138,24 +138,24 @@ sus prestaciones.
 	cumple con la siguiente relación:
 
 	\begin{equation*}
-		f_{IF} = n\cdot f_{LO}\pm f_{RF}~(n\text{ es impar})
+		f_{IF} = n\cdot f_{LO}\pm f_{RF}~(n\text{impar})
 	\end{equation*}
 
 	\indent Por ende, en el caso ideal de un conmutador de switcheo, solo los 
 	armónicos impares del LO se mixean con el tono fundamental de RF. \\
 	\indent Como dicha función transferencia nunca puede alcanzarse en el caso 
 	real, hay un tiempo de transición del estado bajo a uno alto (como se 
-	muestra en la Figura \ref{img:002}c), la señal RF tambíen modula la 
+	muestra en la Figura \ref{img:002}c), la señal RF tambi\'en modula la 
 	transconductancia de los diodos en algún porcentaje. La combinación de las 
 	características reales de los diodos y la modulación de la transconductancia
 	causan todos los componentes de armónicos de la señal IF. Las Figuras 
 	\ref{img:003}b y \ref{img:003}d muestran la señal de salida en tiempo real y
 	el equivalente en el dominio de la frecuencia. Matemáticamente, los 
 	componentes de frecuencias generados por un diodo solo se muestran en la 
-	ecuación \ref{eq:003}
+	Ecuación \ref{eq:003}
 
 	\begin{equation}\label{eq:003}
- 		f_{IF} = n f_{LO}\pm m f_{RF}~\text{m y n son enteros}
+ 		f_{IF} = n f_{LO}\pm m f_{RF}~(\text{m y n enteros})
 	\end{equation}
 
 	\indent Como solo se desea una única frecuencia de salida (cuando n y m = 1)
@@ -168,22 +168,22 @@ sus prestaciones.
 		\item La mayoría de los armónicos no deseados son generados por la 
 		intermodulación no lineal de las señales de RF y LO en la región de 
 		transmisión del diodo.
-		\item Los mejores mixers utilizan diodos que se apriximan al conmutador 
+		\item Los mejores mixers utilizan diodos que se aproximan al conmutador 
 		ideal.
-		\item Mientras menor sea la potencia de la señal RF, la performance de 
-		espureos mejora (dado que la señal del LO controlará la 
+		\item Mientras menor sea la potencia de la señal RF, la presencia de 
+		espurios disminuye (dado que la señal del LO controlará la 
 		transconductancia del diodo de forma más efectiva).
 	\end{itemize}
 
-	\subsubsection{mixer balanceados}
+	\subsubsection{Mixer balanceados}
 	\indent Uno de los problemas que genera utilizar un único diodo como mixer 
 	es que el LO debe radiar parte de la potencia de entrada desde el puerto de 
 	entrada, esto genera una sensibilidad menor, que la potencia de salida 
-	disminuya aún mas y la generación de frecuencias spureas en la salida por 
+	disminuya aún mas y la generación de frecuencias espurias en la salida por 
 	mixeos entre armónicos. \\
 	\indent Como consecuencias surgen los mixers balanceados, este nombre no 
 	viene dado por la cantidad de diodos que poseen, sino por la cantidad de 
-	spureos que quedan en la señal resultante, balanceados 50\% y doble 
+	espurios que quedan en la señal resultante, balanceados 50\% y doble 
 	balanceados 25\%. \\
 	\indent Normalmente un mixer doblemente balanceado utiliza cuatro diodos en 
 	una configuración de anillo o estrella. Cada puerto del mismo permanece
@@ -192,7 +192,7 @@ sus prestaciones.
 	
 	\begin{itemize}
 		\item Aumenta la linealidad
-		\item Mejora la supresión de espureos
+		\item Mejora la supresión de espurios
 		\item Se incrementa la aislación entre puertos
 		\item Posee un ancho de banda superior
 	\end{itemize}
@@ -265,7 +265,7 @@ sus prestaciones.
 	pueden ser utilizados hasta 1-2 GHz, para frecuencias mayores ya se deben 
 	reemplazar por líneas de transimisión. En este caso se elgieron los 
 	ferrites toroidales FT37-67, que, según la especificación, llegan hasta 1GHz
-	como transformadores. Otro tipo de ferrite es el balun que tambíen posee las
+	como transformadores. Otro tipo de ferrite es el balun que tambi\'en posee las
 	mismas especificaciones, pero como no se consiguieron se utilizaron los 
 	primeros.\\
 	\indent Hay que tener en cuenta, que para bobinar dicho ferrite, hay que 
@@ -283,7 +283,7 @@ sus prestaciones.
 		relación entre la potencia de la señal del puerto RF con respecto a la potencia de la señal del puerto IF. Matem\'aticamente esto es,
 		$$\textmd{P\'erdidas por conversi\'on}=10\cdot\log\left(\frac{P_{RF}}{P_{IF}}\right)$$
 		Evidentemente se busca que \'este tenga un valor bajo, ya que no se desea gastar potencia en exceso. Valores t\'ipicos de p\'erdidas por conversi\'on son de $4.5~dB$ a $9~dB$, debido a las p\'erdidas en las l\'ineas de transmisi\'on, la resistencia serie de los diodos, desajustes en los transformadores, entre otros.
-		Una forma sencilla de medir este par\'ametro es colocar en el puerto RF una señal de potencia conocida (proporcionada por un sintetizador de frecuencias, por ejemplo) y utilizando un analizador de espectro observar la potencia de la señal del puerto RF.
+		Una forma sencilla de medir este par\'ametro es colocar en el puerto RF una señal de potencia conocida (proporcionada por un sintetizador de frecuencias, por ejemplo) y utilizando un analizador de espectro observar la potencia de la señal del puerto IF.
 		
 		\subsubsection{Aislación entre puertos}
 		La aislación entre puertos es una medida de la cantidad de potencia que se ``fuga'' de un puerto a otro puerto del mixer.
@@ -311,9 +311,10 @@ sus prestaciones.
 		$$F=10\cdot\log\left(\frac{S_i}{S_o}\cdot\frac{N_o}{N_i}\right)$$
 		Y usando la definici\'on de p\'erdidas por conversi\'on, finalmente queda
 		$$F=\textmd{P\'erdidas por conversi\'on}+10\cdot\log\left(\frac{N_o}{N_i}\right)$$
+		Donde la potencia $N_o$ puede obtenerse utilizando el analizador de redes.
 		
 		\subsubsection{Compresi\'on de conversi\'on}
-		La compresi\'on de conversi\'on es una medida del m\'aximo nivel de se\~nal para la cual el mixer proporciona una operaci\'on lineal. A bajos niveles de potencia de la se\~nal del puerto RF, las p\'erdidas por conversi\'on son constantes. No obstante, cuando la potencia de la se\~nal del puerto RF est\'a aproximadamente dentro de los 10 dB del nivel de potencia de la se\~nal del puerto LO, la potencia de la se\~nal del puerto IF no sigue los aumentos de potencia de la se\~nal del puerto RF. Con lo cual las p\'erdidas por conversi\'on empiezan a aumentar pasado este nivel de potencia en el puerto RF. El criterio usado para medir la desviaci\'on respecto del funcionamiento lineal del mixer es el siguiente: cuando las p\'erdidas por conversi\'on son 1 dB m\'as grandes que cuando se trabaja con niveles bajos de potencia, se alcanza el m\'aximo nivel de se\~nal del puerto RF permitido. 
+		La compresi\'on de conversi\'on es una medida del m\'aximo nivel de se\~nal para la cual el mixer proporciona una operaci\'on lineal. A bajos niveles de potencia de la se\~nal del puerto RF, las p\'erdidas por conversi\'on son constantes. No obstante, cuando la potencia de la se\~nal del puerto RF est\'a aproximadamente dentro de los 10 dB del nivel de potencia de la se\~nal del puerto LO, la potencia de la se\~nal del puerto IF no sigue los aumentos de potencia de la se\~nal del puerto RF. Con lo cual las p\'erdidas por conversi\'on empiezan a aumentar pasado este nivel de potencia en el puerto RF. El criterio usado para medir la desviaci\'on respecto del funcionamiento lineal del mixer es el siguiente: cuando las p\'erdidas por conversi\'on son 1 dB m\'as grandes que cuando se trabaja con niveles bajos de potencia, se alcanza el m\'aximo nivel de se\~nal del puerto RF permitido. Con el analizador de espectro se puede ir observando la se\~nal del puerto IF y observar cuando tiene una diferencia extra de 1 dB con la se\~nal del puerto RF. 
 		
 		\subsubsection{Rango din\'amico}
 		El rango din\'amico del mixer es el rango de potencias de se\~nal en el puerto RF para el cual el mixer proporcional un funcionamiento \'util.
@@ -324,19 +325,43 @@ sus prestaciones.
 
 
 	\section{Diseño a armar}
-	\todo[inline]{completar esta otra}
+	\indent Dado que se el mixer opera a frecuencias altas, al momento de dise\~nar la placa deben tenerse en cuenta determinados criterios. Las pistas del impreso deben ser cortas y gruesas, debe evitarse formar lazos de cobre que eventualmente acoplen interferencias, los \'angulos de 90 grados en las pistas deben eliminarse ya que esto genera una desadapaci\'on de impedancias y por lo tanto ondas reflejadas en dicho nodo, entre otros. Teniendo en cuenta estos criterios se realiz\'o el PCB del mixer como se puede observar en la Figura \ref{pcb}.
 	
-	\section{Mediciones}
-	\todo[inline]{ojala sea este fuckiiiing martes :D}
-	\subsubsection{Impedancias de entrada y salida}
-	\subsubsection{P\'erdidas por conversi\'on}
-	\subsubsection{Aislación entre puertos}
-	\subsubsection{Componentes espurias}
-	\subsubsection{Figura de ruido}
-	\subsubsection{El punto de compresi\'on de conversi\'on}
-	\subsubsection{Rango din\'amico}
-	\subsubsection{DC Offset}
-	\newpage
-	\section{Conclusiones}
-	\indent Vamos Argentinaaaaa!!!
+	\indent Respecto de los componentes utilizados en la placa se tuvieron en cuenta las siguientes cuestiones:
+	\begin{itemize}
+	\item Los diodos Schottky utilizados deben ser de baja capacidad de juntura para poder operar a un rango de frecuencias elevado como el que se pretende. Por ello se eligieron los diodos BAT85 de $C_j=10~pF$, el valor m\'as bajo que pudo obtenerse. 
+	\item Los transformadores se realizaron con ferrites de alta frecuencia bobinados con cable de cobre esmaltado de ??mm. El cable que bobina cada ferrite es un cable trifilar, un hilo que corresponde al primario y otros dos hilos que corresponden al secundario del transformador.
+	\item Los conectores utilizados para los puertos RF, IF y LO son conectores BNC, cuyo rango de operaci\'on, hasta aproximadamente $4~GHz$, es suficiente para el fin buscado.
+	\item La placa es Epoxi m\'as adecuada que las Pertinax para altas frecuencias.
+	\item Cuenta con un gabinete m\'etalico que le otorga blindaje electromagn\'etico frente a interferencias externas.
+	\end{itemize}
+	 
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=8cm]{Images/PCB.png}
+		\caption{PCB}
+		\label{pcb}
+	\end{figure}
+	
+	Finalmente en la Figura \ref{ecuadorputa} se puede ver el dise\~no del mixer terminado. 
+	
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=8cm]{Images/gabi.png}
+			\caption{Mixer}
+			\label{ecuadorputa}
+		\end{figure}
+%	\section{Mediciones}
+%	\todo[inline]{ojala sea este fuckiiiing martes :D}
+%	\subsubsection{Impedancias de entrada y salida}
+%	\subsubsection{P\'erdidas por conversi\'on}
+%	\subsubsection{Aislación entre puertos}
+%	\subsubsection{Componentes espurias}
+%	\subsubsection{Figura de ruido}
+%	\subsubsection{El punto de compresi\'on de conversi\'on}
+%	\subsubsection{Rango din\'amico}
+%	\subsubsection{DC Offset}
+%	\newpage
+%	\section{Conclusiones}
+%	\indent Vamos Argentinaaaaa!!!
 \end{document}
