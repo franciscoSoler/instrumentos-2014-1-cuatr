@@ -37,16 +37,20 @@
 
 
 \section{Objetivo}
-\indent El objetivo de este trabajo consiste en implementar un mixer. Para ello se realiza un an\'alisis te\'orico del funcionamiento y de los par\'ametros m\'as relevantes de un mixer, para luego implementar un dise\~no propio. Al dise\~no propuesto se le realizan  mediciones para caracterizarlo y documentar sus prestaciones.
+\indent El objetivo de este trabajo consiste en implementar un mixer. Para ello 
+se realiza un an\'alisis te\'orico del funcionamiento y de los par\'ametros 
+m\'as relevantes de un mixer, para luego implementar un dise\~no propio. Al 
+dise\~no propuesto se le realizan mediciones para caracterizarlo y documentar 
+sus prestaciones.
 
 \newpage
 \subsection{Introducción teórica}
 	\indent Un mixer de frecuencia es un circuito electrónico de 3 puertos. Dos
-	de los mismos son entradas y el tercero se corresponde con la salida. El mixer ideal mezcla 
-	ambas señales logrando así que la frecuencia de la señal de salida es la 
-	suma o la resta de las de las entradas, como se muestra en la Ecuación 
-	\ref{eq:001}. La Figura \ref{img:001} muestra una representación gráfica del
-	funcionamiento.
+	de los mismos son entradas y el tercero se corresponde con la salida. El 
+	mixer ideal mezcla ambas señales logrando así que la frecuencia de la señal 
+	de salida es la suma o la resta de las de las entradas, como se muestra en 
+	la Ecuación \ref{eq:001}. La Figura \ref{img:001} muestra una representación
+	gráfica del funcionamiento.
 	
 	\begin{equation}\label{eq:001}
 		f_{out} = f_{in1} \pm f_{in2}
@@ -55,7 +59,7 @@
 	\begin{figure}[!htb]
 		\centering
 		\includegraphics[width=8cm]
-		{Images/qmetro1.png}
+		{Images/MixerFunction.png}
 		\caption{Suma y resta de frecuencias en un mixer ideal}
 		\label{img:001} 
 	\end{figure}
@@ -68,17 +72,21 @@
 	\end{itemize}
 
 	\indent La señal que ingresa en el puerto LO funciona como gate del mixer 
-	en el sentido que el mixer puede considerarse ``ON'' cuando dicha señal está en
-	alto y en ``OFF'' cuando está en estado bajo, este puerto solo puede ser utilizado como entrada. \\
+	en el sentido que el mixer puede considerarse ``ON'' cuando dicha señal está
+	en alto y en ``OFF'' cuando está en estado bajo, este puerto solo puede ser 
+	utilizado como entrada. \\
 	\indent Los otros dos puertos del mixer, IF y RF, pueden intercambiarse 
-	dependiendo de que es lo que se busque. Si se utiliza al puerto IF como entrada, se logra obtener la suma de frecuencias, si la entrada es 
-	el puerto RF, se obtiene la resta de frecuencias. La relación entre la entrada y salida de 
-	frecuencias se muestra en la Ecuación \ref{eq:002}
+	dependiendo de que es lo que se busque. Si se utiliza al puerto IF como 
+	entrada, se logra obtener la suma de frecuencias, si la entrada es 
+	el puerto RF, se obtiene la resta de frecuencias. La relación entre la 
+	entrada y salida de frecuencias se muestra en la Ecuación \ref{eq:002}
 
 	\begin{equation}\label{eq:002}
 		f_{IF} = |f_{LO} - f_{RF}|
 	\end{equation}
-	\todo{si se queda con la resta no se llama downconverter y si se queda con la suma es upconverter??}
+	\todo[inline]{si se queda con la resta no se llama downconverter y si se queda con la suma es upconverter??
+	sisi, la resta es downconverter, la suma es upconverter, si mal no recuerdo
+	... me gusta que hayas comenzado a utilizar los todos ;)}
 	\indent En la Figura \ref{img:001}, que representa ambas configuraciones de 
 	funcionamiento, se puede observar que en el caso de upconversion se observa
 	la suma y resta de frecuencias. Si se observan ambas se la llama 
@@ -96,7 +104,7 @@
 	\begin{figure}[!htb]
 		\centering
 		\includegraphics[width=8cm]
-		{Images/qmetro.png}
+		{Images/OneDiodeMixer.png}
 		\caption{(a) Mixer de un diodo. características I-V para (b)
 		conmutador ideal y (c) diodo schottky real.}
 		\label{img:002} 
@@ -105,7 +113,7 @@
 	\begin{figure}[!htb]
 		\centering
 		\includegraphics[width=8cm]
-		{Images/qmetro.png}
+		{Images/OneDiodeMixerFunction.png}
 		\caption{Comparaci\'on de la salida de un mixer de un diodo en el 
 		dominio del tiempo y frecuencia con características de switching 
 		de diodos ideales y reales} 
@@ -204,7 +212,7 @@
 	
 	\begin{figure}[!htb]
 		\centering
-		\includegraphics[width=8cm]{Images/qmetro.png}
+		\includegraphics[width=8cm]{Images/DoubleBalancedMixer.png}
 		\caption{Mixer doblemente balanceado}
 		\label{img:004}
 	\end{figure}
@@ -221,7 +229,7 @@
 	
 	\begin{figure}[!htb]
 		\centering
-		\includegraphics[width=8cm]{Images/qmetro.png}
+		\includegraphics[width=8cm]{Images/VRF.png}
 		\caption{Señal del RF, tensión vs tiempo en nseg}
 		\label{img:005}
 	\end{figure}
@@ -234,7 +242,7 @@
 	
 	\begin{figure}[!htb]
 		\centering
-		\includegraphics[width=8cm]{Images/qmetro.png}
+		\includegraphics[width=8cm]{Images/VLO.png}
 		\caption{Señal del LO, tensión vs tiempo en nseg}
 		\label{img:006}
 	\end{figure}
@@ -247,7 +255,7 @@
 	
 	\begin{figure}[!htb]
 		\centering
-		\includegraphics[width=8cm]{Images/qmetro.png}
+		\includegraphics[width=8cm]{Images/VIF.png}
 		\caption{Tension de IF (Vrf*Vlo) versus tiempo en nseg}
 		\label{img:007}
 	\end{figure}
