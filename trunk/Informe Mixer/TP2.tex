@@ -212,7 +212,7 @@ sus prestaciones.
 	
 	\begin{figure}[!htb]
 		\centering
-		\includegraphics[width=8cm]{Images/DoubleBalancedMixer.png}
+		\includegraphics[width=10cm]{Images/DoubleBalancedMixer.png}
 		\caption{Mixer doblemente balanceado}
 		\label{img:004}
 	\end{figure}
@@ -229,7 +229,7 @@ sus prestaciones.
 	
 	\begin{figure}[!htb]
 		\centering
-		\includegraphics[width=8cm]{Images/VRF.png}
+		\includegraphics[width=10cm]{Images/VRF.png}
 		\caption{Señal del RF, tensión vs tiempo en nseg}
 		\label{img:005}
 	\end{figure}
@@ -242,7 +242,7 @@ sus prestaciones.
 	
 	\begin{figure}[!htb]
 		\centering
-		\includegraphics[width=8cm]{Images/VLO.png}
+		\includegraphics[width=10cm]{Images/VLO.png}
 		\caption{Señal del LO, tensión vs tiempo en nseg}
 		\label{img:006}
 	\end{figure}
@@ -255,7 +255,7 @@ sus prestaciones.
 	
 	\begin{figure}[!htb]
 		\centering
-		\includegraphics[width=8cm]{Images/VIF.png}
+		\includegraphics[width=10cm]{Images/VIF.png}
 		\caption{Tension de IF (Vrf*Vlo) versus tiempo en nseg}
 		\label{img:007}
 	\end{figure}
@@ -297,7 +297,7 @@ sus prestaciones.
 		Es importante notar que cada puerto que no se utilice en la medici\'on deben estar terminado en una impedancia de funcionamiento real.
 		
 		Por otra parte, cuando se especifica la aislaci\'on de un mixer, \'esta debe realizarse sobre una banda de frecuencias. Con lo cual resulta m\'as pr\'actico medirlo utilizando el analizador de redes, prestando especial atenci\'on a los niveles de potencia utilizados para medir en el mixer.
-		\subsubsection{Componentes espurias}
+		\subsubsection{Componentes espurias}\label{todosputos}
 		Como en todo dispositivo electr\'onico, el mixer presenta algunas alinealidades con lo cual adem\'as de la presencia de la frecuencia de inter\'es ($f_{IF}=f_{RF}-f_{LO}$), est\'an presentes otras componentes espectrales ($f_{espurias}=m\cdot f_{RF}-n\cdot f_{LO}$ con $m$ y $n$ enteros). Se especifica como la diferencia (en dB) entre la amplitud de la frecuencia $f_{IF}$ y la amplitud de las componentes espurias. Se especifica para una frecuencia y nivel de potencia determinados de la señal del puerto LO.
 		Esta especificaci\'on puede obtenerse midiendo con un analizador de espectro las amplitudes de la frecuencia $f_{IF}$ y de las frecuencias espurias $f_{espurias}$.
 
@@ -338,7 +338,7 @@ sus prestaciones.
 	 
 	\begin{figure}[!htb]
 		\centering
-		\includegraphics[width=8cm]{Images/PCB.png}
+		\includegraphics[width=10cm]{Images/PCB.png}
 		\caption{PCB}
 		\label{pcb}
 	\end{figure}
@@ -347,21 +347,144 @@ sus prestaciones.
 	
 		\begin{figure}[!htb]
 			\centering
-			\includegraphics[width=8cm]{Images/gabi.png}
+			\includegraphics[width=10cm]{Images/gabi.png}
 			\caption{Mixer}
 			\label{ecuadorputa}
 		\end{figure}
-%	\section{Mediciones}
-%	\todo[inline]{ojala sea este fuckiiiing martes :D}
-%	\subsubsection{Impedancias de entrada y salida}
-%	\subsubsection{P\'erdidas por conversi\'on}
-%	\subsubsection{Aislación entre puertos}
-%	\subsubsection{Componentes espurias}
-%	\subsubsection{Figura de ruido}
-%	\subsubsection{El punto de compresi\'on de conversi\'on}
-%	\subsubsection{Rango din\'amico}
-%	\subsubsection{DC Offset}
-%	\newpage
-%	\section{Conclusiones}
-%	\indent Vamos Argentinaaaaa!!!
+	\subsection{Modificaciones}
+	\todo{fotito del nuevo mixer y explicacion de porque le cambiamos un conector. Y de que cambiamos el rango de frecuencia }
+	\section{Mediciones}
+	\subsection{Impedancias de entrada y salida}
+	Esta medici\'on consiste simplemente en conectar un puerto del analizador de redes Agilent N9923A al puerto de entrada, en este caso el puerto RF. Los otros puertos que no se utilizan (el LO y el IF) deben tener una carga de $50~\Omega$ que representa la carga que tienen en operaci\'on normal.
+	El analizador de redes calcula el coeficiente de reflexi\'on $\rho$ (par\'ametro $S_{11}$) y a partir de la siguiente relaci\'on
+	$$Z_L =Z_0\cdot\frac{1+\rho}{1-\rho}=50~\Omega\cdot\frac{1+\rho}{1-\rho}$$
+	puede obtener el valor de la impedancia de entrada, presentando las mediciones a trav\'es de la carta de Smith.
+	En la Figura \ref{impedancia1} se puede observar la carta de Smith de la impedancia del puerto RF. En particular, para  frecuencias de $30~MHz$
+, $40~MHz$ y $50~MHz$, se obtienen impedancias de $4.69\Omega-j\cdot88.68\Omega$, $2.41\Omega-j\cdot41.07\Omega$ y $1.69\Omega-j\cdot17.76\Omega$, evidentemente lejos de los $50\Omega$ que habitualmente se desea tener.	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=10cm]{Images/impedanciaRF.png}
+		\caption{Impedancia del puerto RF.}
+		\label{impedancia1}
+	\end{figure}
+	
+	En la Figura \ref{impedancia2} se muestran los resultados que se obtienen de realizar el mismo procedimiento, conectando el puerto 1 del analizador de redes al puerto LO del mixer y cargando con $50\Omega$ los puertos IF y RF. Para $f_{LO}=105~MHz$, la impedancia del puerto es de $8.3\Omega-j\cdot69.368\Omega$ tambi\'en lejos de los $50\Omega$ requeridos.
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=10cm]{Images/impedanciaLO.png}
+		\caption{Impedancia del puerto LO.}
+		\label{impedancia2}		
+	\end{figure}
+	
+	Finalmente se calcula la impedancia de salida, es decir, la del puerto IF. En la Figura \ref{impedancia3} se muestran los resultados obtenidos. En particular, para  frecuencias de $f_{IF}=105~MHz-30~MHz=75~MHz$
+	, $f_{IF}=105~MHz-40~MHz=65~MHz$ y $f_{IF}=105~MHz-50~MHz=55~MHz$, se obtienen impedancias de $2.94\Omega-j\cdot11.59\Omega$, $2.54\Omega-j\cdot21.43\Omega$ y $3.26\Omega-j\cdot3.47\Omega$, en cualquier caso lejos de los $50\Omega$ que habitualmente se desea tener.
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=10cm]{Images/impedanciaIF.png}
+		\caption{Impedancia del puerto IF.}
+		\label{impedancia3}
+	\end{figure}			
+	
+	\subsection{P\'erdidas por conversi\'on}
+	Utilizando el sintetizador de frecuencias N9310A se genera un barrido en frecuencia de $140~MHz$ a $160~MHz$. La potencia de la se\~nal del sintetizador es de $10~dBm$ (aunque no toda la potencia se transmite ya que parte se refleja dado que la impedancia de entrada de este puerto no est\'a adaptada a $50\Omega$). Utilizando el tercer arm\'onico del oscilador local para realizar la mezcla, se obtiene en el puerto IF un barrido de frecuencias de $f_{LO}-160~MHz$ a $f_{LO}-140~MHz$ (como se puede ver en la Figura \ref{perdidas}), en el peor  la amplitud de la mezcla es de $-42.73~dB\pm~1.5~dB$. De esta forma las p\'erdidas por conversi\'on mezclando con el 3er arm\'onico son de $52.73~dB\pm~1.5~dB$.
+	
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=10cm]{Images/SCREN538.png}
+		\caption{P\'erdidas por conversi\'on obtenidas con un barrido en frecuencia desde $140~MHz$ a $160~MHz$ de la se\~nal RF.}
+		\label{perdidas}
+	\end{figure}	
+	
+	\subsection{Aislación entre puertos}
+	La aislaci\'on de los puertos consiste en ingresar por un puerto de entrada con una se\~nal de determinada potencia y frecuencia, y medir la potencia presente en esa misma frecuencia en el puerto de salida. Esto puede hacerse f\'acilemte utlizando el analizador de redes conectando el puerto 1 al puerto de entrada, el puerto 2 al puerto de salida y midiendo el par\'ametro $S_{21}$. El puerto que no se utiliza debe estar cargado con una impedancia de $50\Omega$. La ventaja que presenta utilizar este instrumento es que puede obtenerse la aislaci\'on en funci\'on de la frecuencia
+	Esto se realiza para los siguiente casos
+	\begin{itemize}
+	\item Del puerto LO al puerto IF
+	\end{itemize}
+	Para analizar el comportamiento del mixer en frecuencias m\'as altas, se utilizar\'a el tercer arm\'onico del oscilador local para generar la multiplicaci\'on, $f_{mixer}=3\cdot f_{LO}=420~MHz$. Con lo cual nos interesar\'a conocer la aislaci\'on para esta frecuencia en particular.
+	En la Figura \ref{isolation1} se puede ver que para una frecunecia de $f=419.895~MHz$ la aislaci'on es de $8.313~dB~\pm~0.04~dB$, una aislaci\'on muy baja, teniendo en cuenta que la se\~nal del puerto LO es la de mayor potencia, haci\'endo que su presencia en el puerto IF sea considerable como se ver\'a luego cuando se analicen las componentes espurias.
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=10cm]{Images/aislacion1.png}
+		\caption{Aislaci\'on entre los puertos LO y IF.}
+		\label{isolation1}
+	\end{figure}	
+	\begin{itemize}
+	\item Del puerto RF al puerto IF
+	\end{itemize}
+	Esta es otra aislaci\'on importante, la cual da una idea de cuanta potencia pasa del puerto RF al IF. Las se\~nales que se utilizan para mezclar son del rango $140~MHz-160~MHz$ (mayores que las planteadas anteriormente ya que se utilizar\'a el tercer arm\'onico de $f_{LO}$ para mezclar). Entonces resulta conveniente en particular calcualar la aislaci\'on para estas frecuencias. En la Figura \ref{isolation2} se puede ver que para $f=140~MHz$ y $f=160~MHz$ la aislaci'on es de $35.15~dB~\pm~0.06~dB$ y $11.17~dB~\pm~0.04~dB$, respectivamente. Para  estas frecuencias los resultados son m\'as satisfactorios, aunque lejos de los $80~dB$ de aislaci\'on que alcanzan algunos mixers.
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=10cm]{Images/aislacion2.png}
+		\caption{Aislaci\'on entre los puertos RF y IF.}
+		\label{isolation2}
+	\end{figure}
+	\begin{itemize}
+	\item Del puerto LO al puerto RF
+	\end{itemize}
+	Por \'ultimo se calcula la aislaci\'on que tiene el puerto de entrada, es decir el RF, respecto del puerto LO. En la Figura \ref{isolation3} se puede observar el gr\'afico del coeficiente de transmisi\'on para un rango amplio de frecuencia. En particular para un valor de frecuencia cercano al tercer arm\'onico de $f_{LO}$, $f=419.895~MHz$ la aislaci\'on es de $5.224~dB~\pm~0.03~dB$
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=10cm]{Images/aislacion3.png}
+		\caption{Aislaci\'on entre los puertos LO y RF.}
+		\label{isolation3}
+	\end{figure}	
+	
+	\subsection{Componentes espurias}
+	Como se mencion\'o previamente en la Secci\'on \ref{todosputos}, las componentes espurias est\'an determinadas por $f_{espurias}=m\cdot f_{RF}-n\cdot f_{LO}$ con $m$ y $n$ enteros. En este caso, las componentes espurias de mayor relevancia se localizan en $f_{LO}$ y sus arm\'onicos. Este resultado era l\'ogicamente esperado, ya que c\'omo se observ\'o en los resultados expuestos de aislaci\'on entre puertos, la aislaci\'on entre los puertos LO y RF era muy baja.
+	En la Figura \ref{espurios} se puede observar la presencia de \'estas componentes (la de los primeros 3 tonos $f_0$,$f_1$ y $f_2$), siendo la de mayor amplitud la correspondiente a la frecuencia fundamental, cuya amplitud es de $-10~dBm~\pm~1.5dB$
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=10cm]{Images/SCREN539.png}
+		\caption{Componentes espurias.}
+		\label{espurios}
+	\end{figure}
+		
+	\subsection{Figura de ruido}
+		Con el puerto LO conectado al generador de pulsos HP 8007B y el puerto RF una carga de $50\Omega$, el ruido a la entrada se convierte en 
+
+		$$N_i(dB)=kTB=-174~dBm$$
+		
+		Donde $k$ es la constante de Boltzmann, $T$ es la temperatura 
+		absoluta en Kelvin y $B$ es el ancho de banda seleccionado, el cual es de $1~Hz$.
+
+		En la Figura \ref{noise}, se muestra el resultado obtenido de 
+		medir el ruido en el puerto IF. Su densidad espectral de potencia se calcula en una regi\'on donde la se\~nal de LO (y sus arm\'onicos) no interfieran. Como se puede ver se obtiene 
+		$N_o(dB)=-145.52~dBm\pm~1.5~dB$ con lo cual
+		
+		$$N_o(dB)-N_i(dB)=-128.73~dBm-(-174~dBm)=45.27~dB\pm~1.5~dB$$			
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=10cm]{Images/SCREN542.png}
+		\caption{Potencia de ruido $N_o$.}
+		\label{noise}
+	\end{figure}
+		Con lo cual a partir de la medici\'on de p\'erdidas por conversi\'on y la realizada previamente, puede obtenerse la Figura de ruido del mixer.
+		$$F=\textmd{P\'erdidas por conversi\'on}+10\cdot\log\left(\frac{N_o}{N_i}\right)$$
+		$$F=52.73~dB\pm~1.5~dB+45.27~dB\pm~1.5~dB=98~dB\pm~3~dB$$
+	\subsection{El punto de compresi\'on de conversi\'on}
+Para realizar esta medici\'on se conect\'oel puerto RF al sintetizador de frecuencias Agilent N9310A, el puerto LO al generador de pulso HP 8007B y el puerto IF al analizador de espectros PSA 6000. En esta medici\'on la potencia y la frecuencia de la se\~nal LO se mantienen constantes (La potencia del LO se fija en $10~dBm$ y su frecuencia en $105~MHz$). Con el sintetizador de frecuencias Agilent N9310A se modifica la potencia de la se\~nal de entrada desde $-4~dBm$ hasta $7~dBm$, la idea de esta medici\'on consiste en observar con el analizador de espectro la salida IF y determinar a qu\'e potencia de entrada se obtiene una variaci\'on de $1~dB$ en las p\'erdidas por conversi\'on. De esta manera se obtiene el m\'aximo nivel de potencia RF con la cual se puede utilizar el mixer.
+En la Figura \ref{compresion} se puede ver un gr\'afico que resume las mediciones realizadas. Como se puede notar, para una potencia RF de $4~dBm$, se alcanza una variaci\'on de $1~dB$ en las p\'erdidas por conversi\'on, con lo cual queda determinado el m\'aximo nivel de potencia permitido en el puerto RF, dadas determinadas especificaciones de la se\~nal LO.
+	
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=10cm]{Images/compresion.png}
+		\caption{P\'erdidas por conversi\'on vs. Potencia de entrada RF}
+		\label{compresion}
+	\end{figure}	
+	
+	\subsection{Rango din\'amico}
+	\todo{pajaaa}
+	\subsection{DC Offset}
+	\todo{pregunta, lo sacamos??}
+	\newpage
+	\section{Conclusiones}
+	La realizaci\'on de este trabajo permiti\'o adquirir los conocimientos necesarios para entender el funcionamiento de un mixer y su implementaci\'on f\'isica (t\'ecnicas de dise\~no de circuitos impresos para altas frecuencias, tecnolog\'a de componentes adecuada, entre otros). Si bien el mixer implementado es de bajas prestaciones, el objetivo principal (la caracterizaci\'on del mixer mediante las t\'ecnicas de medici\'on aprendidas en la materia, en particular a trav\'es del analizador de espectro y el analizador de redes) fue satisfactoriamente cumplido. 
+	Por otra parte se deja abierta la posibilidad a futuro de que otros estudiantes caractericen el mixer en el rango de frecuencias superior al realizado en este trabajo, donde se piensa que su performance mejorar\'a. 
 \end{document}
