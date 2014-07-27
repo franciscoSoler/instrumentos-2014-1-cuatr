@@ -42,6 +42,9 @@ se realiza un an\'alisis te\'orico del funcionamiento y de los par\'ametros
 m\'as relevantes de un mixer, para luego implementar un dise\~no propio. Al 
 dise\~no propuesto se le realizan mediciones para caracterizarlo y documentar 
 sus prestaciones.
+\indent Como no se consiguió el software de simulación para señales en RF (
+por ejemplo Genesys), no se podrá simular el comportamiento del circuito antes 
+de armar.
 
 \newpage
 \subsection{Introducción teórica}
@@ -77,16 +80,14 @@ sus prestaciones.
 	utilizado como entrada. \\
 	\indent Los otros dos puertos del mixer, IF y RF, pueden intercambiarse 
 	dependiendo de que es lo que se busque. Si se utiliza al puerto IF como 
-	entrada, se logra obtener la suma de frecuencias, si la entrada es 
+	entrada, se logra obtener la suma y resta de frecuencias, si la entrada es 
 	el puerto RF, se obtiene la resta de frecuencias. La relación entre la 
 	entrada y salida de frecuencias se muestra en la Ecuación \ref{eq:002}
 
 	\begin{equation}\label{eq:002}
 		f_{IF} = |f_{LO} - f_{RF}|
 	\end{equation}
-%	\todo[inline]{si se queda con la resta no se llama downconverter y si se queda con la suma es upconverter??
-%	sisi, la resta es downconverter, la suma es upconverter, si mal no recuerdo
-%	... me gusta que hayas comenzado a utilizar los todos ;)}
+
 	\indent En la Figura \ref{img:001}, que representa ambas configuraciones de 
 	funcionamiento, se puede observar que en el caso de upconversion se observa
 	la suma y resta de frecuencias. Si se observan ambas se la llama 
@@ -131,7 +132,7 @@ sus prestaciones.
 	anteriormente mencionado se los llaman conmutadores ideales y poseen la 
 	máxima performance como mixer. \\
 	\indent El proceso de mezclado se produce debido a la respuesta del diodo 
-	con respecto a la señal LO. Debido a que diodo es forzado a circuito abierto 
+	con respecto a la señal LO. Debido a que diodo es forzado a circuito abierto
 	y cerrado por la señal LO, la señal pequeña de RF es chopeada. Si se 
 	analizan las componentes de Fourier de la señal de salida de la conmutación 
 	de dicho mixer (ver Figuras \ref{img:003}a y \ref{img:003}c), se observa que
@@ -264,13 +265,20 @@ sus prestaciones.
 	para generar las señales RF y LO diferenciales. Dichos transformadores 
 	pueden ser utilizados hasta 1-2 GHz, para frecuencias mayores ya se deben 
 	reemplazar por líneas de transimisión. En este caso se elgieron los 
-	ferrites toroidales FT37-67, que, según la especificación, llegan hasta 1GHz
-	como transformadores. Otro tipo de ferrite es el balun que tambi\'en posee las
-	mismas especificaciones, pero como no se consiguieron se utilizaron los 
-	primeros.\\
+	ferrites toroidales FT37-67, que, según la especificación (ver imagen 
+	\ref{chupalaDalmati}), llegan hasta 1GHz como transformadores. Otro tipo de 
+	ferrite es el balun que tambi\'en posee las mismas especificaciones, pero 
+	como no se consiguieron se utilizaron los primeros.\\
 	\indent Hay que tener en cuenta, que para bobinar dicho ferrite, hay que 
 	twistear los cables, en este caso en particular son de a tres cables a la 
 	vez y dos de ellos conforman el secundario del transformador.
+
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=6cm]{Images/specToroid.png}
+		\caption{Especificaciones del toroide utilizado}
+		\label{chupalaDalmati}
+	\end{figure}
 
 \newpage
 \section{Desarrollo}
@@ -425,17 +433,7 @@ sus prestaciones.
 		0.5mm. El cable que bobina cada ferrite es un cable trifilar, un hilo 
 		que corresponde al primario y otros dos hilos que corresponden al 
 		secundario del transformador, dichos hilos están twisteados entre si; 
-		poseen 5 vueltas por cm. \\
-		\indent Buscando en el mercado, se utilizó el RF37-67, las 
-		especificaciones del mismo se muestran en la imagen \ref{SpecToroid}
-
-		\begin{figure}[!htb]
-			\centering
-			\includegraphics[width=6cm]{Images/specToroid.png}
-			\caption{Especificaciones del toroide utilizado}
-			\label{SpecToroid}
-		\end{figure}
-
+		poseen 5 vueltas por cm. 
 		\item Los conectores utilizados para los puertos RF, IF y LO son 
 		conectores BNC, cuyo rango de operaci\'on, hasta aproximadamente $4~GHz$
 		, es suficiente para el fin buscado.
