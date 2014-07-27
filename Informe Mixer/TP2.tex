@@ -264,7 +264,7 @@ de armar.
 	\indent En la Figura \ref{img:004} se utilizan transformadores con ferrites 
 	para generar las señales RF y LO diferenciales. Dichos transformadores 
 	pueden ser utilizados hasta 1-2 GHz, para frecuencias mayores ya se deben 
-	reemplazar por líneas de transimisión. En este caso se elgieron los 
+	reemplazar por líneas de transimisión. En este caso se eligieron los 
 	ferrites toroidales FT37-67, que, según la especificación (ver imagen 
 	\ref{chupalaDalmati}), llegan hasta 1GHz como transformadores. Otro tipo de 
 	ferrite es el balun que tambi\'en posee las mismas especificaciones, pero 
@@ -399,9 +399,6 @@ de armar.
 	din\'amico por lo cual queda \'este queda especificado por las mediciones 
 	previas.
 
-	\subsubsection{DC Offset}
-	\indent Es una medida del desbalance del mixer. Para un mixer perfectamente 
-	balanceado el offset de continua es cero.
 
 	\section{Diseño a armar}
 	\indent Dado que se el mixer opera a frecuencias altas, al momento de 
@@ -462,7 +459,7 @@ de armar.
 	\indent Se debió trabajar en otro rango de frecuencias a la hora de realizar
 	las mediciones por falta de un segundo sintetizador de señales, se utilizó 
 	un generador de pulsos como oscilador local, trabajando a una frecuencia de 
-	100 MHz y, en parte se utilizaron los armónicos de dicha señal para realizar
+	105 MHz y, en parte se utilizaron los armónicos de dicha señal para realizar
 	las mediciones.
 	\indent Como el mismo no entraba en el mismo lugar que el anterior, se lo 
 	colocó en otra cara del gabinete, debiendo utilizar un cable para realizar 
@@ -557,7 +554,7 @@ de armar.
 	frecuencias de $f_{LO}-160~MHz$ a $f_{LO}-140~MHz$ (como se puede ver en la 
 	Figura \ref{perdidas}), en el peor caso, la amplitud de la mezcla es de 
 	$-42.73~dB\pm~1.5~dB$. De esta forma las p\'erdidas por conversi\'on 
-	mezclando con el 3er arm\'onico son de $52.73~dB\pm~1.5~dB$.
+	mezclando con el 3er arm\'onico son de $52.73~dB\pm~1.5~dB$. El cual es un valor alto pero no debe perderse de vista que se est\'a mezclando con el tercer arm\'onico el cual es de menor potencia que el tono funcdamental.
 	
 	\begin{figure}[!htb]
 		\centering
@@ -571,7 +568,7 @@ de armar.
 	\indent La aislaci\'on de los puertos consiste en ingresar por un puerto de 
 	entrada con una se\~nal de determinada potencia y frecuencia, y medir la 
 	potencia presente en esa misma frecuencia en el puerto de salida. Esto puede
-	hacerse f\'acilemte utlizando el analizador de redes conectando el puerto 1 
+	hacerse f\'acilmente utlizando el analizador de redes conectando el puerto 1 
 	al puerto de entrada, el puerto 2 al puerto de salida y midiendo el 
 	par\'ametro $S_{21}$. El puerto que no se utiliza debe estar cargado con una
 	impedancia de $50\Omega$. La ventaja que presenta utilizar este instrumento 
@@ -712,7 +709,7 @@ de armar.
 	m\'aximo nivel de potencia RF con la cual se puede utilizar el mixer. \\
 	\indent La potencia en el puerto LO es aproximada dado que se la midió con 
 	el osciloscopio (el cual posee una resistencia interna aproximada de $50 
-	\Omega$  y el mixer en dicha frecuencia no. \\
+	\Omega$  y el mixer en dicha frecuencia no). \\
 	\indent En la Figura \ref{compresion} se puede ver un gr\'afico que resume 
 	las mediciones realizadas (expresadas en la tabla \ref{tablaCompresion}). 
 	Como se puede notar, para una potencia RF de $4~dBm$, se alcanza una 
@@ -761,8 +758,6 @@ de armar.
 		\label{compresion}
 	\end{figure}	
 	
-	\subsection{Rango din\'amico}
-	\todo{pajaaa}
 	\newpage
 	\section{Conclusiones}
 	\indent La realizaci\'on de este trabajo permiti\'o adquirir los 
