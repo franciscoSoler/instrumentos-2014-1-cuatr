@@ -632,11 +632,17 @@ de armar.
 	\subsection{Componentes espurias}
 	\indent Como se mencion\'o previamente en la Secci\'on \ref{todosputos}, las
 	componentes espurias est\'an determinadas por 
-	$f_{espurias}=m\cdot f_{RF}-n\cdot f_{LO}$ con $m$ y $n$ enteros. En este 
+	$f_{espurias}=n\cdot f_{LO}\pm m\cdot f_{RF}$ con $m$ y $n$ enteros. En este
 	caso, las componentes espurias de mayor relevancia se localizan en $f_{LO}$ 
 	y sus arm\'onicos. Este resultado era l\'ogicamente esperado, ya que c\'omo 
-	se observ\'o en los resultados expuestos de aislaci\'on entre puertos, la 
-	aislaci\'on entre los puertos LO y RF era muy baja. \\
+	se observ\'o en los resultados expuestos de aislaci\'on entre puertos, en 
+	las frecuencias trabajadas dicha aislaci\'on entre los puertos LO y RF era 
+	muy baja. \\
+	\indent Otro problema que se presenta a la hora de realizar esta medición 
+	fue el uso del sintetizador de frecuencias como generador. Dado que la señal
+	generada posee un alto contenido armónico, no se puede medir directamente la
+	potencia que posee algunos componentes espurios generado por el mixer, 
+	particularmente los correspondientes a las frecuencias $n\cdot f_{LO}$.
 	\indent En la Figura \ref{espurios} se puede observar la presencia de 
 	\'estas componentes (la de los primeros 3 tonos $f_0$,$f_1$ y $f_2$), siendo
 	la de mayor amplitud la correspondiente a la frecuencia fundamental, cuya 
