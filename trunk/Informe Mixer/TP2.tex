@@ -459,6 +459,11 @@ de armar.
 	\subsection{Modificaciones}
 	\indent Por falta de instrumental a la hora de realizar las mediciones, se 
 	debió cambiar un conector BNC por uno de tipo N. \\
+	\indent Se debió trabajar en otro rango de frecuencias a la hora de realizar
+	las mediciones por falta de un segundo sintetizador de señales, se utilizó 
+	un generador de pulsos como oscilador local, trabajando a una frecuencia de 
+	100 MHz y, en parte se utilizaron los armónicos de dicha señal para realizar
+	las mediciones.
 	\indent Como el mismo no entraba en el mismo lugar que el anterior, se lo 
 	colocó en otra cara del gabinete, debiendo utilizar un cable para realizar 
 	la conexión entre el conector y la plaqueta, los requerimientos para elegir 
@@ -480,6 +485,12 @@ de armar.
 	\end{figure}
 
 	\section{Mediciones}
+	\indent Muchas de los resultados de las mediciones no serán satisfactorios 
+	dado que se estará trabajando en un rango de frecuencias menor al pensado al
+	momento de construir dicho mixer. En el anexo del presente informe se 
+	presentan las únicas mediciones que se pudieron realizar con un solo 
+	sintetizador de frecuencias.
+
 	\subsection{Impedancias de entrada y salida}
 	\indent Esta medici\'on consiste simplemente en conectar un puerto del 
 	analizador de redes Agilent N9923A al puerto de entrada, en este caso el 
@@ -712,7 +723,7 @@ de armar.
 		\begin{tabular}{|c|c|c|}
 			\hline
 			Potencia entrada RF [dbm] & Potencia salida IF [dbm] & Conversion 
-			Loss \\
+			Loss [db]\\
 			\hline
 			-4 & -40.74 / -40.94 & 36.74 / 36.94 \\
 			\hline
