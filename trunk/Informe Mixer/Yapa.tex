@@ -29,12 +29,12 @@
 
 
 \begin{document}
-\section{La yapa: Mediciones con el mixer original}
+\section{La yapa: Mediciones utilizando con el mixer original}
 	Se incluyen tambi\'en, a modo comparativo, algunos resultados obtenidos en el rango de frecuencias para el cual originalmente estaba dise\~nado el mixer.
 	\subsection{Impedancias de entrada y salida}
 	\indent Como antes se utiliza el puerto 1 del analizador de redes Agilent N9923A para obtener el par\'ametro $S_{11}$ del puerto deseado del mixer(LO, RF o IF), el resto de los puertos debe estar adaptado con una carga de $50\Omega$
 	\indent En la Figura \ref{impedancia1fran} se puede ver la carta de Smith 
-	de la impedancia del puerto RF. Como se puede observar para $3500~MHz$ se obtienen impedancias de $122.4\Omega-j\cdot67.7\Omega$
+	de la impedancia del puerto RF. Como se puede observar para $500~MHz$ se obtienen impedancias de $122.4\Omega-j\cdot67.7\Omega$
 	
 	\begin{figure}[!htb]
 		\centering
@@ -43,7 +43,7 @@
 		\label{impedancia1fran}
 	\end{figure}
 	
-	\indent En la Figura \ref{impedancia2fran} se muestran los resultados que se obtienen de realizar el mismo procedimiento al puerto O del mixer. 
+	\indent En la Figura \ref{impedancia2fran} se muestran los resultados que se obtienen de realizar el mismo procedimiento al puerto LO del mixer. 
 	Para $f_{LO}=800~MHz$, la impedancia del puerto es de 
 	$14.83\Omega-j\cdot15.29\Omega$. Sin embargo a una frecuencia cercana se obtiene un comportamiento que se aproxima mejor al deseado de $50\Omega$, en $f=859.9~MHz$, la impedancia del puerto es de $51.5\Omega+j\cdot3.04\Omega$.
 	
@@ -54,8 +54,7 @@
 		\label{impedancia2fran}		
 	\end{figure}
 
-	\indent Finalmente se mide la impedancia del puerto IF. En la Figura \ref{impedancia3fran} se muestran los resultados obtenidos en el formato de la carta de Smith. Para $f_{IF}=800~MHz-500~MHz=300~MHz$ se obtiene una impedancias de $91.8\Omega+j\cdot75.3\Omega$
-	habitualmente se desea tener.
+	\indent Finalmente se mide la impedancia del puerto IF. En la Figura \ref{impedancia3fran} se muestran los resultados obtenidos en el formato de la carta de Smith. Para $f_{IF}=800~MHz-500~MHz=300~MHz$ se obtiene una impedancia de $91.8\Omega+j\cdot75.3\Omega$.
 	
 	\begin{figure}[!htb]
 		\centering
@@ -63,7 +62,7 @@
 		\caption{Impedancia del puerto IF.}
 		\label{impedancia3fran}
 	\end{figure}			
-	Con respecto a las impedancias obtenidas anteriormente puede notarse que en este caso para todos los puertos la parte resistiva es mayor.
+	Con respecto a las impedancias obtenidas con el otro rango de frecuencias, puede notarse que en este caso para todos los puertos la parte resistiva es mayor.
 	
 	\subsection{Aislación entre puertos}
 	\indent Conectando el analizado de espectros PSA 6000 en el puerto de salida del mixer, el sintetizador de frecuencias N9310A al puerto de entrada y el puerto restante cargado con $50\Omega$ se calculan las aislaciones.
