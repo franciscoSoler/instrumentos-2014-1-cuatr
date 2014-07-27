@@ -408,18 +408,27 @@ sus prestaciones.
 	\indent Respecto de los componentes utilizados en la placa se tuvieron en 
 	cuenta las siguientes cuestiones:
 
-	\todo[inline]{ver si está dicho que los cables de los transformadores estan 
-	twisteados}
-
 	\begin{itemize}
 		\item Los diodos Schottky utilizados deben ser de baja capacidad de 
 		juntura para poder operar a un rango de frecuencias elevado como el que 
 		se pretende. Por ello se eligieron los diodos BAT85 de $C_j=10~pF$, el 
 		valor m\'as bajo que pudo obtenerse. 
 		\item Los transformadores se realizaron con ferrites de alta frecuencia 
-		bobinados con cable de cobre esmaltado de ??mm. El cable que bobina cada
-		ferrite es un cable trifilar, un hilo que corresponde al primario y 
-		otros dos hilos que corresponden al secundario del transformador. 
+		(baja permeabilidad magnética) bobinados con cable de cobre esmaltado de
+		0.5mm. El cable que bobina cada ferrite es un cable trifilar, un hilo 
+		que corresponde al primario y otros dos hilos que corresponden al 
+		secundario del transformador, dichos hilos están twisteados entre si; 
+		poseen 5 vueltas por cm. \\
+		\indent Buscando en el mercado, se utilizó el RF37-67, las 
+		especificaciones del mismo se muestran en la imagen \ref{SpecToroid}
+
+		\begin{figure}[!htb]
+			\centering
+			\includegraphics[width=6cm]{Images/specToroid.png}
+			\caption{Especificaciones del toroide utilizado}
+			\label{SpecToroid}
+		\end{figure}
+
 		\item Los conectores utilizados para los puertos RF, IF y LO son 
 		conectores BNC, cuyo rango de operaci\'on, hasta aproximadamente $4~GHz$
 		, es suficiente para el fin buscado.
@@ -430,17 +439,11 @@ sus prestaciones.
 		conecta a la masa del circuito en un único punto de conexión.
 		\item Para evitar el uso de cables, se soldaron los tres conectores BNC
 		directamente a la placa.
-		\todo[inline]{despues sacar el de abajo}
-		\item Dos de los tres conectores utilizados están soldados directamente 
-		a la placa, de forma tal de evitar utilizar cables, como no se pudo 
-		hacer lo mismo con el tercero, se utilizó un cable lo más corto posible,
-		y conectado de tal forma que no pase por encima de ningún otro 
-		componente.
 	\end{itemize}
 	 
 	\begin{figure}[!htb]
 		\centering
-		\includegraphics[width=10cm]{Images/PCB.png}
+		\includegraphics[width=6cm]{Images/PCB.png}
 		\caption{PCB}
 		\label{pcb}
 	\end{figure}
@@ -721,6 +724,8 @@ sus prestaciones.
 	\indent Por otra parte se deja abierta la posibilidad a futuro de que otros 
 	estudiantes caractericen el mixer en el rango de frecuencias superior al 
 	realizado en este trabajo, donde se piensa que su performance mejorar\'a. 
+	
+	\newpage
 	\section{Referencias}
 	\indent A continuación se muestran las referencias utilizadas para el 
 	estudio del armado y diseño del mixer.
