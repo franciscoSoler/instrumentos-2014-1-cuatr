@@ -639,7 +639,7 @@ de armar.
 	las frecuencias trabajadas dicha aislaci\'on entre los puertos LO y RF era 
 	muy baja. \\
 	\indent Otro problema que se presenta a la hora de realizar esta medición 
-	fue el uso del sintetizador de frecuencias como generador. Dado que la señal
+	fue el uso del generador de pulsos como oscilador local. Dado que la señal
 	generada posee un alto contenido armónico, no se puede medir directamente la
 	potencia que posee algunos componentes espurios generado por el mixer, 
 	particularmente los correspondientes a las frecuencias $n\cdot f_{LO}$.
@@ -686,7 +686,7 @@ de armar.
 	$$F=52.73~dB\pm~1.5~dB+45.27~dB\pm~1.5~dB=98~dB\pm~3~dB$$
 	
 	\subsection{El punto de compresi\'on de conversi\'on}
-	\indent Para realizar esta medici\'on se conect\'oel puerto RF al 
+	\indent Para realizar esta medici\'on se conect\'o el puerto RF al 
 	sintetizador de frecuencias Agilent N9310A, el puerto LO al generador de 
 	pulso HP 8007B y el puerto IF al analizador de espectros PSA 6000. En esta 
 	medici\'on la potencia y la frecuencia de la se\~nal LO se mantienen 
@@ -697,6 +697,9 @@ de armar.
 	IF y determinar a qu\'e potencia de entrada se obtiene una variaci\'on de 
 	$1~dB$ en las p\'erdidas por conversi\'on. De esta manera se obtiene el 
 	m\'aximo nivel de potencia RF con la cual se puede utilizar el mixer. \\
+	\indent La potencia en el puerto LO es aproximada dado que se la midió con 
+	el osciloscopio (el cual posee una resistencia interna aproximada de $50 
+	\Omega$  y el mixer en dicha frecuencia no.
 	\indent En la Figura \ref{compresion} se puede ver un gr\'afico que resume 
 	las mediciones realizadas (expresadas en la tabla \ref{tablaCompresion}). 
 	Como se puede notar, para una potencia RF de $4~dBm$, se alcanza una 
@@ -706,33 +709,32 @@ de armar.
 
 	\begin{table}[!htp]
 		\centering
-		\begin{tabular}{|c|c|}
+		\begin{tabular}{|c|c|c|}
 			\hline
-			Potencia entrada RF [dbm] & Potencia salida IF [dbm] \\
+			Potencia entrada RF [dbm] & Potencia salida IF [dbm] & Conversion 
+			Loss \\
 			\hline
-			-4 &  \\
+			-4 & -40.74 / -40.94 & 36.74 / 36.94 \\
 			\hline
-			-3 &  \\
+			-3 & -39.60 / -39.79 & 36.60 / 36.79 \\
 			\hline
-			-2 &  \\
+			-2 & -38.69 / -38.71 & 36.69 / 36.71 \\
 			\hline
-			-1 &  \\
+			-1 & -37.76 / -37.84 & 36.76 / 36.84 \\
 			\hline
-			0 &  \\
+			0 & -36.87 / -37.05 & 36.87 / 37.05 \\
 			\hline
-			1 &  \\
+			1 & -36.16 / -36.39 & 37.16 / 37.39 \\
 			\hline
-			2 &  \\
+			2 & -35.21 / -35.49 & 37.21 / 37.49 \\
 			\hline
-			3 &  \\
+			3 & -34.41 / -34.59 & 37.41 / 37.59 \\
 			\hline
-			4 &  \\
+			4 & -33.72 / -33.92 & 37.72 / 37.92 \\
 			\hline
-			5 &  \\
+			5 & -33.09 / -33.16 & 38.09 / 38.16 \\
 			\hline
-			6 &  \\
-			\hline
-			7 &  \\
+			6 & -32.73 / -32.80 & 38.73 / 38.80 \\
 			\hline
 		\end{tabular}
 		\caption{mediciones de pérdidas por conversión}
@@ -748,8 +750,6 @@ de armar.
 	
 	\subsection{Rango din\'amico}
 	\todo{pajaaa}
-	\subsection{DC Offset}
-	\todo{pregunta, lo sacamos??}
 	\newpage
 	\section{Conclusiones}
 	\indent La realizaci\'on de este trabajo permiti\'o adquirir los 
